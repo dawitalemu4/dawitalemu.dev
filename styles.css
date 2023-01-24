@@ -797,6 +797,16 @@ bottom:-500px;
   justify-content: center;
   align-items: center;
   margin-top: -700px;
+  position: relative;
+}
+
+#pikachu{
+  align-self: left;
+  position: absolute;
+  bottom: -10%;
+  left: 0%;
+  width: 10%;
+  height: 25%;
 }
 
 #footer__logo {
