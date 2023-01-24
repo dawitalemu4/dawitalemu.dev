@@ -11,7 +11,7 @@
   }
   }
 
-
+/* display:hidden;*/
 .navbar {
   background: #000000d2;
   height: 80px;
@@ -391,87 +391,24 @@ h2 {
   z-index: 1;
 }
 
-@media screen and (max-width: 900px) {
-  #eyes {
-    position: relative;
-    transform: translate(5px,-5px);
-    height: 6%;
-    width: 6%;
-    z-index: 1;
-  }
-  }
-@media screen and (max-width: 850px) {
-    #eyes {
-      position: relative;
-      transform: translate(15px,-5px);
-      height: 6%;
-      width: 6%;
-      z-index: 1;
+@media screen and (max-width: 960px) {
+  #eyes{
+    display:none;
+
+  }}
+  @media screen and (max-width: 960px) {
+    #main__img{
+      display:none;
+      
     }
-    }
-@media screen and (max-width: 800px) {
-    #eyes {
-      position: relative;
-      transform: translate(30px, -5px);
-      height: 6%;
-      width: 6%;
-      z-index: 1;
-    }
-    }
-@media screen and (max-width: 750px) {
-      #eyes {
-        position: relative;
-        transform: translate(40px,-7px);
-        height: 6%;
-        width: 6%;
-        z-index: 1;
-      }
-      }
-@media screen and (max-width: 700px) {
-      #eyes {
-        position: relative;
-        transform: translate(45px, -10px);
-        height: 6%;
-        width: 6%;
-        z-index: 1;
-      }
-      } 
-@media screen and (max-width: 650px) {
-        #eyes {
-          position: relative;
-          transform: translate(55px,-15px);
-          height: 6%;
-          width: 6%;
-          z-index: 1;
-        }
-        }    
- @media screen and (max-width: 600px) {
-        #eyes {
-          position: relative;
-          transform: translate(65px, -15px);
-          height: 6%;
-          width: 6%;
-          z-index: 1;
-        }
-        }
-@media screen and (max-width: 550px) {
-          #eyes {
-            position: relative;
-            transform: translate(75px,-16px);
-            height: 6%;
-            width: 6%;
-            z-index: 1;
-          }
-          }       
-@media screen and (max-width: 500px) {
-          #eyes {
-            position: relative;
-            transform: translate(80x, -20px);
-            height: 6%;
-            width: 6%;
-            z-index: 1;
-          }
-          }
+}
+
+@media screen and (max-width: 960px) {
+form{
+    display:none;
+
+  }}
+  
 /* Mobile Responsive */
 @media screen and (max-width: 768px) {
   .main__container {
