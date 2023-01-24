@@ -12,7 +12,7 @@
   }
 
   
-
+ @media screen and (min-width: 900px) {
 .navbar {
   background: #000000d2;
   height: 80px;
@@ -23,8 +23,12 @@
   position: sticky;
   top: 0;
   z-index: 999;
+}}
+@media screen and (max-width: 900px) {
+  .navbar{
+   display:none;
+  }
 }
-
 
 .navbar__container {
   display: flex;
