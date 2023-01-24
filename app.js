@@ -17,21 +17,24 @@ document.getElementById('home').addEventListener('click', function(event) {
 
 document.getElementById('experience').addEventListener('click', function(event) {
   event.preventDefault();
+  var targetPosition = document.body.scrollHeight * 0.45;
   window.scrollTo({
-    top: 2350,
+    top: targetPosition,
     left: 0,
     behavior: 'smooth'
   });
- 
 });
 
 document.getElementById('projects').addEventListener('click', function(event) {
   event.preventDefault();
+  var targetPosition = document.body.scrollHeight * 0.7;
   window.scrollTo({
-    top: 3400,
+    top: targetPosition,
     left: 0,
     behavior: 'smooth'
   });
+});
+
  
 });
 
