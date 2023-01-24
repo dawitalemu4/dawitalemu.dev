@@ -11,7 +11,8 @@
   }
   }
 
-/* display:hidden;*/
+  
+
 .navbar {
   background: #000000d2;
   height: 80px;
@@ -408,7 +409,7 @@ form{
     display:none;
 
   }}
-  
+
 /* Mobile Responsive */
 @media screen and (max-width: 768px) {
   .main__container {
