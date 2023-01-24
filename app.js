@@ -17,13 +17,12 @@ document.getElementById('home').addEventListener('click', function(event) {
 
 document.getElementById('experience').addEventListener('click', function(event) {
   event.preventDefault();
-  var gameContainer = document.getElementById("game-container");
-  var rect = gameContainer.getBoundingClientRect();
   window.scrollTo({
-    top: rect.top,
+    top: 2350,
     left: 0,
     behavior: 'smooth'
   });
+ 
 });
 
 document.getElementById('projects').addEventListener('click', function(event) {
