@@ -12,12 +12,7 @@ window.onbeforeunload = function () {
 
 document.getElementById('home').addEventListener('click', function(event) {
   event.preventDefault();
-  window.scrollTo({
-    top: 0,
-    left: 0,
-    behavior: 'smooth'
-  });
- 
+  location.reload();
 });
 
 document.getElementById('experience').addEventListener('click', function(event) {
