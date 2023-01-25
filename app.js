@@ -35,9 +35,6 @@ document.getElementById('projects').addEventListener('click', function(event) {
   });
 });
 
- 
-});
-
 document.getElementById('contact').addEventListener('click', function(event) {
   event.preventDefault();
   window.scrollTo({
@@ -117,6 +114,7 @@ console.log(e)
           }
           scrollCounter = 0;
       }
+      
   });
 
   let gif = document.getElementById("game-gif");
