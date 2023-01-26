@@ -1,3 +1,6 @@
+
+
+
 const menu = document.querySelector('#mobile-menu');
 const menuLinks = document.querySelector('.navbar__menu');
 
@@ -17,7 +20,7 @@ document.getElementById('home').addEventListener('click', function(event) {
 
 document.getElementById('experience').addEventListener('click', function(event) {
   event.preventDefault();
-  var targetPosition = document.body.scrollHeight * 0.45;
+  var targetPosition = document.body.scrollHeight * 0.48;
   window.scrollTo({
     top: targetPosition,
     left: 0,
@@ -27,7 +30,7 @@ document.getElementById('experience').addEventListener('click', function(event) 
 
 document.getElementById('projects').addEventListener('click', function(event) {
   event.preventDefault();
-  var targetPosition = document.body.scrollHeight * 0.7;
+  var targetPosition = document.body.scrollHeight * 0.73;
   window.scrollTo({
     top: targetPosition,
     left: 0,
@@ -77,7 +80,7 @@ const anchorY = rekt.top + rekt.height / 2;
 
 document.addEventListener('mousemove', (e) => {
   
-console.log(e)
+
 
   const mouseX = e.clientX;
   const mouseY = e.clientY;
@@ -172,3 +175,6 @@ console.log(e)
       if(i == gifs[1]) {message.style.visibility = "hidden";}
     }, 400);
   }
+
+ 
+
