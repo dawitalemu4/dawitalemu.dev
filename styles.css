@@ -11,6 +11,15 @@
   }
   }
 
+  body::-webkit-scrollbar {
+    width: 0.2em;
+    background-color: #F5F5F5;
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: #000000;
+  }
+
   @media screen and (min-width: 900px) {
 .navbar {
   background: #000000d2;
@@ -753,6 +762,13 @@ top:170%;
   justify-content: center;
   flex-wrap: wrap;
 }
+
+
+#pokeball{
+  width: 100%;
+  height: 100%;
+}
+
 
 .services__card {
   margin: 1rem;
