@@ -11,8 +11,7 @@
   }
   }
 
-  
- @media screen and (min-width: 900px) {
+  @media screen and (min-width: 900px) {
 .navbar {
   background: #000000d2;
   height: 80px;
@@ -29,6 +28,7 @@
    display:none;
   }
 }
+
 
 .navbar__container {
   display: flex;
@@ -486,8 +486,9 @@ form{
 
 #pacman-container{
   position: absolute;
-bottom:-500px;
+top:170%;
   transform: scale(1.25);
+ 
 }
 #dots{
   position: absolute;
@@ -599,6 +600,7 @@ bottom:-500px;
   
   right:50%;
   left: 50%;
+  
   transform: translate(-50%, -50%);
 }
 
@@ -618,9 +620,19 @@ bottom:-500px;
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
-  margin-top: 10%;
+  top: 150%;
+  position: absolute;
+  left: 5%;
   font-size: 2.5rem;
 }
+
+#da{
+  top: 150%;
+  position: absolute;
+  left: -5%;
+  transform: scale(0.5);
+}
+
 .services p{
   font-size: 2rem;
   font-weight: 600;
@@ -630,10 +642,14 @@ bottom:-500px;
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
-  margin-top: 50px;
-  margin-bottom: 100px;
-  text-align: center;
+  margin-top: 10%;
+  margin-bottom: -5%;
+  text-align: left;
   font-size: 2.5rem;
+  margin-right:30%;
+  margin-left:5%;
+  
+  
 }
 
 .services h5 {
@@ -645,8 +661,8 @@ bottom:-500px;
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
-  margin-top: 50px;
-  margin-bottom: 100px;
+  margin-top: -10%;
+  margin-bottom: 20%;
   text-align: center;
   font-size: 2.5rem;
 }
@@ -668,9 +684,12 @@ bottom:-500px;
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
-  margin-top:250px;
+  margin-top: 10%;
   font-size: 2.5rem;
- 
+  text-align: left;
+  font-size: 2.5rem;
+  margin-right:80%;
+  margin-left: 5%;
 }
 
 .services h4{
@@ -689,8 +708,44 @@ bottom:-500px;
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
-  margin-top: 100px;
+  margin-top: 10%;
   font-size: 2.5rem;
+  text-align: right;
+  font-size: 2.5rem;
+  margin-left:75%;
+}
+.services h7{
+  font-size: 2rem;
+  font-weight: 600;
+  background-color: #ffffffbf;
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  text-align: right;
+  font-size: 2.5rem;
+  margin-right:5%;
+  margin-left: 10%
+
+}
+.services h8{
+  font-size: 2rem;
+  font-weight: 600;
+  background-color: #ffffffbf;
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  margin-top: 5%;
+  margin-bottom: -5%;
+  text-align: left;
+  font-size: 2.5rem;
+  margin-right:72%;
+  margin-left:5%;
 }
 
 .services__container {
@@ -799,14 +854,35 @@ bottom:-500px;
   margin-top: -700px;
   position: relative;
 }
+@media screen and (min-width: 900px) {
+.footer__container p{
+  font-size: 2rem;
+  font-weight: 600;
+  background-color: #ffffffbf;
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  margin-top:50px;
+  margin-bottom: 100px;
+  text-align: center;
+  font-size: 2.5rem;
+  margin-left:10%;
+  margin-right:10%;
+}}
+@media screen and (max-width: 900px) {
+  .navbar{
+   display:none;
+  }
+}
 
 #pikachu{
   align-self: left;
   position: absolute;
-  bottom: -10%;
+  bottom: -20%;
   left: 0%;
-  width: 10%;
-  height: 25%;
+  transform: scale(0.5);
 }
 
 #footer__logo {
@@ -928,6 +1004,7 @@ bottom:-500px;
     margin: 0;
     padding: 10px;
     width: 100%;
+    height: 100%;
   }
 }
 
