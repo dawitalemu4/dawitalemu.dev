@@ -307,6 +307,20 @@ h2 {
   }
 }
 /* scroll down */
+/*front page*/
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    filter: blur(100%);
+    transform: translateX(-30%);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+  }
+}
 
 
 
@@ -320,7 +334,7 @@ h2 {
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
-  
+  animation: fadeIn 1s forwards;
 }
 
 .main__content h2 {
@@ -340,6 +354,7 @@ h2 {
   margin-top: 1rem;
   font-size: 1.5rem;
   font-weight: 600;
+  animation: fadeIn 1s forwards;
 }
 
 .main__btn {
