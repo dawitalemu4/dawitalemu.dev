@@ -238,7 +238,7 @@
   background-color: #000000;
   z-index: 1;
   width: 100%;
-  max-width: 1300px;
+  max-width: 100%;
   padding-right: 50px;
   padding-left: 50px;
 }
@@ -320,6 +320,7 @@ h2 {
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
+  
 }
 
 .main__content h2 {
@@ -720,6 +721,15 @@ top:180%;
   font-size: 2.5rem;
   margin-left:75%;
 }
+
+
+
+.services h7 a {
+  color: #a098c0bf !important;
+  text-decoration: underline !important;
+  border-bottom: 7px solid #a098c0bf;
+}
+
 .services h7{
   font-size: 2rem;
   font-weight: 600;
@@ -737,6 +747,11 @@ top:180%;
   margin-left: 10%
 
 }
+
+
+
+
+
 .services h8{
   font-size: 2rem;
   font-weight: 600;
@@ -753,6 +768,8 @@ top:180%;
   margin-right:72%;
   margin-left:5%;
 }
+
+
 
 .services__container {
   display: flex;
