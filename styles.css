@@ -3,13 +3,15 @@
   margin: 0;
   padding: 0;
   font-family: 'Kumbh Sans', sans-serif;
-  
+ 
 }
 @media screen and (max-width: 900px) {
   * {
     overflow-x: clip;
   }
   }
+
+  
 
   body::-webkit-scrollbar {
     width: 0.2em;
@@ -756,6 +758,7 @@ top:180%;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  
 }
 
 
@@ -764,33 +767,64 @@ top:180%;
   margin-right:5%;
   margin-left:70%;
   margin-top: 5%;
+  
 }
-
-
 
 
 #pikachujump {
   transform: scale(0.23);
   margin-right:5%;
   margin-left:70%;
-  
+  animation: jump 0.8s ease-in-out;
 }
 
 #pikachurun {
   transform: scale(0.8);
   margin-right:5%;
   margin-left:70%;
-  margin-top: 15%;
-  animation: run 3s horizontal;
+  margin-top: 18%;
+  animation-fill-mode: forwards;
+  animation: run 1s linear;
 }
-
+@keyframes jump {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: -2%;
+  }
+  100% {
+    top: 0.5%;
+  }
+}
 @keyframes run {
   from {
-    left: 65%;
+    left: 0%;
   }
   to {
-    right: 120%;
+    left: 20%;
   }
+}
+
+#textbox{
+  transform: scale(0.8);
+  margin-right:10%;
+  margin-left:70%;
+  margin-top: 5%;
+  
+}
+#textstill{
+  transform: scale(0.8);
+  margin-right:10%;
+  margin-left:70%;
+  margin-top: 5.2%;
+  
+}
+
+
+
+#pokeball, #pikachujump, #pikachurun {
+  position: relative;
 }
 
 .services__card {
