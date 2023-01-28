@@ -495,9 +495,9 @@ form{
 
 #pacman-container{
   position: absolute;
-top:170%;
+top:180%;
   transform: scale(1.25);
- 
+  
 }
 #dots{
   position: absolute;
@@ -602,16 +602,11 @@ top:170%;
   right:50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  
 }
 
-#twelve{
-  position: absolute;
-  
-  right:50%;
-  left: 50%;
-  
-  transform: translate(-50%, -50%);
-}
+
 
 .services h1 {
   background-color: #a098c0bf;
@@ -662,7 +657,7 @@ top:170%;
 }
 
 .services h5 {
-  font-size: 2rem;
+  
   font-weight: 600;
   background-color: #ffffffbf;
   background-size: 100%;
@@ -673,7 +668,7 @@ top:170%;
   margin-top: -10%;
   margin-bottom: 20%;
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
 }
 
 
@@ -765,10 +760,38 @@ top:170%;
 
 
 #pokeball{
-  width: 100%;
-  height: 100%;
+  transform: scale(0.8);
+  margin-right:5%;
+  margin-left:70%;
+  margin-top: 5%;
 }
 
+
+
+
+#pikachujump {
+  transform: scale(0.23);
+  margin-right:5%;
+  margin-left:70%;
+  
+}
+
+#pikachurun {
+  transform: scale(0.8);
+  margin-right:5%;
+  margin-left:70%;
+  margin-top: 15%;
+  animation: run 3s horizontal;
+}
+
+@keyframes run {
+  from {
+    left: 65%;
+  }
+  to {
+    right: 120%;
+  }
+}
 
 .services__card {
   margin: 1rem;
@@ -896,7 +919,7 @@ top:170%;
 #pikachu{
   align-self: left;
   position: absolute;
-  bottom: -20%;
+  bottom: -22%;
   left: 0%;
   transform: scale(0.5);
 }
