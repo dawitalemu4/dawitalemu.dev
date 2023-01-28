@@ -20,7 +20,7 @@ document.getElementById('home').addEventListener('click', function(event) {
 
 document.getElementById('experience').addEventListener('click', function(event) {
   event.preventDefault();
-  var targetPosition = document.body.scrollHeight * 0.48;
+  var targetPosition = document.body.scrollHeight * 0.45;
   window.scrollTo({
     top: targetPosition,
     left: 0,
@@ -30,7 +30,7 @@ document.getElementById('experience').addEventListener('click', function(event) 
 
 document.getElementById('projects').addEventListener('click', function(event) {
   event.preventDefault();
-  var targetPosition = document.body.scrollHeight * 0.73;
+  var targetPosition = document.body.scrollHeight * 0.66;
   window.scrollTo({
     top: targetPosition,
     left: 0,
@@ -40,12 +40,12 @@ document.getElementById('projects').addEventListener('click', function(event) {
 
 document.getElementById('contact').addEventListener('click', function(event) {
   event.preventDefault();
+  var targetPosition = document.body.scrollHeight * 1;
   window.scrollTo({
-    top: 5000,
+    top: targetPosition,
     left: 0,
     behavior: 'smooth'
   });
- 
 });
 
 const observer = new IntersectionObserver((entries) => {
@@ -99,25 +99,27 @@ document.addEventListener('mousemove', (e) => {
 
   
   var scrollCounter = 0;
+
   document.addEventListener("wheel", function(event) {
-      event.preventDefault();
-      scrollCounter++;
-      if (scrollCounter === 1) {
-          if (event.deltaY < 0) {
-              currentImage--;
-              if(currentImage < 0) currentImage = images.length - 1;
-          } else {
-              currentImage++;
-              if(currentImage === images.length) currentImage = 0;
-          }
-          for (var i = 0; i < images.length; i++) {
-              if (currentImage === i) {
-                  document.getElementById("dots").src = images[i];
+      if ((window.scrollY / (document.body.offsetHeight - window.innerHeight)) > 0.1 && (window.scrollY / (document.body.offsetHeight - window.innerHeight)) < 0.33) {
+          event.preventDefault();
+          scrollCounter++;
+          if (scrollCounter === 1) {
+              if (event.deltaY < 0) {
+                  currentImage--;
+                  if(currentImage < 0) currentImage = images.length - 1;
+              } else {
+                  currentImage++;
+                  if(currentImage === images.length) currentImage = 0;
               }
+              for (var i = 0; i < images.length; i++) {
+                  if (currentImage === i) {
+                      document.getElementById("dots").src = images[i];
+                  }
+              }
+              scrollCounter = 0;
           }
-          scrollCounter = 0;
       }
-      
   });
 
   let gif = document.getElementById("game-gif");
@@ -178,3 +180,24 @@ document.addEventListener('mousemove', (e) => {
 
  
 
+  document.getElementById("pokeball").addEventListener("mouseover", function() {
+    document.getElementById("pokeball").style.cursor = "pointer";
+});
+
+
+var pikachus = ['pikachujump.gif', 'pikachurun.gif'];
+var currentPikachu = 0;
+
+var pokeball = document.getElementById("pokeball");
+var pikachujump = document.getElementById("pikachujump");
+var pikachurun = document.getElementById("pikachurun");
+
+pokeball.addEventListener("click", function() {
+  pokeball.style.display = "none";
+  pikachujump.style.display = "block";
+  setTimeout(function() {
+    pikachujump.style.display = "none";
+    pikachurun.style.display = "block";
+  }, 1000);
+});
+  
