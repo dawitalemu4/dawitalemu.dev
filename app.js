@@ -26,6 +26,7 @@ document.getElementById('experience').addEventListener('click', function(event) 
     left: 0,
     behavior: 'smooth'
   });
+  
 });
 
 document.getElementById('projects').addEventListener('click', function(event) {
@@ -36,6 +37,7 @@ document.getElementById('projects').addEventListener('click', function(event) {
     left: 0,
     behavior: 'smooth'
   });
+ 
 });
 
 document.getElementById('contact').addEventListener('click', function(event) {
@@ -217,5 +219,6 @@ pokeball.addEventListener("click", function() {
 pikachurun.addEventListener("animationend", function() {
   pikachurun.style.display = "none";
   
- 
 });
+
+
