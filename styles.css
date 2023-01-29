@@ -11,9 +11,8 @@
   }
   }
 
-  
 
-  body::-webkit-scrollbar {
+    body::-webkit-scrollbar {
     width: 0.2em;
     background-color: #F5F5F5;
   }
@@ -764,7 +763,22 @@ top:180%;
   margin-left:5%;
 }
 
+.services h9{
 
+  font-weight: 600;
+  background-color: #ffffffbf;
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  margin-top: 5%;
+  margin-bottom: -5%;
+  text-align: right;
+  font-size: 1.5rem;
+  margin-left:70%;
+  margin-right:5%;
+}
 
 .services__container {
   display: flex;
