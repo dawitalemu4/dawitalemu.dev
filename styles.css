@@ -490,14 +490,8 @@ form{
   align-items: center;
   height: 580vh;
 }
-@media screen and (max-width: 1000px) {
-  .services {
-  
-    transform: translate(-100px);
-    
-  }
-  }
 
+  
 #pacman-container{
   position: absolute;
 top:180%;
@@ -651,7 +645,7 @@ top:180%;
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
-  margin-top: 10%;
+  margin-top: 80%;
   margin-bottom: -5%;
   text-align: left;
   font-size: 2.5rem;
@@ -799,9 +793,10 @@ top:180%;
 #pokeball{
   transform: scale(0.8);
   margin-right:5%;
-  margin-left:70%;
+  margin-left:75%;
   margin-top: 5%;
-  
+  margin-bottom: 30%;
+  z-index: 1;
 }
 
 
@@ -809,7 +804,8 @@ top:180%;
   transform: scale(0.23);
   margin-right:5%;
   margin-left:70%;
-  animation: jump 0.8s ease-in-out;
+  animation: jump 0.8s ease-in-out;margin-bottom: 30%;
+  z-index: 1;
 }
 
 #pikachurun {
@@ -818,7 +814,8 @@ top:180%;
   margin-left:70%;
   margin-top: 18%;
   animation-fill-mode: forwards;
-  animation: run 1s linear;
+  animation: run 1s linear;margin-bottom: 30%;
+  z-index: 1;
 }
 @keyframes jump {
   0% {
@@ -841,17 +838,19 @@ top:180%;
 }
 
 #textbox{
-  transform: scale(0.8);
+  transform: scale(0.7);
   margin-right:10%;
   margin-left:70%;
-  margin-top: 5%;
+  margin-top: 5%;margin-bottom: 55%;
+  z-index: 1;
   
 }
 #textstill{
-  transform: scale(0.8);
+  transform: scale(0.7);
   margin-right:10%;
   margin-left:70%;
-  margin-top: 5.2%;
+  margin-top: 5.2%;margin-bottom: 55%;
+  z-index: 1;
   
 }
 
@@ -999,6 +998,7 @@ top:180%;
   text-align: left;
   width: 160px;
   box-sizing: border-box;
+  margin-top: 100%;
 }
 
 .footer__link--items h2 {
@@ -1274,6 +1274,5 @@ display: flex;
   z-index: 999;}
   
 }
-
 
 
