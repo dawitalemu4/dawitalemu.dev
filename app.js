@@ -221,4 +221,3 @@ pikachurun.addEventListener("animationend", function() {
   
 });
 
-
