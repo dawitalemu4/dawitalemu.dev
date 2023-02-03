@@ -366,6 +366,22 @@ scale: 0.4;
   -moz-text-fill-color: transparent;
 }
 
+.main__content h3{
+  font-weight: 600;
+  background-color: #ffffffbf;
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  margin-top: 5%;
+  margin-bottom: -5%;
+  text-align: center;
+  font-size: 1rem;
+  margin-left:75%;
+  margin-right:2%;
+}
+
 .main__content p {
   margin-top: 1rem;
   font-size: 1.5rem;
@@ -1277,4 +1293,5 @@ display: flex;
   z-index: 999;}
   
 }
+
 
