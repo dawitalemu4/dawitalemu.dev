@@ -364,11 +364,34 @@ scale: 0.4;
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
-}
+  opacity: 1;
+  animation: fadeOuth2 2s forwards, fadeInh2 2s forwards 2s, fadeouth2 2s;
+  animation-iteration-count: infinite;animation-direction: alternate;}
+
+  @keyframes fadeOuth2 {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  
+  @keyframes fadeInh2 {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  
+  
 
 .main__content h3{
   font-weight: 600;
-  background-color: #ffffffbf;
+  background-color: #a098c0bf;
   background-size: 100%;
   -webkit-background-clip: text;
   -moz-background-clip: text;
