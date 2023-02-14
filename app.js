@@ -100,29 +100,34 @@ document.addEventListener('mousemove', (e) => {
   });
 
 
-  var scrollCounter = 0;
-
-  document.addEventListener("wheel", function(event) {
-      if ((window.scrollY / (document.body.offsetHeight - window.innerHeight)) > 0.1 && (window.scrollY / (document.body.offsetHeight - window.innerHeight)) < 0.33) {
-          event.preventDefault();
-          scrollCounter++;
-          if (scrollCounter === 1) {
-              if (event.deltaY < 0) {
-                  currentImage--;
-                  if(currentImage < 0) currentImage = images.length - 1;
-              } else {
-                  currentImage++;
-                  if(currentImage === images.length) currentImage = 0;
-              }
-              for (var i = 0; i < images.length; i++) {
-                  if (currentImage === i) {
-                      document.getElementById("dots").src = images[i];
-                  }
-              }
-              scrollCounter = 0;
-          }
+  var images = [
+    'dots.png',
+    'dots2.png',
+    '1.png',
+    '2.png',
+    '3.png',
+    '4.png',
+    '5.png',
+    '6.png',
+    '11.png'
+  ];
+  var currentImage = 0;
+  
+  function changeImage(imageIndex) {
+    currentImage = imageIndex;
+    document.getElementById("dots").src = images[currentImage];
+  }
+  
+  document.addEventListener("scroll", function(event) {
+    var currentScroll = window.scrollY / (document.body.offsetHeight - window.innerHeight) * 100;
+    if (currentScroll >= 10 && currentScroll <= 33) {
+      var newImageIndex = Math.floor((currentScroll - 10) / 2.5);
+      if (newImageIndex !== currentImage) {
+        changeImage(newImageIndex);
       }
+    }
   });
+  
 
  
     
