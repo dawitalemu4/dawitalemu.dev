@@ -846,7 +846,8 @@ ul {
   transform: scale(0.23);
   margin-right:5%;
   margin-left:70%;
-  animation: jump 0.8s ease-in-out;margin-bottom: 30%;
+  animation: jump 0.8s ease-in-out;
+  margin-bottom: 55%;
   z-index: 1;
 }
 
@@ -856,7 +857,8 @@ ul {
   margin-left:70%;
   margin-top: 18%;
   animation-fill-mode: forwards;
-  animation: run 1s linear;margin-bottom: 30%;
+  animation: run 1s linear;
+  margin-bottom: 55%;
   z-index: 1;
 }
 @keyframes jump {
@@ -881,17 +883,19 @@ ul {
 
 #textbox{
   transform: scale(0.5);
-  margin-right:10%;
+  margin-right:4%;
   margin-left:70%;
-  margin-top: 5%;margin-bottom: 55%;
+  margin-top: 5%;
+  margin-bottom: 55%;
   z-index: 1;
   
 }
 #textstill{
-  transform: scale(0.7);
-  margin-right:10%;
+  transform: scale(0.5);
+  margin-right:4%;
   margin-left:70%;
-  margin-top: 5.2%;margin-bottom: 55%;
+  margin-top: 5%;
+  margin-bottom: 55%;
   z-index: 1;
   
 }
@@ -1316,5 +1320,4 @@ display: flex;
   z-index: 999;}
   
 }
-
 
