@@ -243,3 +243,51 @@ pikachurun.addEventListener("animationend", function() {
 });
 
 
+
+const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+
+const elements = document.querySelectorAll('.main__content p, .main__content h1, .services__container h1, .services__container h3, .services__container h4');
+
+elements.forEach(element => {
+  element.addEventListener('mouseover', startAnimation);
+  element.addEventListener('mouseout', resetAnimation);
+});
+
+let intervall;
+
+function startAnimation(event) {
+  let iteration = 0;
+
+  clearInterval(intervall);
+
+  intervall = setInterval(() => {
+    event.target.innerText = event.target.innerText
+      .split("")
+      .map((letter, index) => {
+        if(index < iteration) {
+          return event.target.dataset.value[index];
+        }
+
+        return letters[Math.floor(Math.random() * 26)]
+      })
+      .join("");
+
+    if(iteration >= event.target.dataset.value.length){
+      clearInterval(intervall);
+    }
+
+    iteration += 1 / 3;
+  }, 30);
+
+  event.target.style.cursor = 'none'; 
+}
+
+function resetAnimation(event) {
+  clearInterval(intervall);
+  event.target.innerText = event.target.dataset.value;
+  event.target.style.cursor = 'auto'; 
+}
+
+startAnimation({ target: elements[0] });
+
