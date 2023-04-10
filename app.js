@@ -20,7 +20,7 @@ document.getElementById('home').addEventListener('click', function(event) {
 
 document.getElementById('experience').addEventListener('click', function(event) {
   event.preventDefault();
-  var targetPosition = document.body.scrollHeight * 0.45;
+  var targetPosition = document.body.scrollHeight * 0.47;
   window.scrollTo({
     top: targetPosition,
     left: 0,
@@ -31,11 +31,11 @@ document.getElementById('experience').addEventListener('click', function(event) 
 
 document.getElementById('projects').addEventListener('click', function(event) {
   event.preventDefault();
-  var targetPosition = document.body.scrollHeight * 0.66;
+  var targetPosition = document.body.scrollHeight * 0.67;
   window.scrollTo({
     top: targetPosition,
     left: 0,
-    behavior: 'smooth'
+    behavior: 'smooth' 
   });
  
 });
