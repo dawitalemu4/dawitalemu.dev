@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dawit Alemu</title>
+     <link rel="icon" type="image/png" href="da.png">
+    <link rel="stylesheet" href="styles.css" />
+    
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
+   
+  </head>
+  <body>
+    <!-- Navbar Section -->
+    <nav class="navbar">
+      <div class="navbar__container">
+     
+        <div class="navbar__toggle" id="mobile-menu">
+          <span class="bar"></span> <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <ul class="navbar__menu">
+          <li class="navbar__item1" id = "navbar__item1">
+            <a href="/" id = "home" class="navbar__links">Home</a>
+          </li>
+          <li class="navbar__item2">
+            <a href="/" id = "experience" class="navbar__links">Experience</a>
+          </li>
+          <li class="navbar__item3">
+            <a href="/" id = "projects" class="navbar__links">Projects</a>
+          </li>
+          <li class="navbar__btn">
+            <a href="/" id = "contact" class="button">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hidden">
+    <div class="main" id ="homeSection">
+      <div class="main__container">
+        <div class="main__content">
+          
+          <h1 data-value = "Dawit Alemu">Dawit Alemu</h1>
+          <p data-value = "Software Developer">Software Developer</p>
+        
+          <h3> Yoshi’s eyes follow your cursor. <br> Try it out by moving your mouse cursor around the Yoshi!</h3>
+          <div id="scroll-down-animation">
+            
+            
+            <span class="mouse">
+              <span class="move"></span>
+            </span>
+          </div>
+        </div>
+        <div class="main__img--container">
+          
+          <img id="main__img" src="yoshi.png" />
+          <img src="eyes.png" class= "eye" id="eyes"/>
+        </div>
+       
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- Services Section -->
+    <section class="hidden">
+    <div class="services">
+      <div class="services__container">
+      
+        <h1 data-value = "About Me">About Me</h1>
+      
+      <img id="da" src="da.jpg" alt="da">
+      <div id="pacman-container">
+       
+        <img src="dots.png" id="dots"/>
+     </div>
+     
+     <script>
+        var images = [
+          
+          'dots.png',
+          'dots2.png',
+            '1.png',
+            '2.png',
+            '3.png',
+            '4.png',
+            '5.png',
+            '6.png',
+            '11.png'
+            
+            
+        ];
+        var currentImage = 0;
+     </script>
+     
+      
+      <p>Hello! My name is Dawit Alemu and I'm currently a sophomore at Towson University. <br><br> My main interests are front end web and game development. <br><br> Tap left click while he's pulling below to win! </p>
+    
+      <h4 data-value="Experience">Experience</h4>
+      
+      <div id="game-container">
+        <img id="game-gif" src="luffy fish.gif" alt="Game GIF">
+        <h5>Tap click  while he's pulling (Don't Hold or Drag)</h5>
+        <img class="game-image" src="hatclose.png" id="hatclose" style="display:none;">
+        <img class="game-image" src="hatmid.png" id="hatmid" style="display:none;">
+        <img class="game-image" src="hatopen.png" id="hatopen" style="display:none;">
+      </div>    
+
+
+      <h7>Above are some programming langauges I use which consists of mainly React.jsx and React Native, C#, and Java.<br><br><a href="https://docs.google.com/document/d/1VA2JjizgZaup8Hw1dX10K6-6aRnEW3wpa1yVvscN2H4/edit?usp=sharing" target="_blank"><span class="blue-underline">Click to view my resume!</span></a> <br><br></h7>
+      
+      <h3 data-value="Projects">Projects</h3>
+    
+      <h8><ul><li>For Recruiters / Light Mode Portfolio Website - Coming soon!</li><br><br><li>Misplaced - Lost and Found app for university StarTUp Accelerator competition made with MERN stack. More details and demo on Github. <a href="https://linktr.ee/misplacedapp" target="_blank"><span class="blue-underline">LinkTree</span></a></li>  <br><br><li>2D Sonic Platformer - Gained experience with physics and animation (Unity Game Engine & C# / Demo Coming Soon)</li><br><br><li>Additional Less Important Projects (School Projects, etc.)  - <a href="https://github.com/dawitalemu4" target="_blank"><span class="blue-underline">Browse My GitHub</span></a></li></ul></h8>
+      <h9>Click on the pokeball to open</h9>
+      <img id="pokeball" src="pokeball.gif" alt="pokeball"> 
+      <img id="pikachujump" src="pikachujump.gif" alt="pikachujump" style="display: none;">
+      <img id="pikachurun" src="pikachurun.gif" alt="pikachurun" style="display: none;">
+      <img id="textbox" src="textbox.gif" alt="textbox" style="display: none;"> 
+<img id="textstill" src="textstill.png" alt="textstill" style="display: none;"> 
+
+
+     
+        
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- Footer Section -->
+    <div class="footer__container">
+      <div class="footer__links">
+<h1>*Use desktop or laptop for full experience (mini games and illusions)*</h1>
+
+        <form action="https://api.web3forms.com/submit" method="POST">
+
+          <input type="hidden" name="access_key" value="d36e5828-ad1a-4661-9a5a-5252d677f340">
+      
+          Name<input id="ename" type="text" name="name" required>
+          Email<input id="email" type="email" name="email" required>
+          Message<input id="message" type="message" name="message" required>
+          <input type="hidden" name="redirect" value="https://web3forms.com/success">
+      
+          <button id="submit" type="submit">Send Email</button>
+      
+      </form>
+
+        <div class="footer__link--wrapper">
+          <div class="footer__link--items">
+            
+            
+          </div>
+          <div class="footer__link--items">
+          
+           
+            <a
+              class="social__icon--link"
+              href="https://www.linkedin.com/in/dawit-alemu4/"
+              target="_blank"
+              aria-label="LinkedIn"
+            >
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a
+            class="social__icon--link"
+            href="https://github.com/dawitalemu4"
+            target="_blank"
+            aria-label="Github"
+          >
+          <i class="fab fa-github"></i>
+          </a>
+
+          <a
+          class="social__icon--link"
+          href="https://mail.google.com/mail?view=cm&fs=1&to=dndawita@gmail.com&su=Draft"
+          target="_blank"
+          aria-label="Email"
+        >
+        <i class="fa fa-envelope" aria-hidden="true"></i>
+      </a>
+          </div>
+        </div>
+        <img id="pikachu" src="pikachu.gif" alt="pikachu">
+      </section>
+      <div class="container">
+  
+      </div>
+    </div>
+    
+    <script src="app.js"></script>
+  </body>
+</html>
+
+
+
+
