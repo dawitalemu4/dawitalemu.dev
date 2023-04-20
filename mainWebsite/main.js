@@ -1,1 +1,1 @@
-//this folder will be used to create the main website in react.jsx
+//this folder will be used to create the main website in react.jsx.
