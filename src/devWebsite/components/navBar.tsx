@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Navbar() {
+const Navbar: React.FC = () => {
   return (
     <div id="navbar-container" className="flex sticky top-0 w-full h-10 py-10 px-10 bg-transparent border border-color-white items-center text-white">      
        <img id="bars" src="../bars.jpg" className="hidden"/>
