@@ -1,13 +1,17 @@
-import { Inter } from 'next/font/google'
 import Navbar from '../devWebsite/components/navBar'
-
-const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
-    <main >
+    <html>
+      <head>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"/>
+      <title>Dawit Alemu</title>
+      <meta name="description" content="Made By Dawit Alemu"/>
+      </head>
+    <body >
       <Navbar />
       
-    </main>
+    </body>
+    </html>
   )
 }
