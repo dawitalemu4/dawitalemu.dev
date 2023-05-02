@@ -17,8 +17,39 @@ const Navbar: React.FC = () => {
     };
   }, []);
 
+  const handleHomeClick = () => {
+    location.reload();
+  };
+
+  const handleExperienceClick = () => {
+    const targetPosition = document.body.scrollHeight * 0.47;
+    window.scrollTo({
+      top: targetPosition,
+      left: 0,
+      behavior: 'smooth'
+    });
+  };
+  
+  const handleProjectsClick = () => {   
+    const targetPosition = document.body.scrollHeight * 0.67;
+    window.scrollTo({
+      top: targetPosition,
+      left: 0,
+      behavior: 'smooth' 
+    });
+  };
+
+  const handleContactClick = () => {
+    const targetPosition = document.body.scrollHeight * 1;
+    window.scrollTo({
+      top: targetPosition,
+      left: 0,
+      behavior: 'smooth'
+    });
+  };
+
   return (
-    <div id="navbar-container" className="flex sticky top-0 w-full h-10 py-10 px-10 bg-transparent items-center text-white">
+    <div id="navbar-container" className="flex sticky top-0 w-full h-10 py-10 px-10 items-center text-white">
       <img
         id="bars"
         src="bars.jpg"
@@ -31,58 +62,73 @@ const Navbar: React.FC = () => {
         className="flex flex-wrap py-5 px-10 rounded-md ml-auto text-2xl items-center"
       >
         <li id="navbar-home" className="flex-shrink px-5">
-          <a href="/" id="home" className="">
+          <a href="/" id="home" className="" onClick={handleHomeClick}>
             Home
           </a>
         </li>
         <li id="navbar-experience" className="flex-shrink px-5">
-          <a href="/" id="experience" className="">
+          <a href="/" id="experience" className="" onClick={handleExperienceClick}>
             Experience
           </a>
         </li>
         <li id="navbar-projects" className="flex-shrink px-5">
-          <a href="/" id="projects" className="">
+          <a href="/" id="projects" className="" onClick={handleProjectsClick}>
             Projects
           </a>
         </li>
         <li id="navbar-contact" className="flex-shrink px-5">
-          <a href="/" id="contact" className="">
+          <a href="/" id="contact" className="" onClick={handleContactClick}>
             Contact
           </a>
         </li>
       </ul>
       <style>
         {`
+        #navbar-container {
+          background-color: #171717;
+        }
           @media (max-width: 768px) {
-            #bars {
-              margin-top: 3%;
-              margin-bottom: 3%;
-              cursor: pointer;
+            #navbar-container { 
+              width: 100%;
               display: flex;
               justify-content: center;
-              align-items: center;
-              scale: 10%;
+              background-color: #171717;
+              position: fixed;
+              top: 0;
+              left: 0;
+              z-index: 1;
+              height: 70px;
+            }
+            #bars {
+              cursor: pointer;
+              display: flex;
+              width: 70px;
+              height: 70px;
+              position: fixed;
+              top: 1;
+              z-index: 1;
             }
             #navbar-ul {
+              width: 100%;
               display: flex;
               flex-direction: column;
-              align-items: flex-end;
-              background-color: rgba(255, 255, 255, 0.9);
-              position: absolute;
-              top: 100%;
+              align-items: center;
+              justify-content: center;
+              background-color: #171717;
+              position: fixed;
+              top: 70px;
               left: 0;
-              right: 0;
-              z-index: 1;
-              padding: 10px;
-              border-radius: 10px;
+              z-index: 1; 
+              border-bottom-left-radius: 30px;
+              border-bottom-right-radius: 30px;
+              
             }
             #navbar-ul li {
-              margin-bottom: 10px;
+              padding: 6px;
               font-size: 1.5rem;
             }
             #navbar-ul a {
-              color: black;
-              text-decoration: none;
+              color: white;
             }
             #bars:hover {
               opacity: 0.5;
