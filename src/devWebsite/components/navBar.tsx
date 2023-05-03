@@ -17,11 +17,13 @@ const Navbar: React.FC = () => {
     };
   }, []);
 
-  const handleHomeClick = () => {
+  const handleHomeClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    event.preventDefault();
     location.reload();
   };
 
-  const handleExperienceClick = () => {
+  const handleExperienceClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    event.preventDefault();
     const targetPosition = document.body.scrollHeight * 0.47;
     window.scrollTo({
       top: targetPosition,
@@ -30,7 +32,8 @@ const Navbar: React.FC = () => {
     });
   };
   
-  const handleProjectsClick = () => {   
+  const handleProjectsClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    event.preventDefault();
     const targetPosition = document.body.scrollHeight * 0.67;
     window.scrollTo({
       top: targetPosition,
@@ -39,7 +42,8 @@ const Navbar: React.FC = () => {
     });
   };
 
-  const handleContactClick = () => {
+  const handleContactClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    event.preventDefault();
     const targetPosition = document.body.scrollHeight * 1;
     window.scrollTo({
       top: targetPosition,
