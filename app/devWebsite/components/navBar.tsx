@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 
 const Navbar: React.FC = () => {
   const [showMenu, setShowMenu] = useState(false);
-  const [shouldShowMenu, setShouldShowMenu] = useState(window.innerWidth <= 768);
+  const [shouldShowMenu, setShouldShowMenu] = useState(typeof window !== 'undefined' && window.innerWidth <= 768);
 
   useEffect(() => {
     const handleResize = () => {
