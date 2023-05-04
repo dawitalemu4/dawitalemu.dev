@@ -1,14 +1,14 @@
+'use client'
 import React from "react";
 import Link from "next/link";
 
-const SwitchButton: React.FC = () => {
+const MainButton: React.FC = () => {
 
 
 return (
 <div>
-    a
-<Link href="/mainwebsite">
-    </Link>
+    
+<Link href="/">main</Link>
 <style>
     {`
 
@@ -17,4 +17,4 @@ return (
 </div>
 );
 }
-export default SwitchButton;
+export default MainButton;
