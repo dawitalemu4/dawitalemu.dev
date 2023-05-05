@@ -14,7 +14,7 @@ const Navbar: React.FC = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setShouldShowMenu(window.innerWidth <= 768);
+      setShouldShowMenu(window.innerWidth <= 900);
     };
   
     window.addEventListener('resize', handleResize);
@@ -109,6 +109,7 @@ const Navbar: React.FC = () => {
           background-color: #171717;
           font-family: Inter, sans-serif; 
           font-weight: 500;
+          z-index: 5;
         }
 
         #mainButton {
@@ -123,7 +124,7 @@ const Navbar: React.FC = () => {
           position: fixed;
           top: 13px;
           left: 13px;
-          z-index: 3;
+          z-index: 4;
           scale: 0.8;
           }
 
@@ -136,7 +137,7 @@ const Navbar: React.FC = () => {
               position: fixed;
               top: 0;
               left: 0;
-              z-index: 2;
+              z-index: 5;
               height: 70px;
             }
             #bars {
@@ -146,7 +147,7 @@ const Navbar: React.FC = () => {
               height: 70px;
               position: fixed;
               top: 1;
-              z-index: 2;
+              z-index: 4;
             }
             #navbar-ul {
               width: 100%;
@@ -158,7 +159,7 @@ const Navbar: React.FC = () => {
               position: fixed;
               top: 70px;
               left: 0;
-              z-index: 2; 
+              z-index: 3; 
               border-bottom-left-radius: 30px;
               border-bottom-right-radius: 30px;
               

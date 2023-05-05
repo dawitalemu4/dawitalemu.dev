@@ -2,25 +2,28 @@
 import React from 'react';
 
 
-const HeroText: React.FC = () => {
+const AboutText: React.FC = () => {
 
     return(
         <div>
-        <div id="heroText">
-            <h1>Dawit Alemu</h1>
-            <h2>Software Developer</h2>
+        <div id="AboutText">
+<p>Hello! My name is Dawit Alemu and I'm currently a junior at Towson University.
+
+<br/><br/>My main interests are front end web and game development.
+
+<br/><br/>Tap left click while he's pulling his fishing rod!</p>
             
             <style>
             {`
-            #heroText {
+            #AboutText {
             display: flex;
             flex-direction: column;
-            position: absolute;
+            position: relative;
             top: 17%;
-            left: 6%;
+            left: 0;
             padding: 20px;
             }
-            h1,h2{
+            p{
                 font-family: Inter, sans-serif;
                 font-weight: 700;
                 color: white;
@@ -113,4 +116,4 @@ const HeroText: React.FC = () => {
     )
 }
 
-export default HeroText;
+export default AboutText;

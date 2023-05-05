@@ -110,6 +110,7 @@ const Navbar: React.FC = () => {
           font-family: Inter, sans-serif;
           font-weight: 500;
           border-bottom: 1px solid #ccc;
+          z-index: 5;
         }
 
         #devButton {
@@ -125,7 +126,7 @@ const Navbar: React.FC = () => {
           position: fixed;
           top: 13px;
           left: -1px;
-          z-index: 3;
+          z-index: 4;
           scale: 0.8;
           transform: scale(1);
           transition: transform 0.5s ease-in-out;
@@ -168,7 +169,7 @@ const Navbar: React.FC = () => {
               position: fixed;
               top: 0;
               left: 0;
-              z-index: 2;
+              z-index: 5;
               height: 70px;
             }
             #bars {
@@ -178,7 +179,7 @@ const Navbar: React.FC = () => {
               height: 70px;
               position: fixed;
               top: 1;
-              z-index: 2;
+              z-index: 4;
             }
             #navbar-ul {
               width: 100%;
@@ -190,7 +191,7 @@ const Navbar: React.FC = () => {
               position: fixed;
               top: 70px;
               left: 0;
-              z-index: 2; 
+              z-index: 3; 
               border-bottom-left-radius: 30px;
               border-bottom-right-radius: 30px;
               
