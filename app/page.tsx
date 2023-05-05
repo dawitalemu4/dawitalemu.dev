@@ -1,7 +1,9 @@
 import { Metadata } from 'next';
-import Link from "next/link";
-import DevButton from './components/devButton';
-
+import Navbar from './mcomponents/navBar';
+import Hero from './sections/Hero';
+import Experience from './sections/Experience';
+import Projects from './sections/Projects';
+import Contact from './sections/Contact';
 
 export const metadata: Metadata = {
   title: 'Dawit Alemu',
@@ -11,8 +13,12 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <html>
-  <body>
-   <DevButton/>
+  <body className="bg-white">
+    <Navbar/>
+    <Hero/>
+    <Experience/>
+    <Projects/>
+    <Contact/>
   </body>
   </html>
   )

@@ -7,9 +7,9 @@ const Navbar: React.FC = () => {
   const [shouldShowMenu, setShouldShowMenu] = useState(false);
   const [textIndex, setTextIndex] = useState(0);
   const texts = [
-    "Website For Recruiters",
-    "Main Website",
-    "Light Mode Website",
+    "if (developer) {return 'Click Me!'}",
+    "for (website++) {return 'Click Me!'}",
+    "for (darkMode) {return 'Click Me!'}",
   ];
 
   useEffect(() => {
@@ -66,7 +66,7 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <div id="navbar-container" className="flex fixed top-0 w-full h-10 py-10 px-10 items-center text-white">
+    <div id="navbar-container" className="flex sticky top-0 w-full h-10 py-10 px-10 items-center text-black ">
       <img
         id="bars"
         src="bars.jpg"
@@ -99,32 +99,64 @@ const Navbar: React.FC = () => {
           </a>
         </li>
         <li>
-        <Link id="mainButton" className="flex-shrink px-5" href="/">{texts[textIndex]}</Link>
+        <Link id="devButton" href="/devWebsite">{texts[textIndex]}</Link>
         </li>
       </ul>
       <style>
         {`
        
         #navbar-container {
-          background-color: #171717;
-          font-family: Inter, sans-serif; 
+          background-color: white;
+          font-family: Inter, sans-serif;
           font-weight: 500;
+          border-bottom: 1px solid #ccc;
         }
 
-        #mainButton {
-          border: 2px solid #ccc;
+        #devButton {
+          font-family: Courier New, Courier, monospace;
+          color: #39FF14;
+          border: 1px solid #171717;
           padding: 10px;
           border-radius: 10px;
           display: flex;
           align-items: flex-start;
           justify-content: flex-start;
-          background-color: #f2f2f2;
-          color: black;
+          background-color: black;
           position: fixed;
           top: 13px;
-          left: 13px;
+          left: -1px;
           z-index: 3;
           scale: 0.8;
+          transform: scale(1);
+          transition: transform 0.5s ease-in-out;
+          }
+
+          @media (max-width: 1177px) and (min-width: 900px) {
+            #devButton {
+              transform: scale(0.8) translateX(-70px);
+              transition: transform 0.4s ease-in-out;  
+            }
+          }
+
+          @media (max-width: 1048px) and (min-width: 900px){
+            #devButton {
+              transform: scale(0.7) translateX(-150px);
+              transition: transform 0.4s ease-in-out;  
+            }
+          }
+
+          @media (max-width: 953px) and (min-width: 900px){
+            #devButton {
+              transform: scale(0.6) translateX(-200px);
+              transition: transform 0.4s ease-in-out;  
+            }
+          }
+
+          @media (max-width: 916px) and (min-width: 900px){
+            #devButton {
+              transform: scale(0.6) translateX(-250px);
+              transition: transform 0.4s ease-in-out;  
+            }
           }
 
           @media (max-width: 900px) {
@@ -170,13 +202,13 @@ const Navbar: React.FC = () => {
             #navbar-ul a {
               color: white;
             }
-            #mainButton {
+            #devButton {
               position: static;
-              padding: 10px;
+              padding: 4px;
               text-align: center;
               margin-top: -5px;
-              color: black !important;
-            }
+              color: #39FF14 !important;
+              }
             #bars:hover {
               opacity: 0.5;
             }
