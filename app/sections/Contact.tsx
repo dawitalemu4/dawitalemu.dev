@@ -1,13 +1,12 @@
 'use client'
 import React from 'react';
 
-const Experience: React.FC = () => {
+const Contact: React.FC = () => {
 
     return(
         <div>
-        
         </div>
     )
 }
 
-export default Experience;
+export default Contact;

@@ -3,13 +3,14 @@
 @tailwind utilities;
 
 body{
-  background-color: white;
+  background-color: black
 }
+
 body::-webkit-scrollbar {
   width: 0.2em;
-  background-color: black;
+  background-color: #F5F5F5;
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #F5F5F5;
+  background-color: black;
 }
