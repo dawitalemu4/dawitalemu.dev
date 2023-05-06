@@ -37,32 +37,77 @@ const PacMan: React.FC = () => {
 
   return (
     <div id="pacmanContainer">
+      <div id='gameBorder'>
+        <img src="pacLogo.png" id='pacLogo'/>
         <img src="pacmanScene.jpg" id='scene'/>
-        <img src="dots.png" id="dots"/>
+        <img src="dots.png" id="dots" className='hidden'/>
     
       <style>
         {`
          #pacmanContainer {
             display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 110%;
+            justify-content: center;
+            align-items: center;
+            background-color: yellow;
+            border-top: 150px solid yellow;
+            border-bottom: 150px solid yellow;
+         }  
+        #gameBorder {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        justify-content: center;
+        align-items: center;
+        border: 100px solid red;
+        background-color: black;
+        }
+        #pacLogo {
             position: relative;
-            top: 850px;
-            margin: 0;
+            display: flex;
+            top: -150px;
          }
         #scene {
             position: relative;
-            top: 0;
+            display: flex;
+            bottom: 150px;
             left: 0;
-            width: 100%;
+            width: 90%;
             z-index: 1;
+            border: 1px solid green;
         }
         #dots {
-            position: absolute;
-            top: 0;
-            left: 50%;
+            position: relative;
+            top: 1px;
             z-index: 2;
         }
+
+        @media (max-width: 750px) {
+            #gameBorder {
+                width: 100%;
+                border: 0px;
+            }
+            #scene {
+                width: 100%;
+                transform: translateY(150px);
+                border: 0px;
+            }
+            #pacLogo {
+                display: none;
+            }
+            #pacmanContainer {
+            border: 0px;
+            }
+        }
+       @media (max-width: 1120px) {
+        #pacLogo {
+            transform: translateY(80px);
         `}
       </style>
+    </div>
     </div>
   );
 };

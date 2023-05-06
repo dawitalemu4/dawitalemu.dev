@@ -24,7 +24,7 @@ const HeroText: React.FC = () => {
                 font-family: Inter, sans-serif;
                 font-weight: 700;
                 color: white;
-                font-size: 4rem;
+                font-size: 3.5rem;
                 opacity: 0;
             transform: translateX(-50px);
             animation: fadeInLeft 3s ease forwards;
@@ -33,7 +33,7 @@ const HeroText: React.FC = () => {
                 font-family: Inter, sans-serif;
                 font-weight: 600;
                 color: white;
-                font-size: 2.2rem;
+                font-size: 1.8rem;
                 animation-delay: 1s;
             }
 
