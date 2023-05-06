@@ -4,7 +4,6 @@ import Link from "next/link";
 
 const Navbar: React.FC = () => {
   const [showMenu, setShowMenu] = useState(false);
-  const [shouldShowMenu, setShouldShowMenu] = useState(false);
   const [textIndex, setTextIndex] = useState(0);
   const texts = [
     "Website For Recruiters",
@@ -13,18 +12,12 @@ const Navbar: React.FC = () => {
   ];
 
   useEffect(() => {
-    const handleResize = () => {
-      setShouldShowMenu(window.innerWidth <= 768);
-    };
-  
-    window.addEventListener('resize', handleResize);
   
     const timer = setTimeout(() => {
       setTextIndex((textIndex + 1) % texts.length);
     }, 4000);
   
     return () => {
-      window.removeEventListener('resize', handleResize);
       clearTimeout(timer);
     };
   }, [textIndex, texts.length]);
@@ -33,6 +26,12 @@ const Navbar: React.FC = () => {
   const handleHomeClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     event.preventDefault();
     location.reload();
+    const targetPosition = document.body.scrollHeight * 0.0000000000000000001;
+    window.scrollTo({
+      top: targetPosition,
+      left: 0,
+      behavior: 'smooth'
+    });
   };
 
   const handleExperienceClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
@@ -70,12 +69,11 @@ const Navbar: React.FC = () => {
       <img
         id="bars"
         src="bars.jpg"
-        className={shouldShowMenu ? 'block' : 'hidden'}
+        className={showMenu ? 'block' : 'hidden'}
         onClick={() => setShowMenu(!showMenu)}
       />
       <ul
-        id="navbar-ul"
-        style={{ display: shouldShowMenu ? (showMenu ? 'flex' : 'none') : 'flex' }}
+        id="navbar-ul" style={{ display: showMenu ? 'flex' : 'none' }}
         className="flex flex-wrap py-5 px-10 rounded-md ml-auto text-2xl items-center"
       >
         <li id="navbar-home" className="flex-shrink px-5">
@@ -109,6 +107,7 @@ const Navbar: React.FC = () => {
           background-color: #171717;
           font-family: Inter, sans-serif; 
           font-weight: 500;
+          z-index: 5;
         }
 
         #mainButton {
@@ -123,7 +122,7 @@ const Navbar: React.FC = () => {
           position: fixed;
           top: 13px;
           left: 13px;
-          z-index: 3;
+          z-index: 4;
           scale: 0.8;
           }
 
@@ -136,7 +135,7 @@ const Navbar: React.FC = () => {
               position: fixed;
               top: 0;
               left: 0;
-              z-index: 2;
+              z-index: 5;
               height: 70px;
             }
             #bars {
@@ -146,7 +145,7 @@ const Navbar: React.FC = () => {
               height: 70px;
               position: fixed;
               top: 1;
-              z-index: 2;
+              z-index: 4;
             }
             #navbar-ul {
               width: 100%;
@@ -158,7 +157,7 @@ const Navbar: React.FC = () => {
               position: fixed;
               top: 70px;
               left: 0;
-              z-index: 2; 
+              z-index: 3; 
               border-bottom-left-radius: 30px;
               border-bottom-right-radius: 30px;
               
@@ -181,6 +180,13 @@ const Navbar: React.FC = () => {
               opacity: 0.5;
             }
           }
+          @media (min-width: 901px) {
+            #bars {
+              display: none;
+            }
+            #navbar-ul {
+              display: flex !important;
+            }}
         `}
       </style>
     </div>

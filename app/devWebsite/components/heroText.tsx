@@ -24,7 +24,7 @@ const HeroText: React.FC = () => {
                 font-family: Inter, sans-serif;
                 font-weight: 700;
                 color: white;
-                font-size: 4rem;
+                font-size: 3.5rem;
                 opacity: 0;
             transform: translateX(-50px);
             animation: fadeInLeft 3s ease forwards;
@@ -33,7 +33,7 @@ const HeroText: React.FC = () => {
                 font-family: Inter, sans-serif;
                 font-weight: 600;
                 color: white;
-                font-size: 2.2rem;
+                font-size: 1.8rem;
                 animation-delay: 1s;
             }
 
@@ -86,7 +86,7 @@ const HeroText: React.FC = () => {
                             border-radius: 50%;
                             left: 50%;
                             transform: translateX(-50%);
-                            animation: move 2s linear infinite;
+                            animation: move 3s linear infinite;
                           }
                           
                           
@@ -105,11 +105,6 @@ const HeroText: React.FC = () => {
                             }
                           }
                           
-                          @media screen and (max-width: 1000px) {
-                            #scroll-down-animation{
-                             display:none;
-                            }
-                          }
                           
             `}
         </style>

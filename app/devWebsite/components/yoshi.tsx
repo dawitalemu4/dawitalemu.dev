@@ -46,9 +46,9 @@ const Yoshi: React.FC = () => {
           #yoshiContainer {
             display: flex;
             position: absolute;
-            top: 40%;
+            top: 50%;
             left: 80%;
-            width: 550px;
+            width: 360px;
             height: 450px;
             flex-wrap: wrap;
             transform: translate(-50%,-35%);
@@ -56,22 +56,24 @@ const Yoshi: React.FC = () => {
           #yoshi {
             display: flex;
             position: relative;   
-            transform: scale(0.6);
+            transform: scale(0.8);
+            margin-top: 0;
+            z-index: 1;
           }
           #eyes {
             display: flex;
             position: relative;
             height: 32px;
-            bottom: 558px;
-            left: 237px;
+            bottom: 405px;
+            left: 145px;
             z-index: 2;
             flex-shrink: 0;
           }
           #bubbleContainer {
             display: flex;
-            position: fixed;
-            top: 8%;
-            left: 19%;
+            position: relative;
+            top: 0;
+            left: 0;
             align-items: center;
             justify-content: center;
             width: 350px;
@@ -82,8 +84,10 @@ const Yoshi: React.FC = () => {
           text-align: center;
           font-size: 1rem;
           z-index: 1;
-          
           }
+          @media (max-width: 900px) {
+            #yoshiContainer {
+              display: none;
         `}
       </style>
     </div>

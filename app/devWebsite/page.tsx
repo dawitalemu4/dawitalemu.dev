@@ -4,6 +4,7 @@ import Contact from './sections/Contact';
 import Experience from './sections/Experience';
 import Hero from './sections/Hero';
 import Projects from './sections/Projects';
+import About from './sections/About';
 
 export const metadata: Metadata = {
   title: 'Dawit Alemu',
@@ -17,6 +18,7 @@ export default function Home(){
     <body>    
       <Navbar />
       <Hero />
+      <About />
       <Experience />
       <Projects />
       <Contact />
