@@ -24,6 +24,11 @@ const Navbar: React.FC = () => {
 
   const handleHomeClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     event.preventDefault();
+    const targetPosition = document.body.scrollHeight * 0;
+    window.scrollTo({
+      top: targetPosition,
+      left: 0
+    });
     location.reload();
   };
 
@@ -58,7 +63,7 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <div id="navbar-container" className="flex sticky top-0 w-full h-10 py-10 px-10 items-center text-black ">
+    <div id="navbar-container" className="flex fixed top-0 w-full h-10 py-10 px-10 items-center text-black">
       <img
         id="bars"
         src="bars.jpg"
