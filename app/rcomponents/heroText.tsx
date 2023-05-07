@@ -6,13 +6,13 @@ const HeroText: React.FC = () => {
 
     return(
         <div>
-        <div id="heroText">
+        <div id="heroTextContainer">
             <h1>Dawit Alemu</h1>
             <h2>Software Developer</h2>
             
             <style>
             {`
-            #heroText {
+            #heroTextContainer {
             display: flex;
             flex-direction: column;
             position: absolute;

@@ -64,7 +64,7 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <div id="navbar-container" className="flex fixed top-0 w-full h-10 py-10 px-10 items-center text-white">
+    <div id="navbarContainer" className="flex fixed top-0 w-full h-10 py-10 px-10 items-center text-white">
       <img
         id="bars"
         src="bars.jpg"
@@ -102,7 +102,7 @@ const Navbar: React.FC = () => {
       <style>
         {`
        
-        #navbar-container {
+        #navbarContainer {
           background-color: #171717;
           font-family: Inter, sans-serif; 
           font-weight: 500;
@@ -126,7 +126,7 @@ const Navbar: React.FC = () => {
           }
 
           @media (max-width: 900px) {
-            #navbar-container { 
+            #navbarContainer { 
               width: 100%;
               display: flex;
               justify-content: center;

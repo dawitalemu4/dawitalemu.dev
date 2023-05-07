@@ -3,29 +3,53 @@ import React from "react";
 
 const AboutText: React.FC = () => {
   return (
-    <div>
-    <div id="aboutMe">
-    <h4>About Me</h4>
-    <h5>Dawit Alemu</h5>
+    <div id="aboutTextContainer">
+    
 
     <style>
       {`
-    #aboutMe {
-        font-family: Inter, sans-serif; 
-        font-weight: 500;
-        color: white;
+      #aboutTextContainer {
+        display: flex;
+        position: absolute;
+        top: 310%;
+        width: 100%;
+        height: 2000px;
+        border: 1px solid red;
+        z-index: 7;
+        flex-direction: column;
+      }
+
+    #meContainer {
         display: flex;
         postion: relative;
-        bottom: 100%;
-        left: 50%;
+        width: 13%;
+        height: 27%;
+        margin-left: 54%;
         z-index: 7;
+      justify-content: center;
+      flex-direction: column;
     } 
-          `}
+    #aboutMe {
+        display: flex;
+        position: relative;
+      bottom: 25%;
+      font-size: 40px;
+      padding-left: 4px;
+    }
+    #da {
+      display: flex;
+      position: relative;
+      top: 68%;
+      width: 110px;
+      height: 110px;
+      border-radius: 100px;
+    }
+        `}
     </style>
-    </div>
+    
 
-    <div id="aboutText" className="hidden">
-      <p>
+    <div id="aboutParContainer" >
+      <p id="aboutPar">
         Hello! My name is Dawit Alemu and I'm currently a junior at Towson
         University.
         <br />
@@ -38,7 +62,9 @@ const AboutText: React.FC = () => {
 
       <style>
         {`
-    
+    #aboutParContainer {
+      display: flex;
+      border: 1px solid red;
 
             `}
       </style>
