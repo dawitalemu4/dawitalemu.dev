@@ -5,7 +5,7 @@ import React from 'react';
 const HeroText: React.FC = () => {
 
     return(
-        <div>
+        <div className='flex'>
         <div id="heroTextContainer">
             <h1>Dawit Alemu</h1>
             <h2>Software Developer</h2>

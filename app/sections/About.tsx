@@ -6,7 +6,7 @@ import AboutText from '../rcomponents/aboutText';
 const About: React.FC = () => {
 
     return(
-        <div id='About'>
+        <div id='About' className='flex border border-red-500 h-screen'>
         <PacMan/>
         <AboutText/>
         </div>
