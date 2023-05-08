@@ -106,6 +106,7 @@ const Navbar: React.FC = () => {
           background-color: #171717;
           font-family: Inter, sans-serif; 
           font-weight: 500;
+          color: white;
           z-index: 5;
         }
 
@@ -159,7 +160,6 @@ const Navbar: React.FC = () => {
               z-index: 3; 
               border-bottom-left-radius: 30px;
               border-bottom-right-radius: 30px;
-              
             }
             #navbar-ul li {
               padding: 6px;

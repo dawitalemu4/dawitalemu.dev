@@ -16,7 +16,7 @@ export default function Home() {
     <html>
   <body className="bg-white">
     <Navbar/>
-    <div className='flex h-screen lg:h-auto justify-center items-center flex-col'>
+    <div className='flex h-screen justify-center items-center flex-col'>
     <img src='inProg.png' className='w-1/2'/>
     <h1 className='text-center font-inter font-medium text-gray-800 text-lg px-5'>
     In Progress. For now, visit the dev version of my portfolio by clicking the black button at the top left!</h1>

@@ -37,13 +37,17 @@ const PacMan: React.FC = () => {
     <div id="pacmanContainer">   
       <img src="arcade.png" id='arcade'/>
       <img src="pacmanScene.jpg" id='scene'/>
-          <div id="meContainer">
-            <h2 id="aboutMe">About Me</h2>
+        <div id='dotsContainer'>
+          <img src={images[imageIndex]} id="dots"/>
+        </div>
+        <div id="meContainer">
+          <div id='topMeContainer'>
+            <h3 id="aboutMe">About Me</h3>
+          </div>
+          <div id='bottomMeContainer'>
             <img id="da" src="da.jpg"/>
           </div>
-        <div id='dotsContainer'>
-        <img src={images[imageIndex]} id="dots"/>
-       </div>
+        </div>
     
       <style>
         {`
@@ -89,28 +93,76 @@ const PacMan: React.FC = () => {
             z-index: 3;
         }
         #meContainer {
+          display: flex;
           position: absolute;
-          width: -10%;
-          height: 27%;
-          z-index: 7;
-        justify-content: center;
-        flex-direction: column;
-        border: 1px solid red;
-      } 
-      #aboutMe {
-        position: absolute;
-        bottom: 25%;
-        font-size: 40px;
-        padding-left: 4px;
-        border: 1px solid red;
-      }
-      #da {
-        position: absolute;
-        top: 68%;
-        width: 110px;
-        height: 110px;
-        border-radius: 100px;
-      }
+          top: 46%;
+          right: 29%;
+          width: 16%;
+          height: 26%;
+          z-index: 2;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+        } 
+        #topMeContainer {
+          display: flex;
+          position: relative;
+          top: 0;
+          margin-bottom: 33%;
+          width: 100%;
+          height: 32%;
+          align-items: center;
+          justify-content: center;
+        }
+        #bottomMeContainer {
+          display: flex;
+          position: relative;
+          bottom: 0;
+          margin-top: 33%;
+          width: 100%;
+          height: 34%;
+          align-items: center;
+          justify-content: center;
+        }
+        #aboutMe {
+          display: flex;
+          position: absolute;
+          font-family: 'Press Start 2P';
+          color: white;
+          font-size: 200%;
+          z-index: 2;
+          margin-top: 3%;
+        }
+        
+        #da {
+          display: flex;
+          position: absolute;
+          left: 22%;
+          width: 55%;
+          height: 90%;
+          margin-bottom: 3%;
+          border-radius: 10px;
+          z-index: 2;
+        }
+
+        @media (min-width: 2000px) {
+          #aboutMe {
+            margin-left: 10%;
+            margin-top: 0;
+          }
+        #da {
+          margin-bottom: 0;
+          left: 25%;
+        }
+        }
+
+        @media (max-width: 1300px) {
+        #meContainer {
+          display: none;
+        }
+        }
+
         @media (max-width: 900px) {
           #pacmanContainer {
             width: 100%;

@@ -2,59 +2,23 @@
 import React from "react";
 
 const AboutText: React.FC = () => {
+
   return (
-    <div id="aboutTextContainer">
-    
-
-    <style>
-      {`
-      #aboutTextContainer {
-        display: flex;
-        position: absolute;
-        top: 310%;
-        width: 100%;
-        height: 2000px;
-        border: 1px solid red;
-        z-index: 7;
-        flex-direction: column;
-      }
-
-    #meContainer {
-        display: flex;
-        postion: relative;
-        width: 13%;
-        height: 27%;
-        margin-left: 54%;
-        z-index: 7;
-      justify-content: center;
-      flex-direction: column;
-    } 
-    #aboutMe {
-        display: flex;
-        position: relative;
-      bottom: 25%;
-      font-size: 40px;
-      padding-left: 4px;
-    }
-    #da {
-      display: flex;
-      position: relative;
-      top: 68%;
-      width: 110px;
-      height: 110px;
-      border-radius: 100px;
-    }
-        `}
-    </style>
-    
-
-    <div id="aboutParContainer" >
+    <div id="aboutContainer">
+      <div id="aboutHeaderContainer">
+        <div id="aboutHeaderTextContainer">
+          <h4 id="aboutHeaderText">About Me</h4>
+        </div>
+        <div id="aboutHeaderImageContainer">
+          <img id="aboutHeaderImage" src="da.jpg" />
+        </div>
+      </div>
       <p id="aboutPar">
         Hello! My name is Dawit Alemu and I'm currently a junior at Towson
-        University.
+        University who loves to self-teach software development.
         <br />
         <br />
-        My main interests are front end web and game development.
+        My interests are front end web and game software development.
         <br />
         <br />
         Tap left click while he's pulling his fishing rod!
@@ -62,13 +26,107 @@ const AboutText: React.FC = () => {
 
       <style>
         {`
-    #aboutParContainer {
+    #aboutContainer {
       display: flex;
+      position: absolute;
+      top: 310%;
+      left: 5%;
+      width: 90%;
+      justify-content: center;
+      align-items: center;
       border: 1px solid red;
+      flex-direction: row;
+    }
+    #aboutHeaderContainer {
+      display: flex;
+      position: relative;
+      right: 5%;
+      width: 30%;
+      flex-direction: column;
+      justify-content: center;
+    }
+    #aboutHeaderTextContainer {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 5%;
+      margin-top: 5%;
+    }
+    #aboutHeaderText {
+    color: white;
+    font-family: Inter;
+    font-size: 400%;
+    }
+    #aboutHeaderImageContainer {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    }
+    #aboutHeaderImage {
+      border-radius: 10%;
+    }
+    #aboutPar {
+    position: relative;
+    left: 5%;
+    width: 60%;
+    color: white;
+    font-family: Inter;
+    font-size: 200%;
+    text-align: center;
+    }
+
+
+
+  @media (max-width: 1370px) {
+      #aboutContainer {
+        flex-direction: column;
+       
+    }
+    #aboutHeaderContainer {
+      right: 0;
+      width: 100%;
+    }
+    #aboutHeaderImageContainer {
+      justify-content: center;
+    }
+    #aboutHeaderImage {
+      width: 40%;
+    }
+    #aboutHeaderTextContainer {
+      justify-content: center;
+    }
+    #aboutPar {
+      left: 0;
+      width: 100%;
+      margin-top: 5%;
+    }
+    #aboutHeaderText {
+      font-size: 300%;
+    }
+  }
+  
+
+  @media (max-width: 900px) {
+    #aboutPar {
+      font-size: 150%;
+    }
+    #aboutHeaderImage {
+      width: 70%;
+    }
+    aboutHeaderText {
+      font-size: 200%;
+    }
+  }
+  @media (max-width: 560px) {
+  #aboutPar {
+  font-size: 100%;
+  }
+  #aboutHeaderText {
+  font-size: 190%;
+  }
+  }
 
             `}
       </style>
-    </div>
     </div>
   );
 };

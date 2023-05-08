@@ -4,7 +4,7 @@ import React from 'react';
 const Contact: React.FC = () => {
 
     return(
-        <div id='Contact'>
+        <div id='Contact' className='flex border border-red-500 h-screen'>
         
         </div>
     )
