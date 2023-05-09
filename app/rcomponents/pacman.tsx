@@ -55,7 +55,7 @@ const PacMan: React.FC = () => {
             display: flex;
             flex-direction: column;
             position: absolute;
-            top: 120%;
+            top: 5%;
             left: 10%;
             width: 80%;
             justify-content: center;
