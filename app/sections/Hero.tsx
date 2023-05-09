@@ -6,7 +6,7 @@ import Yoshi from '../rcomponents/yoshi';
 const Hero: React.FC = () => {
 
     return(
-        <div id='Hero' className='flex border border-red-500 h-screen'>
+        <div id='Hero' className='flex relative h-screen'>
         <HeroText />
         <Yoshi />
         </div>

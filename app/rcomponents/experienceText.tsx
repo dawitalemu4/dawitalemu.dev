@@ -1,32 +1,29 @@
 "use client";
 import React from "react";
 
-const AboutText: React.FC = () => {
+const ExperienceText: React.FC = () => {
 
   return (
-    <div id="aboutContainer">
-      <div id="aboutHeaderContainer">
-        <div id="aboutHeaderTextContainer">
-          <h4 id="aboutHeaderText">About Me</h4>
-        </div>
-        <div id="aboutHeaderImageContainer">
-          <img id="aboutHeaderImage" src="da.jpg" />
+    <div id="experienceContainer">
+      <div id="experienceHeaderContainer">
+        <div id="experienceHeaderTextContainer">
+          <h4 id="experienceHeaderText">Experience</h4>
         </div>
       </div>
-      <p id="aboutPar">
-        Hello! My name is Dawit Alemu and I'm currently a junior at Towson
-        University who loves to self-teach software development.
+      <p id="experiencePar">
+      Above are some programming langauges I use which consists of mainly React.tsx, React Native, Next.js, C#, and Java.
         <br />
         <br />
-        My interests are front end web and game software development.
+        I worked as a full time Full-Stack software developer at Tap In Inc. and interned at Urban Alliance during Summer 2023.
         <br />
         <br />
-        Tap left click while he's pulling his fishing rod!
+        <a href="https://docs.google.com/document/d/1VA2JjizgZaup8Hw1dX10K6-6aRnEW3wpa1yVvscN2H4/edit?usp=sharing" target="_blank">
+        <span id="Resume">Click me to view my resume!</span></a>
       </p>
 
       <style>
         {`
-    #aboutContainer {
+    #experienceContainer {
       display: flex;
       position: absolute;
       bottom: 0;
@@ -36,7 +33,7 @@ const AboutText: React.FC = () => {
       align-items: center;
       flex-direction: row;
     }
-    #aboutHeaderContainer {
+    #experienceHeaderContainer {
       display: flex;
       position: relative;
       right: 5%;
@@ -44,26 +41,26 @@ const AboutText: React.FC = () => {
       flex-direction: column;
       justify-content: center;
     }
-    #aboutHeaderTextContainer {
+    #experienceHeaderTextContainer {
       display: flex;
       justify-content: center;
       margin-bottom: 5%;
       margin-top: 5%;
     }
-    #aboutHeaderText {
+    #experienceHeaderText {
     color: white;
     font-family: Inter;
     font-size: 400%;
     }
-    #aboutHeaderImageContainer {
+    #experienceHeaderImageContainer {
     display: flex;
     width: 100%;
     justify-content: center;
     }
-    #aboutHeaderImage {
+    #experienceHeaderImage {
       border-radius: 10%;
     }
-    #aboutPar {
+    #experiencePar {
     position: relative;
     left: 5%;
     width: 60%;
@@ -76,50 +73,50 @@ const AboutText: React.FC = () => {
 
 
   @media (max-width: 1370px) {
-      #aboutContainer {
+      #experienceContainer {
         flex-direction: column;
        
     }
-    #aboutHeaderContainer {
+    #experienceHeaderContainer {
       right: 0;
       width: 100%;
     }
-    #aboutHeaderImageContainer {
+    #experienceHeaderImageContainer {
       justify-content: center;
     }
-    #aboutHeaderImage {
+    #experienceHeaderImage {
       width: 40%;
     }
-    #aboutHeaderTextContainer {
+    #experienceHeaderTextContainer {
       justify-content: center;
     }
-    #aboutPar {
+    #experiencePar {
       left: 0;
       width: 100%;
       margin-top: 5%;
     }
-    #aboutHeaderText {
+    #experienceHeaderText {
       font-size: 300%;
     }
   }
   
 
   @media (max-width: 900px) {
-    #aboutPar {
+    #experiencePar {
       font-size: 150%;
     }
-    #aboutHeaderImage {
+    #experienceHeaderImage {
       width: 70%;
     }
-    aboutHeaderText {
+    experienceHeaderText {
       font-size: 200%;
     }
   }
   @media (max-width: 560px) {
-  #aboutPar {
+  #experiencePar {
   font-size: 100%;
   }
-  #aboutHeaderText {
+  #experienceHeaderText {
   font-size: 190%;
   }
   }
@@ -130,4 +127,4 @@ const AboutText: React.FC = () => {
   );
 };
 
-export default AboutText;
+export default ExperienceText;

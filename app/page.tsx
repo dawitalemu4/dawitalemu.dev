@@ -15,7 +15,7 @@ export default function Home(){
 
     return (
       <html>
-    <body className='bg-black flex flex-col'>    
+    <body className='bg-black flex flex-col relative'>    
       <Navbar />
       <Hero />
       <About />
