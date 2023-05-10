@@ -5,21 +5,21 @@ const ExperienceText: React.FC = () => {
 
   return (
     <div id="experienceContainer">
-      <div id="experienceHeaderContainer">
-        <div id="experienceHeaderTextContainer">
-          <h4 id="experienceHeaderText">Experience</h4>
-        </div>
-      </div>
+      <div id="experienceParContainer">
       <p id="experiencePar">
-      Above are some programming langauges I use which consists of mainly React.tsx, React Native, Next.js, C#, and Java.
+        Above are some programming langauges and frameworks I use which consists of mainly React.tsx, React Native, Next.js, C#, and Java.
         <br />
         <br />
-        I worked as a full time Full-Stack software developer at Tap In Inc. and interned at Urban Alliance during Summer 2023.
+        I worked as a full time Full-Stack web developer at Tap In Inc. and interned at Urban Alliance during Summer 2023.
         <br />
         <br />
         <a href="https://docs.google.com/document/d/1VA2JjizgZaup8Hw1dX10K6-6aRnEW3wpa1yVvscN2H4/edit?usp=sharing" target="_blank">
         <span id="Resume">Click me to view my resume!</span></a>
       </p>
+      </div>
+      <div id="experienceHeaderContainer">    
+          <h4 id="experienceHeaderText">Experience</h4>
+      </div>
 
       <style>
         {`
@@ -29,71 +29,66 @@ const ExperienceText: React.FC = () => {
       bottom: 0;
       left: 5%;
       width: 90%;
-      justify-content: center;
       align-items: center;
       flex-direction: row;
     }
     #experienceHeaderContainer {
       display: flex;
       position: relative;
-      right: 5%;
+      left: 5%;
       width: 30%;
       flex-direction: column;
-      justify-content: center;
-    }
-    #experienceHeaderTextContainer {
-      display: flex;
-      justify-content: center;
       margin-bottom: 5%;
-      margin-top: 5%;
     }
     #experienceHeaderText {
     color: white;
     font-family: Inter;
     font-size: 400%;
+    text-align: center;
     }
-    #experienceHeaderImageContainer {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    }
-    #experienceHeaderImage {
-      border-radius: 10%;
+    #experienceParContainer {
+      display: flex;
+      position: relative;
+      left: 0;
+      width: 65%;
+      height: 50%;
     }
     #experiencePar {
     position: relative;
-    left: 5%;
-    width: 60%;
+    right: 0;
+    width: 100%;
     color: white;
     font-family: Inter;
     font-size: 200%;
     text-align: center;
-    }
-
-
+  }
+  #Resume {
+    color: #d6ddf2;
+    text-decoration: underline;
+  }
+  #Resume:hover {
+    opacity: 0.5;
+  }
 
   @media (max-width: 1370px) {
       #experienceContainer {
         flex-direction: column;
-       
+       height: 50%;
     }
     #experienceHeaderContainer {
-      right: 0;
+      left: 0;
       width: 100%;
     }
-    #experienceHeaderImageContainer {
-      justify-content: center;
-    }
-    #experienceHeaderImage {
-      width: 40%;
-    }
-    #experienceHeaderTextContainer {
-      justify-content: center;
-    }
+#experienceParContainer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 80%;
+}
     #experiencePar {
       left: 0;
       width: 100%;
-      margin-top: 5%;
+      font-size: 180%;
     }
     #experienceHeaderText {
       font-size: 300%;

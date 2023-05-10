@@ -128,7 +128,7 @@ const PacMan: React.FC = () => {
         #aboutMe {
           display: flex;
           position: absolute;
-          font-family: 'Press Start 2P';
+          font-family: Press Start P;
           color: white;
           font-size: 200%;
           z-index: 2;

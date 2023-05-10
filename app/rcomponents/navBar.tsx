@@ -125,6 +125,9 @@ const Navbar: React.FC = () => {
           z-index: 4;
           scale: 0.8;
           }
+          a:hover {
+            opacity: 0.5;
+          }
 
           @media (max-width: 900px) {
             #navbarContainer { 
