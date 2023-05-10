@@ -127,6 +127,9 @@ const Navbar: React.FC = () => {
           transform: scale(1);
           transition: transform 0.5s ease-in-out;
           }
+          a:hover {
+            opacity: 0.5;
+          }
 
           @media (max-width: 1177px) and (min-width: 900px) {
             #devButton {

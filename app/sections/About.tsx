@@ -15,7 +15,7 @@ const About: React.FC = () => {
             }
             @media (max-width: 1660px) {
                 #About {
-                    height: 280vh;
+                    height: 290vh;
                 }
                 }
             @media (max-width: 1370px) {
