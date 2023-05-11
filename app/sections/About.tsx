@@ -20,7 +20,7 @@ const About: React.FC = () => {
                 }
             @media (max-width: 1370px) {
             #About {
-                height: 310vh;
+                height: 330vh;
             }
             }
             @media (max-width: 1150px) {
@@ -43,6 +43,10 @@ const About: React.FC = () => {
                     height: 170vh;
                 }
                 }
+            @media (max-height: 650px) {
+                #About {
+                    height: 360vh;
+            }
             `}
       </style>
     </div>

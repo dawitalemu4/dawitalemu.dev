@@ -21,9 +21,8 @@ const AboutText: React.FC = () => {
         My interests are front end web and game software development.
         <br />
         <br />
-        Tap left click while he's pulling his fishing rod!
+        Tap click while he's pulling his fishing rod!
       </p>
-
       <style>
         {`
     #aboutContainer {
@@ -47,7 +46,7 @@ const AboutText: React.FC = () => {
     #aboutHeaderTextContainer {
       display: flex;
       justify-content: center;
-      margin-bottom: 5%;
+      margin-bottom: 10%;
       margin-top: 5%;
     }
     #aboutHeaderText {
@@ -92,6 +91,7 @@ const AboutText: React.FC = () => {
     }
     #aboutHeaderTextContainer {
       justify-content: center;
+      margin-bottom: 5%;
     }
     #aboutPar {
       left: 0;
