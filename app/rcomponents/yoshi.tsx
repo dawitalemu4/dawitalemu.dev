@@ -94,6 +94,12 @@ const Yoshi: React.FC = () => {
               display: none;
             }
           }
+          @media (max-width: 500px) {
+            #yoshiContainer {
+              transform: translate(-121%,-30%);
+              scale: 0.45;
+            }
+          }
         `}
       </style>
     </div>

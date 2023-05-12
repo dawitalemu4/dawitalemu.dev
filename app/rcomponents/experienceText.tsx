@@ -73,7 +73,7 @@ const ExperienceText: React.FC = () => {
   @media (max-width: 1370px) {
       #experienceContainer {
         flex-direction: column;
-       height: 35%;
+       height: 40%;
     }
     #experienceHeaderContainer {
       left: 0;
@@ -102,16 +102,13 @@ const ExperienceText: React.FC = () => {
 
   @media (max-width: 900px) {
     #experiencePar {
-      font-size: 120%;
+      font-size: 150%;
     }
    #experienceHeaderContainer {
-    height: 15%;
-    }
-    #experienceParContainer {
-      height: 85%;
-    }
+    height: 125%; 
+  }
     #experienceHeaderText {
-      font-size: 200%;
+      font-size: 300%;
     }
   }
   @media (max-width: 560px) {

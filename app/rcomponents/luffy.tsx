@@ -48,25 +48,26 @@ const Luffy: React.FC = () => {
           text-align: center;
           font-size: 150%;
           z-index: 1;
+          display: none;
           }
           @media (max-width: 1370px) {
             #luffyContainer {
-              height: 65%;
+              height: 55%;
             }
             #luffy {
               width: 45%;
             }
-          @media (max-width: 840px) {
+          @media (max-width: 900px) {
             #warningMessage {
               font-size: 100%;
             }
             #luffy {
-              width: 55%;
+              width: 65%;
             }
           }
-          @media (max-width: 600px) {
+          @media (max-width: 700px) {
             #luffy {
-              width: 65%;
+              width: 80%;
             }
           }
           @media (max-width: 400px) {
