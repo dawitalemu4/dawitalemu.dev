@@ -11,7 +11,6 @@ const Luffy: React.FC = () => {
       <div id="warningMessageContainer">
         <h5 id="warningMessage">Tap left click while he is pulling - Don't drag or hold</h5>
         </div>
-        <script src='/luffyJs.js' />
       <style>
         {`
           #luffyContainer {
