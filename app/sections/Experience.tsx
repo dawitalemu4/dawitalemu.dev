@@ -11,17 +11,26 @@ const Experience: React.FC = () => {
       <style>
         {`
             #Experience {
-                height: 160vh;
+                height: 155vh;
             }
             @media (max-width: 1370px) {
                 #Experience {
-                        height: 180vh;
+                        height: 175vh;
                     }
                     @media (max-width: 900px) {
                         #Experience {
-                                height: 130vh;
+                                height: 160vh;
                             }
-                            
+                            @media (max-width: 560px) {
+                              #Experience {
+                                  height: 140vh;
+                              }
+                          }
+                          @media (max-width: 450px) {
+                            #Experience {
+                                height: 110vh;
+                            }
+                        }               
             @media (max-height: 650px) {
                 #Experience {
                     height: 180vh;

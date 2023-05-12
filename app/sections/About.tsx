@@ -13,14 +13,24 @@ const About: React.FC = () => {
             #About {
                 height: 300vh;
             }
-            @media (max-width: 1660px) {
+            @media (max-width: 1800px) and (min-height: 900px) {
                 #About {
-                    height: 290vh;
+                    height: 270vh;
                 }
                 }
+            @media (max-width: 1700px) and (min-height: 900px) {
+                #About {
+                    height: 200vh;
+                }
+                }
+                @media (max-width: 1500px) and (min-height: 900px) {
+                    #About {
+                        height: 220vh;
+                    }
+                    }
             @media (max-width: 1370px) {
             #About {
-                height: 330vh;
+                height: 350vh;
             }
             }
             @media (max-width: 1150px) {
@@ -28,11 +38,21 @@ const About: React.FC = () => {
                 height: 300vh;
             }
             }
+            @media (max-width: 900px) {
+                #About {
+                    height: 310vh;
+                }
+                }
             @media (max-width: 750px) {
             #About {
                 height: 280vh;
             }
             }
+            @media (max-width: 670px) {
+                #About {
+                    height: 260vh;
+                }
+                }
             @media (max-width: 560px) {
             #About {
                 height: 200vh;
@@ -43,10 +63,16 @@ const About: React.FC = () => {
                     height: 170vh;
                 }
                 }
-            @media (max-height: 650px) {
+                @media (max-width: 400px) {
+                    #About {
+                        height: 160vh;
+                    }
+                    }
+            @media (max-height: 660px) {
                 #About {
                     height: 360vh;
             }
+        }
             `}
       </style>
     </div>

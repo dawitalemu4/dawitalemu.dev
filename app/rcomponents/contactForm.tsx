@@ -6,16 +6,17 @@ const ContactForm: React.FC = () => {
     <div id="contactContainer">
       <div id="contactFormContainer">
         <form action="https://api.web3forms.com/submit" method="POST">
+        <div id="I dont care about this key btw its free. Use the contact form and send me 'You cant see me' if you see this div!"></div>
           <input
             type="hidden"
             name="access_key"
-            value="d36e5828-ad1a-4661-9a5a-5252d677f340"
-          />
-          Name
+            value="d36e5828-ad1a-4661-9a5a-5252d677f340" 
+          /> 
+          <p>Name</p>
           <input id="ename" type="text" name="name" required />
-          Email
+          <p>Email</p>
           <input id="email" type="email" name="email" required />
-          Message
+          <p>Message</p>
           <input id="message" type="message" name="message" required />
           <input
             type="hidden"
@@ -23,7 +24,7 @@ const ContactForm: React.FC = () => {
             value="https://web3forms.com/success"
           />
           <button id="submit" type="submit">
-            Send Email
+          <p>Send Email</p>
           </button>
         </form>
       </div>
@@ -61,7 +62,6 @@ const ContactForm: React.FC = () => {
       width: 90%;
       height: 95%;
       flex-direction: row;
-      border: 1px solid red;
     }
     #contactFormContainer {
         display: flex;
@@ -70,7 +70,7 @@ const ContactForm: React.FC = () => {
         width: 50%;
         height: 80%;
         align-items: center;
-        border: 1px solid blue;
+        margin-top: 5%;
       }
       #contactFooterContainer {
         display: flex;
@@ -80,7 +80,6 @@ const ContactForm: React.FC = () => {
         width: 50%;
         height: 80%;
         flex-direction: column;
-        border: 1px solid green;
       }
     form {
         width: 100%;
@@ -97,7 +96,7 @@ const ContactForm: React.FC = () => {
         background-color: black;
         color: white;
         border: 1px solid #d6ddf2;
-        border-radius: 2%;
+        border-radius: 1%;
         padding: 2%;
         margin-bottom: 5%;
       }
@@ -160,20 +159,32 @@ const ContactForm: React.FC = () => {
       #contactButtonsContainer {
         display: flex;
         position: relative;
-        top: 0;
+        top: 15%;
+        left: 5%;
         align-items: center;
-        border: 1px solid orange;
+        justify-content: space-evenly;
       }
-        #piakchuFooter {
+        #pikachuFooter {
         display: flex;
         position: absolute;
+        width: 100%;
+        height: 50%;
         bottom: 0;
-        width: 50%;
-        height: 20%;
-        border: 10px solid pink;
+        right: 0;
+        }
+        #linkedinIcon, #githubIcon, #mailIcon, #misplacedIcon {
+          display: flex;
+        width: 20%;
+        }
+        #misplacedIcon img {
+          border-radius: 50%;
         }
         #pikachu {
-            border: 10px solid red;
+          display: flex;
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          width: 30%;
         }
         @media (max-width: 1370px) {
             #contactContainer {
@@ -184,16 +195,42 @@ const ContactForm: React.FC = () => {
                 top: 0;
                 right: 40%;
             }
+            #contactHeaderText {
+              font-size: 300%;
+            }
             #contactFormContainer {
                 position: absolute;
-                top: 20%;
+                top: 10%;
             }
         }
         @media (max-width: 900px) {
-            #contactContainer {
-                flex-direction: column;
-                justify-content: center;
-            }
+          #contactHeaderText {
+            font-size: 300%;
+          }
+          #contactFormContainer {
+            display: none;
+        }
+        #contactFooterContainer {
+          width: 100%;
+        }
+        #contactButtonsContainer {
+          position: absolute;
+          top: 0;
+        }
+        #pikachu {
+          width: 20%;
+          left: 40%;
+          right: 40%;
+        }
+      }
+      @media (max-width: 560px) {
+        #contactHeaderText {
+          font-size: 190%;
+        }
+        #pikachu {
+          width: 30%;
+          left: 35%;
+          right: 35%;
         }
             `}
       </style>
@@ -202,5 +239,3 @@ const ContactForm: React.FC = () => {
 };
 
 export default ContactForm;
-
-//fix experience header
