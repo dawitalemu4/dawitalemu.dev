@@ -3,28 +3,52 @@ import React, { useState, useEffect, useRef } from 'react';
 
 const PacMan: React.FC = () => {
   const [imageIndex, setImageIndex] = useState(0);
-
-  var images = [    'dots.png',    'dots2.png',    '1.png',    '2.png',    '3.png',    '4.png',    '5.png',    '6.png',    '11.png'  ];
-  var currentImage = 0;
+  const images = [
+    '1.png',
+    '2.png',
+    '3.png',
+    '4.png',
+    '5.png',
+    '6.png',
+    '7.png',
+    '8.png',
+    '9.png',
+    '10.png',
+    '11.png',
+    '12.png',
+    '13.png',
+    '14.png',
+    '15.png',
+    'final.png'
+  ];
 
   const dotsRef = useRef<HTMLImageElement>(null);
+  const dotsContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     function changeImage(imageIndex: number) {
-      currentImage = imageIndex;
+      setImageIndex(imageIndex);
       if (dotsRef.current) {
-        dotsRef.current.src = images[currentImage];
+        dotsRef.current.src = images[imageIndex];
       }
     }
 
-    function handleScroll(event: Event) {
-      var currentScroll =
-        (window.scrollY / (document.body.offsetHeight - window.innerHeight)) *
-        100;
-      if (currentScroll >= 8 && currentScroll <= 40) {
-        var newImageIndex = Math.floor((currentScroll - 10) / 2.5);
-        if (newImageIndex !== currentImage) {
+    function handleScroll() {
+      const dotsContainer = dotsContainerRef.current;
+      if (!dotsContainer) return;
+
+      const containerTop = dotsContainer.getBoundingClientRect().top;
+      const containerBottom = dotsContainer.getBoundingClientRect().bottom;
+      const viewportHeight = window.innerHeight;
+
+      if (containerTop <= viewportHeight && containerBottom >= 0) {
+        const scrollPercentage =
+          (viewportHeight - containerTop) / (viewportHeight + containerBottom);
+
+        const newImageIndex = Math.floor(scrollPercentage * images.length);
+        if (newImageIndex !== imageIndex) {
           changeImage(newImageIndex);
+          console.log(newImageIndex);
         }
       }
     }
@@ -34,13 +58,13 @@ const PacMan: React.FC = () => {
     return () => {
       document.removeEventListener('scroll', handleScroll);
     };
-  }, [dotsRef]);
+  }, [dotsRef, dotsContainerRef]);
 
   return (
     <div id="pacmanContainer">   
       <img src="arcade.png" id='arcade'/>
       <img src="pacmanScene.jpg" id='scene'/>
-        <div id='dotsContainer'>
+        <div id='dotsContainer' ref={dotsContainerRef}>
           <img src={images[imageIndex]} id="dots" ref={dotsRef}/>
         </div>
         <div id="meContainer">
@@ -82,17 +106,17 @@ const PacMan: React.FC = () => {
         #dotsContainer {
             position: absolute;
             display: flex;
-            top: 31%;
+            top: 35%;
             width: 50%;
-            height: 54.3%;
+            height: 50%;
             z-index: 3;
             align-items: center;
             justify-content: center;
           }
         #dots {
-            position: relative;
-            bottom: 30%;
-            width: 5%;
+            position: absolute;
+            top: 0;
+            width: 7%;
             z-index: 3;
         }
         #meContainer {
@@ -171,6 +195,11 @@ const PacMan: React.FC = () => {
             width: 100%;
             left: 0;
           }
+          #dotsContainer {
+            top: 31.5%;
+            width: 50%;
+            height: 54.3%;
+          }
             #scene {
                 border: 0px;
             }     
@@ -178,7 +207,9 @@ const PacMan: React.FC = () => {
             bottom: 37%;
           }   
         }
-       
+       @media (min-width: 1650px) {
+          #dotsContainer {
+            top: 34%;
         `}
       </style>
     </div>

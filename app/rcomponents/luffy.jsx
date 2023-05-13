@@ -10,19 +10,15 @@ let message = document.getElementById("warningMessage");
 let gameIntervalId;
 let startTime;
 
-// Start the game
 startGame();
 
-// Add click and contextmenu event listeners to the gif
 gif.addEventListener("click", onClick);
 gif.addEventListener("contextmenu", onClick);
 
-// Add mouseover event listener to the gif
 gif.addEventListener("mouseover", function() {
   gif.style.cursor = "pointer";
 });
 
-// Start the game loop
 function startGame() {
   message.style.visibility = "hidden";
   startTime = Date.now();
@@ -33,11 +29,10 @@ function startGame() {
   }, 5040);
 }
 
-// Handle click event
 function onClick(event) {
   event.preventDefault();
   let now = Date.now();
-  if (now - startTime >= 3500 && now - startTime <= 5000) {
+  if (now - startTime >= 3700 && now - startTime <= 5040) {
     message.style.visibility = "hidden";
     displayWinOutcome();
   } else {
@@ -48,7 +43,6 @@ function onClick(event) {
   }
 }
 
-// Display win outcome
 function displayWinOutcome() {
   clearInterval(gameIntervalId);
   let i = 0;
