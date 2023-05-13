@@ -1,7 +1,7 @@
 let gif = document.getElementById("luffy");
 let gifs = ["hatclose.png", "hatmid.png", "hatopen.png"];
 let currentimages = 0;
-let message = document.getElementsByTagName("h5")[0];
+let message = document.getElementById("warningMessage");
 let gameIntervalId;
 let startTime;
 
@@ -21,10 +21,10 @@ gif.addEventListener("mouseover", function() {
 function startGame() {
   message.style.visibility = "hidden";
   startTime = Date.now();
-  gif.src = "luffy fish.gif";
+  gif.src = "luffy.gif";
   gameIntervalId = setInterval(function() {
     startTime = Date.now();
-    gif.src = "luffy fish.gif";
+    gif.src = "luffy.gif";
   }, 5040);
 }
 

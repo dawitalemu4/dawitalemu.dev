@@ -37,7 +37,8 @@ const Yoshi: React.FC = () => {
   return (
     <div id="yoshiContainer">
         <div id="bubbleContainer">
-        <h1 id="text">Yoshi's eyes follow your mouse, move your mouse around him to see what happens!</h1>
+        <h1 id="text">Move your mouse around Yoshi and see what happens!</h1>
+        <img id="mouse-pointer" src="pointer.jpg"/>
         </div>
       <img src="yoshi.png" id="yoshi" ref={yoshiRef} />
       <img src="eyes.png" id="eyes" ref={eyesRef} />
@@ -81,11 +82,12 @@ const Yoshi: React.FC = () => {
           }
           #text {
           display: flex;
+          margin-left: 10%;
           text-align: center;
           font-size: 1rem;
           z-index: 1;
           }
-          @media (max-width: 840px) {
+          @media (max-width: 900px) {
             #yoshiContainer {
               transform: translate(-99%,-20%);
               scale: 0.6;
@@ -98,6 +100,24 @@ const Yoshi: React.FC = () => {
             #yoshiContainer {
               transform: translate(-121%,-30%);
               scale: 0.45;
+            }
+          }
+
+          #mouse-pointer {
+            width: 15px;
+            position: relative;
+            animation: updown 5s ease-in-out infinite;
+          }
+          
+          @keyframes updown {
+            0% {
+              top: 100px;
+            }
+            50% {
+              top: 300px;
+            }
+            100% {
+              top: 100px;
             }
           }
         `}

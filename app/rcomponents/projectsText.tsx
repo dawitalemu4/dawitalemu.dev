@@ -1,7 +1,10 @@
 "use client";
-import React from "react";
+import React, {useRef, useEffect} from "react";
 
 const ProjectsText: React.FC = () => {
+
+ 
+
 
   return (
     <div id="projectsContainer">
@@ -22,10 +25,10 @@ const ProjectsText: React.FC = () => {
             <b>/// 2D Sonic Platformer</b> - Gained experience with physics and animation in Unity Game Engine & C# (30s Demo on <a href="https://github.com/dawitalemu4/sonic" target="_blank"><span id="projectsLi">GitHub</span></a>)
             <br/>
             <br/>
-            <b># Cat Island Web Game</b> - In Progress (Angular)
+            <b># Cat Island Web Game</b> - In Progress (Angular, TypeScript)
             <br/>
             <br/>
-            <b>' Additional Less Important Projects</b> - School projects such as VB.NET GUIs, Java, etc. (<a href="https://github.com/dawitalemu4" target="_blank"><span id="projectsLi">Browse My GitHub</span></a>)
+            <b>' Additional Side Projects</b> - School projects such as VB.NET GUIs, Java, etc. (<a href="https://github.com/dawitalemu4" target="_blank"><span id="projectsLi">Browse My GitHub</span></a>)
       </p>
 
       <style>

@@ -4,7 +4,7 @@ import React, {useState, useEffect} from 'react';
 const PacMan: React.FC = () => {
   const [imageIndex, setImageIndex] = useState(0);
 
-  const images = [
+  var images = [
     'dots.png',
     'dots2.png',
     '1.png',
@@ -15,23 +15,22 @@ const PacMan: React.FC = () => {
     '6.png',
     '11.png'
   ];
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPercentage = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
-      const index = Math.floor((scrollPercentage - 10) / (100 / images.length));
-      setImageIndex(Math.min(Math.max(index, 0), images.length - 1)); // clamp index to array bounds
-      //console.log('scrolling. index:', index);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    //console.log('effect called with index', imageIndex);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [imageIndex]);
+  var currentImage = 0;
+  
+  function changeImage(imageIndex) {
+    currentImage = imageIndex;
+    document.getElementById("dots").src = images[currentImage];
+  }
+  
+  document.addEventListener("scroll", function(event) {
+    var currentScroll = window.scrollY / (document.body.offsetHeight - window.innerHeight) * 100;
+    if (currentScroll >= 10 && currentScroll <= 40) {
+      var newImageIndex = Math.floor((currentScroll - 10) / 2.5);
+      if (newImageIndex !== currentImage) {
+        changeImage(newImageIndex);
+      }
+    }
+  });
 
   return (
     <div id="pacmanContainer">   
