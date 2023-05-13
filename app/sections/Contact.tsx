@@ -5,10 +5,13 @@ import ContactForm from '../rcomponents/contactForm';
 const Contact: React.FC = () => {
 
     return(
-        <div id='Contact' className='flex relative h-screen'>
+        <div id='Contact' className='flex relative'>
         <ContactForm />
         <style>
             {`
+            #Contact {
+                height: 90vh;
+            }
             @media (max-width: 900px) {
                 #Contact {
                 height: 120vh;

@@ -55,7 +55,7 @@ const Navbar: React.FC = () => {
 
   const handleContactClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     event.preventDefault();
-    const targetPosition = document.body.scrollHeight * 0.865;
+    const targetPosition = document.body.scrollHeight * 1;
     window.scrollTo({
       top: targetPosition,
       left: 0,

@@ -21,7 +21,7 @@ const ProjectsText: React.FC = () => {
         pokeball.style.cursor = "pointer";
       });
 
-      const handleClick = function(event: React.MouseEvent<HTMLImageElement, MouseEvent>) {
+      const handleClick = function(event: Event) {
         event.preventDefault();
         if (pokeball && pikachujump && pikachurun && textbox && textstill) {
           pokeball.style.display = "none";
@@ -41,15 +41,15 @@ const ProjectsText: React.FC = () => {
         }
       }
 
-      //pokeball.addEventListener("click", handleClick);
-      //pokeball.addEventListener("contextmenu", handleClick);
+     pokeball.addEventListener("click", handleClick);
+     pokeball.addEventListener("contextmenu", handleClick);
 
       return () => {
         pokeball.removeEventListener("mouseover", function () {
-          pokeball.style.cursor = "pointer";
+        pokeball.style.cursor = "pointer";
         });
-       // pokeball.removeEventListener("click", handleClick);
-        //pokeball.removeEventListener("contextmenu", handleClick);        
+       pokeball.removeEventListener("click", handleClick);
+       pokeball.removeEventListener("contextmenu", handleClick);        
       };
     }
   }, [pokeballRef, pikachujumpRef, pikachurunRef, textboxRef, textstillRef]);
@@ -65,8 +65,8 @@ const ProjectsText: React.FC = () => {
         <img id="projectsPokeball" ref={pokeballRef} src="/pokeball.gif" />
 <img id="pikachujump" ref={pikachujumpRef} src="/pikachujump.gif" style={{display: 'none'}}/>
 <img id="pikachurun" ref={pikachurunRef} src="/pikachurun.gif" style={{display: 'none'}}/>
-<img ref={textboxRef} src="/textbox.gif" style={{display: 'none'}}/>
-<img ref={textstillRef} src="/textstill.png" style={{display: 'none'}}/>
+<img id="textbox" ref={textboxRef} src="/textbox.gif" style={{display: 'none'}}/>
+<img id="textstill" ref={textstillRef} src="/textstill.png" style={{display: 'none'}}/>
         </div>
       </div>
       <p id="projectsPar">   
@@ -118,7 +118,9 @@ const ProjectsText: React.FC = () => {
     #projectsPokeballContainer {
     display: flex;
     width: 100%;
+    height: 330px;
     justify-content: center;
+    align-items: center;
     }
     #projectsPar {
     position: relative;
@@ -147,30 +149,41 @@ const ProjectsText: React.FC = () => {
     }
     
     #pikachurun {
+      display: flex;
       position: absolute;
       transform: scale(0.8);
       animation: run 3s ease-in-out;
     }
+
+    #textbox, #textstill {
+      display: flex; 
+      top: 50%;  
+      width: 300px;
+      height: 150px;
+    }
     
   @keyframes jump {
     0% {
-      top: 50%;
+      top: 20%;
     }
     50% {
-      top: -30%;
+      top: -20%;
     }
     100% {
-      top: 50%;
+      top: 20%;
     }
   }
   @keyframes run {
     0% {
+      bottom: 0%;
       left: 0%;
     }
     50% {
+      bottom: 0%;
       left: 150%;
     }
     100% {
+      bottom: 0%;
       left: 150%;
     }
   }
@@ -185,7 +198,7 @@ const ProjectsText: React.FC = () => {
       width: 100%;
     }
     #projectsPokeball {
-      width: 30%;
+      width: 25%;
     }
     #projectsHeaderTextContainer {
       justify-content: center;
@@ -212,6 +225,10 @@ const ProjectsText: React.FC = () => {
     projectsHeaderText {
       font-size: 200%;
     }
+    #pikachujump {
+      position: absolute;
+     margin-top: -10%;
+    }
   }
   @media (max-width: 560px) {
   #projectsPar {
@@ -223,6 +240,10 @@ const ProjectsText: React.FC = () => {
   }
   #projectsPokeball {
     margin-bottom: 10%;
+  }
+  #pikachujump {
+    position: absolute;
+   margin-top: -30%;
   }
   }
 
