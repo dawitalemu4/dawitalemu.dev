@@ -1,43 +1,47 @@
 'use client'
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 const PacMan: React.FC = () => {
   const [imageIndex, setImageIndex] = useState(0);
 
-  var images = [
-    'dots.png',
-    'dots2.png',
-    '1.png',
-    '2.png',
-    '3.png',
-    '4.png',
-    '5.png',
-    '6.png',
-    '11.png'
-  ];
+  var images = [    'dots.png',    'dots2.png',    '1.png',    '2.png',    '3.png',    '4.png',    '5.png',    '6.png',    '11.png'  ];
   var currentImage = 0;
-  
-  function changeImage(imageIndex) {
-    currentImage = imageIndex;
-    document.getElementById("dots").src = images[currentImage];
-  }
-  
-  document.addEventListener("scroll", function(event) {
-    var currentScroll = window.scrollY / (document.body.offsetHeight - window.innerHeight) * 100;
-    if (currentScroll >= 10 && currentScroll <= 40) {
-      var newImageIndex = Math.floor((currentScroll - 10) / 2.5);
-      if (newImageIndex !== currentImage) {
-        changeImage(newImageIndex);
+
+  const dotsRef = useRef<HTMLImageElement>(null);
+
+  useEffect(() => {
+    function changeImage(imageIndex: number) {
+      currentImage = imageIndex;
+      if (dotsRef.current) {
+        dotsRef.current.src = images[currentImage];
       }
     }
-  });
+
+    function handleScroll(event: Event) {
+      var currentScroll =
+        (window.scrollY / (document.body.offsetHeight - window.innerHeight)) *
+        100;
+      if (currentScroll >= 8 && currentScroll <= 40) {
+        var newImageIndex = Math.floor((currentScroll - 10) / 2.5);
+        if (newImageIndex !== currentImage) {
+          changeImage(newImageIndex);
+        }
+      }
+    }
+
+    document.addEventListener('scroll', handleScroll);
+
+    return () => {
+      document.removeEventListener('scroll', handleScroll);
+    };
+  }, [dotsRef]);
 
   return (
     <div id="pacmanContainer">   
       <img src="arcade.png" id='arcade'/>
       <img src="pacmanScene.jpg" id='scene'/>
         <div id='dotsContainer'>
-          <img src={images[imageIndex]} id="dots"/>
+          <img src={images[imageIndex]} id="dots" ref={dotsRef}/>
         </div>
         <div id="meContainer">
           <div id='topMeContainer'>

@@ -1,12 +1,11 @@
 'use client'
 import React, {useEffect} from 'react';
 
-const Luffy: React.FC = () => {
+const Luffy = () => {
 
   useEffect(() => {
     let gif = document.getElementById("luffy");
 let gifs = ["hatclose.png", "hatmid.png", "hatopen.png"];
-let currentimages = 0;
 let message = document.getElementById("warningMessage");
 let gameIntervalId;
 let startTime;
