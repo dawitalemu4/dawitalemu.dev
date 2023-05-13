@@ -35,7 +35,7 @@ const Navbar: React.FC = () => {
 
   const handleExperienceClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     event.preventDefault();
-    const targetPosition = document.body.scrollHeight * 0.47;
+    const targetPosition = document.body.scrollHeight * 0.50;
     window.scrollTo({
       top: targetPosition,
       left: 0,
@@ -45,7 +45,7 @@ const Navbar: React.FC = () => {
   
   const handleProjectsClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     event.preventDefault();
-    const targetPosition = document.body.scrollHeight * 0.67;
+    const targetPosition = document.body.scrollHeight * 0.72;
     window.scrollTo({
       top: targetPosition,
       left: 0,
@@ -55,7 +55,7 @@ const Navbar: React.FC = () => {
 
   const handleContactClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     event.preventDefault();
-    const targetPosition = document.body.scrollHeight * 1;
+    const targetPosition = document.body.scrollHeight * 0.865;
     window.scrollTo({
       top: targetPosition,
       left: 0,

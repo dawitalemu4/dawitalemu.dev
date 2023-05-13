@@ -10,7 +10,7 @@ const ExperienceText: React.FC = () => {
         Above are some programming langauges and frameworks I use which consists of mainly React.tsx, React Native, Next.js, C#, and Java.
         <br />
         <br />
-        I worked as a full time Full-Stack web developer at Tap In Inc. and interned at Urban Alliance during Summer 2023.
+        I worked as a part time Full-Stack web developer at <a href="https://www.letsalltapin.com/" target="_blank"><span id="TapIn">Let's Tap In LLC</span></a> and interned at Urban Alliance during Summer 2023.
         <br />
         <br />
         <a href="https://docs.google.com/document/d/1VA2JjizgZaup8Hw1dX10K6-6aRnEW3wpa1yVvscN2H4/edit?usp=sharing" target="_blank">
@@ -26,7 +26,7 @@ const ExperienceText: React.FC = () => {
     #experienceContainer {
       display: flex;
       position: absolute;
-      bottom: 0;
+      bottom: 5%;
       left: 5%;
       width: 90%;
       align-items: center;
@@ -67,6 +67,13 @@ const ExperienceText: React.FC = () => {
     text-decoration: underline;
   }
   #Resume:hover {
+    opacity: 0.5;
+  }
+  #TapIn {
+    color: #d6ddf2;
+    text-decoration: underline;
+  }
+  #TapIn:hover {
     opacity: 0.5;
   }
 

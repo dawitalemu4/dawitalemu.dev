@@ -216,6 +216,7 @@ const ContactForm: React.FC = () => {
         #contactButtonsContainer {
           position: absolute;
           top: 0;
+          left: 0;
         }
         #pikachu {
           width: 20%;
