@@ -35,22 +35,28 @@ const Navbar: React.FC = () => {
 
   const handleExperienceClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     event.preventDefault();
-    const targetPosition = document.body.scrollHeight * 0.50;
+  const ExperienceDiv = document.getElementById("Experience");
+  if (ExperienceDiv) {
+    const { top } = ExperienceDiv.getBoundingClientRect();
     window.scrollTo({
-      top: targetPosition,
+      top: window.pageYOffset + top,
       left: 0,
       behavior: 'smooth'
     });
+  }
   };
   
   const handleProjectsClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     event.preventDefault();
-    const targetPosition = document.body.scrollHeight * 0.72;
-    window.scrollTo({
-      top: targetPosition,
-      left: 0,
-      behavior: 'smooth' 
-    });
+    const ProjectsDiv = document.getElementById("Projects");
+    if (ProjectsDiv) {
+      const { top } = ProjectsDiv.getBoundingClientRect();
+      window.scrollTo({
+        top: window.pageYOffset + top + 70,
+        left: 0,
+        behavior: 'smooth'
+      });
+    }
   };
 
   const handleContactClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {

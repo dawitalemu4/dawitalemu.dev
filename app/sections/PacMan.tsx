@@ -1,81 +1,81 @@
 "use client";
 import React from "react";
-import AboutText from "../rcomponents/aboutText";
+import PacMan from "../rcomponents/pacman";
 
-const About: React.FC = () => {
+const PacManSection: React.FC = () => {
   return (
-    <div id="About" className="flex relative">
-      <AboutText />
+    <div id="PacMan" className="flex relative">
+      <PacMan />
       <style>
         {`
-              #About {
+            #PacMan {
+                margin-top: 10vh;
                 height: 150vh;
             }
             @media (max-width: 1800px) and (min-height: 900px) {
-                #About {
+                #PacMan {
                     height: 135vh;
                 }
                 }
             @media (max-width: 1700px) and (min-height: 900px) {
-                #About {
+                #PacMan {
                     height: 100vh;
                 }
                 }
                 @media (max-width: 1500px) and (min-height: 900px) {
-                    #About {
+                    #PacMan {
                         height: 110vh;
                     }
                     }
             @media (max-width: 1370px) {
-            #About {
+            #PacMan {
                 height: 175vh;
             }
             }
             @media (max-width: 1150px) {
-            #About {
+            #PacMan {
                 height: 150vh;
             }
             }
             @media (max-width: 900px) {
-                #About {
+                #PacMan {
                     height: 155vh;
                 }
                 }
             @media (max-width: 750px) {
-            #About {
+            #PacMan {
                 height: 140vh;
             }
             }
             @media (max-width: 670px) {
-                #About {
+                #PacMan {
                     height: 130vh;
                 }
                 }
             @media (max-width: 560px) {
-            #About {
+            #PacMan {
                 height: 100vh;
             }
             }
             @media (max-width: 450px) {
-                #About {
+                #PacMan {
                     height: 85vh;
                 }
                 }
                 @media (max-width: 400px) {
-                    #About {
+                    #PacMan {
                         height: 80vh;
                     }
                     }
             @media (max-height: 660px) {
-                #About {
+                #PacMan {
                     height: 180vh;
             }
         }
-            
             `}
       </style>
     </div>
   );
 };
 
-export default About;
+export default PacManSection;
