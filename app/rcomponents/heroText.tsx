@@ -21,7 +21,7 @@ const HeroText: React.FC = () => {
             padding: 20px;
             }
             h1,h2{
-                font-family: Inter, sans-serif;
+                font-family: Inter;
                 font-weight: 700;
                 color: white;
                 font-size: 3.5rem;
@@ -30,7 +30,7 @@ const HeroText: React.FC = () => {
             animation: fadeInLeft 3s ease forwards;
             }
             h2 {
-                font-family: Inter, sans-serif;
+                font-family: Inter;
                 font-weight: 600;
                 color: white;
                 font-size: 1.8rem;

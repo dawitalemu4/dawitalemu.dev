@@ -24,6 +24,10 @@ const Projects: React.FC = () => {
                                 #Projects {
                                         height: 140vh;
                                     }
+                                    @media (max-width: 400px) {
+                                        #Projects {
+                                                height: 155vh;
+                                            }
             @media (max-height: 650px) {
                 #Projects {
                     height: 180vh;
