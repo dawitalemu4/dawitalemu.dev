@@ -76,10 +76,10 @@ const ProjectsText: React.FC = () => {
             <b>/* <i>Light Mode Portfolio Website</i></b> - Click button on navbar to view progress! (Next.js, React.tsx, TypeScript, Tailwind CSS)
             <br/>
             <br/>
+            <b># <i>Mariam & Gebriel EOTC Website</i></b> - Mariam & Gebriel EOTC -- Leading a team of 5 devs to make a website to give back to our childhood church and learn MEAN stack and TypeScript (In Progress)
+            <br/>
+            <br/>
             <b>/// <i>2D Sonic Platformer</i></b> - Gained experience with physics and animation in Unity Game Engine & C# (30s Demo on <a href="https://github.com/dawitalemu4/sonic" target="_blank"><span id="projectsLi">GitHub</span></a>)
-            <br/>
-            <br/>
-            <b># <i>Cat Island Web Game</i></b> - In Progress (Angular, TypeScript)
             <br/>
             <br/>
             <b>' <i>Additional Side Projects</i></b> - School projects such as VB.NET GUIs, Java, etc. (<a href="https://github.com/dawitalemu4" target="_blank"><span id="projectsLi">Browse My GitHub</span></a>)
