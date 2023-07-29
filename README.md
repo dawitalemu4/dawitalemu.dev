@@ -6,9 +6,7 @@ Coming soon.
 
 Old Website:
 
-<video width="100%" controls>
-    <source src="https://res.cloudinary.com/dxihhuhvk/video/upload/v1690670617/demos/port_ubshur.mp4" type="video/mp4">
-</video>
+https://github.com/dawitalemu4/portfolio/assets/106638403/a0152f2b-4aeb-4f6b-a437-d7b9da755d2a
 
 
 
