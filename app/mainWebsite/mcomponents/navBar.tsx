@@ -5,6 +5,7 @@ import Link from "next/link";
 const Navbar: React.FC = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [textIndex, setTextIndex] = useState(0);
+  
   const texts = [
     "if (developer) {return 'Click Me!'}",
     "for (website++) {return 'Click Me!'}",
@@ -20,7 +21,9 @@ const Navbar: React.FC = () => {
     return () => {
       clearTimeout(timer);
     };
+
   }, [textIndex, texts.length]);
+
 
   const handleHomeClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     event.preventDefault();
@@ -32,6 +35,7 @@ const Navbar: React.FC = () => {
     location.reload();
   };
 
+
   const handleExperienceClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     event.preventDefault();
     const targetPosition = document.body.scrollHeight * 0.47;
@@ -42,6 +46,7 @@ const Navbar: React.FC = () => {
     });
   };
   
+
   const handleProjectsClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     event.preventDefault();
     const targetPosition = document.body.scrollHeight * 0.67;
@@ -51,6 +56,7 @@ const Navbar: React.FC = () => {
       behavior: 'smooth' 
     });
   };
+
 
   const handleContactClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     event.preventDefault();
@@ -62,40 +68,25 @@ const Navbar: React.FC = () => {
     });
   };
 
+
   return (
     <div id="navbar-container" className="flex fixed top-0 w-full h-10 py-10 px-10 items-center text-black">
-      <img
-        id="bars"
-        src="bars.jpg"
-        className={showMenu ? 'block' : 'hidden'}
-        onClick={() => setShowMenu(!showMenu)}
-      />
-      <ul
-        id="navbar-ul" style={{ display: showMenu ? 'flex' : 'none' }}
-        className="flex flex-wrap py-5 px-10 rounded-md ml-auto text-2xl items-center"
-      >
+      <img id="bars" src="bars.jpg" className={showMenu ? 'block' : 'hidden'} onClick={() => setShowMenu(!showMenu)}/>
+      <ul id="navbar-ul" style={{ display: showMenu ? 'flex' : 'none' }} className="flex flex-wrap py-5 px-10 rounded-md ml-auto text-2xl items-center">
         <li id="navbar-home" className="flex-shrink px-5">
-          <a href="/" id="home" className="" onClick={handleHomeClick}>
-            Home
-          </a>
+          <a href="/" id="home" className="" onClick={handleHomeClick}>Home</a>
         </li>
         <li id="navbar-experience" className="flex-shrink px-5">
-          <a href="/" id="experience" className="" onClick={handleExperienceClick}>
-            Experience
-          </a>
+          <a href="/" id="experience" className="" onClick={handleExperienceClick}>Experience</a>
         </li>
         <li id="navbar-projects" className="flex-shrink px-5">
-          <a href="/" id="projects" className="" onClick={handleProjectsClick}>
-            Projects
-          </a>
+          <a href="/" id="projects" className="" onClick={handleProjectsClick}>Projects</a>
         </li>
         <li id="navbar-contact" >
-          <a href="/" id="contact" className="flex-shrink px-5" onClick={handleContactClick}>
-            Contact
-          </a>
+          <a href="/" id="contact" className="flex-shrink px-5" onClick={handleContactClick}>Contact</a>
         </li>
         <li>
-        <Link id="devButton" href="/">{texts[textIndex]}</Link>
+          <Link id="devButton" href="/">{texts[textIndex]}</Link>
         </li>
       </ul>
       <style>
@@ -127,6 +118,7 @@ const Navbar: React.FC = () => {
           transform: scale(1);
           transition: transform 0.5s ease-in-out;
           }
+
           a:hover {
             opacity: 0.5;
           }
@@ -171,6 +163,7 @@ const Navbar: React.FC = () => {
               z-index: 5;
               height: 70px;
             }
+
             #bars {
               cursor: pointer;
               display: flex;
@@ -180,6 +173,7 @@ const Navbar: React.FC = () => {
               top: 1;
               z-index: 4;
             }
+
             #navbar-ul {
               width: 100%;
               display: flex;
@@ -193,33 +187,39 @@ const Navbar: React.FC = () => {
               z-index: 3; 
               border-bottom-left-radius: 30px;
               border-bottom-right-radius: 30px;
-              
             }
+
             #navbar-ul li {
               padding: 6px;
               font-size: 1.5rem;
             }
+
             #navbar-ul a {
               color: white;
             }
+
             #devButton {
               position: static;
               padding: 4px;
               text-align: center;
               margin-top: -5px;
               color: #39FF14 !important;
-              }
+            }
+
             #bars:hover {
               opacity: 0.5;
             }
           }
+
           @media (min-width: 901px) {
             #bars {
               display: none;
             }
+            
             #navbar-ul {
               display: flex !important;
-            }}
+            }
+          }
         `}
       </style>
     </div>

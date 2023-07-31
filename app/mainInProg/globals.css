@@ -2,8 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-  background-color: white;
+html, body{
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  background-color: black;
 }
 body::-webkit-scrollbar {
   width: 0.2em;
