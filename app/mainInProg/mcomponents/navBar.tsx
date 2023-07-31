@@ -138,6 +138,10 @@ const Navbar: React.FC = () => {
             background-color: black;
             border-radius: 10px;
           }
+
+          #MenuBars:hover {
+            opacity: 0;
+          }
         
           #navbar-container {
             background-color: white;
@@ -204,6 +208,11 @@ const Navbar: React.FC = () => {
               #Navbar {
                 display: flex !important;
               }
+
+              #MenuBars {
+                background-color: transparent; 
+              }
+
               #navbar-container { 
                 width: 100%;
                 display: flex !important;

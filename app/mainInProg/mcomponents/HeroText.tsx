@@ -4,23 +4,51 @@ import { HiArrowNarrowDown } from 'react-icons/hi';
 
 const HeroText: React.FC = () => {
 
-    const [heroScrollHeight, setHeroScrollHeight] = useState('');
+    const [heroScrollHeight, setHeroScrollHeight] = useState('0%');
     const heroTextContainerRef = useRef<HTMLDivElement>(null);
+
 
     const handleHeroScroll = () => {
         const heroTextContainer = heroTextContainerRef.current;
         if (!heroTextContainer) return;
-        const totalHeroHeight = heroTextContainer.scrollHeight;
-        const heroScrollPosition = window.scrollY;
-        const heroScrollPercentage = (heroScrollPosition / totalHeroHeight) * 100;
-        setHeroScrollHeight(`${heroScrollPercentage}%`);
+      
+        const containerHeight = heroTextContainer.clientHeight;
+        const containerTop = heroTextContainer.getBoundingClientRect().top;
+        const scrollPosition = window.scrollY;
+
+        const offset = containerHeight * 0.2;
+        const isContainerVisible = containerTop + containerHeight >= offset && containerTop <= window.innerHeight;
+      
+        if (!isContainerVisible) {
+          setHeroScrollHeight('0%');
+        } else {
+          const maxScroll = containerHeight * 0.20; 
+          const heroScrollPercentage = Math.min((scrollPosition / maxScroll) * 50, 100);
+          setHeroScrollHeight(`${heroScrollPercentage}%`);
+          console.log(heroScrollPercentage);
+
+          if (heroScrollPercentage === 100) {
+                const leftContainer = document.getElementById('LeftContainer');
+                const rightContainer = document.getElementById('RightContainer');
+                if (leftContainer) leftContainer.style.display = 'none';
+                if (rightContainer) rightContainer.style.display = 'none';
+            } else {
+                const leftContainer = document.getElementById('LeftContainer');
+                const rightContainer = document.getElementById('RightContainer');
+                if (leftContainer) leftContainer.style.display = 'flex';
+                if (rightContainer) rightContainer.style.display = 'flex';
+            }
+        }
     }
     
     useEffect(() => {
-    window.addEventListener('scroll', handleHeroScroll);
-    return () => {
-        window.removeEventListener('scroll', handleHeroScroll);
-    };
+
+        window.addEventListener('scroll', handleHeroScroll);
+        
+        return () => {
+            window.removeEventListener('scroll', handleHeroScroll);
+        };
+
     }, []);
 
 
@@ -28,17 +56,21 @@ const HeroText: React.FC = () => {
         <div id='HeroText' ref={heroTextContainerRef}>
             <div id='HeroTextContainer'>
                 <div id='LeftContainer'>
-                    <img id='WhiteTriangle' src='whiteTriangle.png' />
-                </div>
-                <div id="HeaderContainer">
-                    <div id="ArrowContainer">
-                        <div id='Arrow'>Scroll Down<HiArrowNarrowDown/></div>
+                    <div id='WhiteTriangleContainer'>
+                        <img id='WhiteTriangle' src='whiteTriangle.png' />
                     </div>
-                    <p id="HeaderText">Dawit Alemu</p>
-                    <p id="HeaderSubText">Full-Stack Software Developer</p>
                 </div>
                 <div id='RightContainer'>
-                    <img id='BlackTriangle' src='blackTriangle.png' />
+                    <div id='BlackTriangleContainer'>
+                        <img id='BlackTriangle' src='blackTriangle.png' />
+                    </div>
+                </div>
+                <div id="ArrowContainer">
+                        <div id='Arrow'>Scroll Down<HiArrowNarrowDown/></div>
+                </div>                
+                <div id="HeaderContainer">
+                    <p id="HeaderText">Dawit Alemu</p>
+                    <p id="HeaderSubText">Full-Stack Software Developer</p>
                 </div>
             </div>
         <style>
@@ -49,7 +81,7 @@ const HeroText: React.FC = () => {
                     display: flex;
                     position: relative;
                     width: 99.7vw;
-                    height: 140vh;
+                    height: 160vh;
                     justify-content: center;
                     align-items: center;
                     background-color: #171717;
@@ -65,7 +97,7 @@ const HeroText: React.FC = () => {
                     left: 0;
                     width: 100%;
                     height: 100%;
-                    flex-direction: row;
+                    flex-direction: column;
                     justify-content: center;
                     align-items: center;
                 }
@@ -73,24 +105,27 @@ const HeroText: React.FC = () => {
                 #LeftContainer, #RightContainer {
                     display: flex;
                     position: absolute;
-                    width: 150%;
                     height: 100%;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
+                    width: 100%;
+                    background-color: transparent;
                     z-index: 3;
-                    border: 1px solid red;
                 }
 
                 #LeftContainer { left: calc(0.1% - var(--heroScrollHeight)); }
         
                 #RightContainer { right: calc(0.1% - var(--heroScrollHeight)); }
 
+                #WhiteTriangleContainer, #BlackTriangleContainer {
+                    display: flex;
+                    position: fixed;
+                    top: 0;
+                    height: 100vh;
+                    width: 105vw;
+                }
+
                 #BlackTriangle, #WhiteTriangle {
-                    position: absolute;
                     height: 100%;
-                    width: 150%;
-                    border: 1px solid blue;
+                    width: 100%;
                 }
 
                 #HeaderContainer {
@@ -101,7 +136,7 @@ const HeroText: React.FC = () => {
                     flex-direction: column;
                     justify-content: center;
                     align-items: center;
-                    z-index: 3;
+                    z-index: 2;
                     color: white;
                 }
 

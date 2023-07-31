@@ -1,8 +1,14 @@
+This website was a breath of fresh creative air after doing websites for work all summer. Even though work websites are fun, this project had challenges I've never solved before, which is an experience I don't want to become rare! Check out all the videos below.
+
 # Demos:
 
 New Webiste:
 
 Coming soon.
+
+In Progress Videos:
+
+https://github.com/dawitalemu4/portfolio/assets/106638403/cc7a5b52-7fb7-4fa6-9738-3389c6b2ef03
 
 Old Website:
 
