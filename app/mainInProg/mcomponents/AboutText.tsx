@@ -19,7 +19,6 @@ const AboutText: React.FC = () => {
       
         if (!isContainerVisible) {
           setAboutScrollHeight('0%');
-            setIsVisible(false);
         } else {
           const maxScroll = containerHeight * 2;
           const aboutScrollPercentage = Math.min((scrollPosition / maxScroll) * 100, 100);
@@ -149,8 +148,8 @@ const AboutText: React.FC = () => {
 
                 #AboutTitle {
                     color: black;
-                    font-size: calc(550 * var(--aboutScrollHeight));
-                    transform: translateY(calc(0.1 * var(--aboutScrollHeight))) translateX(calc(-1 * (0.123 * var(--aboutScrollHeight))));
+                    font-size: calc(400 * var(--aboutScrollHeight));
+                    transform: translateY(calc(0.1 * var(--aboutScrollHeight))) translateX(calc(-1 * (0.09 * var(--aboutScrollHeight))));
                 }
 
                 @media (max-width: 1000px) {
@@ -172,6 +171,11 @@ const AboutText: React.FC = () => {
                     #AboutImageContainer { width: 100%; height: 20%; }
 
                     #AboutImage { width: 70%; height: 70%; }
+
+                    #AboutTitle {
+                        font-size: calc(300 * var(--aboutScrollHeight));
+                        transform: translateY(calc(0.4 * var(--aboutScrollHeight))) translateX(calc(-1 * (0.1 * var(--aboutScrollHeight))));
+                    }
                 }
 
             `}

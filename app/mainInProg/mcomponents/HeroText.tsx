@@ -142,13 +142,13 @@ const HeroText: React.FC = () => {
 
                 #HeaderText { 
                     font-size: 100px; 
-                    opacity: calc(var(--heroScrollHeight)); 
+                    opacity: calc(20% + var(--heroScrollHeight)); 
                     text-align: center; 
                 }
 
                 #HeaderSubText { 
                     font-size: 30px; 
-                    opacity: calc(var(--heroScrollHeight)); 
+                    opacity: calc(20% + var(--heroScrollHeight)); 
                     text-align: center; 
                 }
 
