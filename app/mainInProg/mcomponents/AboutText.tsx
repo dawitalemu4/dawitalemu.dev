@@ -162,7 +162,7 @@ const AboutText: React.FC = () => {
 
                     #AboutParagraphContainer { 
                         width: 95%;
-                        height: 20%;
+                        height: 21%;
                         text-align: center;
                     }
 

@@ -12,11 +12,11 @@ const ExperienceText: React.FC = () => {
                 <div id="ExperienceAndSkillsContainer">
                     <div id='ExperienceParagraphContainer'>
                         <p id='ExperienceParagraph'>
-                            In Summer 2023, I interned at Urban Alliance as a Front End Engineer and created a website for a partner companies main website using React, Gatsby.js, and JavaScript.
+                            In Summer 2023, I interned at Urban Alliance as a Front End Engineer and created a website for a partner company's main website using React, Gatsby.js, and JavaScript.
                             <br/><br/>
                             I also completed multiple contracts during Summer 2023, but the most notable one is a website I built for my childhood church, where I led a team of 6 junior developers and taught/learned Angular.
                             <br/><br/>
-                            All of these skills have a project I created with them. Keep scrolling for more in-depth information about all my work!
+                            All of these skills have a project I created with them. <b>Keep scrolling</b> for more in-depth information about all my work!
                             <br/><br/>
                             <a id='ResumeLink' href="https://docs.google.com/document/d/1VA2JjizgZaup8Hw1dX10K6-6aRnEW3wpa1yVvscN2H4/edit?usp=sharing" target="_blank">Click me to view Dawit's resume!</a>
                         </p>
@@ -218,6 +218,7 @@ const ExperienceText: React.FC = () => {
                 #SkillsHeader, #DoubleSkillsHeader {
                     font-size: 20px;
                     text-align: center;
+                    font-weight: bold;
                 }
 
                 #SkillsRowContainer {
@@ -276,15 +277,17 @@ const ExperienceText: React.FC = () => {
 
                     #ExperienceHeaderContainer { width: 90%;  }
 
-                    #ExperienceHeader { font-size: 60px; text-align: center; }
+                    #ExperienceHeader { font-size: 51px; text-align: center; }
 
                     #ExperienceAndSkillsContainer { flex-direction: column; justify-content: flex-start; }
 
-                    #ExperienceParagraphContainer { width: 95%; height: 40%; margin-bottom: 5vh; }
+                    #ExperienceParagraphContainer { width: 95%; height: 45%; margin-bottom: 5vh; }
 
                     #ExperienceParagraph { font-size: 16px; text-align: center; }
 
                     #SkillsContainer { width: 90%; height: 50%; }
+
+                    #DoubleSkillListContainer { margin-bottom: 15px; }
 
                     #SkillsHeader, #DoubleSkillsHeader { font-size: 18px; }
 
