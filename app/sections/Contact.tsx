@@ -20,9 +20,9 @@ const Contact: React.FC = () => {
                 </div>
                 <div id="ContactBodyContainer">
                     <div id="ContactIconsConatiner">
-                        <a id="ContactEmail"><img id="EmailIcon" src="mail.png" /></a>
-                        <a id="ContactLinkedin"><img id="LinkedinIcon" src="in.png" /></a>
-                        <a id="ContactGitHub"><img id="GitHubIcon" src="github.jpg" /></a>
+                        <a id="ContactEmail" href='https://mail.google.com/mail?view=cm&fs=1&to=dndawita@gmail.com&su=Draft' target='blank'><img id="EmailIcon" src="mail.png" /></a>
+                        <a id="ContactLinkedin" href='https://www.linkedin.com/in/dawit-alemu4' target='blank'><img id="LinkedinIcon" src="in.png" /></a>
+                        <a id="ContactGitHub" href="https://github.com/dawitalemu4" target='blank'><img id="GitHubIcon" src="github.jpg" /></a>
                     </div>
                     <div id="ContactButtonContainer">
                         <p id="ContactButtonText">Click the arrow to see it all in reverse!</p>

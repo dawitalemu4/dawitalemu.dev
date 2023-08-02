@@ -187,8 +187,11 @@ const Hero: React.FC = () => {
                 }
 
                 @media (max-width: 1000px) {
-                    #Header { font-size: 60px; }
+
+                    #HeaderText { font-size: 60px; }
+
                     #HeaderSubText { font-size: 22px; }
+                    
                     #Arrow { font-size: 30px; }
 
                     @keyframes arrow {

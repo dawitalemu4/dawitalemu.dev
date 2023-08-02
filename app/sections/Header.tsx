@@ -18,9 +18,9 @@ const Navbar: React.FC = () => {
 
 
   const texts = [
-    "if (developer) {return 'Click Me!'}",
-    "for (website++) {return 'Click Me!'}",
-    "for (darkMode) {return 'Click Me!'}",
+    "if (SWE || dev) {return 'Click Me!'}",
+    "for (docs+more) {return 'Click Me!'}",
+    "for (miniGames) {return 'Click Me!'}",
   ];
 
 
@@ -50,9 +50,11 @@ const Navbar: React.FC = () => {
 
   const handleExperienceClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     event.preventDefault();
-    const targetPosition = document.body.scrollHeight * 0.47;
+    const experiencePosition = document.getElementById('Experience');
+    if (!experiencePosition) return;
+
     window.scrollTo({
-      top: targetPosition,
+      top: experiencePosition.offsetTop,
       left: 0,
       behavior: 'smooth'
     });
@@ -61,9 +63,11 @@ const Navbar: React.FC = () => {
 
   const handleProjectsClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     event.preventDefault();
-    const targetPosition = document.body.scrollHeight * 0.67;
+    const projectsPosition = document.getElementById('Projects');
+    if (!projectsPosition) return;
+    
     window.scrollTo({
-      top: targetPosition,
+      top: projectsPosition.offsetTop,
       left: 0,
       behavior: 'smooth' 
     });
@@ -84,23 +88,23 @@ const Navbar: React.FC = () => {
   return (
     <div id="Navbar" onMouseOver={handleHover} onMouseOut={handleLeave}>
       <img id="MenuBars" src="bars.jpg" style={{display: hovered ? 'none' : 'flex'}}/>
-      <div id="navbar-container" className="flex fixed top-0 w-full h-10 py-10 px-10 items-center text-black" style={{ display: hovered ? "flex" : "none"}}>
-        <img id="bars" src="bars.jpg" className={showMenu ? 'flex' : 'hidden'} onClick={() => setShowMenu(!showMenu)}/>
-        <ul id="navbar-ul" style={{ display: showMenu ? 'flex' : 'none' }} className="flex flex-wrap py-5 px-10 rounded-md ml-auto text-2xl items-center">
-          <li id="navbar-home" className="flex-shrink px-5">
+      <div id="NavbarContainer" className="flex fixed top-0 w-full h-10 py-10 px-10 items-center text-black" style={{ display: hovered ? "flex" : "none"}}>
+        <img id="Bars" src="bars.jpg" className={showMenu ? 'flex' : 'hidden'} onClick={() => setShowMenu(!showMenu)}/>
+        <ul id="NavbarListContainer" style={{ display: showMenu ? 'flex' : 'none' }} className="flex flex-wrap py-5 px-10 rounded-md ml-auto text-2xl items-center">
+          <li id="NavbarHome" className="flex-shrink px-5">
             <a href="/" id="home" className="" onClick={handleHomeClick}>Home</a>
           </li>
-          <li id="navbar-experience" className="flex-shrink px-5">
+          <li id="NanvarExperience" className="flex-shrink px-5">
             <a href="/" id="experience" className="" onClick={handleExperienceClick}>Experience</a>
           </li>
-          <li id="navbar-projects" className="flex-shrink px-5">
+          <li id="NavbarProjects" className="flex-shrink px-5">
             <a href="/" id="projects" className="" onClick={handleProjectsClick}>Projects</a>
           </li>
-          <li id="navbar-contact" >
+          <li id="NavbarContact" >
             <a href="/" id="contact" className="flex-shrink px-5" onClick={handleContactClick}>Contact</a>
           </li>
           <li>
-            <Link id="devButton" href="/">{texts[textIndex]}</Link>
+            <Link id="DevButton" href="/docs">{texts[textIndex]}</Link>
           </li>
         </ul>
         <style>
@@ -143,7 +147,7 @@ const Navbar: React.FC = () => {
             opacity: 0;
           }
         
-          #navbar-container {
+          #NavbarContainer {
             background-color: white;
             font-family: Inter, sans-serif;
             font-weight: 500;
@@ -152,7 +156,7 @@ const Navbar: React.FC = () => {
             animation: dropdown 0.3s ease-in-out;
           }
 
-          #devButton {
+          #DevButton {
             font-family: Courier New, Courier, monospace;
             color: #39FF14;
             border: 1px solid #171717;
@@ -177,28 +181,28 @@ const Navbar: React.FC = () => {
             }
 
             @media (max-width: 1177px) and (min-width: 900px) {
-              #devButton {
+              #DevButton {
                 transform: scale(0.8) translateX(-70px);
                 transition: transform 0.4s ease-in-out;  
               }
             }
 
             @media (max-width: 1048px) and (min-width: 900px){
-              #devButton {
+              #DevButton {
                 transform: scale(0.7) translateX(-150px);
                 transition: transform 0.4s ease-in-out;  
               }
             }
 
             @media (max-width: 953px) and (min-width: 900px){
-              #devButton {
+              #DevButton {
                 transform: scale(0.6) translateX(-200px);
                 transition: transform 0.4s ease-in-out;  
               }
             }
 
             @media (max-width: 916px) and (min-width: 900px){
-              #devButton {
+              #DevButton {
                 transform: scale(0.6) translateX(-250px);
                 transition: transform 0.4s ease-in-out;  
               }
@@ -213,7 +217,7 @@ const Navbar: React.FC = () => {
                 background-color: transparent; 
               }
 
-              #navbar-container { 
+              #NavbarContainer { 
                 width: 100%;
                 display: flex !important;
                 justify-content: center;
@@ -225,7 +229,7 @@ const Navbar: React.FC = () => {
                 height: 70px;
               }
 
-              #bars {
+              #Bars {
                 cursor: pointer;
                 display: flex;
                 width: 70px;
@@ -235,7 +239,7 @@ const Navbar: React.FC = () => {
                 z-index: 4;
               }
 
-              #navbar-ul {
+              #NavbarListContainer {
                 width: 100%;
                 display: flex;
                 flex-direction: column;
@@ -250,16 +254,16 @@ const Navbar: React.FC = () => {
                 border-bottom-right-radius: 30px;
               }
 
-              #navbar-ul li {
+              #NavbarListContainer li {
                 padding: 6px;
                 font-size: 1.5rem;
               }
 
-              #navbar-ul a {
+              #NavbarListContainer a {
                 color: white;
               }
 
-              #devButton {
+              #DevButton {
                 position: static;
                 padding: 4px;
                 text-align: center;
@@ -267,17 +271,17 @@ const Navbar: React.FC = () => {
                 color: #39FF14 !important;
               }
 
-              #bars:hover {
+              #Bars:hover {
                 opacity: 0.5;
               }
             }
 
             @media (min-width: 901px) {
-              #bars {
+              #Bars {
                 display: none;
               }
               
-              #navbar-ul {
+              #NavbarListContainer {
                 display: flex !important;
               }
             }

@@ -15,7 +15,7 @@ const Projects: React.FC = () => {
 
         setEffectToggle(!effectToggle);
 
-        if (effectToggle == false) {
+        if (effectToggle === false) {
             setEffectText('On');
         } else {
             setEffectText('Off');
