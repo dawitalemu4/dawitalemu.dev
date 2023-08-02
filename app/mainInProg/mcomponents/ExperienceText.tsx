@@ -108,7 +108,7 @@ const ExperienceText: React.FC = () => {
                                     <p id='SkillsHeader'>Miscellaneous</p>
                                 </div>
                                 <div id='SkillsRowContainer'>
-                                    <div id='BottomSkillsRowItem'><a id="githubIcon" href="https://github.com/dawitalemu4" target="_blank"><img id="ItemLogo" src="github.jpg" />GitHub</a></div>
+                                    <div id='BottomSkillsRowItem'><a id="GitHubA" href="https://github.com/dawitalemu4" target="_blank"><img id="GitHubItemLogo" src="github.jpg" />GitHub</a></div>
                                     <div id='BottomSkillsRowItem'><img id="ItemLogo" src="git.png" />Git</div>
                                     <div id='BottomSkillsRowItem'><img id="ItemLogo" src="gcp.jpg" />Google Cloud</div>
                                     <div id='BottomSkillsRowItem'><img id="ItemLogo" src="bash.png" />Bash</div>
@@ -163,7 +163,7 @@ const ExperienceText: React.FC = () => {
 
                 #ExperienceHeader {
                     font-size: 50px;
-                    font-weight: bold;
+                    font-family: InterBold;
                 }
 
                 #ExperienceAndSkillsContainer {
@@ -198,6 +198,7 @@ const ExperienceText: React.FC = () => {
                 }
 
                 #ExperienceParagraph {
+                    font-family: Inter;
                     font-size: 20px;
                 }
 
@@ -257,7 +258,7 @@ const ExperienceText: React.FC = () => {
                 #SkillsHeader, #DoubleSkillsHeader {
                     font-size: 20px;
                     text-align: center;
-                    font-weight: bold;
+                    font-family: InterSemi;
                 }
 
                 #SkillsRowContainer {
@@ -289,6 +290,7 @@ const ExperienceText: React.FC = () => {
                     align-items: center;
                     object-fit: contain;
                     text-align: center;
+                    font-family: Inter;
                     transform: translateY(calc(0.8 * var(--experienceScrollHeight)));
                 }
 
@@ -300,7 +302,7 @@ const ExperienceText: React.FC = () => {
 
                 #BottomSkillsRowItem { transform: translateY(calc(0.7 * var(--experienceScrollHeight))); }
 
-                #ItemLogo {
+                #ItemLogo, #GitHubItemLogo {
                     width: 90px;
                     height: 90px;
                     margin-bottom: 10px;
@@ -312,9 +314,15 @@ const ExperienceText: React.FC = () => {
                     margin-bottom: 10px;
                 }
 
-                #ItemLogo:hover, #DoubleItemLogo:hover { transform: scale(1.1); }
+                #ItemLogo:hover, #DoubleItemLogo:hover, #GitHubA:hover { transform: scale(1.1); }
 
-                #ResumeLink { font-size: 22px; text-decoration: underline; }
+                #GitHubA {
+                    width
+                    font-size: 16px;
+                    text-decoration: underline;
+                }
+
+                #ResumeLink { font-size: 22px; font-family: InterSemi; text-decoration: underline; }
 
                 @media (max-width: 1000px) {
                     
@@ -336,13 +344,17 @@ const ExperienceText: React.FC = () => {
 
                     #SkillsHeader, #DoubleSkillsHeader { font-size: 18px; }
 
-                    #SkillsRowItem, #BottomSkillsRowItem { font-size: 11px; }
+                    #SkillsRowItem, #BottomSkillsRowItem { font-size: 11px; margin-top: -10px; }
 
                     #DoubleSkillsRowItem { font-size: 11px; }
                     
-                    #ItemLogo { width: 60px; height: 60px; padding: 0px 3px; }
+                    #ItemLogo, #GitHubItemLogo { width: 60px; height: 60px; padding: 0px 3px; }
 
                     #DoubleItemLogo { width: 65px; height: 65px; }
+
+                    #GitHubA { font-size: 11px; }
+
+                    #ResumeLink { font-size: 18px; }
                 }
 
             `}

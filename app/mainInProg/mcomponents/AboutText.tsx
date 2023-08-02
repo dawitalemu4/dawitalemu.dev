@@ -4,7 +4,6 @@ import React, { useState, useEffect, useRef } from 'react';
 const AboutText: React.FC = () => {
 
     const [aboutScrollHeight, setAboutScrollHeight] = useState('0%');
-    const [isVisible, setIsVisible] = useState(false);
     const aboutTextContainerRef = useRef<HTMLDivElement>(null);
 
     const handleAboutScroll = () => {
@@ -24,7 +23,6 @@ const AboutText: React.FC = () => {
           const aboutScrollPercentage = Math.min((scrollPosition / maxScroll) * 100, 100);
           setAboutScrollHeight(`${aboutScrollPercentage}%`);
           console.log(aboutScrollPercentage);
-          setIsVisible(true);
         }
     }
     
@@ -41,7 +39,7 @@ const AboutText: React.FC = () => {
 
     return (
         <div id='AboutText' ref={aboutTextContainerRef}>
-            <div id="AboutTextContainer" style={{ animation: isVisible ? 'fadeIn 2.5s ease-in-out' : 'none' }}>
+            <div id="AboutTextContainer">
                 <div id="AboutParagraphContainer">
                     <p id='AboutParagraph'>Hello! My name is Dawit Alemu and I'm currently a junior at Towson University who loves to self-teach software development. 
                     <br/><br/> I'm mainly interested in full-stack web development, but open to learning new things. <br/><br/> Keep scrolling!</p>
@@ -69,17 +67,6 @@ const AboutText: React.FC = () => {
                     background-color: white;
                     overflow: hidden;
                     z-index: 6;
-                }
-
-                @keyframes fadeIn { 
-                    0% {
-                        top: 50px;
-                        opacity: 0;
-                    } 
-                    100% {
-                        top: 0;
-                        opacity: 1;
-                    }
                 }
 
                 #AboutTextContainer {
@@ -148,6 +135,7 @@ const AboutText: React.FC = () => {
 
                 #AboutTitle {
                     color: black;
+                    font-family: InterSemi;
                     font-size: calc(400 * var(--aboutScrollHeight));
                     transform: translateY(calc(0.1 * var(--aboutScrollHeight))) translateX(calc(-1 * (0.09 * var(--aboutScrollHeight))));
                 }

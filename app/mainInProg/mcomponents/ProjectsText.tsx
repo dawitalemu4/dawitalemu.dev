@@ -7,7 +7,20 @@ import { IoIosPaper } from 'react-icons/io';
 const ProjectsText: React.FC = () => {
 
     const [projectScrollHeight, setProjectScrollHeight] = useState('0%');
+    const [effectToggle, setEffectToggle] = useState(true);
+    const [effectText, setEffectText] = useState('On');
     const projectTextContainerRef = useRef<HTMLDivElement>(null);
+
+    const toggleEffect = () => {
+
+        setEffectToggle(!effectToggle);
+
+        if (effectToggle == false) {
+            setEffectText('On');
+        } else {
+            setEffectText('Off');
+        }
+    }
 
     const handleProjectScroll = () => {
         const projectTextContainer = projectTextContainerRef.current;
@@ -22,7 +35,7 @@ const ProjectsText: React.FC = () => {
         if (!isContainerVisible) {
           setProjectScrollHeight('0%');
         } else {
-          const maxScroll = containerHeight * 2;
+          const maxScroll = containerHeight * 2.5;
           const projectScrollPercentage = Math.min((scrollPosition / maxScroll) * 100, 100);
           setProjectScrollHeight(`${projectScrollPercentage}%`);
           console.log(projectScrollPercentage);
@@ -45,6 +58,7 @@ const ProjectsText: React.FC = () => {
             <div id="ProjectsTextContainer">
                 <div id="ProjectsHeaderContainer">
                     <p id="ProjectsHeader">Projects</p>
+                    <button id="ProjectsHeaderToggle" onClick={toggleEffect}>Effect: {effectText}</button>
                 </div>
                 <div id="ProjectsListContainer">
                     <div id="Project1">
@@ -68,6 +82,7 @@ const ProjectsText: React.FC = () => {
                                     <img id="StackIcon" src="angular.jpg" />
                                     <img id="StackIcon" src="firebase.png" />
                                     <img id="StackIcon" src="gcp.jpg" />
+                                    <img id="StackIconTS" src="ts.jpg" />
                                 </div>
 
                             </div>
@@ -104,9 +119,9 @@ const ProjectsText: React.FC = () => {
                                 <div id="Project2StackContainer">
                                     <img id="StackIcon" src="react.png" />
                                     <img id="StackIcon" src="expo.png" />
-                                    <img id="StackIcon" src="js.png" />
                                     <img id="StackIcon" src="mongo.png" />
                                     <img id="StackIcon" src="node.png" />
+                                    <img id="StackIconJS" src="js.png" />
                                 </div>
 
                             </div>
@@ -143,7 +158,7 @@ const ProjectsText: React.FC = () => {
                                 <div id="Project3StackContainer">
                                     <img id="StackIcon" src="react.png" />
                                     <img id="StackIcon" src="next.png" />
-                                    <img id="StackIcon" src="ts.jpg" />
+                                    <img id="StackIconTS" src="ts.jpg" />
                                 </div>
 
                             </div>
@@ -183,7 +198,7 @@ const ProjectsText: React.FC = () => {
                                 <div id="Project4StackContainer">
                                     <img id="StackIcon" src="react.png" />
                                     <img id="StackIcon" src="gatsby.webp" />
-                                    <img id="StackIcon" src="js.png" />
+                                    <img id="StackIconJS" src="js.png" />
                                 </div>
 
                             </div>
@@ -235,25 +250,25 @@ const ProjectsText: React.FC = () => {
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </div>                
+                </div>                    
                 <div id="MoreContainer">
-                    <p id="More">And More... Browse My GitHub or Visit the Docs Page for Devs!</p>
+                    <p id="More">And More... Browse My <a id='MoreGitHub' href=''>GitHub</a> or Visit the <a id='DocsA' href=''>Docs Page for Devs</a>!</p>
                 </div>
             </div>
         <style>
             {` 
 
-                :root { --projectScrollHeight: ${projectScrollHeight}; }
-
                 #ProjectsText {
                     display: flex;
                     position: relative;
                     width: 99.7vw;
-                    height: 280vh;
+                    height: 285vh;
+                    padding-bottom: 5vh;
                     background-color: white;
                     justify-content: center;
                     align-items: center;
+                    overflow: hidden;
                     z-index: 8;
                 }
 
@@ -271,7 +286,8 @@ const ProjectsText: React.FC = () => {
                     display: flex;
                     position: relative;
                     width: 100%;
-                    height: 10%;
+                    height: 8%;
+                    padding-top: 1%;
                     justify-content: center;
                     align-items: center;
                 }
@@ -279,7 +295,14 @@ const ProjectsText: React.FC = () => {
                 #ProjectsHeader {
                     font-size: 50px;
                     color: black;
-                    font-weight: bold;
+                    font-family: InterBold;
+                }
+
+                #ProjectsHeaderToggle {
+                    display: flex;
+                    position: absolute;
+                    top: 20%;
+                    right: 5%;
                 }
 
                 #ProjectsListContainer {
@@ -297,13 +320,38 @@ const ProjectsText: React.FC = () => {
                     position: relative;
                     width: 90%;
                     height: 19%;
-                    margin-bottom: 1%;
+                    margin-top: 1%;
                     flex-direction: row;
                     justify-content: center;
                     align-items: center;
                     background-color: black;
                     border-radius: 25px;
                     border: 3px solid #ccc;
+                }
+
+                #Project1 {
+                    left: ${effectToggle ? '50%' : '0'};
+                    transform: ${effectToggle ? `translateX(calc(-1.2 * ${projectScrollHeight}))` : 'none'};
+                }
+                
+                #Project2 {
+                    right: ${effectToggle ? '60%' : '0'};
+                    transform: ${effectToggle ? `translateX(calc(1.1 * ${projectScrollHeight}))` : 'none'};
+                }
+
+                #Project3 {
+                    left: ${effectToggle ? '70%' : '0'};
+                    transform: ${effectToggle ? `translateX(calc(-1.05 * ${projectScrollHeight}))` : 'none'};
+                }
+
+                #Project4 {
+                    right: ${effectToggle ? '80%' : '0'};
+                    transform: ${effectToggle ? `translateX(calc(1 * ${projectScrollHeight}))` : 'none'};
+                }
+
+                #Project5 {
+                    left: ${effectToggle ? '90%' : '0'};
+                    transform: ${effectToggle ? `translateX(calc(-1 * ${projectScrollHeight}))` : 'none'};
                 }
 
                 #Project1LeftContainer, #Project2LeftContainer, #Project3LeftContainer, #Project4LeftContainer, #Project5LeftContainer {
@@ -367,6 +415,7 @@ const ProjectsText: React.FC = () => {
                 #Project1Header, #Project2Header, #Project3Header, #Project4Header, #Project5Header {
                     font-size: 30px;
                     color: white;
+                    font-family: InterSemi;
                     text-align: center;
                 }
 
@@ -396,6 +445,7 @@ const ProjectsText: React.FC = () => {
                 #Project1Paragraph, #Project2Paragraph, #Project3Paragraph, #Project4Paragraph, #Project5Paragraph {
                     font-size: 16px;
                     color: white;
+                    font-family: Inter;
                     text-align: left;
                 }
 
@@ -408,11 +458,13 @@ const ProjectsText: React.FC = () => {
                     align-items: center;
                 }
 
-                #StackIcon {
+                #StackIcon, #StackIconTS, #StackIconJS {
                     height: 80%;
                     margin-left: 3px;
                     margin-right: 3px;
                 }
+
+                #StackIconTS, #StackIconJS { margin-left: 7px; }
 
                 #Project1IconsContainer, #Project2IconsContainer, #Project3IconsContainer, #Project4IconsContainer, #Project5IconsContainer {
                     display: flex;
@@ -443,6 +495,7 @@ const ProjectsText: React.FC = () => {
                     align-items: center;
                     color: white;
                     font-size: 12px;
+                    font-family: Inter;
                     text-align: center;
                 }
 
@@ -453,17 +506,26 @@ const ProjectsText: React.FC = () => {
 
                 #MoreContainer {
                     display: flex;
-                    position: relative;
+                    position: absolute;
+                    bottom: -3vh;
                     width: 100%;
-                    margin-top: -1%;
-                    margin-bottom: 1%;
+                    height: 5vh;
                     justify-content: center;
                     text-align: center;
+                    align-items: center;
                 }
 
-                @media (max-width: 1000px) { 
+                #DocsA, #MoreGitHub {
+                    text-decoration: underline;
+                }
 
-                    #Project1, #Project2, #Project3, #Project4, #Project5 { width: 95%; margin-bottom: 3%;  overflow: scroll; }
+                @media (max-width: 900px) { 
+
+                    #ProjectsHeaderToggle {
+                        top: 15%;
+                    }
+
+                    #Project1, #Project2, #Project3, #Project4, #Project5 { width: 95%; margin-bottom: 3%; }
 
                     #Project1LeftContainer, #Project2LeftContainer, #Project3LeftContainer, #Project4LeftContainer, #Project5LeftContainer { display: none; }
 
@@ -487,6 +549,31 @@ const ProjectsText: React.FC = () => {
                     }
 
                     #GithubIconContainer, #RedirectIconContainer, #DocsIconContainer { width: 33%; height: 100%; }
+
+                    #Project1 {
+                        left: ${effectToggle ? '55%' : '0'};
+                        transform: ${effectToggle ? `translateX(calc(-1.2 * ${projectScrollHeight}))` : 'none'};
+                    }
+                    
+                    #Project2 {
+                        right: ${effectToggle ? '65%' : '0'};
+                        transform: ${effectToggle ? `translateX(calc(1.1 * ${projectScrollHeight}))` : 'none'};
+                    }
+    
+                    #Project3 {
+                        left: ${effectToggle ? '75%' : '0'};
+                        transform: ${effectToggle ? `translateX(calc(-1.05 * ${projectScrollHeight}))` : 'none'};
+                    }
+    
+                    #Project4 {
+                        right: ${effectToggle ? '85%' : '0'};
+                        transform: ${effectToggle ? `translateX(calc(1 * ${projectScrollHeight}))` : 'none'};
+                    }
+    
+                    #Project5 {
+                        left: ${effectToggle ? '95%' : '0'};
+                        transform: ${effectToggle ? `translateX(calc(-1 * ${projectScrollHeight}))` : 'none'};
+                    }
                 }
             `}
         </style>

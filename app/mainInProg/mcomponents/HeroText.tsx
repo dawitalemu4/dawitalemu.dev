@@ -85,7 +85,6 @@ const HeroText: React.FC = () => {
                     justify-content: center;
                     align-items: center;
                     background-color: #171717;
-                    font-family: Inter;
                     z-index: 5;
                     user-select: none;
                 }
@@ -142,12 +141,14 @@ const HeroText: React.FC = () => {
 
                 #HeaderText { 
                     font-size: 100px; 
+                    font-family: InterBold;
                     opacity: calc(20% + var(--heroScrollHeight)); 
                     text-align: center; 
                 }
 
                 #HeaderSubText { 
                     font-size: 30px; 
+                    font-family: InterSemi;
                     opacity: calc(20% + var(--heroScrollHeight)); 
                     text-align: center; 
                 }
