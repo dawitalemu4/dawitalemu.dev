@@ -105,12 +105,12 @@ const AboutText: React.FC = () => {
 
                 #AboutParagraphContainer::-webkit-scrollbar {
                     width: 5px;
-                    background: transparent;
+                    background-color: transparent;
                 }
 
                 #AboutParagraphContainer::-webkit-scrollbar-thumb {
-                    color: #ccc;
-                    border-radius: 20px;
+                    background-color: #ccc;
+                    border-radius: 10px;
                 }
 
                 #AboutParagraph {

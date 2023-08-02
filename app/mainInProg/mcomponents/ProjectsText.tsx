@@ -57,21 +57,23 @@ const ProjectsText: React.FC = () => {
                             <div id="Project1ParagraphContainer">
 
                                 <div id="Project1HeaderContainer">
-                                    <p id="Project1Header">Debre Tsion Mariam & Gabriel Church</p>
+                                    <p id="Project1Header">Debre Tsion Church</p>
                                 </div>
                                 
-                                <p id='Project1Paragraph'>A website for Debre Tsion Church made by a team of 7 student developers to give back to our childhood church led by Dawit Alemu. Created with Angular, Firebase, and TypeScript. Live production at https://debretsion.org/en.</p>
+                                <div id="Project1TextContainer">
+                                    <p id='Project1Paragraph'>A website for Debre Tsion Church made by a team of 7 student developers to give back to our childhood church led by Dawit Alemu. Created with Angular, Firebase, and TypeScript.</p>
+                                </div>  
 
                                 <div id="Project1StackContainer">
-                                    <img id="StackIcon" src="" />
-                                    <img id="StackIcon" src="" />
-                                    <img id="StackIcon" src="" />
+                                    <img id="StackIcon" src="angular.jpg" />
+                                    <img id="StackIcon" src="firebase.png" />
+                                    <img id="StackIcon" src="gcp.jpg" />
                                 </div>
 
                             </div>
                             <div id="Project1IconsContainer">
                                 <div id="GithubIconContainer">
-                                    <a id="GithubLink" href=""> <VscGithubAlt id='GithubIcon' />GitHub <br/> (Video Demos)</a>
+                                    <a id="GithubLink" href=""> <VscGithubAlt id='GithubIcon' />Video Demos</a>
                                 </div>
                                 <div id="RedirectIconContainer">
                                     <a id="RedirectLink" href=""> <CiShare1 id='RedirectIcon' />View Site</a>
@@ -95,18 +97,22 @@ const ProjectsText: React.FC = () => {
                                     <p id="Project2Header">Misplaced</p>
                                 </div>
 
-                                <p id='Project2Paragraph'></p>
+                                <div id="Project2TextContainer">
+                                    <p id='Project2Paragraph'>Misplaced is a digitalized lost and found platform for TU students to retrieve lost items by posting information through an intuitive React Native UI and connecting with potential finders. Utilizes MERN stack and Google Cloud APIs.</p>
+                                </div>
 
-                                <div id="Project1StackContainer">
-                                    <img id="StackIcon" src="" />
-                                    <img id="StackIcon" src="" />
-                                    <img id="StackIcon" src="" />
+                                <div id="Project2StackContainer">
+                                    <img id="StackIcon" src="react.png" />
+                                    <img id="StackIcon" src="expo.png" />
+                                    <img id="StackIcon" src="js.png" />
+                                    <img id="StackIcon" src="mongo.png" />
+                                    <img id="StackIcon" src="node.png" />
                                 </div>
 
                             </div>
                             <div id="Project2IconsContainer">
                                 <div id="GithubIconContainer">
-                                    <a id="GithubLink" href=""> <VscGithubAlt id='GithubIcon' />GitHub <br/> (Video Demos)</a>
+                                    <a id="GithubLink" href=""> <VscGithubAlt id='GithubIcon' />Video Demos</a>
                                 </div>
                                 <div id="RedirectIconContainer">
                                     <a id="RedirectLink" href=""> <CiShare1 id='RedirectIcon' />View Site</a>
@@ -127,21 +133,23 @@ const ProjectsText: React.FC = () => {
                             <div id="Project3ParagraphContainer">
 
                                 <div id="Project3HeaderContainer">
-                                    <p id="Project3Header">Let's Tap In</p>
+                                    <p id="Project3Header">Let's Tap In, LLC</p>
                                 </div>
 
-                                <p id='Project3Paragraph'></p>
+                                <div id="Project3TextContainer">
+                                    <p id='Project3Paragraph'>This static webpage made for a client displays dummy recent events available and allows you to checkout tickets. Made with React, Next.js, and TypeScript. Click this repo to view short demo video!</p>
+                                </div>
 
-                                <div id="Project1StackContainer">
-                                    <img id="StackIcon" src="" />
-                                    <img id="StackIcon" src="" />
-                                    <img id="StackIcon" src="" />
+                                <div id="Project3StackContainer">
+                                    <img id="StackIcon" src="react.png" />
+                                    <img id="StackIcon" src="next.png" />
+                                    <img id="StackIcon" src="ts.jpg" />
                                 </div>
 
                             </div>
                             <div id="Project3IconsContainer">
                                 <div id="GithubIconContainer">
-                                    <a id="GithubLink" href=""> <VscGithubAlt id='GithubIcon' />GitHub <br/> (Video Demos)</a>
+                                    <a id="GithubLink" href=""> <VscGithubAlt id='GithubIcon' />Video Demos</a>
                                 </div>
                                 <div id="RedirectIconContainer">
                                     <a id="RedirectLink" href=""> <CiShare1 id='RedirectIcon' />View Site</a>
@@ -162,21 +170,26 @@ const ProjectsText: React.FC = () => {
                             <div id="Project4ParagraphContainer">
 
                                 <div id="Project4HeaderContainer">
-                                    <p id="Project4Header">Urban Alliance / EduCo Group</p>
+                                    <p id="Project4Header">Urban Alliance</p>
                                 </div>
 
-                                <p id='Project4Paragraph'></p>
+                                <div id="Project4TextContainer">
+                                    <p id='Project4Paragraph'>Upgraded EduCo’s main website by coding a new website from scratch, eliminating previous web template expenses. 
+                                    Utilized Gatsby.js, React, and JavaScript to take advantage of Gatsby’s Static Site Generation for this static site.
+                                    Held meetings with the CEO and Co-Founder to align development with business needs. Production: educogroup.org
+                                    Sparked the start of EduCo Group’s codebase using GitHub organizations, project-based repos, and protection rules.</p>
+                                </div>
 
-                                <div id="Project1StackContainer">
-                                    <img id="StackIcon" src="" />
-                                    <img id="StackIcon" src="" />
-                                    <img id="StackIcon" src="" />
+                                <div id="Project4StackContainer">
+                                    <img id="StackIcon" src="react.png" />
+                                    <img id="StackIcon" src="gatsby.webp" />
+                                    <img id="StackIcon" src="js.png" />
                                 </div>
 
                             </div>
                             <div id="Project4IconsContainer">
                                 <div id="GithubIconContainer">
-                                    <a id="GithubLink" href=""> <VscGithubAlt id='GithubIcon' />GitHub <br/> (Video Demos)</a>
+                                    <a id="GithubLink" href=""> <VscGithubAlt id='GithubIcon' />Video Demos</a>
                                 </div>
                                 <div id="RedirectIconContainer">
                                     <a id="RedirectLink" href=""> <CiShare1 id='RedirectIcon' />View Site</a>
@@ -200,18 +213,19 @@ const ProjectsText: React.FC = () => {
                                     <p id="Project5Header">2D Sonic Platformer</p>
                                 </div>
 
-                                <p id='Project5Paragraph'></p>
+                                <div id="Project5TextContainer">
+                                    <p id='Project5Paragraph'>A 2D Sonic platformer game that gave me experience with physics and animation in Unity Game Engine and C#. Click this repo for a quick video demo!</p>
+                                </div>
 
-                                <div id="Project1StackContainer">
-                                    <img id="StackIcon" src="" />
-                                    <img id="StackIcon" src="" />
-                                    <img id="StackIcon" src="" />
+                                <div id="Project5StackContainer">
+                                    <img id="StackIcon" src="c.png" />
+                                    <img id="StackIcon" src="unity.jpg" />
                                 </div>
                                 
                             </div>
                             <div id="Project5IconsContainer">
                                 <div id="GithubIconContainer">
-                                    <a id="GithubLink" href=""> <VscGithubAlt id='GithubIcon' />GitHub <br/> (Video Demos)</a>
+                                    <a id="GithubLink" href=""> <VscGithubAlt id='GithubIcon' />Video Demos</a>
                                 </div>
                                 <div id="RedirectIconContainer">
                                     <a id="RedirectLink" href=""> <CiShare1 id='RedirectIcon' />View Site</a>
@@ -223,6 +237,9 @@ const ProjectsText: React.FC = () => {
                         </div>
                     </div>
                 </div>
+                <div id="MoreContainer">
+                    <p id="More">And More... Browse My GitHub or Visit the Docs Page for Devs!</p>
+                </div>
             </div>
         <style>
             {` 
@@ -233,7 +250,7 @@ const ProjectsText: React.FC = () => {
                     display: flex;
                     position: relative;
                     width: 99.7vw;
-                    height: 250vh;
+                    height: 280vh;
                     background-color: white;
                     justify-content: center;
                     align-items: center;
@@ -285,6 +302,8 @@ const ProjectsText: React.FC = () => {
                     justify-content: center;
                     align-items: center;
                     background-color: black;
+                    border-radius: 25px;
+                    border: 3px solid #ccc;
                 }
 
                 #Project1LeftContainer, #Project2LeftContainer, #Project3LeftContainer, #Project4LeftContainer, #Project5LeftContainer {
@@ -295,31 +314,6 @@ const ProjectsText: React.FC = () => {
                     flex-direction: column;
                     justify-content: center;
                     align-items: center;
-                }
-
-                #Project1RightContainer, #Project2RightContainer, #Project3RightContainer, #Project4RightContainer, #Project5RightContainer {
-                    display: flex;
-                    position: relative;
-                    width: 60%;
-                    height: 100%;
-                    flex-direction: row;
-                    justify-content: center;
-                    align-items: center;
-                }
-
-                #Project1HeaderContainer, #Project2HeaderContainer, #Project3HeaderContainer, #Project4HeaderContainer, #Project5HeaderContainer {
-                    display: flex;
-                    position: relative;
-                    width: 100%;
-                    height: 25%;
-                    justify-content: center;
-                    align-items: center;
-                }
-
-                #Project1Header, #Project2Header, #Project3Header, #Project4Header, #Project5Header {
-                    font-size: 30px;
-                    color: white;
-                    text-align: center;
                 }
 
                 #Project1ImageContainer, #Project2ImageContainer, #Project3ImageContainer, #Project4ImageContainer, #Project5ImageContainer {
@@ -341,6 +335,16 @@ const ProjectsText: React.FC = () => {
                     object-fit: contain;
                 }
 
+                #Project1RightContainer, #Project2RightContainer, #Project3RightContainer, #Project4RightContainer, #Project5RightContainer {
+                    display: flex;
+                    position: relative;
+                    width: 60%;
+                    height: 100%;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: flex-start;
+                }
+
                 #Project1ParagraphContainer, #Project2ParagraphContainer, #Project3ParagraphContainer, #Project4ParagraphContainer, #Project5ParagraphContainer {
                     display: flex;
                     position: relative;
@@ -351,10 +355,63 @@ const ProjectsText: React.FC = () => {
                     align-items: center;
                 }
 
+                #Project1HeaderContainer, #Project2HeaderContainer, #Project3HeaderContainer, #Project4HeaderContainer, #Project5HeaderContainer {
+                    display: flex;
+                    position: relative;
+                    width: 100%;
+                    height: 20%;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                #Project1Header, #Project2Header, #Project3Header, #Project4Header, #Project5Header {
+                    font-size: 30px;
+                    color: white;
+                    text-align: center;
+                }
+
+                #Project1TextContainer, #Project2TextContainer, #Project3TextContainer, #Project4TextContainer, #Project5TextContainer {
+                    display: flex;
+                    position: relative;
+                    width: 100%;
+                    height: 40%;
+                    margin-top: 2%;
+                    margin-bottom: 2%;
+                    padding-right: 5px;
+                    justify-content: center;
+                    align-items: flex-start;
+                    overflow-y: scroll;
+                }
+
+                #Project1TextContainer::-webkit-scrollbar, #Project2TextContainer::-webkit-scrollbar, #Project3TextContainer::-webkit-scrollbar, #Project4TextContainer::-webkit-scrollbar, #Project5TextContainer::-webkit-scrollbar {
+                    width: 5px;
+                    background-color: black;
+                }
+
+                #Project1TextContainer::-webkit-scrollbar-thumb, #Project2TextContainer::-webkit-scrollbar-thumb, #Project3TextContainer::-webkit-scrollbar-thumb, #Project4TextContainer::-webkit-scrollbar-thumb, #Project5TextContainer::-webkit-scrollbar-thumb {
+                    background-color: white;
+                    border-radius: 10px;
+                }
+
                 #Project1Paragraph, #Project2Paragraph, #Project3Paragraph, #Project4Paragraph, #Project5Paragraph {
-                    font-size: 15px;
+                    font-size: 16px;
                     color: white;
                     text-align: left;
+                }
+
+                #Project1StackContainer, #Project2StackContainer, #Project3StackContainer, #Project4StackContainer, #Project5StackContainer {
+                    display: flex;
+                    position: relative;
+                    width: 100%;
+                    height: 25%;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                #StackIcon {
+                    height: 80%;
+                    margin-left: 3px;
+                    margin-right: 3px;
                 }
 
                 #Project1IconsContainer, #Project2IconsContainer, #Project3IconsContainer, #Project4IconsContainer, #Project5IconsContainer {
@@ -393,7 +450,44 @@ const ProjectsText: React.FC = () => {
                     font-size: 45px;
                     color: white;
                 }
+
+                #MoreContainer {
+                    display: flex;
+                    position: relative;
+                    width: 100%;
+                    margin-top: -1%;
+                    margin-bottom: 1%;
+                    justify-content: center;
+                    text-align: center;
+                }
+
+                @media (max-width: 1000px) { 
+
+                    #Project1, #Project2, #Project3, #Project4, #Project5 { width: 95%; margin-bottom: 3%;  overflow: scroll; }
+
+                    #Project1LeftContainer, #Project2LeftContainer, #Project3LeftContainer, #Project4LeftContainer, #Project5LeftContainer { display: none; }
+
+                    #Project1RightContainer, #Project2RightContainer, #Project3RightContainer, #Project4RightContainer, #Project5RightContainer { 
+                        width: 90%; 
+                        flex-direction: column;
+                        align-items: center;
+                    }
                     
+                    #Project1ParagraphContainer, #Project2ParagraphContainer, #Project3ParagraphContainer, #Project4ParagraphContainer, #Project5ParagraphContainer { width: 100%; height: 75%; }
+
+                    #Project1TextContainer, #Project2TextContainer, #Project3TextContainer, #Project4TextContainer, #Project5TextContainer { height: 40%; }
+
+                    #Project1StackContainer, #Project2StackContainer, #Project3StackContainer, #Project4StackContainer, #Project5StackContainer { height: 20%; margin-top: 5%; }
+
+                    #Project1IconsContainer, #Project2IconsContainer, #Project3IconsContainer, #Project4IconsContainer, #Project5IconsContainer { 
+                        width: 100%; 
+                        height: 19%; 
+                        margin-bottom: 1%; 
+                        flex-direction: row; 
+                    }
+
+                    #GithubIconContainer, #RedirectIconContainer, #DocsIconContainer { width: 33%; height: 100%; }
+                }
             `}
         </style>
         </div>

@@ -50,7 +50,7 @@ const ExperienceText: React.FC = () => {
                             <br/><br/>
                             I also completed multiple contracts during Summer 2023, but the most notable one is a website I built for my childhood church, where I led a team of 6 junior developers and taught/learned Angular.
                             <br/><br/>
-                            All of these skills have a project I created with them. <b>Keep scrolling</b> for more in-depth information Experience all my work!
+                            <b>Keep scrolling</b> for more in-depth information Experience all my work!
                             <br/><br/>
                             <a id='ResumeLink' href="https://docs.google.com/document/d/1VA2JjizgZaup8Hw1dX10K6-6aRnEW3wpa1yVvscN2H4/edit?usp=sharing" target="_blank">Click me to view Dawit's resume!</a>
                         </p>
@@ -189,12 +189,12 @@ const ExperienceText: React.FC = () => {
 
                 #ExperienceParagraphContainer::-webkit-scrollbar { 
                     width: 5px;
-                    color: white;
+                    background-color: black;
                 }
 
                 #ExperienceParagraphContainer::-webkit-scrollbar-thumb {
-                    color: #ccc;
-                    border-radius: 25px;
+                    background-color: white;
+                    border-radius: 10px;
                 }
 
                 #ExperienceParagraph {

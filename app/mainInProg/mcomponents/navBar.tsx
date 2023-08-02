@@ -42,9 +42,9 @@ const Navbar: React.FC = () => {
     const targetPosition = document.body.scrollHeight * 0;
     window.scrollTo({
       top: targetPosition,
-      left: 0
+      left: 0, 
+      behavior: 'smooth'
     });
-    location.reload();
   };
 
 
@@ -131,8 +131,8 @@ const Navbar: React.FC = () => {
           #MenuBars {
             display: flex;
             position: fixed;
-            right: 15px;
-            top: 13px;
+            right: 10px;
+            top: 10px;
             width: 70px;
             height: 70px;
             background-color: black;
