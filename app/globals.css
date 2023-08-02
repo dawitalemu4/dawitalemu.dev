@@ -2,24 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
+html, body {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
   background-color: black;
+  font-family: InterMedium;
 }
 
 body::-webkit-scrollbar {
   width: 0.2em;
-  background-color: #F5F5F5;
-}
-
-body::-webkit-scrollbar-thumb {
   background-color: black;
 }
 
-@font-face {
-  font-family: 'Press Start P';
-  src: url('/PressStart2P-Regular.ttf') format('truetype');
+body::-webkit-scrollbar-thumb {
+  background-color: #F5F5F5;
 }
+
 @font-face {
   font-family: 'Inter';
+  src: url('/Inter-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'InterMedium';
   src: url('/Inter-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'InterSemi';
+  src: url('/Inter-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'InterBold';
+  src: url('/Inter-Bold.ttf') format('truetype');
 }
