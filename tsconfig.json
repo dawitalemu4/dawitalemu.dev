@@ -23,6 +23,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/rcomponents/luffy.jsx", "app/rcomponents/projectsText.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/docs/rcomponents/luffy.jsx", "app/docs/rcomponents/projectsText.tsx"],
   "exclude": ["node_modules"]
 }

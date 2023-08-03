@@ -1,81 +1,175 @@
-"use client";
-import React from "react";
-import AboutText from "../rcomponents/aboutText";
+'use client'
+import React, { useState, useEffect, useRef } from 'react';
 
 const About: React.FC = () => {
-  return (
-    <div id="About" className="flex relative">
-      <AboutText />
-      <style>
-        {`
-              #About {
-                height: 150vh;
-            }
-            @media (max-width: 1800px) and (min-height: 900px) {
-                #About {
-                    height: 135vh;
-                }
-                }
-            @media (max-width: 1700px) and (min-height: 900px) {
-                #About {
-                    height: 100vh;
-                }
-                }
-                @media (max-width: 1500px) and (min-height: 900px) {
-                    #About {
-                        height: 110vh;
-                    }
-                    }
-            @media (max-width: 1370px) {
-            #About {
-                height: 175vh;
-            }
-            }
-            @media (max-width: 1150px) {
-            #About {
-                height: 150vh;
-            }
-            }
-            @media (max-width: 900px) {
-                #About {
-                    height: 155vh;
-                }
-                }
-            @media (max-width: 750px) {
-            #About {
-                height: 140vh;
-            }
-            }
-            @media (max-width: 670px) {
-                #About {
-                    height: 130vh;
-                }
-                }
-            @media (max-width: 560px) {
-            #About {
-                height: 100vh;
-            }
-            }
-            @media (max-width: 450px) {
-                #About {
-                    height: 85vh;
-                }
-                }
-                @media (max-width: 400px) {
-                    #About {
-                        height: 80vh;
-                    }
-                    }
-            @media (max-height: 660px) {
-                #About {
-                    height: 180vh;
-            }
+
+    const [aboutScrollHeight, setAboutScrollHeight] = useState('0%');
+    const aboutContainerRef = useRef<HTMLDivElement>(null);
+
+    const handleAboutScroll = () => {
+        const aboutContainer = aboutContainerRef.current;
+        if (!aboutContainer) return;
+      
+        const containerHeight = aboutContainer.clientHeight;
+        const containerTop = aboutContainer.getBoundingClientRect().top;
+        const scrollPosition = Math.max(0, window.scrollY - containerTop - window.innerHeight * 1.9);
+
+        const isContainerVisible = containerTop + containerHeight >= 0 && containerTop <= window.innerHeight;
+      
+        if (!isContainerVisible) {
+          setAboutScrollHeight('0%');
+        } else {
+          const maxScroll = containerHeight * 2;
+          const aboutScrollPercentage = Math.min((scrollPosition / maxScroll) * 100, 100);
+          setAboutScrollHeight(`${aboutScrollPercentage}%`);
+          console.log(aboutScrollPercentage);
         }
-            
+    }
+    
+    useEffect(() => {
+
+        window.addEventListener('scroll', handleAboutScroll);
+        
+        return () => {
+            window.removeEventListener('scroll', handleAboutScroll);
+        };
+
+    }, []);
+
+
+    return (
+        <div id='About' ref={aboutContainerRef}>
+            <div id="AboutContainer">
+                <div id="AboutParagraphContainer">
+                    <p id='AboutParagraph'>Hello! My name is Dawit Alemu and I'm currently a junior at Towson University who loves to self-teach software development. 
+                    <br/><br/> I'm mainly interested in full-stack web development, but open to learning new things. <br/><br/> Keep scrolling!</p>
+                </div>                   
+                <div id='AboutImageContainer'>
+                    <img id='AboutImage' src='da.jpg' alt='Dawit Alemu'/>
+                </div>                 
+                <div id='AboutTitleContainer'>
+                    <p id='AboutTitle'>About</p>
+                </div>
+            </div>
+        <style>
+            {` 
+
+                :root { --aboutScrollHeight: ${aboutScrollHeight}; }
+
+                #About {
+                    display: flex;
+                    position: relative;
+                    width: 99.7vw;
+                    height: 230vh;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: white;
+                    overflow: hidden;
+                    z-index: 6;
+                }
+
+                #AboutContainer {
+                    display: flex;
+                    position: relative;
+                    width: 90%;
+                    height: 100%;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                }
+
+                #AboutParagraphContainer {
+                    display: flex;
+                    position: relative;
+                    width: 90%;
+                    height: 40%;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    overflow-y: scroll;
+                }
+
+                #AboutParagraphContainer::-webkit-scrollbar {
+                    width: 5px;
+                    background-color: transparent;
+                }
+
+                #AboutParagraphContainer::-webkit-scrollbar-thumb {
+                    background-color: #ccc;
+                    border-radius: 10px;
+                }
+
+                #AboutParagraph {
+                    font-size: 26px;
+                    color: black;
+                }
+
+                #AboutImageContainer {
+                    display: flex;
+                    position: relative;
+                    width: 50%;
+                    height: 40%;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                #AboutImage {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+
+                #AboutTitleContainer {
+                    display: flex;
+                    position: absolute;
+                    top: 30%;
+                    width: 100%;
+                    height: 20%;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 7;
+                }
+
+                #AboutTitle {
+                    color: black;
+                    font-family: InterSemi;
+                    font-size: calc(400 * var(--aboutScrollHeight));
+                    transform: translateY(calc(0.1 * var(--aboutScrollHeight))) translateX(calc(-1 * (0.09 * var(--aboutScrollHeight))));
+                }
+
+                @media (max-width: 1000px) {
+
+                    #AboutContainer { 
+                        flex-direction: column; 
+                        justify-content: flex-start; 
+                        align-items: center; 
+                    }
+
+                    #AboutParagraphContainer { 
+                        width: 95%;
+                        height: 21%;
+                        text-align: center;
+                    }
+
+                    #AboutParagraph { font-size: 20px; }
+
+                    #AboutImageContainer { width: 100%; height: 20%; }
+
+                    #AboutImage { width: 70%; height: 70%; }
+
+                    #AboutTitle {
+                        font-size: calc(300 * var(--aboutScrollHeight));
+                        transform: translateY(calc(0.4 * var(--aboutScrollHeight))) translateX(calc(-1 * (0.1 * var(--aboutScrollHeight))));
+                    }
+                }
+
             `}
-      </style>
-    </div>
-  );
-};
+        </style>
+        </div>
+    )
+}
 
 export default About;
