@@ -194,88 +194,88 @@ const Navbar: React.FC = () => {
             font-size: 20px;
           }
 
-            a:hover {
+          a:hover {
+            opacity: 0.5;
+          }
+
+          @media (max-width: 900px) {
+            #Navbar {
+              display: flex !important;
+            }
+
+            #MenuBars {
+              background-color: transparent; 
+            }
+
+            #NavbarContainer { 
+              width: 100%;
+              display: flex !important;
+              justify-content: center;
+              background-color: #171717;
+              position: fixed;
+              top: 0;
+              left: 0;
+              z-index: 5;
+              height: 70px;
+            }
+
+            #Bars {
+              cursor: pointer;
+              display: flex;
+              width: 70px;
+              height: 70px;
+              position: fixed;
+              right: 15px;
+              z-index: 4;
+            }
+
+            #NavbarListContainer {
+              width: 100%;
+              height: 250px;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              background-color: #171717;
+              position: fixed;
+              top: 70px;
+              left: 0;
+              z-index: 3; 
+              border-bottom-left-radius: 30px;
+              border-bottom-right-radius: 30px;
+            }
+
+            #NavbarListContainer li {
+              padding: 6px;
+              font-size: 17px;
+            }
+
+            #NavbarListContainer a {
+              color: white;
+            }
+
+            #DevButton {
+              position: static;
+              padding: 4px;
+              text-align: center;
+              margin-top: -5px;
+              color: #39FF14 !important;
+            }
+
+            #Bars:hover {
               opacity: 0.5;
             }
+          }
 
-            @media (max-width: 900px) {
-              #Navbar {
-                display: flex !important;
-              }
-
-              #MenuBars {
-                background-color: transparent; 
-              }
-
-              #NavbarContainer { 
-                width: 100%;
-                display: flex !important;
-                justify-content: center;
-                background-color: #171717;
-                position: fixed;
-                top: 0;
-                left: 0;
-                z-index: 5;
-                height: 70px;
-              }
-
-              #Bars {
-                cursor: pointer;
-                display: flex;
-                width: 70px;
-                height: 70px;
-                position: fixed;
-                right: 15px;
-                z-index: 4;
-              }
-
-              #NavbarListContainer {
-                width: 100%;
-                height: 250px;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                background-color: #171717;
-                position: fixed;
-                top: 70px;
-                left: 0;
-                z-index: 3; 
-                border-bottom-left-radius: 30px;
-                border-bottom-right-radius: 30px;
-              }
-
-              #NavbarListContainer li {
-                padding: 6px;
-                font-size: 17px;
-              }
-
-              #NavbarListContainer a {
-                color: white;
-              }
-
-              #DevButton {
-                position: static;
-                padding: 4px;
-                text-align: center;
-                margin-top: -5px;
-                color: #39FF14 !important;
-              }
-
-              #Bars:hover {
-                opacity: 0.5;
-              }
+          @media (min-width: 901px) {
+            #Bars {
+              display: none;
             }
-
-            @media (min-width: 901px) {
-              #Bars {
-                display: none;
-              }
-              
-              #NavbarListContainer {
-                display: flex !important;
-              }
+            
+            #NavbarListContainer {
+              display: flex !important;
             }
+          }
           `}
         </style>
       </div>
