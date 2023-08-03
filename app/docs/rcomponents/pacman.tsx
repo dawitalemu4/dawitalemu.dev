@@ -48,7 +48,6 @@ const PacMan: React.FC = () => {
         const newImageIndex = Math.floor(scrollPercentage * images.length);
         if (newImageIndex !== imageIndex) {
           changeImage(newImageIndex);
-          console.log(newImageIndex);
         }
       }
     }

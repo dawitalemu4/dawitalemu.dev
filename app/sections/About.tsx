@@ -22,7 +22,6 @@ const About: React.FC = () => {
           const maxScroll = containerHeight * 2;
           const aboutScrollPercentage = Math.min((scrollPosition / maxScroll) * 100, 100);
           setAboutScrollHeight(`${aboutScrollPercentage}%`);
-          console.log(aboutScrollPercentage);
         }
     }
     

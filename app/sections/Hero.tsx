@@ -25,7 +25,6 @@ const Hero: React.FC = () => {
           const maxScroll = containerHeight * 0.20; 
           const heroScrollPercentage = Math.min((scrollPosition / maxScroll) * 50, 100);
           setHeroScrollHeight(`${heroScrollPercentage}%`);
-          console.log(heroScrollPercentage);
 
           if (heroScrollPercentage === 100) {
                 const leftContainer = document.getElementById('LeftContainer');
