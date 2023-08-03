@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import Navbar from './rcomponents/navBar';
+// import Navbar from './rcomponents/navBar';
 import Contact from './sections/Contact';
 import Experience from './sections/Experience';
 import Hero from './sections/Hero';
@@ -17,7 +17,7 @@ export default function Home(){
     return (
       <html>
     <body className='bg-black flex flex-col relative'>    
-      <Navbar />
+      {/* <Navbar /> */}
       <Hero />
       <PacManSection />
       <About />

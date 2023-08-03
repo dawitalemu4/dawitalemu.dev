@@ -38,7 +38,6 @@ const Projects: React.FC = () => {
           const maxScroll = containerHeight * 2.5;
           const projectScrollPercentage = Math.min((scrollPosition / maxScroll) * 100, 100);
           setProjectScrollHeight(`${projectScrollPercentage}%`);
-          console.log(projectScrollPercentage);
         }
     }
     
@@ -64,7 +63,7 @@ const Projects: React.FC = () => {
                     <div id="Project1">
                         <div id="Project1LeftContainer">
                             <div id="Project1ImageContainer">
-                                <img id="Project1Image" src="" />
+                                <img id="Project1Image" src="dt.png" />
                             </div>
                         </div>
                         <div id="Project1RightContainer">
@@ -88,13 +87,13 @@ const Projects: React.FC = () => {
                             </div>
                             <div id="Project1IconsContainer">
                                 <div id="GithubIconContainer">
-                                    <a id="GithubLink" href=""> <VscGithubAlt id='GithubIcon' />Video Demos</a>
+                                    <a id="GithubLink" href="https://github.com/DebreTsionWeb/debretsion.org" target='blank'> <VscGithubAlt id='GithubIcon' />Video Demos</a>
                                 </div>
                                 <div id="RedirectIconContainer">
-                                    <a id="RedirectLink" href=""> <CiShare1 id='RedirectIcon' />View Site</a>
+                                    <a id="RedirectLink" href="https://debretsion.vercel.app/en" target='blank'> <CiShare1 id='RedirectIcon' />View Site</a>
                                 </div>
                                 <div id="DocsIconContainer">
-                                    <a id="DocsLink" href=""> <IoIosPaper id='DocsIcon' />Docs</a>
+                                    <a id="DocsLink" href="/docs" target='blank'> <IoIosPaper id='DocsIcon' />Docs</a>
                                 </div>
                             </div>
                         </div>
@@ -102,7 +101,7 @@ const Projects: React.FC = () => {
                     <div id="Project2">
                         <div id="Project2LeftContainer">
                             <div id="Project2ImageContainer">
-                                <img id="Project2Image" src="" />
+                                <img id="Project2Image" src="misplaced.png" />
                             </div>
                         </div>
                         <div id="Project2RightContainer">
@@ -127,13 +126,13 @@ const Projects: React.FC = () => {
                             </div>
                             <div id="Project2IconsContainer">
                                 <div id="GithubIconContainer">
-                                    <a id="GithubLink" href=""> <VscGithubAlt id='GithubIcon' />Video Demos</a>
+                                    <a id="GithubLink" href="https://github.com/misplaced-dev/misplaced.app" target='blank'> <VscGithubAlt id='GithubIcon' />Video Demos</a>
                                 </div>
                                 <div id="RedirectIconContainer">
-                                    <a id="RedirectLink" href=""> <CiShare1 id='RedirectIcon' />View Site</a>
+                                    <a id="RedirectLink" href="https://misplaced.app" target='blank'> <CiShare1 id='RedirectIcon' />View Site</a>
                                 </div>
                                 <div id="DocsIconContainer">
-                                    <a id="DocsLink" href=""> <IoIosPaper id='DocsIcon' />Docs</a>
+                                    <a id="DocsLink" href="/docs" target='blank'> <IoIosPaper id='DocsIcon' />Docs</a>
                                 </div>
                             </div>
                         </div>
@@ -141,7 +140,7 @@ const Projects: React.FC = () => {
                     <div id="Project3">
                         <div id="Project3LeftContainer">
                             <div id="Project3ImageContainer">
-                                <img id="Project3Image" src="" />
+                                <img id="Project3Image" src="tap.png" />
                             </div>
                         </div>
                         <div id="Project3RightContainer">
@@ -164,13 +163,13 @@ const Projects: React.FC = () => {
                             </div>
                             <div id="Project3IconsContainer">
                                 <div id="GithubIconContainer">
-                                    <a id="GithubLink" href=""> <VscGithubAlt id='GithubIcon' />Video Demos</a>
+                                    <a id="GithubLink" href="https://github.com/dawitalemu4/TapInWebPage" target='blank'> <VscGithubAlt id='GithubIcon' />Video Demos</a>
                                 </div>
                                 <div id="RedirectIconContainer">
-                                    <a id="RedirectLink" href=""> <CiShare1 id='RedirectIcon' />View Site</a>
+                                    <a id="RedirectLink" href="https://tapinwebpage.vercel.app/" target='blank'> <CiShare1 id='RedirectIcon' />View Site</a>
                                 </div>
                                 <div id="DocsIconContainer">
-                                    <a id="DocsLink" href=""> <IoIosPaper id='DocsIcon' />Docs</a>
+                                    <a id="DocsLink" href="/docs" target='blank'> <IoIosPaper id='DocsIcon' />Docs</a>
                                 </div>
                             </div>
                         </div>
@@ -178,7 +177,7 @@ const Projects: React.FC = () => {
                     <div id="Project4">
                         <div id="Project4LeftContainer">
                             <div id="Project4ImageContainer">
-                                <img id="Project4Image" src="" />
+                                <img id="Project4Image" src="edu.png" />
                             </div>
                         </div>
                         <div id="Project4RightContainer">
@@ -204,13 +203,13 @@ const Projects: React.FC = () => {
                             </div>
                             <div id="Project4IconsContainer">
                                 <div id="GithubIconContainer">
-                                    <a id="GithubLink" href=""> <VscGithubAlt id='GithubIcon' />Video Demos</a>
+                                    <a id="GithubLink" href="https://github.com/EduCoGroup/educogroup.org" target='blank'> <VscGithubAlt id='GithubIcon' />Video Demos</a>
                                 </div>
                                 <div id="RedirectIconContainer">
-                                    <a id="RedirectLink" href=""> <CiShare1 id='RedirectIcon' />View Site</a>
+                                    <a id="RedirectLink" href="https://educogroup.vercel.app/" target='blank'> <CiShare1 id='RedirectIcon' />View Site</a>
                                 </div>
                                 <div id="DocsIconContainer">
-                                    <a id="DocsLink" href=""> <IoIosPaper id='DocsIcon' />Docs</a>
+                                    <a id="DocsLink" href="/docs" target='blank'> <IoIosPaper id='DocsIcon' />Docs</a>
                                 </div>
                             </div>
                         </div>
@@ -218,7 +217,7 @@ const Projects: React.FC = () => {
                     <div id="Project5">
                         <div id="Project5LeftContainer">
                             <div id="Project5ImageContainer">
-                                <img id="Project5Image" src="" />
+                                <img id="Project5Image" src="sonic.png" />
                             </div>
                         </div>
                         <div id="Project5RightContainer">
@@ -240,13 +239,13 @@ const Projects: React.FC = () => {
                             </div>
                             <div id="Project5IconsContainer">
                                 <div id="GithubIconContainer">
-                                    <a id="GithubLink" href=""> <VscGithubAlt id='GithubIcon' />Video Demos</a>
+                                    <a id="GithubLink" href="https://github.com/dawitalemu4/sonic" target='blank'> <VscGithubAlt id='GithubIcon' />Video Demos</a>
                                 </div>
                                 <div id="RedirectIconContainer">
-                                    <a id="RedirectLink" href=""> <CiShare1 id='RedirectIcon' />View Site</a>
+                                    <a id="RedirectLink" href="https://github.com/dawitalemu4/sonic" target='blank'> <CiShare1 id='RedirectIcon' />View Video</a>
                                 </div>
                                 <div id="DocsIconContainer">
-                                    <a id="DocsLink" href=""> <IoIosPaper id='DocsIcon' />Docs</a>
+                                    <a id="DocsLink" href="/docs" target='blank'> <IoIosPaper id='DocsIcon' />Docs</a>
                                 </div>
                             </div>
                         </div>
@@ -378,7 +377,6 @@ const Projects: React.FC = () => {
                 #Project1Image, #Project2Image, #Project3Image, #Project4Image, #Project5Image {
                     display: flex;
                     position: relative;
-                    width: 100%;
                     height: 100%;
                     object-fit: contain;
                 }

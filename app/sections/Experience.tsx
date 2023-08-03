@@ -22,7 +22,6 @@ const Experience: React.FC = () => {
           const maxScroll = containerHeight * 2;
           const experienceScrollPercentage = Math.min((scrollPosition / maxScroll) * 100, 100);
           setExperienceScrollHeight(`${experienceScrollPercentage}%`);
-          console.log(experienceScrollPercentage);
         }
     }
     

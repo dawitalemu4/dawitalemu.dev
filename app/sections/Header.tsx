@@ -88,20 +88,20 @@ const Navbar: React.FC = () => {
   return (
     <div id="Navbar" onMouseOver={handleHover} onMouseOut={handleLeave}>
       <img id="MenuBars" src="bars.jpg" style={{display: hovered ? 'none' : 'flex'}}/>
-      <div id="NavbarContainer" className="flex fixed top-0 w-full h-10 py-10 px-10 items-center text-black" style={{ display: hovered ? "flex" : "none"}}>
-        <img id="Bars" src="bars.jpg" className={showMenu ? 'flex' : 'hidden'} onClick={() => setShowMenu(!showMenu)}/>
-        <ul id="NavbarListContainer" style={{ display: showMenu ? 'flex' : 'none' }} className="flex flex-wrap py-5 px-10 rounded-md ml-auto text-2xl items-center">
-          <li id="NavbarHome" className="flex-shrink px-5">
-            <a href="/" id="home" className="" onClick={handleHomeClick}>Home</a>
+      <div id="NavbarContainer" style={{ display: hovered ? "flex" : "none"}}>
+        <img id="Bars" src="bars.jpg" style={{display: showMenu ? 'flex' : 'hidden'}} onClick={() => setShowMenu(!showMenu)}/>
+        <ul id="NavbarListContainer" style={{ display: showMenu ? 'flex' : 'none' }}>
+          <li id="NavbarHome">
+            <a href="/" id="home" onClick={handleHomeClick}>Home</a>
           </li>
-          <li id="NanvarExperience" className="flex-shrink px-5">
-            <a href="/" id="experience" className="" onClick={handleExperienceClick}>Experience</a>
+          <li id="NavbarExperience">
+            <a href="/" id="experience" onClick={handleExperienceClick}>Experience</a>
           </li>
-          <li id="NavbarProjects" className="flex-shrink px-5">
-            <a href="/" id="projects" className="" onClick={handleProjectsClick}>Projects</a>
+          <li id="NavbarProjects">
+            <a href="/" id="projects" onClick={handleProjectsClick}>Projects</a>
           </li>
-          <li id="NavbarContact" >
-            <a href="/" id="contact" className="flex-shrink px-5" onClick={handleContactClick}>Contact</a>
+          <li id="NavbarContact">
+            <a href="/" id="contact" onClick={handleContactClick}>Contact</a>
           </li>
           <li>
             <Link id="DevButton" href="/docs">{texts[textIndex]}</Link>
@@ -116,7 +116,7 @@ const Navbar: React.FC = () => {
             top: 0;
             left: 0;
             right: 0;
-            width: 100vw;
+            width: 99.7vw;
             height: 70px;
             justify-content: center;
             align-items: center;
@@ -148,11 +148,16 @@ const Navbar: React.FC = () => {
           }
         
           #NavbarContainer {
+            display: flex;
+            position: relative;
+            width: 100%;
+            height: 100%;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
             background-color: white;
-            font-family: Inter, sans-serif;
-            font-weight: 500;
+            font-family: Inter;
             border-bottom: 1px solid #ccc;
-            z-index: 5;
             animation: dropdown 0.3s ease-in-out;
           }
 
@@ -167,45 +172,30 @@ const Navbar: React.FC = () => {
             justify-content: flex-start;
             background-color: black;
             position: fixed;
-            top: 13px;
+            top: 8px;
             left: -1px;
-            z-index: 4;
-            scale: 0.8;
+            scale: 0.9;
             transform: scale(1);
             transition: transform 0.5s ease-in-out;
             animation: dropdown 0.25s ease-in-out;
-            }
+          }
+
+          #NavbarListContainer {
+            display: flex;
+            position: relative;
+            width: 40%;
+            height: 100%;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+          }
+
+          #NavbarListContainer li {
+            font-size: 20px;
+          }
 
             a:hover {
               opacity: 0.5;
-            }
-
-            @media (max-width: 1177px) and (min-width: 900px) {
-              #DevButton {
-                transform: scale(0.8) translateX(-70px);
-                transition: transform 0.4s ease-in-out;  
-              }
-            }
-
-            @media (max-width: 1048px) and (min-width: 900px){
-              #DevButton {
-                transform: scale(0.7) translateX(-150px);
-                transition: transform 0.4s ease-in-out;  
-              }
-            }
-
-            @media (max-width: 953px) and (min-width: 900px){
-              #DevButton {
-                transform: scale(0.6) translateX(-200px);
-                transition: transform 0.4s ease-in-out;  
-              }
-            }
-
-            @media (max-width: 916px) and (min-width: 900px){
-              #DevButton {
-                transform: scale(0.6) translateX(-250px);
-                transition: transform 0.4s ease-in-out;  
-              }
             }
 
             @media (max-width: 900px) {
@@ -241,6 +231,7 @@ const Navbar: React.FC = () => {
 
               #NavbarListContainer {
                 width: 100%;
+                height: 250px;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -256,7 +247,7 @@ const Navbar: React.FC = () => {
 
               #NavbarListContainer li {
                 padding: 6px;
-                font-size: 1.5rem;
+                font-size: 17px;
               }
 
               #NavbarListContainer a {
