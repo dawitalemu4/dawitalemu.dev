@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import AboutText from "../rcomponents/aboutText";
+import AboutText from "../components/aboutText";
 
 const About: React.FC = () => {
   return (

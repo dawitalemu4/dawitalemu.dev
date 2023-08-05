@@ -1,6 +1,6 @@
 'use client'
 import React from 'react';
-import ContactForm from '../rcomponents/contactForm';
+import ContactForm from '../components/contactForm';
 
 const Contact: React.FC = () => {
 

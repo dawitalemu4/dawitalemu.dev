@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-// import Navbar from './rcomponents/navBar';
+// import Navbar from './components/navBar';
 import Contact from './sections/Contact';
 import Experience from './sections/Experience';
 import Hero from './sections/Hero';

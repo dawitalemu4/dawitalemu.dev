@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
-import ExperienceText from "../rcomponents/experienceText";
-import Luffy from "../rcomponents/luffy.jsx";
+import ExperienceText from "../components/experienceText";
+import Luffy from "../components/luffy.jsx";
 
 const Experience: React.FC = () => {
   return (
