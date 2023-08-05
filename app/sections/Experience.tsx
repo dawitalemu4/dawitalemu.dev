@@ -1,5 +1,6 @@
 'use client'
 import React, { useState, useEffect, useRef } from 'react';
+import Link from "next/link";
 
 const Experience: React.FC = () => {
 
@@ -51,7 +52,7 @@ const Experience: React.FC = () => {
                             <br/><br/>
                             <b>Keep scrolling</b> for more in-depth information about all my work!
                             <br/><br/>
-                            <a id='ResumeLink' href="https://docs.google.com/document/d/1VA2JjizgZaup8Hw1dX10K6-6aRnEW3wpa1yVvscN2H4/edit?usp=sharing" target="_blank">Click me to view Dawit's resume!</a>
+                            <Link id='ResumeLink' href="https://docs.google.com/document/d/1VA2JjizgZaup8Hw1dX10K6-6aRnEW3wpa1yVvscN2H4/edit?usp=sharing" target="_blank">Click me to view Dawit's resume!</Link>
                         </p>
                     </div>
                     <div id='SkillsContainer'>
@@ -107,7 +108,7 @@ const Experience: React.FC = () => {
                                     <p id='SkillsHeader'>Miscellaneous</p>
                                 </div>
                                 <div id='SkillsRowContainer'>
-                                    <div id='BottomSkillsRowItem'><a id="GitHubA" href="https://github.com/dawitalemu4" target="_blank"><img id="GitHubItemLogo" src="github.jpg" />GitHub</a></div>
+                                    <div id='BottomSkillsRowItem'><Link id="GitHubA" href="https://github.com/dawitalemu4" target="_blank"><img id="GitHubItemLogo" src="github.jpg" />GitHub</Link></div>
                                     <div id='BottomSkillsRowItem'><img id="ItemLogo" src="git.png" />Git</div>
                                     <div id='BottomSkillsRowItem'><img id="ItemLogo" src="gcp.jpg" />Google Cloud</div>
                                     <div id='BottomSkillsRowItem'><img id="ItemLogo" src="bash.png" />Bash</div>

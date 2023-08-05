@@ -40,3 +40,8 @@ body::-webkit-scrollbar-thumb {
   font-family: 'InterBold';
   src: url('/Inter-Bold.ttf') format('truetype');
 }
+
+@font-face {
+  font-family: 'Consolas';
+  src: url('/Consolas.ttf') format('truetype');
+}

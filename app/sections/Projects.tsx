@@ -1,5 +1,6 @@
 'use client'
 import React, { useState, useEffect, useRef } from 'react';
+import Link from "next/link";
 import { VscGithubAlt } from 'react-icons/vsc';
 import { CiShare1 } from 'react-icons/ci';
 import { IoIosPaper } from 'react-icons/io';
@@ -87,13 +88,13 @@ const Projects: React.FC = () => {
                             </div>
                             <div id="Project1IconsContainer">
                                 <div id="GithubIconContainer">
-                                    <a id="GithubLink" href="https://github.com/DebreTsionWeb/debretsion.org" target='blank'> <VscGithubAlt id='GithubIcon' />Video Demos</a>
+                                    <Link id="GithubLink" href="https://github.com/DebreTsionWeb/debretsion.org" target='_blank'> <VscGithubAlt id='GithubIcon' />Video Demos</Link>
                                 </div>
                                 <div id="RedirectIconContainer">
-                                    <a id="RedirectLink" href="https://debretsion.vercel.app/en" target='blank'> <CiShare1 id='RedirectIcon' />View Site</a>
+                                    <Link id="RedirectLink" href="https://debretsion.vercel.app/en" target='_blank'> <CiShare1 id='RedirectIcon' />View Site</Link>
                                 </div>
                                 <div id="DocsIconContainer">
-                                    <a id="DocsLink" href="/docs" target='blank'> <IoIosPaper id='DocsIcon' />Docs</a>
+                                    <Link id="DocsLink" href="/docs"> <IoIosPaper id='DocsIcon' />Docs</Link>
                                 </div>
                             </div>
                         </div>
@@ -126,13 +127,13 @@ const Projects: React.FC = () => {
                             </div>
                             <div id="Project2IconsContainer">
                                 <div id="GithubIconContainer">
-                                    <a id="GithubLink" href="https://github.com/misplaced-dev/misplaced.app" target='blank'> <VscGithubAlt id='GithubIcon' />Video Demos</a>
+                                    <Link id="GithubLink" href="https://github.com/misplaced-dev/misplaced.app" target='_blank'> <VscGithubAlt id='GithubIcon' />Video Demos</Link>
                                 </div>
                                 <div id="RedirectIconContainer">
-                                    <a id="RedirectLink" href="https://misplaced.app" target='blank'> <CiShare1 id='RedirectIcon' />View Site</a>
+                                    <Link id="RedirectLink" href="https://misplaced.app" target='_blank'> <CiShare1 id='RedirectIcon' />View Site</Link>
                                 </div>
                                 <div id="DocsIconContainer">
-                                    <a id="DocsLink" href="/docs" target='blank'> <IoIosPaper id='DocsIcon' />Docs</a>
+                                    <Link id="DocsLink" href="/docs"> <IoIosPaper id='DocsIcon' />Docs</Link>
                                 </div>
                             </div>
                         </div>
@@ -163,13 +164,13 @@ const Projects: React.FC = () => {
                             </div>
                             <div id="Project3IconsContainer">
                                 <div id="GithubIconContainer">
-                                    <a id="GithubLink" href="https://github.com/dawitalemu4/TapInWebPage" target='blank'> <VscGithubAlt id='GithubIcon' />Video Demos</a>
+                                    <Link id="GithubLink" href="https://github.com/dawitalemu4/TapInWebPage" target='_blank'> <VscGithubAlt id='GithubIcon' />Video Demos</Link>
                                 </div>
                                 <div id="RedirectIconContainer">
-                                    <a id="RedirectLink" href="https://tapinwebpage.vercel.app/" target='blank'> <CiShare1 id='RedirectIcon' />View Site</a>
+                                    <Link id="RedirectLink" href="https://tapinwebpage.vercel.app/" target='_blank'> <CiShare1 id='RedirectIcon' />View Site</Link>
                                 </div>
                                 <div id="DocsIconContainer">
-                                    <a id="DocsLink" href="/docs" target='blank'> <IoIosPaper id='DocsIcon' />Docs</a>
+                                    <Link id="DocsLink" href="/docs"> <IoIosPaper id='DocsIcon' />Docs</Link>
                                 </div>
                             </div>
                         </div>
@@ -203,13 +204,13 @@ const Projects: React.FC = () => {
                             </div>
                             <div id="Project4IconsContainer">
                                 <div id="GithubIconContainer">
-                                    <a id="GithubLink" href="https://github.com/EduCoGroup/educogroup.org" target='blank'> <VscGithubAlt id='GithubIcon' />Video Demos</a>
+                                    <Link id="GithubLink" href="https://github.com/EduCoGroup/educogroup.org" target='_blank'> <VscGithubAlt id='GithubIcon' />Video Demos</Link>
                                 </div>
                                 <div id="RedirectIconContainer">
-                                    <a id="RedirectLink" href="https://educogroup.vercel.app/" target='blank'> <CiShare1 id='RedirectIcon' />View Site</a>
+                                    <Link id="RedirectLink" href="https://educogroup.vercel.app/" target='_blank'> <CiShare1 id='RedirectIcon' />View Site</Link>
                                 </div>
                                 <div id="DocsIconContainer">
-                                    <a id="DocsLink" href="/docs" target='blank'> <IoIosPaper id='DocsIcon' />Docs</a>
+                                    <Link id="DocsLink" href="/docs"> <IoIosPaper id='DocsIcon' />Docs</Link>
                                 </div>
                             </div>
                         </div>
@@ -239,20 +240,20 @@ const Projects: React.FC = () => {
                             </div>
                             <div id="Project5IconsContainer">
                                 <div id="GithubIconContainer">
-                                    <a id="GithubLink" href="https://github.com/dawitalemu4/sonic" target='blank'> <VscGithubAlt id='GithubIcon' />Video Demos</a>
+                                    <Link id="GithubLink" href="https://github.com/dawitalemu4/sonic" target='_blank'> <VscGithubAlt id='GithubIcon' />Video Demos</Link>
                                 </div>
                                 <div id="RedirectIconContainer">
-                                    <a id="RedirectLink" href="https://github.com/dawitalemu4/sonic" target='blank'> <CiShare1 id='RedirectIcon' />View Video</a>
+                                    <Link id="RedirectLink" href="https://github.com/dawitalemu4/sonic" target='_blank'> <CiShare1 id='RedirectIcon' />View Video</Link>
                                 </div>
                                 <div id="DocsIconContainer">
-                                    <a id="DocsLink" href="/docs" target='blank'> <IoIosPaper id='DocsIcon' />Docs</a>
+                                    <Link id="DocsLink" href="/docs"> <IoIosPaper id='DocsIcon' />Docs</Link>
                                 </div>
                             </div>
                         </div>
                     </div>                
                 </div>                    
                 <div id="MoreContainer">
-                    <p id="More">And More... Browse My <a id='MoreGitHub' href=''>GitHub</a> or Visit the <a id='DocsA' href=''>Docs Page for Devs</a>!</p>
+                    <p id="More">And More... Browse My <Link id='MoreGitHub' href='https://github.com/dawitalemu4' target="_blank">GitHub</Link> or Visit the <Link id='DocsA' href='/docs'>Docs Page for Devs</Link>!</p>
                 </div>
             </div>
         <style>

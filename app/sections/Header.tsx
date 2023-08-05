@@ -37,8 +37,7 @@ const Navbar: React.FC = () => {
   }, [textIndex, texts.length]);
 
 
-  const handleHomeClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-    event.preventDefault();
+  const handleHomeClick = () => {
     const targetPosition = document.body.scrollHeight * 0;
     window.scrollTo({
       top: targetPosition,
@@ -48,8 +47,7 @@ const Navbar: React.FC = () => {
   };
 
 
-  const handleExperienceClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-    event.preventDefault();
+  const handleExperienceClick = () => {
     const experiencePosition = document.getElementById('Experience');
     if (!experiencePosition) return;
 
@@ -61,8 +59,7 @@ const Navbar: React.FC = () => {
   };
   
 
-  const handleProjectsClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-    event.preventDefault();
+  const handleProjectsClick = () => {
     const projectsPosition = document.getElementById('Projects');
     if (!projectsPosition) return;
     
@@ -74,8 +71,7 @@ const Navbar: React.FC = () => {
   };
 
 
-  const handleContactClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-    event.preventDefault();
+  const handleContactClick = () => {
     const targetPosition = document.body.scrollHeight * 1;
     window.scrollTo({
       top: targetPosition,
@@ -92,16 +88,16 @@ const Navbar: React.FC = () => {
         <img id="Bars" src="bars.jpg" style={{display: showMenu ? 'flex' : 'hidden'}} onClick={() => setShowMenu(!showMenu)}/>
         <ul id="NavbarListContainer" style={{ display: showMenu ? 'flex' : 'none' }}>
           <li id="NavbarHome">
-            <a href="/" id="home" onClick={handleHomeClick}>Home</a>
+            <div id="home" onClick={handleHomeClick}>Home</div>
           </li>
           <li id="NavbarExperience">
-            <a href="/" id="experience" onClick={handleExperienceClick}>Experience</a>
+            <div id="experience" onClick={handleExperienceClick}>Experience</div>
           </li>
           <li id="NavbarProjects">
-            <a href="/" id="projects" onClick={handleProjectsClick}>Projects</a>
+            <div id="projects" onClick={handleProjectsClick}>Projects</div>
           </li>
           <li id="NavbarContact">
-            <a href="/" id="contact" onClick={handleContactClick}>Contact</a>
+            <div id="contact" onClick={handleContactClick}>Contact</div>
           </li>
           <li>
             <Link id="DevButton" href="/docs">{texts[textIndex]}</Link>
@@ -162,7 +158,7 @@ const Navbar: React.FC = () => {
           }
 
           #DevButton {
-            font-family: Courier New, Courier, monospace;
+            font-family: Consolas;
             color: #39FF14;
             border: 1px solid #171717;
             padding: 10px;
@@ -192,10 +188,15 @@ const Navbar: React.FC = () => {
 
           #NavbarListContainer li {
             font-size: 20px;
+            font-family: InterMedium;
           }
 
-          a:hover {
-            opacity: 0.5;
+          #home, #experience, #projects, #contact {
+            cursor: pointer;
+          }
+
+          #home:hover, #experience:hover, #projects:hover, #contact:hover {
+            opacity: 0.8;
           }
 
           @media (max-width: 900px) {

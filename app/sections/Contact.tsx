@@ -1,5 +1,6 @@
 'use client'
 import React from 'react';
+import Link from "next/link";
 import { BsArrowUp } from 'react-icons/bs';
 
 const Contact: React.FC = () => {
@@ -20,9 +21,9 @@ const Contact: React.FC = () => {
                 </div>
                 <div id="ContactBodyContainer">
                     <div id="ContactIconsConatiner">
-                        <a id="ContactEmail" href='https://mail.google.com/mail?view=cm&fs=1&to=dndawita@gmail.com&su=Draft' target='blank'><img id="EmailIcon" src="mail.png" /></a>
-                        <a id="ContactLinkedin" href='https://www.linkedin.com/in/dawit-alemu4' target='blank'><img id="LinkedinIcon" src="in.png" /></a>
-                        <a id="ContactGitHub" href="https://github.com/dawitalemu4" target='blank'><img id="GitHubIcon" src="github.jpg" /></a>
+                        <Link id="ContactEmail" href='https://mail.google.com/mail?view=cm&fs=1&to=dndawita@gmail.com&su=Draft' target='_blank'><img id="EmailIcon" src="mail.png" /></Link>
+                        <Link id="ContactLinkedin" href='https://www.linkedin.com/in/dawit-alemu4' target='_blank'><img id="LinkedinIcon" src="in.png" /></Link>
+                        <Link id="ContactGitHub" href="https://github.com/dawitalemu4" target='_blank'><img id="GitHubIcon" src="github.jpg" /></Link>
                     </div>
                     <div id="ContactButtonContainer">
                         <p id="ContactButtonText">Click the arrow to see it all in reverse!</p>
