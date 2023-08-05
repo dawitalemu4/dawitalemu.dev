@@ -1,7 +1,7 @@
 'use client'
 import React from 'react';
-import HeroText from '../rcomponents/heroText';
-import Yoshi from '../rcomponents/yoshi';
+import HeroText from '../components/heroText';
+import Yoshi from '../components/yoshi';
 
 const Hero: React.FC = () => {
 

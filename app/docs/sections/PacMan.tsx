@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import PacMan from "../rcomponents/pacman";
+import PacMan from "../components/pacman";
 
 const PacManSection: React.FC = () => {
   return (

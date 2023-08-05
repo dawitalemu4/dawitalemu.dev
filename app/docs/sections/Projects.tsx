@@ -1,6 +1,6 @@
 'use client'
 import React from 'react';
-import ProjectsText from '../rcomponents/projectsText';
+import ProjectsText from '../components/projectsText';
 
 const Projects: React.FC = () => {
 
