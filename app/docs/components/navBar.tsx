@@ -81,16 +81,16 @@
 //       <img id="bars" src="bars.jpg" className={showMenu ? 'block' : 'hidden'} onClick={() => setShowMenu(!showMenu)}/>
 //       <ul id="navbar-ul" style={{ display: showMenu ? 'flex' : 'none' }} className="flex flex-wrap py-5 px-10 rounded-md ml-auto text-2xl items-center">
 //         <li id="navbar-home" className="flex-shrink px-5">
-//           <a href="/" id="home" className="" onClick={handleHomeClick}>Home</a>
+//           <Link href="/" id="home" className="" onClick={handleHomeClick}>Home</Link>
 //         </li>
 //         <li id="navbar-experience" className="flex-shrink px-5">
-//           <a href="/" id="experience" className="" onClick={handleExperienceClick}>Experience</a>
+//           <Link href="/" id="experience" className="" onClick={handleExperienceClick}>Experience</Link>
 //         </li>
 //         <li id="navbar-projects" className="flex-shrink px-5">
-//           <a href="/" id="projects" className="" onClick={handleProjectsClick}>Projects</a>
+//           <Link href="/" id="projects" className="" onClick={handleProjectsClick}>Projects</Link>
 //         </li>
 //         <li id="navbar-contact" >
-//           <a href="/" id="contact" className="flex-shrink px-5" onClick={handleContactClick}>Contact</a>
+//           <Link href="/" id="contact" className="flex-shrink px-5" onClick={handleContactClick}>Contact</Link>
 //         </li>
 //         <li>
 //           <Link id="mainButton" className="flex-shrink px-5" href="/mainWebsite">{texts[textIndex]}</Link>

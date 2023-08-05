@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useRef } from "react";
+import Link from "next/link";
 
 const ProjectsText: React.FC = () => {
 
@@ -70,7 +71,7 @@ const ProjectsText: React.FC = () => {
         </div>
       </div>
       <p id="projectsPar">   
-            <b>// <i>Misplaced</i></b> - Wrote over 100k lines of code creating a Lost and Found app/website for TU students (with expansion in progress). Made with MERN stack (React Native), JavaScript, and Google Cloud APIs. More details and demos on GitHub - <a href="https://misplaced.app" target="_blank"><span id="projectsLi">Misplaced.app (Beta)</span></a> & <a href="https://github.com/misplaced-dev/misplaced" target="_blank"><span id="projectsLi">GitHub</span></a>  
+            <b>// <i>Misplaced</i></b> - Wrote over 100k lines of code creating a Lost and Found app/website for TU students (with expansion in progress). Made with MERN stack (React Native), JavaScript, and Google Cloud APIs. More details and demos on GitHub - <Link href="https://misplaced.app" target="_blank"><span id="projectsLi">Misplaced.app (Beta)</span></Link> & <Link href="https://github.com/misplaced-dev/misplaced" target="_blank"><span id="projectsLi">GitHub</span></Link>  
             <br/>
             <br/>
             <b># <i>Mariam & Gebriel EOTC Website</i></b> - Led a team of 7 devs to make a website to give back to our childhood church in MEAN stack and TypeScript (In Progress)
@@ -79,10 +80,10 @@ const ProjectsText: React.FC = () => {
             <b>/* <i>Light Mode Portfolio Website</i></b> - Click button on navbar to view progress! (Next.js, React.tsx, TypeScript, Tailwind CSS)
             <br/>
             <br/>
-            <b>/// <i>2D Sonic Platformer</i></b> - Gained experience with physics and animation in Unity Game Engine & C# (30s Demo on <a href="https://github.com/dawitalemu4/sonic" target="_blank"><span id="projectsLi">GitHub</span></a>)
+            <b>/// <i>2D Sonic Platformer</i></b> - Gained experience with physics and animation in Unity Game Engine & C# (30s Demo on <Link href="https://github.com/dawitalemu4/sonic" target="_blank"><span id="projectsLi">GitHub</span></Link>)
             <br/>
             <br/>
-            <b>' <i>Additional Side Projects</i></b> - School projects such as VB.NET GUIs, Java, etc. (<a href="https://github.com/dawitalemu4" target="_blank"><span id="projectsLi">Browse My GitHub</span></a>)
+            <b>' <i>Additional Side Projects</i></b> - School projects such as VB.NET GUIs, Java, etc. (<Link href="https://github.com/dawitalemu4" target="_blank"><span id="projectsLi">Browse My GitHub</span></Link>)
       </p>
 
       <style>

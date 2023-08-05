@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Link from "next/link";
 
 const ContactForm: React.FC = () => {
   return (
@@ -33,18 +34,18 @@ const ContactForm: React.FC = () => {
       </div>
       <div id="contactFooterContainer">
       <div id="contactButtonsContainer">
-        <a id="linkedinIcon" href="https://www.linkedin.com/in/dawit-alemu4" target="_blank">
+        <Link id="linkedinIcon" href="https://www.linkedin.com/in/dawit-alemu4" target="_blank">
          <img src="in.png"/>  
-        </a>
-        <a id="githubIcon" href="https://github.com/dawitalemu4" target="_blank">
+        </Link>
+        <Link id="githubIcon" href="https://github.com/dawitalemu4" target="_blank">
         <img src="github.jpg"/>
-        </a>
-        <a id="mailIcon" href="https://mail.google.com/mail?view=cm&fs=1&to=dndawita@gmail.com&su=Draft" target="_blank">
+        </Link>
+        <Link id="mailIcon" href="https://mail.google.com/mail?view=cm&fs=1&to=dndawita@gmail.com&su=Draft" target="_blank">
         <img src="mail.png"/>
-        </a>
-        <a id="misplacedIcon" href="https://misplaced.app" target="_blank">
+        </Link>
+        <Link id="misplacedIcon" href="https://misplaced.app" target="_blank">
         <img src="m.png"/>
-        </a>
+        </Link>
       </div>
       <div id="pikachuFooter">
         <img id="pikachu" src="pikachu.gif" />
