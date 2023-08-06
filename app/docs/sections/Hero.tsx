@@ -6,51 +6,60 @@ import { HiOutlineArrowSmLeft } from "react-icons/hi";
 
 const Hero: React.FC = () => {
 
+    function scrollToElement(elementId: string) {
+        const element = document.getElementById(elementId);
+        if (element) {
+            const elementRect = element.getBoundingClientRect();
+            const viewportHeight = window.innerHeight;
+            const offset = (viewportHeight - elementRect.height) * 0.50;
+            const targetPosition = elementRect.top - offset;
+    
+            window.scrollTo({
+                top: targetPosition,
+                behavior: "smooth",
+            });
+        }
+    }
+    
     function Portfolio() {
-        const Portfolio = document.getElementById("Portfolio")
-        if (Portfolio) Portfolio.scrollIntoView({behavior: "smooth"})
+        scrollToElement("Portfolio");
     }
-
-    function DebreTsion() { 
-        const DebreTsion = document.getElementById("DebreTsion")
-        if (DebreTsion) DebreTsion.scrollIntoView({behavior: "smooth"})
+    
+    function DebreTsion() {
+        scrollToElement("DebreTsion");
     }
-
+    
     function Misplaced() {
-        const Misplaced = document.getElementById("Misplaced")
-        if (Misplaced) Misplaced.scrollIntoView({behavior: "smooth"})
+        scrollToElement("Misplaced");
     }
-
+    
     function TapIn() {
-        const TapIn = document.getElementById("TapIn")
-        if (TapIn) TapIn.scrollIntoView({behavior: "smooth"})
+        scrollToElement("TapIn");
     }
-
+    
     function UA() {
-        const UA = document.getElementById("UA")
-        if (UA) UA.scrollIntoView({behavior: "smooth"})
+        scrollToElement("UA");
     }
-
+    
     function Sonic() {
-        const Sonic = document.getElementById("Sonic")
-        if (Sonic) Sonic.scrollIntoView({behavior: "smooth"})
+        scrollToElement("Sonic");
     }
-
+    
     function CreatorVerse() {
-        const CreatorVerse = document.getElementById("CreatorVerse")
-        if (CreatorVerse) CreatorVerse.scrollIntoView({behavior: "smooth"})
+        scrollToElement("CreatorVerse");
     }
+    
 
-
+    
     return (
         <div id="Hero">
             <div id="BackContainer">
-                    <Link id="Back" href='/'><HiOutlineArrowSmLeft /></Link>
+                <Link id="Back" href='/'><HiOutlineArrowSmLeft /></Link>
             </div>
             <div id="HeroContainer">    
                 <div id="HeroHeaderContainer">
                     <p id="HeroHeader">Docs</p>
-                    <p id="HeroSubHeader">Documentation for all of my works <br/> (In Progress)</p>
+                    <p id="HeroSubHeader">Documentation for all of my works</p>
                 </div>
                 <div id="HeroListContainer">
                     <div id="HeroList">
@@ -96,6 +105,7 @@ const Hero: React.FC = () => {
                         justify-content: center;
                         align-items: center;
                         color: white;
+                        z-index: 1;
                     }
 
                     @keyframes fadeIn {
@@ -123,6 +133,7 @@ const Hero: React.FC = () => {
                         height: 50px;
                         justify-content: center;
                         align-items: center;
+                        z-index: 2;
                     }
 
                     #Back { font-size: 50px; }
@@ -200,7 +211,7 @@ const Hero: React.FC = () => {
 
                         #HeroContainer { flex-direction: column; }
 
-                        #BackContainer { top: 25px; left: 10px; }
+                        #BackContainer { top: 25px; left: 20px; }
 
                         #HeroHeaderContainer { 
                             width: 100%; 
@@ -218,6 +229,8 @@ const Hero: React.FC = () => {
                             width: 100%; 
                             height: 60%; 
                             align-items: center; 
+                            z-index: 3;
+                            background-color: black;
                         }
 
                         #HeroList, #HeroListItemContainer, #HeroListItemContainerBottom { width: 95%; }

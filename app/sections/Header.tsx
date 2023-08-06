@@ -176,6 +176,8 @@ const Navbar: React.FC = () => {
             animation: dropdown 0.25s ease-in-out;
           }
 
+          #DevButton:hover { opacity: 0.8; }
+
           #NavbarListContainer {
             display: flex;
             position: relative;

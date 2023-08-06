@@ -322,6 +322,8 @@ const Experience: React.FC = () => {
                     text-decoration: underline;
                 }
 
+                #GitHubA:hover { opacity: 0.8; }
+
                 #ResumeLink { font-size: 22px; font-family: InterSemi; text-decoration: underline; }
 
                 @media (max-width: 1000px) {

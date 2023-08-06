@@ -1,101 +1,96 @@
+"use client"
 import React from "react";
 import Link from "next/link";
+import { HiOutlineArrowSmLeft } from "react-icons/hi";
 import { VscGithubAlt } from 'react-icons/vsc';
 import { CiShare1 } from 'react-icons/ci';
+import CodeHighlight, { portfolioCode, debreTsionCode, misplacedCode, tapInCode, UACode, sonicCode, CVCode } from "./Codes";
 
 const Projects: React.FC = () => {
 
     return (
         <div id="Projects">
+            <div id="BackContainer">
+                <Link id="Back" href='/'><HiOutlineArrowSmLeft /></Link>
+            </div>
             <div id="ProjectsContainer">
 
                 <div id="Portfolio">
-
-                    <div id="PortfolioHeaderContainer">
-                        <p id="PortfolioHeader">Portfolio</p>
+                    <div id="DocsHeaderContainer">
+                        <p id="DocsHeader">Portfolio</p>
                     </div>
-
-                    <div id="PortfolioTextContainer">
-
-                        <div id="PortfolioLeftContainer">
-                            <div id="PortfolioChallengeContainer">
-                                <div id="PortfolioChallengeContainer">
-                                    <div id="PortfolioTopChallengeContainer">
-                                        <p id="PortfolioChallengeHeader">Favorite Challenge</p>
-                                    </div>
-                                    <div id="PortfolioBottomChallengeContainer">
-                                        <p id="PortfolioChallenge"></p>
-                                    </div>
+                    <div id="DocsTextContainer">
+                        <div id="DocsLeftContainer">
+                            <div id="DocsChallengeContainer">
+                                <div id="DocsChallengeHeaderContainer">
+                                    <p id="DocsChallengeHeader">Favorite Challenge</p>
+                                </div>
+                                <div id="DocsChallengeContainer">
+                                    <p id="DocsChallenge">Thought the parallax effect was cool? Here's the code for the effect on the projects section! 
+                                    Even though this function is almost the same as the other functions on the other sections, this one has a on and off button to toggle the effect.
+                                    In short, I took the height of the div and the top, the scroll position of the user, and calculated the % of where their scroll position is on the div.
+                                    I also offset the top a bit for timing reasons, as it would start counting the % immedialty as the top of the div showed up on the screen, but the effect is 
+                                    cooler when you can see it happening😹. Why I'm using this component's parallax function is because believe it or not, I spent 30 minutes or so confused
+                                    why 'if (effectToggle === true)' wouldn't display 'On', until I tried false like how it is now. Don't ask me why it works. (jk)</p>
                                 </div>
                             </div>
                         </div>
-
-                        <div id="PortfolioRightContainer">
-                            <div id="PortfolioParagraphContainer">
-
-                                <div id="PortfolioSubHeaderContainer">
-                                    <p id="PortfolioSubHeader">Portfolio</p>
+                        <div id="DocsRightContainer">
+                            <div id="DocsCodeContainer">
+                                <div id="DocsCodeHeaderContainer">
+                                    <p id="DocsCodeHeader">Code</p>
                                 </div>
-                                
-                                <div id="PortfolioTextContainer">
-                                    <p id='PortfolioParagraph'>A website for Debre Tsion Church made by a team of 7 student developers to give back to our childhood church led by Dawit Alemu. Created with Angular, Firebase, and TypeScript.</p>
+                                <div id="DocsCodeContainer">
+                                    <div id="DocsCode"><CodeHighlight code={portfolioCode} /></div>
                                 </div>  
-
                             </div>
-
                         </div>
                     </div>  
-
-                        <div id="PortfolioIconsContainer">
+                    <div id="BottomContainer">
+                        <div id="DocsIconsContainer">
                             <div id="GithubIconContainer">
                                 <Link id="GithubLink" href="https://github.com/DebreTsionWeb/debretsion.org" target='_blank'> <VscGithubAlt id='GithubIcon' />Video Demos</Link>
                             </div>
                             <div id="RedirectIconContainer">
-                                <Link id="RedirectLink" href="https://debretsion.vercel.app/en" target='_blank'> <CiShare1 id='RedirectIcon' />View Site</Link>
+                                <Link id="RedirectLink" href="/" target='_blank'> <CiShare1 id='RedirectIcon' />View Site</Link>
                             </div>
                         </div>                     
-                    
-                    <div id="PortfolioStackContainer">
-                        <img id="StackIcon" src="react.png" />
-                        <img id="StackIcon" src="next.png" />
-                        <img id="StackIconTS" src="ts.jpg" />
-                        
+                        <div id="DocsStackContainer">
+                            <img id="StackIcon" src="react.png" />
+                            <img id="StackIcon" src="next.png" />
+                            <img id="StackIconTS" src="ts.jpg" />
+                        </div>
                     </div>
-
                 </div>
 
                 <div id="DebreTsion">
-
-                    <div id="DebreTsionHeaderContainer">
-                        <p id="DebreTsionHeader">Debre Tsion Church</p>
+                    <div id="DocsHeaderContainer">
+                        <p id="DocsHeader">Debre Tsion Church</p>
                     </div>
-
-                    <div id="DebreTsionLeftContainer">
-                        <div id="DebreTsionChallengeContainer">
-                            <div id="DebreTsionChallengeContainer">
-                                <div id="DebreTsionTopChallengeContainer">
-                                    <p id="DebreTsionChallengeHeader">Favorite Challenge</p>
+                    <div id="DocsTextContainer">
+                        <div id="DocsLeftContainer">
+                            <div id="DocsChallengeContainer">
+                                <div id="DocsChallengeHeaderContainer">
+                                    <p id="DocsChallengeHeader">Favorite Challenge</p>
                                 </div>
-                                <div id="DebreTsionBottomChallengeContainer">
-                                    <p id="DebreTsionChallenge"></p>
+                                <div id="DocsChallengeContainer">
+                                    <p id="DocsChallenge">This website is one of my favorites </p>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div id="DebreTsionRightContainer">
-                        <div id="DebreTsionParagraphContainer">
-
-                            <div id="DebreTsionSubHeaderContainer">
-                                <p id="DebreTsionSubHeader">Debre Tsion Church</p>
+                        <div id="DocsRightContainer">
+                            <div id="DocsCodeContainer">
+                                <div id="DocsCodeHeaderContainer">
+                                    <p id="DocsCodeHeader">Code</p>
+                                </div>
+                                <div id="DocsCodeContainer">
+                                    <div id='DocsCode'><CodeHighlight code={debreTsionCode} /></div>
+                                </div>  
                             </div>
-                            
-                            <div id="DebreTsionTextContainer">
-                                <p id='DebreTsionParagraph'>A website for Debre Tsion Church made by a team of 7 student developers to give back to our childhood church led by Dawit Alemu. Created with Angular, Firebase, and TypeScript.</p>
-                            </div>  
-
                         </div>
-                        <div id="DebreTsionIconsContainer">
+                    </div>  
+                    <div id="BottomContainer">
+                        <div id="DocsIconsContainer">
                             <div id="GithubIconContainer">
                                 <Link id="GithubLink" href="https://github.com/DebreTsionWeb/debretsion.org" target='_blank'> <VscGithubAlt id='GithubIcon' />Video Demos</Link>
                             </div>
@@ -103,98 +98,88 @@ const Projects: React.FC = () => {
                                 <Link id="RedirectLink" href="https://debretsion.vercel.app/en" target='_blank'> <CiShare1 id='RedirectIcon' />View Site</Link>
                             </div>
                         </div>
+                        <div id="DocsStackContainer">
+                            <img id="StackIcon" src="angular.jpg" />
+                            <img id="StackIcon" src="firebase.png" />
+                            <img id="StackIcon" src="gcp.jpg" />
+                            <img id="StackIconTS" src="ts.jpg" />
+                        </div>
                     </div>
-
-                    <div id="DebreTsionStackContainer">
-                        <img id="StackIcon" src="angular.jpg" />
-                        <img id="StackIcon" src="firebase.png" />
-                        <img id="StackIcon" src="gcp.jpg" />
-                        <img id="StackIconTS" src="ts.jpg" />
-                    </div>
-
                 </div>
 
                 <div id="Misplaced">
-
-                    <div id="MisplacedHeaderContainer">
-                        <p id="MisplacedHeader">Misplaced</p>
+                    <div id="DocsHeaderContainer">
+                        <p id="DocsHeader">Misplaced</p>
                     </div>
-
-                    <div id="MisplacedLeftContainer">
-                        <div id="MisplacedChallengeContainer">
-                            <div id="MisplacedTopChallengeContainer">
-                                <p id="MisplacedChallengeHeader">Favorite Challenge</p>
-                            </div>
-                            <div id="MisplacedBottomChallengeContainer">
-                                <p id="MisplacedChallenge"></p>
+                    <div id="DocsTextContainer">
+                        <div id="DocsLeftContainer">
+                            <div id="DocsChallengeContainer">
+                                <div id="DocsChallengeHeaderContainer">
+                                    <p id="DocsChallengeHeader">Favorite Challenge</p>
+                                </div>
+                                <div id="DocsChallengeContainer">
+                                    <p id="DocsChallenge">Challenge</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div id="MisplacedRightContainer">
-                        <div id="MisplacedParagraphContainer">
-
-                            <div id="MisplacedSubHeaderContainer">
-                                <p id="MisplacedSubHeader">Misplaced</p>
+                        <div id="DocsRightContainer">
+                            <div id="DocsCodeContainer">
+                                <div id="DocsCodeHeaderContainer">
+                                    <p id="DocsCodeHeader">Code</p>
+                                </div>
+                                <div id="DocsCodeContainer">
+                                    <div id='DocsCode'><CodeHighlight code={misplacedCode} /></div>
+                                </div>  
                             </div>
-
-                            <div id="MisplacedTextContainer">
-                                <p id='MisplacedParagraph'>Misplaced is a digitalized lost and found platform for TU students to retrieve lost items by posting information through an intuitive React Native UI and connecting with potential finders. Utilizes MERN stack and Google Cloud APIs.</p>
-                            </div>
-
                         </div>
-                        <div id="MisplacedIconsContainer">
+                    </div>  
+                    <div id="BottomContainer">
+                        <div id="DocsIconsContainer">
                             <div id="GithubIconContainer">
                                 <Link id="GithubLink" href="https://github.com/misplaced-dev/misplaced.app" target='_blank'> <VscGithubAlt id='GithubIcon' />Video Demos</Link>
                             </div>
                             <div id="RedirectIconContainer">
                                 <Link id="RedirectLink" href="https://misplaced.app" target='_blank'> <CiShare1 id='RedirectIcon' />View Site</Link>
                             </div>
+                        </div>                        
+                        <div id="DocsStackContainer">
+                            <img id="StackIcon" src="react.png" />
+                            <img id="StackIcon" src="expo.png" />
+                            <img id="StackIcon" src="mongo.png" />
+                            <img id="StackIcon" src="node.png" />
+                            <img id="StackIconJS" src="js.png" />
                         </div>
                     </div>
-
-                    <div id="MisplacedStackContainer">
-                        <img id="StackIcon" src="react.png" />
-                        <img id="StackIcon" src="expo.png" />
-                        <img id="StackIcon" src="mongo.png" />
-                        <img id="StackIcon" src="node.png" />
-                        <img id="StackIconJS" src="js.png" />
-                    </div>
-
                 </div>
 
                 <div id="TapIn">
-
-                    <div id="TapInHeaderContainer">
-                        <p id="TapInHeader">Let's Tap In, LLC</p>
+                    <div id="DocsHeaderContainer">
+                        <p id="DocsHeader">Let's Tap In</p>
                     </div>
-
-                    <div id="TapInLeftContainer">
-                        <div id="TapInChallengeContainer">
-                            <div id="TapInChallengeContainer">
-                                <div id="TapInTopChallengeContainer">
-                                    <p id="TapInChallengeHeader">Favorite Challenge</p>
+                    <div id="DocsTextContainer">
+                        <div id="DocsLeftContainer">
+                            <div id="DocsChallengeContainer">
+                                <div id="DocsChallengeHeaderContainer">
+                                    <p id="DocsChallengeHeader">Favorite Challenge</p>
                                 </div>
-                                <div id="TapInBottomChallengeContainer">
-                                    <p id="TapInChallenge"></p>
+                                <div id="DocsChallengeContainer">
+                                    <p id="DocsChallenge">Challenge</p>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div id="TapInRightContainer">
-                        <div id="TapInParagraphContainer">
-
-                            <div id="TapInSubHeaderContainer">
-                                <p id="TapInSubHeader">Let's Tap In, LLC</p>
+                        <div id="DocsRightContainer">
+                            <div id="DocsCodeContainer">
+                                <div id="DocsCodeHeaderContainer">
+                                    <p id="DocsCodeHeader">Code</p>
+                                </div>
+                                <div id="DocsCodeContainer">
+                                    <div id='DocsCode'><CodeHighlight code={tapInCode} /></div>
+                                </div>  
                             </div>
-
-                            <div id="TapInTextContainer">
-                                <p id='TapInParagraph'>This static webpage made for a client displays dummy recent events available and allows you to checkout tickets. Made with React, Next.js, and TypeScript. Click this repo to view short demo video!</p>
-                            </div>
-
                         </div>
-                        <div id="TapInIconsContainer">
+                    </div>  
+                    <div id="BottomContainer">
+                        <div id="DocsIconsContainer">
                             <div id="GithubIconContainer">
                                 <Link id="GithubLink" href="https://github.com/dawitalemu4/TapInWebPage" target='_blank'> <VscGithubAlt id='GithubIcon' />Video Demos</Link>
                             </div>
@@ -202,51 +187,42 @@ const Projects: React.FC = () => {
                                 <Link id="RedirectLink" href="https://tapinwebpage.vercel.app/" target='_blank'> <CiShare1 id='RedirectIcon' />View Site</Link>
                             </div>
                         </div>
+                        <div id="DocsStackContainer">
+                            <img id="StackIcon" src="react.png" />
+                            <img id="StackIcon" src="next.png" />
+                            <img id="StackIconTS" src="ts.jpg" />
+                        </div>
                     </div>
-
-                    <div id="TapInStackContainer">
-                        <img id="StackIcon" src="react.png" />
-                        <img id="StackIcon" src="next.png" />
-                        <img id="StackIconTS" src="ts.jpg" />
-                    </div>
-
                 </div>
 
                 <div id="UA">
-
-                    <div id="UAHeaderContainer">
-                        <p id="UAHeader">Urban Alliance</p>
+                    <div id="DocsHeaderContainer">
+                        <p id="DocsHeader">Urban Alliance</p>
                     </div>
-
-                    <div id="UALeftContainer">
-                        <div id="UAChallengeContainer">
-                            <div id="UAChallengeContainer">
-                                <div id="UATopChallengeContainer">
-                                    <p id="UAChallengeHeader">Favorite Challenge</p>
+                    <div id="DocsTextContainer">
+                        <div id="DocsLeftContainer">
+                            <div id="DocsChallengeContainer">
+                                <div id="DocsChallengeHeaderContainer">
+                                    <p id="DocsChallengeHeader">Favorite Challenge</p>
                                 </div>
-                                <div id="UABottomChallengeContainer">
-                                    <p id="UAChallenge"></p>
+                                <div id="DocsChallengeContainer">
+                                    <p id="DocsChallenge">Trying to avoid reptitve code</p>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div id="UARightContainer">
-                        <div id="UAParagraphContainer">
-
-                            <div id="UASubHeaderContainer">
-                                <p id="UASubHeader">Urban Alliance</p>
+                        <div id="DocsRightContainer">
+                            <div id="DocsCodeContainer">
+                                <div id="DocsCodeHeaderContainer">
+                                    <p id="DocsCodeHeader">Code</p>
+                                </div>
+                                <div id="DocsCodeContainer">
+                                    <div id='DocsCode'><CodeHighlight code={UACode} /></div>
+                                </div>  
                             </div>
-
-                            <div id="UATextContainer">
-                                <p id='UAParagraph'>Upgraded EduCo’s main website by coding a new website from scratch, eliminating previous web template expenses. 
-                                Utilized Gatsby.js, React, and JavaScript to take advantage of Gatsby’s Static Site Generation for this static site.
-                                Held meetings with the CEO and Co-Founder to align development with business needs. Production: educogroup.org
-                                Sparked the start of EduCo Group’s codebase using GitHub organizations, project-based repos, and protection rules.</p>
-                            </div>
-
                         </div>
-                        <div id="UAIconsContainer">
+                    </div>  
+                    <div id="BottomContainer">
+                        <div id="DocsIconsContainer">
                             <div id="GithubIconContainer">
                                 <Link id="GithubLink" href="https://github.com/EduCoGroup/educogroup.org" target='_blank'> <VscGithubAlt id='GithubIcon' />Video Demos</Link>
                             </div>
@@ -254,112 +230,97 @@ const Projects: React.FC = () => {
                                 <Link id="RedirectLink" href="https://educogroup.vercel.app/" target='_blank'> <CiShare1 id='RedirectIcon' />View Site</Link>
                             </div>
                         </div>
+                        <div id="DocsStackContainer">
+                            <img id="StackIcon" src="react.png" />
+                            <img id="StackIcon" src="gatsby.webp" />
+                            <img id="StackIconJS" src="js.png" />
+                        </div>
                     </div>
-
-                    <div id="UAStackContainer">
-                        <img id="StackIcon" src="react.png" />
-                        <img id="StackIcon" src="gatsby.webp" />
-                        <img id="StackIconJS" src="js.png" />
-                    </div>
-
                 </div>
 
                 <div id="Sonic">
-
-                    <div id="SonicHeaderContainer">
-                        <p id="SonicHeader">2D Sonic Platformer</p>
+                    <div id="DocsHeaderContainer">
+                        <p id="DocsHeader">2D Sonic Platformer</p>
                     </div>
-
-                    <div id="SonicLeftContainer">
-                        <div id="SonicChallengeContainer">
-                            <div id="SonicChallengeContainer">
-                                <div id="SonicTopChallengeContainer">
-                                    <p id="SonicChallengeHeader">Favorite Challenge</p>
+                    <div id="DocsTextContainer">
+                        <div id="DocsLeftContainer">
+                            <div id="DocsChallengeContainer">
+                                <div id="DocsChallengeHeaderContainer">
+                                    <p id="DocsChallengeHeader">Favorite Challenge</p>
                                 </div>
-                                <div id="SonicBottomChallengeContainer">
-                                    <p id="SonicChallenge"></p>
+                                <div id="DocsChallengeContainer">
+                                    <p id="DocsChallenge">Challenge</p>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div id="SonicRightContainer">
-                        <div id="SonicParagraphContainer">
-
-                            <div id="SonicSubHeaderContainer">
-                                <p id="SonicSubHeader">2D Sonic Platformer</p>
+                        <div id="DocsRightContainer">
+                            <div id="DocsCodeContainer">
+                                <div id="DocsCodeHeaderContainer">
+                                    <p id="DocsCodeHeader">Code</p>
+                                </div>
+                                <div id="DocsCodeContainer">
+                                    <div id='DocsCode'><CodeHighlight code={sonicCode} /></div>
+                                </div>  
                             </div>
-
-                            <div id="SonicTextContainer">
-                                <p id='SonicParagraph'>A 2D Sonic platformer game that gave me experience with physics and animation in Unity Game Engine and C#. Click this repo for a quick video demo!</p>
-                            </div>
-
                         </div>
-                        <div id="SonicIconsContainer">
+                    </div>  
+                    <div id="BottomContainer">
+                        <div id="DocsIconsContainer">
                             <div id="GithubIconContainer">
                                 <Link id="GithubLink" href="https://github.com/dawitalemu4/sonic" target='_blank'> <VscGithubAlt id='GithubIcon' />Video Demos</Link>
                             </div>
                             <div id="RedirectIconContainer">
                                 <Link id="RedirectLink" href="https://github.com/dawitalemu4/sonic" target='_blank'> <CiShare1 id='RedirectIcon' />View Video</Link>
                             </div>
+                        </div>  
+                        <div id="DocsStackContainer">
+                            <img id="StackIcon" src="c.png" />
+                            <img id="StackIcon" src="unity.jpg" />
                         </div>
-                    </div>                            
-                    
-                    <div id="SonicStackContainer">
-                        <img id="StackIcon" src="c.png" />
-                        <img id="StackIcon" src="unity.jpg" />
                     </div>
-
                 </div> 
 
                 <div id="CreatorVerse">
-
-                    <div id="CVHeaderContainer">
-                        <p id="CVHeader">CreatorVerse</p>
+                    <div id="DocsHeaderContainer">
+                        <p id="DocsHeader">CreatorVerse</p>
                     </div>
-
-                    <div id="CVLeftContainer">
-                        <div id="CVChallengeContainer">
-                            <div id="CVChallengeContainer">
-                                <div id="CVTopChallengeContainer">
-                                    <p id="CVChallengeHeader">Favorite Challenge</p>
+                    <div id="DocsTextContainer">
+                        <div id="DocsLeftContainer">
+                            <div id="DocsChallengeContainer">
+                                <div id="DocsChallengeHeaderContainer">
+                                    <p id="DocsChallengeHeader">Favorite Challenge</p>
                                 </div>
-                                <div id="CVBottomChallengeContainer">
-                                    <p id="CVChallenge"></p>
+                                <div id="DocsChallengeContainer">
+                                    <p id="DocsChallenge">Challenge</p>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    
-                    <div id="CVRightContainer">
-                        <div id="CVParagraphContainer">
-
-                            <div id="CVSubHeaderContainer">
-                                <p id="CVSubHeader">Debre Tsion Church</p>
+                        <div id="DocsRightContainer">
+                            <div id="DocsCodeContainer">
+                                <div id="DocsCodeHeaderContainer">
+                                    <p id="DocsCodeHeader">Code</p>
+                                </div>
+                                <div id="DocsCodeContainer">
+                                    <div id='DocsCode'><CodeHighlight code={CVCode} /></div>
+                                </div>  
                             </div>
-                            
-                            <div id="CVTextContainer">
-                                <p id='CVParagraph'>A website for Debre Tsion Church made by a team of 7 student developers to give back to our childhood church led by Dawit Alemu. Created with Angular, Firebase, and TypeScript.</p>
-                            </div>  
-
                         </div>
-                        <div id="CVIconsContainer">
+                    </div>  
+                    <div id="BottomContainer">
+                        <div id="DocsIconsContainer">
                             <div id="GithubIconContainer">
-                                <Link id="GithubLink" href="https://github.com/DebreTsionWeb/debretsion.org" target='_blank'> <VscGithubAlt id='GithubIcon' />Video Demos</Link>
+                                <Link id="GithubLink" href="https://github.com/dawitalemu4/CodePath103PreWork" target='_blank'> <VscGithubAlt id='GithubIcon' />Video Demos</Link>
                             </div>
                             <div id="RedirectIconContainer">
-                                <Link id="RedirectLink" href="https://debretsion.vercel.app/en" target='_blank'> <CiShare1 id='RedirectIcon' />View Site</Link>
+                                <Link id="RedirectLink" href="https://creatorverse-da.vercel.app" target='_blank'> <CiShare1 id='RedirectIcon' />View Site</Link>
                             </div>
                         </div>
-                    </div> 
-
-                    <div id="CVStackContainer">
-                        <img id="StackIcon" src="angular.jpg" />
-                        <img id="StackIcon" src="firebase.png" />
-                        <img id="StackIcon" src="gcp.jpg" />
-                        <img id="StackIconTS" src="ts.jpg" />
+                        <div id="DocsStackContainer">
+                            <img id="StackIcon" src="react.png" />
+                            <img id="StackIcon" src="supabase.png" />
+                            <img id="StackIconJS" src="js.png" />
+                        </div>
                     </div>
-
                 </div>
 
             </div>
@@ -374,7 +335,24 @@ const Projects: React.FC = () => {
                     justify-content: center;
                     align-items: center;
                     color: white;
+                    z-index: 1;
                 }
+
+                #BackContainer {
+                    display: flex;
+                    position: fixed;
+                    top: 20px;
+                    left: 20px;
+                    width: 50px;
+                    height: 50px;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 2;
+                }
+
+                #Back { font-size: 50px; }
+
+                #Back:hover { opacity: 0.5;}
 
                 #ProjectsContainer {
                     display: flex;
@@ -382,7 +360,7 @@ const Projects: React.FC = () => {
                     width: 90%;
                     height: 100%;
                     flex-direction: column;
-                    justify-content: center;
+                    justify-content: space-between;
                     align-items: center;
                 }
 
@@ -390,105 +368,15 @@ const Projects: React.FC = () => {
                     display: flex;
                     position: relative;
                     width: 95%;
-                    height: 14%;
-                    flex-direction: row;
+                    height: 11%;
+                    flex-direction: column;
                     justify-content: center;
-                    align-items: flex-start;
+                    align-items: center;
                     background-color: black;
-                    border-radius: 25px;
+                    z-index: 3;
                 }
 
-                #PortfolioHeaderContainer, #DebreTsionHeaderContainer, #MisplacedHeaderContainer, #TapInHeaderContainer, #UAHeaderContainer, #SonicHeaderContainer, #CVHeaderContainer {
-                    display: flex;
-                    position: absolute;
-                    top: 0;
-                    width: 100%;
-                    height: 20%;
-                    justify-content: center;
-                    align-items: center;
-                }
-
-                #PortfolioHeader, #DebreTsionHeader, #MisplacedHeader, #TapInHeader, #UAHeader, #SonicHeader, #CVHeader {
-                    font-size: 50px;
-                    color: white;
-                    font-family: InterSemi;
-                    text-align: center;
-                }
-
-                #PortfolioLeftContainer, #DebreTsionLeftContainer, #MisplacedLeftContainer, #TapInLeftContainer, #UALeftContainer, #SonicLeftContainer, #CVLeftContainer {
-                    display: flex;
-                    position: relative;
-                    width: 40%;
-                    height: 90%;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                }
-
-                #PortfolioChallengeContainer, #DebreTsionChallengeContainer, #MisplacedChallengeContainer, #TapInChallengeContainer, #UAChallengeContainer, #SonicChallengeContainer, #CVChallengeContainer {
-                    display: flex;
-                    position: relative;
-                    width: 90%;
-                    height: 75%;
-                    justify-content: center;
-                    align-items: center;
-                    object-fit: contain;
-                    overflow: hidden;
-                }
-
-                #PortfolioTopChallengeContainer, #DebreTsionTopChallengeContainer, #MisplacedTopChallengeContainer, #TapInTopChallengeContainer, #UATopChallengeContainer, #SonicTopChallengeContainer, #CVTopChallengeContainer {
-                    display: flex;
-                    position: relative;
-                    width: 100%;
-                    height: 20%;
-                    justify-content: center;
-                    align-items: center;
-                }
-
-                #PortfolioChallengeHeader, #DebreTsionChallengeHeader, #MisplacedChallengeHeader, #TapInChallengeHeader, #UAChallengeHeader, #SonicChallengeHeader, #CVChallengeHeader {
-                    font-size: 30px;
-                    color: white;
-                    font-family: InterSemi;
-                    text-align: center;
-                }
-
-                #PortfolioBottomChallengeContainer, #DebreTsionBottomChallengeContainer, #MisplacedBottomChallengeContainer, #TapInBottomChallengeContainer, #UABottomChallengeContainer, #SonicBottomChallengeContainer, #CVBottomChallengeContainer {
-                    display: flex;
-                    position: relative;
-                    width: 100%;
-                    height: 80%;
-                    justify-content: center;
-                    align-items: center;
-                }
-
-                #PortfolioChallenge, #DebreTsionChallenge, #MisplacedChallenge, #TapInChallenge, #UAChallenge, #SonicChallenge, #CVChallenge {
-                    font-size: 20px;
-                    color: white;
-                    font-family: Inter;
-                    text-align: center;
-                }
-
-                #PortfolioRightContainer, #DebreTsionRightContainer, #MisplacedRightContainer, #TapInRightContainer, #UARightContainer, #SonicRightContainer, #CVRightContainer {
-                    display: flex;
-                    position: relative;
-                    width: 60%;
-                    height: 90%;
-                    flex-direction: row;
-                    justify-content: center;
-                    align-items: flex-start;
-                }
-
-                #PortfolioParagraphContainer, #DebreTsionParagraphContainer, #MisplacedParagraphContainer, #TapInParagraphContainer, #UAParagraphContainer, #SonicParagraphContainer, #CVParagraphContainer {
-                    display: flex;
-                    position: relative;
-                    width: 85%;
-                    height: 100%;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                }
-
-                #PortfolioSubHeaderContainer, #DebreTsionSubHeaderContainer, #MisplacedSubHeaderContainer, #TapInSubHeaderContainer, #UASubHeaderContainer, #SonicSubHeaderContainer, #CVSubHeaderContainer {
+                #DocsHeaderContainer {
                     display: flex;
                     position: relative;
                     width: 100%;
@@ -497,66 +385,122 @@ const Projects: React.FC = () => {
                     align-items: center;
                 }
 
-                #PortfolioSubHeader, #DebreTsionSubHeader, #MisplacedSubHeader, #TapInSubHeader, #UASubHeader, #SonicSubHeader, #CVSubHeader {
-                    font-size: 30px;
-                    color: white;
-                    font-family: Inter;
+                #DocsHeader {
+                    font-size: 50px;
+                    font-family: InterBold;
                     text-align: center;
                 }
 
-                #PortfolioTextContainer, #DebreTsionTextContainer, #MisplacedTextContainer, #TapInTextContainer, #UATextContainer, #SonicTextContainer, #CVTextContainer {
+                #DocsTextContainer {
                     display: flex;
                     position: relative;
                     width: 100%;
-                    height: 40%;
-                    margin-top: 2%;
-                    margin-bottom: 2%;
-                    padding-right: 15px;
-                    padding-left: 10px;
+                    height: 75%;
+                    flex-direction: row;
                     justify-content: center;
                     align-items: center;
-                    background-color: #171717;
+                }
+
+                #DocsLeftContainer, #DocsRightContainer {
+                    display: flex;
+                    position: relative;
+                    width: 50%;
+                    height: 100%;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                #DocsChallengeContainer, #DocsCodeContainer {
+                    display: flex;
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                #DocsChallengeHeaderContainer, #DocsCodeHeaderContainer {
+                    display: flex;
+                    position: relative;
+                    width: 100%;
+                    height: 20%;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                #DocsChallengeHeader, #DocsCodeHeader {
+                    font-size: 30px;
+                    font-family: InterSemi;
+                    text-align: center;
+                }
+
+                #DocsChallengeContainer, #DocsCodeContainer {
+                    display: flex;
+                    position: relative;
+                    width: 90%;
+                    height: 80%;
+                    justify-content: flex-start;
+                    align-items: center;
+                }
+
+                #DocsCodeContainer { width: 100%; }
+
+                #DocsChallenge {
+                    font-size: 15px;
+                    font-family: Inter;
+                    text-align: left;
                     overflow-y: scroll;
                 }
 
-                #PortfolioTextContainer::-webkit-scrollbar, #DebreTsionTextContainer::-webkit-scrollbar, #MisplacedTextContainer::-webkit-scrollbar, #TapInTextContainer::-webkit-scrollbar, #UATextContainer::-webkit-scrollbar, #SonicTextContainer::-webkit-scrollbar, #CVTextContainer::-webkit-scrollbar {
+                #DocsChallenge::-webkit-scrollbar {
                     width: 5px;
-                    background-color: black;
+                    background-color: transparent;
                 }
 
-                #PortfolioTextContainer::-webkit-scrollbar-thumb, #DebreTsionTextContainer::-webkit-scrollbar-thumb, #MisplacedTextContainer::-webkit-scrollbar-thumb, #TapInTextContainer::-webkit-scrollbar-thumb, #UATextContainer::-webkit-scrollbar-thumb, #SonicTextContainer::-webkit-scrollbar-thumb, #CVTextContainer::-webkit-scrollbar-thumb {
+                #DocsChallenge::-webkit-scrollbar-thumb {
                     background-color: white;
                     border-radius: 10px;
                 }
 
-                #PortfolioParagraph, #DebreTsionParagraph, #MisplacedParagraph, #TapInParagraph, #UAParagraph, #SonicParagraph, #CVParagraph {
-                    font-family: Consolas;
-                    color: white;
-                    text-align: left;
+                #DocsCode { 
+                    display: flex;
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                    overflow: scroll;
+                    font-size: 11px;
+                    background-color: #1d1f21;
                 }
 
-                #PortfolioStackContainer, #DebreTsionStackContainer, #MisplacedStackContainer, #TapInStackContainer, #UAStackContainer, #SonicStackContainer, #CVStackContainer {
+                #DocsCode::-webkit-scrollbar {
+                    width: 5px;
+                    height: 5px;
+                    background-color: transparent;
+                }
+
+                #DocsCode::-webkit-scrollbar-thumb {
+                    background-color: white;
+                    border-radius: 10px;
+                }
+
+                #BottomContainer {
                     display: flex;
-                    position: absolute;
-                    bottom: 5%;
+                    position: relative;
                     width: 100%;
                     height: 15%;
+                    flex-direction: row;
                     justify-content: center;
                     align-items: center;
                 }
 
-                #StackIcon, #StackIconTS, #StackIconJS {
-                    height: 80%;
-                    margin-left: 3px;
-                    margin-right: 3px;
-                }
-
-                #StackIconTS, #StackIconJS { margin-left: 7px; }
-
-                #PortfolioIconsContainer, #DebreTsionIconsContainer, #MisplacedIconsContainer, #TapInIconsContainer, #UAIconsContainer, #SonicIconsContainer, #CVIconsContainer {
+                #DocsIconsContainer {
                     display: flex;
                     position: relative;
-                    width: 25%;
+                    width: 50%;
                     height: 100%;
                     flex-direction: row;
                     justify-content: center;
@@ -567,7 +511,7 @@ const Projects: React.FC = () => {
                     display: flex;
                     position: relative;
                     width: 100%;
-                    height: 33%;
+                    height: 100%;
                     justify-content: center;
                     align-items: center;
                 }
@@ -589,6 +533,46 @@ const Projects: React.FC = () => {
                 #GithubIcon, #RedirectIcon, #DocsIcon {
                     font-size: 45px;
                     color: white;
+                }
+
+                #DocsStackContainer {
+                    display: flex;
+                    position: relative;
+                    width: 50%;
+                    height: 100%;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                #StackIcon, #StackIconTS, #StackIconJS {
+                    height: 80%;
+                    margin-left: 3px;
+                    margin-right: 3px;
+                }
+
+                #StackIconTS, #StackIconJS { margin-left: 7px; }
+
+                @media (max-width: 1000px) {
+
+                    #Projects { height: 800vh; }
+
+                    #BackContainer { top: 25px; left: 20px; }
+
+                    #DocsHeader { font-size: 34px; }
+
+                    #DocsTextContainer { flex-direction: column; }
+
+                    #DocsLeftContainer, #DocsRightContainer { width: 100%; height: 50%; }
+
+                    #DocsChallengeHeader { font-size: 25px; }
+                    
+                    #DocsCodeHeaderContainer { margin-bottom: 5%; }
+
+                    #DocsCodeHeader { font-size: 25px; }
+
+                    #DocsStackContainer { flex-wrap: wrap; }
+
+                    #StackIcon, #StackIconTS, #StackIconJS { height: 40%; }
                 }
 
             `}

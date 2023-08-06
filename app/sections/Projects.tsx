@@ -10,7 +10,7 @@ const Projects: React.FC = () => {
     const [projectScrollHeight, setProjectScrollHeight] = useState('0%');
     const [effectToggle, setEffectToggle] = useState(true);
     const [effectText, setEffectText] = useState('On');
-    const projectTextContainerRef = useRef<HTMLDivElement>(null);
+    const projectsContainerRef = useRef<HTMLDivElement>(null);
 
     const toggleEffect = () => {
 
@@ -24,11 +24,11 @@ const Projects: React.FC = () => {
     }
 
     const handleProjectScroll = () => {
-        const projectTextContainer = projectTextContainerRef.current;
-        if (!projectTextContainer) return;
+        const projectsContainer = projectsContainerRef.current;
+        if (!projectsContainer) return;
       
-        const containerHeight = projectTextContainer.clientHeight;
-        const containerTop = projectTextContainer.getBoundingClientRect().top;
+        const containerHeight = projectsContainer.clientHeight;
+        const containerTop = projectsContainer.getBoundingClientRect().top;
         const scrollPosition = Math.max(0, window.scrollY - containerTop - window.innerHeight * 1.9);
 
         const isContainerVisible = containerTop + containerHeight >= 0 && containerTop <= window.innerHeight;
@@ -54,7 +54,7 @@ const Projects: React.FC = () => {
 
 
     return (
-        <div id='Projects' ref={projectTextContainerRef}>
+        <div id='Projects' ref={projectsContainerRef}>
             <div id="ProjectsContainer">
                 <div id="ProjectsHeaderContainer">
                     <p id="ProjectsHeader">Projects</p>
@@ -498,6 +498,8 @@ const Projects: React.FC = () => {
                     text-align: center;
                 }
 
+                #GithubLink:hover, #RedirectLink:hover, #DocsLink:hover { opacity: 0.7; }
+
                 #GithubIcon, #RedirectIcon, #DocsIcon {
                     font-size: 45px;
                     color: white;
@@ -514,9 +516,9 @@ const Projects: React.FC = () => {
                     align-items: center;
                 }
 
-                #DocsA, #MoreGitHub {
-                    text-decoration: underline;
-                }
+                #DocsA, #MoreGitHub { text-decoration: underline; }
+
+                #DocsA:hover, #MoreGitHub:hover { opacity: 0.7; }
 
                 @media (max-width: 900px) { 
 
