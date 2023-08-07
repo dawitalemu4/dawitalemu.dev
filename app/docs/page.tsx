@@ -2,6 +2,7 @@ import React from 'react';
 import { Metadata } from 'next';
 import Hero from './sections/Hero';
 import Projects from './sections/Projects';
+import MiniGames from './sections/MiniGames';
 
 export const metadata: Metadata = {
   title: 'Dawit Alemu',
@@ -14,6 +15,7 @@ export default function Home(){
       <body>    
         <Hero />
         <Projects />
+        <MiniGames />
       </body>
     </html>
   )

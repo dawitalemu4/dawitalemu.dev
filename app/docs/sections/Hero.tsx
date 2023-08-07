@@ -2,55 +2,73 @@
 import React from "react";
 import Link from "next/link";
 import { IoIosArrowDown } from "react-icons/io";
-import { HiOutlineArrowSmLeft } from "react-icons/hi";
+import { HiOutlineArrowSmLeft, HiArrowNarrowDown} from "react-icons/hi";
 
 const Hero: React.FC = () => {
 
-    function Portfolio() {
-        const Portfolio = document.getElementById("Portfolio")
-        if (Portfolio) Portfolio.scrollIntoView({behavior: "smooth"})
+    const scrollToElement = (elementId: string) => {
+        const element = document.getElementById(elementId);
+        if (element) {
+            const elementRect = element.getBoundingClientRect();
+            const viewportHeight = window.innerHeight;
+            const offset = (viewportHeight - elementRect.height) * 0.50;
+            const targetPosition = elementRect.top - offset;
+    
+            window.scrollTo({
+                top: targetPosition,
+                behavior: "smooth",
+            });
+        }
+    }
+    
+    const Portfolio = () => {
+        scrollToElement("Portfolio");
+    }
+    
+    const DebreTsion = () => {
+        scrollToElement("DebreTsion");
+    }
+    
+    const Misplaced = () => {
+        scrollToElement("Misplaced");
+    }
+    
+    const TapIn = () => {
+        scrollToElement("TapIn");
+    }
+    
+    const UA = () => {
+        scrollToElement("UA");
+    }
+    
+    const Sonic = () => {
+        scrollToElement("Sonic");
+    }
+    
+    const CreatorVerse = () => {
+        scrollToElement("CreatorVerse");
+    }
+    
+    const Bottom = () => {
+        const element = document.getElementById("MiniGames");
+        if (!element) { return }
+        window.scrollTo({
+            top: element.getBoundingClientRect().top,
+            behavior: "smooth",
+        });
     }
 
-    function DebreTsion() { 
-        const DebreTsion = document.getElementById("DebreTsion")
-        if (DebreTsion) DebreTsion.scrollIntoView({behavior: "smooth"})
-    }
-
-    function Misplaced() {
-        const Misplaced = document.getElementById("Misplaced")
-        if (Misplaced) Misplaced.scrollIntoView({behavior: "smooth"})
-    }
-
-    function TapIn() {
-        const TapIn = document.getElementById("TapIn")
-        if (TapIn) TapIn.scrollIntoView({behavior: "smooth"})
-    }
-
-    function UA() {
-        const UA = document.getElementById("UA")
-        if (UA) UA.scrollIntoView({behavior: "smooth"})
-    }
-
-    function Sonic() {
-        const Sonic = document.getElementById("Sonic")
-        if (Sonic) Sonic.scrollIntoView({behavior: "smooth"})
-    }
-
-    function CreatorVerse() {
-        const CreatorVerse = document.getElementById("CreatorVerse")
-        if (CreatorVerse) CreatorVerse.scrollIntoView({behavior: "smooth"})
-    }
-
-
+    
     return (
         <div id="Hero">
             <div id="BackContainer">
-                    <Link id="Back" href='/'><HiOutlineArrowSmLeft /></Link>
+                <Link id="Back" href='/'><HiOutlineArrowSmLeft /></Link>
             </div>
             <div id="HeroContainer">    
                 <div id="HeroHeaderContainer">
                     <p id="HeroHeader">Docs</p>
-                    <p id="HeroSubHeader">Documentation for all of my works <br/> (In Progress)</p>
+                    <p id="HeroSubHeader">Documentation for all of my works <br/> Mini-games at the bottom</p>
+                    <div id="Bottom" onClick={Bottom}><HiArrowNarrowDown /></div>
                 </div>
                 <div id="HeroListContainer">
                     <div id="HeroList">
@@ -96,6 +114,7 @@ const Hero: React.FC = () => {
                         justify-content: center;
                         align-items: center;
                         color: white;
+                        z-index: 1;
                     }
 
                     @keyframes fadeIn {
@@ -123,6 +142,7 @@ const Hero: React.FC = () => {
                         height: 50px;
                         justify-content: center;
                         align-items: center;
+                        z-index: 2;
                     }
 
                     #Back { font-size: 50px; }
@@ -135,6 +155,7 @@ const Hero: React.FC = () => {
                         width: 40%;
                         height: 100%;
                         padding-left: 5%;
+                        margin-top: -5%;
                         flex-direction: column;
                         justify-content: center;
                     }
@@ -146,9 +167,22 @@ const Hero: React.FC = () => {
                     }
 
                     #HeroSubHeader {
+                        display: flex;
+                        flex-direction: row;
                         padding-left: 8px;
                         font-family: InterMedium;
                     }
+
+                    #Bottom {
+                        display: flex;
+                        position: absolute;
+                        top: 80%;
+                        left: 50%;
+                        font-size: 50px;
+                        cursor: pointer;
+                    }
+
+                    #Bottom:hover { opacity: 0.5; }
 
                     #HeroListContainer {
                         display: flex;
@@ -200,7 +234,7 @@ const Hero: React.FC = () => {
 
                         #HeroContainer { flex-direction: column; }
 
-                        #BackContainer { top: 25px; left: 10px; }
+                        #BackContainer { top: 25px; left: 20px; }
 
                         #HeroHeaderContainer { 
                             width: 100%; 
@@ -218,6 +252,8 @@ const Hero: React.FC = () => {
                             width: 100%; 
                             height: 60%; 
                             align-items: center; 
+                            z-index: 3;
+                            background-color: black;
                         }
 
                         #HeroList, #HeroListItemContainer, #HeroListItemContainerBottom { width: 95%; }
