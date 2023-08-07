@@ -44,7 +44,7 @@ const PokeBall: React.FC = () => {
   return (
     <div id="projectsContainer">
         <div id="projectsPokeBallContainer">
-          <img id="projectsPokeBall" ref={pokeBall} src="/pokeBall.gif" onClick={handlePokeBallClick}/>
+          <img id="projectsPokeBall" ref={pokeBall} src="/pokeball.gif" onClick={handlePokeBallClick}/>
           <img id="pikachuJump" ref={pikachuJump} src="/pikachuJump.gif" style={{display: 'none'}}/>
           <img id="pikachuRun" ref={pikachuRun} src="/pikachuRun.gif" style={{display: 'none'}}/>
           <img id="textBox" ref={textBox} src="/textBox.gif" style={{display: 'none'}}/>

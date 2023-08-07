@@ -3,7 +3,7 @@ import React from "react";
 import PacMan from "../components/PacMan";
 import Yoshi from "../components/Yoshi";
 import PokeBall from "../components/PokeBall";
-import Luffy from "../components/Luffy.jsx";
+import Luffy from "../components/Luffy";
 
 const MiniGames: React.FC = () => { 
     return ( 
