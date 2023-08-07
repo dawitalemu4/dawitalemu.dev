@@ -27,10 +27,10 @@ const Projects: React.FC = () => {
                                 </div>
                                 <div id="DocsChallengeContainer">
                                     <p id="DocsChallenge">Thought the parallax effect was cool? Here's the code for the effect on the projects section! 
-                                    Even though this function is almost the same as the other functions on the other sections, this one has a on and off button to toggle the effect.
+                                    Even though this function is almost the same as the other functions in the other sections, this one has an on and off button to toggle the effect.
                                     In short, I took the height of the div and the top, the scroll position of the user, and calculated the % of where their scroll position is on the div.
-                                    I also offset the top a bit for timing reasons, as it would start counting the % immedialty as the top of the div showed up on the screen, but the effect is 
-                                    cooler when you can see it happening😹. Why I'm using this component's parallax function is because believe it or not, I spent 30 minutes or so confused
+                                    I also offset the top a bit for timing reasons, as it would start counting the % immediately as the top of the div showed up on the screen, but the effect is 
+                                    cooler when you can see it happening😹. Why I'm using this component's parallax function is, because believe it or not, I spent 20 minutes or so confused
                                     why 'if (effectToggle === true)' wouldn't display 'On', until I tried false like how it is now. Don't ask me why it works. (jk)</p>
                                 </div>
                             </div>
@@ -425,7 +425,7 @@ const Projects: React.FC = () => {
                     display: flex;
                     position: relative;
                     width: 100%;
-                    height: 20%;
+                    height: 19%;
                     justify-content: center;
                     align-items: center;
                 }
@@ -440,7 +440,7 @@ const Projects: React.FC = () => {
                     display: flex;
                     position: relative;
                     width: 90%;
-                    height: 80%;
+                    height: 81%;
                     justify-content: flex-start;
                     align-items: center;
                 }
@@ -451,6 +451,8 @@ const Projects: React.FC = () => {
                     font-size: 15px;
                     font-family: Inter;
                     text-align: left;
+                    margin-top: 2%;
+                    padding-right: 2%;
                     overflow-y: scroll;
                 }
 
@@ -565,6 +567,8 @@ const Projects: React.FC = () => {
                     #DocsLeftContainer, #DocsRightContainer { width: 100%; height: 50%; }
 
                     #DocsChallengeHeader { font-size: 25px; }
+
+                    #DocsChallengeContainer { width: 100%; }
                     
                     #DocsCodeHeaderContainer { margin-bottom: 5%; }
 

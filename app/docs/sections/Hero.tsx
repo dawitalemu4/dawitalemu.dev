@@ -2,11 +2,11 @@
 import React from "react";
 import Link from "next/link";
 import { IoIosArrowDown } from "react-icons/io";
-import { HiOutlineArrowSmLeft } from "react-icons/hi";
+import { HiOutlineArrowSmLeft, HiArrowNarrowDown} from "react-icons/hi";
 
 const Hero: React.FC = () => {
 
-    function scrollToElement(elementId: string) {
+    const scrollToElement = (elementId: string) => {
         const element = document.getElementById(elementId);
         if (element) {
             const elementRect = element.getBoundingClientRect();
@@ -21,34 +21,42 @@ const Hero: React.FC = () => {
         }
     }
     
-    function Portfolio() {
+    const Portfolio = () => {
         scrollToElement("Portfolio");
     }
     
-    function DebreTsion() {
+    const DebreTsion = () => {
         scrollToElement("DebreTsion");
     }
     
-    function Misplaced() {
+    const Misplaced = () => {
         scrollToElement("Misplaced");
     }
     
-    function TapIn() {
+    const TapIn = () => {
         scrollToElement("TapIn");
     }
     
-    function UA() {
+    const UA = () => {
         scrollToElement("UA");
     }
     
-    function Sonic() {
+    const Sonic = () => {
         scrollToElement("Sonic");
     }
     
-    function CreatorVerse() {
+    const CreatorVerse = () => {
         scrollToElement("CreatorVerse");
     }
     
+    const Bottom = () => {
+        const element = document.getElementById("MiniGames");
+        if (!element) { return }
+        window.scrollTo({
+            top: element.getBoundingClientRect().top,
+            behavior: "smooth",
+        });
+    }
 
     
     return (
@@ -59,7 +67,8 @@ const Hero: React.FC = () => {
             <div id="HeroContainer">    
                 <div id="HeroHeaderContainer">
                     <p id="HeroHeader">Docs</p>
-                    <p id="HeroSubHeader">Documentation for all of my works</p>
+                    <p id="HeroSubHeader">Documentation for all of my works <br/> Mini-games at the bottom</p>
+                    <div id="Bottom" onClick={Bottom}><HiArrowNarrowDown /></div>
                 </div>
                 <div id="HeroListContainer">
                     <div id="HeroList">
@@ -146,6 +155,7 @@ const Hero: React.FC = () => {
                         width: 40%;
                         height: 100%;
                         padding-left: 5%;
+                        margin-top: -5%;
                         flex-direction: column;
                         justify-content: center;
                     }
@@ -157,9 +167,22 @@ const Hero: React.FC = () => {
                     }
 
                     #HeroSubHeader {
+                        display: flex;
+                        flex-direction: row;
                         padding-left: 8px;
                         font-family: InterMedium;
                     }
+
+                    #Bottom {
+                        display: flex;
+                        position: absolute;
+                        top: 80%;
+                        left: 50%;
+                        font-size: 50px;
+                        cursor: pointer;
+                    }
+
+                    #Bottom:hover { opacity: 0.5; }
 
                     #HeroListContainer {
                         display: flex;
