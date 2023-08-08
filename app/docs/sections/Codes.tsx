@@ -299,7 +299,7 @@ public class PlayerMovement : MonoBehaviour {
     private SpriteRenderer sprite;
     private float moveSpeed = 15f;
     private float jumpForce = 20f;
-    private enum MovementState { idle, running, jumping, falling}
+    private enum MovementState { idle, running, jumping, falling }
   
     private void Start() {
         rb = GetComponent<Rigidbody2D>();
@@ -345,7 +345,7 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     private bool IsGrounded() {
-      return  Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
+      return Physics2D.BoxCast( coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround );
     }
 }`;
 
@@ -357,21 +357,22 @@ export default function ShowCreators() {
     const [creators, setCreators] = useState([]);
   
     useEffect(() => {
-      async function fetchCreators() {
-        try {
-          const { data, error } = await supabase
-            .from('creators')
-            .select('id, name, Youtube, Twitter, Instagram, description, imageURL');
+        async function fetchCreators() {
+            try {
+                const { data, error } = await supabase
+                .from('creators')
+                .select('id, name, Youtube, Twitter, Instagram, description, imageURL');
   
-          if (error) {
-            console.log('error', error);
-          } else {
-            setCreators(data);
-          }
-        } catch (error) {
-          console.log('error', error);
+                if (error) {
+                    console.log('error', error);
+                } else {
+                    setCreators(data);
+                }
+            } catch (error) {
+                console.log('error', error);
+            }
         }
-      }
   
-      fetchCreators();
+        fetchCreators();
+        
     }, []); /*<- Bad code was [id]*/`;

@@ -75,7 +75,9 @@ const Projects: React.FC = () => {
                                 </div>
                                 
                                 <div id="Project1TextContainer">
-                                    <p id='Project1Paragraph'>A website for Debre Tsion Church made by a team of 7 student developers to give back to our childhood church led by Dawit Alemu. Created with Angular, Firebase, and TypeScript.</p>
+                                    <p id='Project1Paragraph'>This website was created by 6 devs led by Dawit Alemu to give back to our childhood church.
+                                    I taught junior devs, managed meading with church leadership, and recieved good feedback from teammates and was approved to push to production.
+                                    </p>
                                 </div>  
 
                                 <div id="Project1StackContainer">
@@ -113,7 +115,9 @@ const Projects: React.FC = () => {
                                 </div>
 
                                 <div id="Project2TextContainer">
-                                    <p id='Project2Paragraph'>Misplaced is a digitalized lost and found platform for TU students to retrieve lost items by posting information through an intuitive React Native UI and connecting with potential finders. Utilizes MERN stack and Google Cloud APIs.</p>
+                                    <p id='Project2Paragraph'>Misplaced is a digitalized lost and found platform for TU students to retrieve lost items by posting information through an intuitive React Native UI and connecting with potential finders. 
+                                    Wrote 100k+ lines of code and was recognized by VP and CIO of Towson University.
+                                    </p>
                                 </div>
 
                                 <div id="Project2StackContainer">
@@ -152,7 +156,8 @@ const Projects: React.FC = () => {
                                 </div>
 
                                 <div id="Project3TextContainer">
-                                    <p id='Project3Paragraph'>This static webpage made for a client displays dummy recent events available and allows you to checkout tickets. Made with React, Next.js, and TypeScript. Click this repo to view short demo video!</p>
+                                    <p id='Project3Paragraph'>This static website displays dummy events and allows you to checkout tickets.
+                                    Led initiative on website preformance improvements, collaborated with other senior developers, and receieved approval to push to production.</p>
                                 </div>
 
                                 <div id="Project3StackContainer">
@@ -189,10 +194,9 @@ const Projects: React.FC = () => {
                                 </div>
 
                                 <div id="Project4TextContainer">
-                                    <p id='Project4Paragraph'>Upgraded EduCo’s main website by coding a new website from scratch, eliminating previous web template expenses. 
-                                    Utilized Gatsby.js, React, and JavaScript to take advantage of Gatsby’s Static Site Generation for this static site.
-                                    Held meetings with the CEO and Co-Founder to align development with business needs. Production: educogroup.org
-                                    Sparked the start of EduCo Group’s codebase using GitHub organizations, project-based repos, and protection rules.</p>
+                                    <p id='Project4Paragraph'>This static website was a revamping of a partner companies template-service website. 
+                                    Held meetings with the CEO and Co-Founder to align development with business needs.
+                                    Sparked the start of the partner companies codebase using GitHub organizations, project-based repos, and protection rules.</p>
                                 </div>
 
                                 <div id="Project4StackContainer">
@@ -229,7 +233,8 @@ const Projects: React.FC = () => {
                                 </div>
 
                                 <div id="Project5TextContainer">
-                                    <p id='Project5Paragraph'>A 2D Sonic platformer game that gave me experience with physics and animation in Unity Game Engine and C#. Click this repo for a quick video demo!</p>
+                                    <p id='Project5Paragraph'>A sentimental first project where I decided to take action on my childhood dream to become a "game maker", and introduced me to the world of software development.
+                                    Learned physics and animation in game development, and more importantly, how to self teach software development, which brought me where I am now.</p>
                                 </div>
 
                                 <div id="Project5StackContainer">

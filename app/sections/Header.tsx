@@ -4,6 +4,7 @@ import Link from "next/link";
 
 const Navbar: React.FC = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const [showList, setShowList] = useState(false);
   const [textIndex, setTextIndex] = useState(0);
   const [hovered, setHovered] = useState(false);
 
@@ -14,7 +15,13 @@ const Navbar: React.FC = () => {
 
   const handleLeave = () => {
       setHovered(false);
+      setShowList(false);
   }
+
+  const toggleMenu = () => {
+    setShowMenu(!showMenu);  
+    setShowList(!showList);  
+  };
 
 
   const texts = [
@@ -22,6 +29,54 @@ const Navbar: React.FC = () => {
     "for (docs+more) {return 'Click Me!'}",
     "for (miniGames) {return 'Click Me!'}",
   ];
+
+
+  const handleHomeClick = () => {
+    const targetPosition = document.body.scrollHeight * 0;
+    window.scrollTo({
+      top: targetPosition,
+      left: 0, 
+      behavior: 'smooth'
+    });
+    handleLeave();
+  };
+
+
+  const handleExperienceClick = () => {
+    const experiencePosition = document.getElementById('Experience');
+    if (!experiencePosition) return;
+
+    window.scrollTo({
+      top: experiencePosition.offsetTop,
+      left: 0,
+      behavior: 'smooth'
+    });
+    handleLeave();
+  };
+  
+
+  const handleProjectsClick = () => {
+    const projectsPosition = document.getElementById('Projects');
+    if (!projectsPosition) return;
+    
+    window.scrollTo({
+      top: projectsPosition.offsetTop,
+      left: 0,
+      behavior: 'smooth' 
+    });
+    handleLeave();
+  };
+
+
+  const handleContactClick = () => {
+    const targetPosition = document.body.scrollHeight * 1;
+    window.scrollTo({
+      top: targetPosition,
+      left: 0,
+      behavior: 'smooth'
+    });
+    handleLeave();
+  };
 
 
   useEffect(() => {
@@ -37,56 +92,13 @@ const Navbar: React.FC = () => {
   }, [textIndex, texts.length]);
 
 
-  const handleHomeClick = () => {
-    const targetPosition = document.body.scrollHeight * 0;
-    window.scrollTo({
-      top: targetPosition,
-      left: 0, 
-      behavior: 'smooth'
-    });
-  };
-
-
-  const handleExperienceClick = () => {
-    const experiencePosition = document.getElementById('Experience');
-    if (!experiencePosition) return;
-
-    window.scrollTo({
-      top: experiencePosition.offsetTop,
-      left: 0,
-      behavior: 'smooth'
-    });
-  };
-  
-
-  const handleProjectsClick = () => {
-    const projectsPosition = document.getElementById('Projects');
-    if (!projectsPosition) return;
-    
-    window.scrollTo({
-      top: projectsPosition.offsetTop,
-      left: 0,
-      behavior: 'smooth' 
-    });
-  };
-
-
-  const handleContactClick = () => {
-    const targetPosition = document.body.scrollHeight * 1;
-    window.scrollTo({
-      top: targetPosition,
-      left: 0,
-      behavior: 'smooth'
-    });
-  };
-
 
   return (
     <div id="Navbar" onMouseOver={handleHover} onMouseOut={handleLeave}>
       <img id="MenuBars" src="bars.jpg" style={{display: hovered ? 'none' : 'flex'}}/>
       <div id="NavbarContainer" style={{ display: hovered ? "flex" : "none"}}>
-        <img id="Bars" src="bars.jpg" style={{display: showMenu ? 'flex' : 'hidden'}} onClick={() => setShowMenu(!showMenu)}/>
-        <ul id="NavbarListContainer" style={{ display: showMenu ? 'flex' : 'none' }}>
+        <img id="Bars" src="bars.jpg" style={{display: showMenu ? 'flex' : 'hidden'}} onClick={toggleMenu}/>
+        <ul id="NavbarListContainer" style={{ display: showList ? 'flex' : 'none' }}>
           <li id="NavbarHome">
             <div id="home" onClick={handleHomeClick}>Home</div>
           </li>
@@ -253,7 +265,7 @@ const Navbar: React.FC = () => {
               font-size: 17px;
             }
 
-            #NavbarListContainer a {
+            #home, #experience, #projects, #contact {
               color: white;
             }
 
@@ -279,6 +291,7 @@ const Navbar: React.FC = () => {
               display: flex !important;
             }
           }
+          
           `}
         </style>
       </div>

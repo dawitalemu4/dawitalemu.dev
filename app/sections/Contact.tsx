@@ -1,7 +1,7 @@
 'use client'
 import React from 'react';
 import Link from "next/link";
-import { BsArrowUp } from 'react-icons/bs';
+import { HiArrowNarrowUp } from "react-icons/hi";
 
 const Contact: React.FC = () => {
 
@@ -27,7 +27,7 @@ const Contact: React.FC = () => {
                     </div>
                     <div id="ContactButtonContainer">
                         <p id="ContactButtonText">Click the arrow to see it all in reverse!</p>
-                        <button id="ContactButton" onClick={toTop}><BsArrowUp /></button>
+                        <button id="ContactButton" onClick={toTop}><HiArrowNarrowUp /></button>
                     </div>
                 </div>
             </div>
