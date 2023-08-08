@@ -9,6 +9,7 @@ const MiniGames: React.FC = () => {
     return ( 
         <div id='MiniGames'>
             <div id='MiniGamesContainer'>
+                
                 <div id="PacMan">
                     <PacMan />
                 </div>

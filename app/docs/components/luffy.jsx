@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
 const Luffy = () => {
 
     useEffect(() => {
-        let gif = document.getElementById("Luffy");
+        let gif = document.getElementById("LuffyImg");
         let gifs = ["hatclose.png", "hatmid.png", "hatopen.png"];
         let message = document.getElementById("WarningMessage");
         let gameIntervalId;
