@@ -1,9 +1,9 @@
 "use client"
 import React from "react";
-import PacMan from "../components/PacMan";
-import Yoshi from "../components/Yoshi";
-import PokeBall from "../components/PokeBall";
-import Luffy from "../components/Luffy";
+import PacMan from "../components/PacManGame";
+import Yoshi from "../components/YoshiGame";
+import PokeBall from "../components/PokeBallGame";
+import Luffy from "../components/LuffyGame";
 
 const MiniGames: React.FC = () => { 
     return ( 
