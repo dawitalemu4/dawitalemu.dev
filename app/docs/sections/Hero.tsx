@@ -1,5 +1,5 @@
 "use client"
-import React from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
 import { IoIosArrowDown } from "react-icons/io";
 import { HiOutlineArrowSmLeft, HiArrowNarrowDown} from "react-icons/hi";
@@ -20,6 +20,21 @@ const Hero: React.FC = () => {
             });
         }
     }
+
+    const isContainerVisble = () => {
+        const container = document.getElementById("Hero");
+        if (!container) { return }
+        const containerRect = container.getBoundingClientRect();
+        const targetPosition = containerRect.bottom;
+        const arrow = document.getElementById("BackContainer");
+        if (!arrow) { return }
+        if (targetPosition > 0) {
+            arrow.style.display = "flex";
+        } else {
+            arrow.style.display = "none";
+        }
+    }
+
     
     const Portfolio = () => {
         scrollToElement("Portfolio");
@@ -58,6 +73,13 @@ const Hero: React.FC = () => {
         });
     }
 
+    useEffect(() => {
+        window.addEventListener("scroll", isContainerVisble);
+        return () => {
+            window.removeEventListener("scroll", isContainerVisble);
+        }
+    }, []);
+
     
     return (
         <div id="Hero">
@@ -67,7 +89,7 @@ const Hero: React.FC = () => {
             <div id="HeroContainer">    
                 <div id="HeroHeaderContainer">
                     <p id="HeroHeader">Docs</p>
-                    <p id="HeroSubHeader">Documentation for all of my works <br/> Mini-games at the bottom</p>
+                    <p id="HeroSubHeader">Mini-games at the bottom</p>
                     <div id="Bottom" onClick={Bottom}><HiArrowNarrowDown /></div>
                 </div>
                 <div id="HeroListContainer">
@@ -158,18 +180,16 @@ const Hero: React.FC = () => {
                         margin-top: -5%;
                         flex-direction: column;
                         justify-content: center;
+                        align-items: center;
                     }
 
                     #HeroHeader {
                         font-size: 150px;
                         font-family: InterBold;
-                        text-align: left;
                     }
 
                     #HeroSubHeader {
-                        display: flex;
-                        flex-direction: row;
-                        padding-left: 8px;
+                        text-align: center;
                         font-family: InterMedium;
                     }
 
@@ -177,7 +197,9 @@ const Hero: React.FC = () => {
                         display: flex;
                         position: absolute;
                         top: 80%;
-                        left: 50%;
+                        width: 100%;
+                        justify-content: center;
+                        align-items: center;
                         font-size: 50px;
                         cursor: pointer;
                     }
@@ -247,6 +269,8 @@ const Hero: React.FC = () => {
                         #HeroHeader { font-size: 100px; }
 
                         #HeroSubHeader { padding-left: 0; }
+
+                        #Bottom { top: 90%; }
 
                         #HeroListContainer { 
                             width: 100%; 
