@@ -36,91 +36,99 @@ const Yoshi: React.FC = () => {
     }, [yoshiRef, eyesRef]);
 
     return (
-    <div id="yoshiContainer">
-        <div id="bubbleContainer">
-            <h1 id="text">Move your mouse around Yoshi and see what happens!</h1>
-            <img id="mouse-pointer" src="pointer.jpg"/>
+    <div id="YoshiContainer">
+        <p id="BubbleText">Refresh and move your mouse around Yoshi to see what happens!</p>
+        <div id="YoshiImgContainer">    
+            <img id="Eyes" src="eyes.png" ref={eyesRef} />
+            <img id="YoshiImg" src="yoshi.png" ref={yoshiRef} />
+        </div>        
+        <div id="MouseContainer">
+            <img id="MousePointer" src="pointer.jpg"/>
         </div>
-        <img src="yoshi.png" id="yoshi" ref={yoshiRef} />
-        <img src="eyes.png" id="eyes" ref={eyesRef} />
     <style>
         {`
-        #yoshiContainer {
-            display: flex;
-            position: absolute;
-            top: 50%;
-            left: 80%;
-            width: 360px;
-            height: 450px;
-            flex-wrap: wrap;
-            transform: translate(-50%,-35%);
-        }
-        #yoshi {
-            display: flex;
-            position: relative;   
-            transform: scale(0.8);
-            margin-top: 0;
-            z-index: 1;
-        }
-        #eyes {
-            display: flex;
-            position: relative;
-            height: 32px;
-            bottom: 405px;
-            left: 145px;
-            z-index: 2;
-            flex-shrink: 0;
-        }
-        #bubbleContainer {
-            display: flex;
-            position: relative;
-            top: 0;
-            left: 0;
-            align-items: center;
-            justify-content: center;
-            width: 350px;
-            z-index: 1;
-        }
-        #text {
-            display: flex;
-            margin-left: 10%;
-            text-align: center;
-            font-size: 1rem;
-            z-index: 1;
-        }
-        @media (max-width: 900px) {
-            #yoshiContainer {
-                transform: translate(-99%,-20%);
-                scale: 0.6;
-            }
-            #bubbleContainer {
-                display: none;
-            }
-        }
-        @media (max-width: 500px) {
-            #yoshiContainer {
-                transform: translate(-121%,-30%);
-                scale: 0.45;
-            }
+
+        @keyframes updown {
+            0% { top: 0; }
+            25% { top: -200px; }
+            75% { top: 200px; }
+            100% { top: 0; }
         }
 
-        #mouse-pointer {
+        #YoshiContainer {
+            display: flex;
+            position: relative;
+            width: 100%;
+            height: 100%;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #BubbleText {
+            display: flex;
+            position: absolute;
+            top: 10%;
+            font-size: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        #MouseContainer {
+            display: flex;
+            position: relative;
+            width: 10%;
+            height: 100%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #MousePointer {
             width: 15px;
             position: relative;
             animation: updown 5s ease-in-out infinite;
         }
 
-        @keyframes updown {
-            0% {
-                top: 100px;
-            }
-            50% {
-                top: 300px;
-            }
-            100% {
-                top: 100px;
-            }
+        #YoshiImgContainer {
+            display: flex;
+            position: relative;
+            width: 50%;
+            height: 50%;
+            padding-left: 10%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
+
+        #YoshiImg {
+            position: absolute;
+            width: 80%;
+            height: 100%;
+            z-index: 2;
+        }
+
+        #Eyes {
+            position: absolute;
+            top: 10%;
+            width: 16%;
+            height: 8%;
+            z-index: 3;
+        }
+
+        @media (max-width: 1000px) {
+
+            #BubbleText { font-size: 13px; }
+
+            @keyframes updown {
+                0% { top: 0; }
+                25% { top: -100px; }
+                75% { top: 100px; }
+                100% { top: 0; }
+            }
+
+        }
+        
         `}
     </style>
     </div>

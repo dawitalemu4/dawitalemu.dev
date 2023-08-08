@@ -1,17 +1,42 @@
 "use client"
-import React from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
-import { HiOutlineArrowSmLeft } from "react-icons/hi";
+import { HiArrowNarrowUp } from "react-icons/hi";
 import { VscGithubAlt } from 'react-icons/vsc';
 import { CiShare1 } from 'react-icons/ci';
 import CodeHighlight, { portfolioCode, debreTsionCode, misplacedCode, tapInCode, UACode, sonicCode, CVCode } from "./Codes";
 
 const Projects: React.FC = () => {
 
+    const Top = () => {
+        window.scrollTo({ top: 0, behavior: "smooth" })
+    }
+
+    const isContainerVisble = () => {
+        const container = document.getElementById("Projects");
+        if (!container) { return }
+        const containerRect = container.getBoundingClientRect();
+        const targetPosition = containerRect.top;
+        const arrow = document.getElementById("UpContainer");
+        if (!arrow) { return }
+        if (targetPosition < 0) {
+            arrow.style.display = "flex";
+        } else {
+            arrow.style.display = "none";
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener("scroll", isContainerVisble);
+        return () => {
+            window.removeEventListener("scroll", isContainerVisble);
+        }
+    }, []);
+
     return (
         <div id="Projects">
-            <div id="BackContainer">
-                <Link id="Back" href='/'><HiOutlineArrowSmLeft /></Link>
+            <div id="UpContainer">
+                <div id="Up" onClick={Top}><HiArrowNarrowUp /></div>
             </div>
             <div id="ProjectsContainer">
 
@@ -338,8 +363,8 @@ const Projects: React.FC = () => {
                     z-index: 1;
                 }
 
-                #BackContainer {
-                    display: flex;
+                #UpContainer {
+                    display: none;
                     position: fixed;
                     top: 20px;
                     left: 20px;
@@ -347,12 +372,13 @@ const Projects: React.FC = () => {
                     height: 50px;
                     justify-content: center;
                     align-items: center;
+                    cursor: pointer;
                     z-index: 2;
                 }
 
-                #Back { font-size: 50px; }
+                #Up { font-size: 50px; }
 
-                #Back:hover { opacity: 0.5;}
+                #Up:hover { opacity: 0.5;}
 
                 #ProjectsContainer {
                     display: flex;
@@ -558,7 +584,7 @@ const Projects: React.FC = () => {
 
                     #Projects { height: 800vh; }
 
-                    #BackContainer { top: 25px; left: 20px; }
+                    #UpContainer { top: 25px; left: 20px; }
 
                     #DocsHeader { font-size: 34px; }
 

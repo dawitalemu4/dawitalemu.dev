@@ -4,9 +4,9 @@ import React, { useEffect } from 'react';
 const Luffy = () => {
 
     useEffect(() => {
-        let gif = document.getElementById("luffy");
+        let gif = document.getElementById("Luffy");
         let gifs = ["hatclose.png", "hatmid.png", "hatopen.png"];
-        let message = document.getElementById("warningMessage");
+        let message = document.getElementById("WarningMessage");
         let gameIntervalId;
         let startTime;
 
@@ -17,7 +17,7 @@ const Luffy = () => {
 
         function startGame() {
 
-            message.style.visibility = "hidden";
+            message.style.display = "none";
             startTime = Date.now();
             gif.src = "luffy.gif";
 
@@ -33,13 +33,15 @@ const Luffy = () => {
             let now = Date.now();
 
             if (now - startTime >= 3700 && now - startTime <= 5040) {
-                message.style.visibility = "hidden";
+                message.style.display = "none";
                 displayWinOutcome();
+                console.log("You clicked at the right time");
             } else {
-                message.style.visibility = "visible";
+                message.style.display = "flex";
+                console.log("You clicked too early or too late");
 
                 setTimeout(function() {
-                    message.style.visibility = "hidden";
+                    message.style.display = "none";
                 }, 2000);
             }
         }
@@ -52,85 +54,64 @@ const Luffy = () => {
             gameIntervalId = setInterval(function() {
 
                 gif.src = gifs[i];
+                console.log(gifs[i]);
                 i++;
 
                 if (i === gifs.length) {
                     clearInterval(gameIntervalId);
                     gif.src = gifs[i-1];
-                    message.style.visibility = "hidden";
+                    message.style.display = "none";
                 }
 
-                if(i == gifs[1]) {message.style.visibility = "hidden";}
+                if(i == gifs[1]) {message.style.display = "none";}
             }, 400);
+            gif.removeEventListener("click", onClick);
+            gif.removeEventListener("contextmenu", onClick);
         }
 
     }, []);
 
     return (
-        <div id="luffyContainer">
-            <img id="luffy" src="luffy.gif" />
-                <div id="warningMessageContainer">
-                    <h5 id="warningMessage">Tap left click while he is pulling - Don't drag or hold</h5>
+        <div id="LuffyContainer">
+            <img id="LuffyImg" src="luffy.gif" />
+                <div id="WarningMessageContainer">
+                    <p id="WarningMessage">Tap left click while luffy is pulling - Don't drag or hold</p>
                 </div>
         <style>
         {`
-            #luffyContainer {
+            #LuffyContainer {
                 display: flex;
                 position: relative;
-                width: 90%;
-                height: 60%;
+                width: 100%;
+                height: 100%;
+                flex-direction: column;
+                justify-content: flex-start;
                 align-items: center;
-                justify-content: center;
             }
-            #luffy {
-                display: flex;
-                position: relative;  
-                z-index: 1;
-                width: 35%;
+
+            #LuffyImg {
+                height: 90%;
                 cursor: pointer;
             }
-            #warningMessageContainer {
+
+            #WarningMessageContainer {
                 display: flex;
                 position: relative;
-                top: -5%;
                 width: 100%;
-                align-items: center;
+                height: 10%;
                 justify-content: center;
-                z-index: 1;
+                align-items: center;
             }
-            #warningMessage {
-                display: flex;
-                font-family: Inter;
+
+            #WarningMessage {
                 color: white;
                 text-align: center;
-                font-size: 150%;
-                z-index: 1;
             }
-            @media (max-width: 1370px) {
-                #luffyContainer {
-                    height: 55%;
-                }
-                #luffy {
-                    width: 45%;
-                }
-            }    
-            @media (max-width: 900px) {
-                #warningMessage {
-                    font-size: 100%;
-                }
-                #luffy {
-                    width: 65%;
-                }
-            }
-            @media (max-width: 700px) {
-                #luffy {
-                    width: 80%;
-                }
-            }
-            @media (max-width: 400px) {
-                #luffy {
-                    width: 85%;
-                }
+
+            @media (max-width: 1000px ) {
+
+                #WarningMessage { font-size: 12px; }
+
             }
         `}
         </style>

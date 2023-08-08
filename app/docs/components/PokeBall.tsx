@@ -3,6 +3,7 @@ import React, { useRef } from "react";
 
 const PokeBall: React.FC = () => {
 
+    const clickMe = useRef<HTMLDivElement>(null);
     const pokeBall = useRef<HTMLImageElement>(null);
     const pikachuJump = useRef<HTMLImageElement>(null);
     const pikachuRun = useRef<HTMLImageElement>(null);
@@ -10,10 +11,11 @@ const PokeBall: React.FC = () => {
     const textStill = useRef<HTMLImageElement>(null);
 
     const handlePokeBallClick = () => {
-        if (!pokeBall.current || !pikachuJump.current || !pikachuRun.current || !textBox.current || !textStill.current) {
+        if (!clickMe || !pokeBall.current || !pikachuJump.current || !pikachuRun.current || !textBox.current || !textStill.current) {
             return;
         }
-        if (pokeBall.current && pikachuJump.current && pikachuRun.current && textBox.current && textStill.current) {
+        if (clickMe.current && pokeBall.current && pikachuJump.current && pikachuRun.current && textBox.current && textStill.current) {
+            clickMe.current.style.display = "none";
             pokeBall.current.style.display = "none";
             pikachuJump.current.style.display = "flex";
             setTimeout(function () {
@@ -41,66 +43,114 @@ const PokeBall: React.FC = () => {
     };
     
 
-  return (
-    <div id="projectsContainer">
-        <div id="projectsPokeBallContainer">
-          <img id="projectsPokeBall" ref={pokeBall} src="/pokeball.gif" onClick={handlePokeBallClick}/>
-          <img id="pikachuJump" ref={pikachuJump} src="/pikachuJump.gif" style={{display: 'none'}}/>
-          <img id="pikachuRun" ref={pikachuRun} src="/pikachuRun.gif" style={{display: 'none'}}/>
-          <img id="textBox" ref={textBox} src="/textBox.gif" style={{display: 'none'}}/>
-          <img id="textStill" ref={textStill} src="/textStill.png" style={{display: 'none'}}/>
+    return (
+        <div id="PokeBallContainer">
+            <div id="ClickMe" ref={clickMe}>Click Me!</div>
+            <img id="PokeBallGif" ref={pokeBall} src="/pokeball.gif" onClick={handlePokeBallClick}/>
+            <img id="PikachuJump" ref={pikachuJump} src="/pikachujump.gif" style={{display: 'none'}}/>
+            <img id="PikachuRun" ref={pikachuRun} src="/pikachurun.gif" style={{display: 'none'}}/>
+            <img id="TextBox" ref={textBox} src="/textbox.gif" style={{display: 'none'}}/>
+            <img id="TextStill" ref={textStill} src="/textstill.png" style={{display: 'none'}}/>
+            
+            <style> 
+                {`
+
+                    @keyframes pikachuJump {
+                        0% { transform: translateY(0px); }
+                        50% { transform: translateY(-150px); }
+                        100% { transform: translateY(0px); }
+                    }
+
+                    @keyframes pikachuRun {
+                        0% { transform: translateX(0px); }
+                        100% { transform: translateX(650px); }
+                    }
+
+                    #PokeBallContainer {
+                        display: flex;
+                        position: relative;
+                        width: 100%;
+                        height: 100%;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                    }
+
+                    #ClickMe {
+                        display: flex;
+                        position: relative;
+                        width: 100%;
+                        height: 5%;
+                        justify-content: center;    
+                        align-items: center;
+                        font-size: 40px;
+                        color: white;
+                        margin-bottom: 5%;
+                    }
+
+                    #PokeBallGif {
+                        display: flex;
+                        position: relative;
+                        width: 50%;
+                        height: 50%;
+                        justify-content: center;
+                        align-items: center;
+                        cursor: pointer;
+                    }
+
+                    #PikachuJump {
+                        display: flex;
+                        position: relative;
+                        width: 15%;
+                        height: 20%;
+                        justify-content: center;
+                        align-items: center;
+                        animation: pikachuJump 1s ease-in-out;
+                    }
+
+                    #PikachuRun {
+                        display: flex;
+                        position: relative;
+                        width: 30%;
+                        height: 20%;
+                        justify-content: center;
+                        align-items: center;
+                        animation: pikachuRun 1.7s ease-in-out;
+                    }
+
+                    #TextBox {
+                        display: flex;
+                        position: relative;
+                        width: 50%;
+                        height: 20%;
+                        justify-content: center;
+                        align-items: center;
+                    }
+
+                    #TextStill {
+                        display: flex;
+                        position: relative;
+                        width: 50%;
+                        height: 20%;
+                        justify-content: center;
+                        align-items: center;
+                    }
+
+                    @media (max-width: 1000px) {
+
+                        @keyframes pikachuJump {
+                            0% { top: 0; }
+                            50% { top: -100px; }
+                            100% { top: 0; }
+                        }
+
+                        #ClickMe { font-size: 22px; }
+
+                    }
+
+                `}
+            </style>
         </div>
-        <style> 
-            {`
-            #projectsPokeBallContainer {
-                display: flex;
-                width: 100%;
-                height: 330px;
-                justify-content: center;
-                align-items: center;
-                }
-                #projectsPar {
-                position: relative;
-                left: 5%;
-                width: 60%;
-                color: white;
-                font-family: Inter;
-                font-size: 170%;
-                text-align: center;
-                background-color: black;
-                z-index: 2;
-                }
-                #projectsLi {
-                    color: #d6ddf2;
-                text-decoration: underline;
-                }
-                #projectsLi:hover {
-                    opacity: 0.5;
-                }
-            
-            
-                #pikachuJump {
-                  position: absolute;
-                  transform: scale(0.3);
-                  animation: jump 1s ease-in-out;
-                }
-                
-                #pikachuRun {
-                  display: flex;
-                  position: absolute;
-                  transform: scale(0.8);
-                  animation: run 3s ease-in-out;
-                }
-            
-                #textBox, #textStill {
-                  display: flex; 
-                  top: 50%;  
-                  width: 300px;
-                  height: 150px;
-                }
-            `}
-        </style>
-    </div>
     )
 }
 
