@@ -64,7 +64,7 @@ const Projects: React.FC = () => {
                     <div id="Project1">
                         <div id="Project1LeftContainer">
                             <div id="Project1ImageContainer">
-                                <img id="Project1Image" src="dt.png" />
+                                <img id="Project1Image" src="dtgif.gif" />
                             </div>
                         </div>
                         <div id="Project1RightContainer">
@@ -81,10 +81,10 @@ const Projects: React.FC = () => {
                                 </div>  
 
                                 <div id="Project1StackContainer">
-                                    <img id="StackIcon" src="angular.jpg" />
-                                    <img id="StackIcon" src="firebase.png" />
-                                    <img id="StackIcon" src="gcp.jpg" />
-                                    <img id="StackIconTS" src="ts.jpg" />
+                                    <img id="StackIcon" src="angular.webp" />
+                                    <img id="StackIcon" src="firebase.webp" />
+                                    <img id="StackIcon" src="gcp.webp" />
+                                    <img id="StackIconTS" src="ts.webp" />
                                 </div>
 
                             </div>
@@ -104,7 +104,7 @@ const Projects: React.FC = () => {
                     <div id="Project2">
                         <div id="Project2LeftContainer">
                             <div id="Project2ImageContainer">
-                                <img id="Project2Image" src="misplaced.png" />
+                                <img id="Project2Image" src="MisplacedGif.gif" />
                             </div>
                         </div>
                         <div id="Project2RightContainer">
@@ -121,11 +121,11 @@ const Projects: React.FC = () => {
                                 </div>
 
                                 <div id="Project2StackContainer">
-                                    <img id="StackIcon" src="react.png" />
-                                    <img id="StackIcon" src="expo.png" />
-                                    <img id="StackIcon" src="mongo.png" />
-                                    <img id="StackIcon" src="node.png" />
-                                    <img id="StackIconJS" src="js.png" />
+                                    <img id="StackIcon" src="react.webp" />
+                                    <img id="StackIcon" src="expo.webp" />
+                                    <img id="StackIcon" src="mongo.webp" />
+                                    <img id="StackIcon" src="node.webp" />
+                                    <img id="StackIconJS" src="js.webp" />
                                 </div>
 
                             </div>
@@ -145,7 +145,7 @@ const Projects: React.FC = () => {
                     <div id="Project3">
                         <div id="Project3LeftContainer">
                             <div id="Project3ImageContainer">
-                                <img id="Project3Image" src="tap.png" />
+                                <img id="Project3Image" src="TapGif.gif" />
                             </div>
                         </div>
                         <div id="Project3RightContainer">
@@ -161,9 +161,9 @@ const Projects: React.FC = () => {
                                 </div>
 
                                 <div id="Project3StackContainer">
-                                    <img id="StackIcon" src="react.png" />
-                                    <img id="StackIcon" src="next.png" />
-                                    <img id="StackIconTS" src="ts.jpg" />
+                                    <img id="StackIcon" src="react.webp" />
+                                    <img id="StackIcon" src="next.webp" />
+                                    <img id="StackIconTS" src="ts.webp" />
                                 </div>
 
                             </div>
@@ -183,7 +183,7 @@ const Projects: React.FC = () => {
                     <div id="Project4">
                         <div id="Project4LeftContainer">
                             <div id="Project4ImageContainer">
-                                <img id="Project4Image" src="edu.png" />
+                                <img id="Project4Image" src="UAGif.gif" />
                             </div>
                         </div>
                         <div id="Project4RightContainer">
@@ -200,9 +200,9 @@ const Projects: React.FC = () => {
                                 </div>
 
                                 <div id="Project4StackContainer">
-                                    <img id="StackIcon" src="react.png" />
+                                    <img id="StackIcon" src="react.webp" />
                                     <img id="StackIcon" src="gatsby.webp" />
-                                    <img id="StackIconJS" src="js.png" />
+                                    <img id="StackIconJS" src="js.webp" />
                                 </div>
 
                             </div>
@@ -222,7 +222,7 @@ const Projects: React.FC = () => {
                     <div id="Project5">
                         <div id="Project5LeftContainer">
                             <div id="Project5ImageContainer">
-                                <img id="Project5Image" src="sonic.png" />
+                                <img id="Project5Image" src="SonicGif.gif" />
                             </div>
                         </div>
                         <div id="Project5RightContainer">
@@ -238,8 +238,8 @@ const Projects: React.FC = () => {
                                 </div>
 
                                 <div id="Project5StackContainer">
-                                    <img id="StackIcon" src="c.png" />
-                                    <img id="StackIcon" src="unity.jpg" />
+                                    <img id="StackIcon" src="c.webp" />
+                                    <img id="StackIcon" src="unity.webp" />
                                 </div>
                                 
                             </div>

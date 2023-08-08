@@ -39,11 +39,11 @@ const Yoshi: React.FC = () => {
     <div id="YoshiContainer">
         <p id="BubbleText">Refresh and move your mouse around Yoshi to see what happens!</p>
         <div id="YoshiImgContainer">    
-            <img id="Eyes" src="eyes.png" ref={eyesRef} />
-            <img id="YoshiImg" src="yoshi.png" ref={yoshiRef} />
+            <img id="Eyes" src="eyes.webp" ref={eyesRef} />
+            <img id="YoshiImg" src="yoshi.webp" ref={yoshiRef} />
         </div>        
         <div id="MouseContainer">
-            <img id="MousePointer" src="pointer.jpg"/>
+            <img id="MousePointer" src="pointer.webp"/>
         </div>
     <style>
         {`

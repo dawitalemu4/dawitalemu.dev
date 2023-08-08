@@ -50,7 +50,7 @@ const PokeBall: React.FC = () => {
             <img id="PikachuJump" ref={pikachuJump} src="/pikachujump.gif" style={{display: 'none'}}/>
             <img id="PikachuRun" ref={pikachuRun} src="/pikachurun.gif" style={{display: 'none'}}/>
             <img id="TextBox" ref={textBox} src="/textbox.gif" style={{display: 'none'}}/>
-            <img id="TextStill" ref={textStill} src="/textstill.png" style={{display: 'none'}}/>
+            <img id="TextStill" ref={textStill} src="/textstill.webp" style={{display: 'none'}}/>
             
             <style> 
                 {`

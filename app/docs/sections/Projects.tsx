@@ -81,9 +81,9 @@ const Projects: React.FC = () => {
                             </div>
                         </div>                     
                         <div id="DocsStackContainer">
-                            <img id="StackIcon" src="react.png" />
-                            <img id="StackIcon" src="next.png" />
-                            <img id="StackIconTS" src="ts.jpg" />
+                            <img id="StackIcon" src="react.webp" />
+                            <img id="StackIcon" src="next.webp" />
+                            <img id="StackIconTS" src="ts.webp" />
                         </div>
                     </div>
                 </div>
@@ -128,10 +128,10 @@ const Projects: React.FC = () => {
                             </div>
                         </div>
                         <div id="DocsStackContainer">
-                            <img id="StackIcon" src="angular.jpg" />
-                            <img id="StackIcon" src="firebase.png" />
-                            <img id="StackIcon" src="gcp.jpg" />
-                            <img id="StackIconTS" src="ts.jpg" />
+                            <img id="StackIcon" src="angular.webp" />
+                            <img id="StackIcon" src="firebase.webp" />
+                            <img id="StackIcon" src="gcp.webp" />
+                            <img id="StackIconTS" src="ts.webp" />
                         </div>
                     </div>
                 </div>
@@ -174,11 +174,11 @@ const Projects: React.FC = () => {
                             </div>
                         </div>                        
                         <div id="DocsStackContainer">
-                            <img id="StackIcon" src="react.png" />
-                            <img id="StackIcon" src="expo.png" />
-                            <img id="StackIcon" src="mongo.png" />
-                            <img id="StackIcon" src="node.png" />
-                            <img id="StackIconJS" src="js.png" />
+                            <img id="StackIcon" src="react.webp" />
+                            <img id="StackIcon" src="expo.webp" />
+                            <img id="StackIcon" src="mongo.webp" />
+                            <img id="StackIcon" src="node.webp" />
+                            <img id="StackIconJS" src="js.webp" />
                         </div>
                     </div>
                 </div>
@@ -221,9 +221,9 @@ const Projects: React.FC = () => {
                             </div>
                         </div>
                         <div id="DocsStackContainer">
-                            <img id="StackIcon" src="react.png" />
-                            <img id="StackIcon" src="next.png" />
-                            <img id="StackIconTS" src="ts.jpg" />
+                            <img id="StackIcon" src="react.webp" />
+                            <img id="StackIcon" src="next.webp" />
+                            <img id="StackIconTS" src="ts.webp" />
                         </div>
                     </div>
                 </div>
@@ -265,9 +265,9 @@ const Projects: React.FC = () => {
                             </div>
                         </div>
                         <div id="DocsStackContainer">
-                            <img id="StackIcon" src="react.png" />
+                            <img id="StackIcon" src="react.webp" />
                             <img id="StackIcon" src="gatsby.webp" />
-                            <img id="StackIconJS" src="js.png" />
+                            <img id="StackIconJS" src="js.webp" />
                         </div>
                     </div>
                 </div>
@@ -310,8 +310,8 @@ const Projects: React.FC = () => {
                             </div>
                         </div>  
                         <div id="DocsStackContainer">
-                            <img id="StackIcon" src="c.png" />
-                            <img id="StackIcon" src="unity.jpg" />
+                            <img id="StackIcon" src="c.webp" />
+                            <img id="StackIcon" src="unity.webp" />
                         </div>
                     </div>
                 </div> 
@@ -353,9 +353,9 @@ const Projects: React.FC = () => {
                             </div>
                         </div>
                         <div id="DocsStackContainer">
-                            <img id="StackIcon" src="react.png" />
-                            <img id="StackIcon" src="supabase.png" />
-                            <img id="StackIconJS" src="js.png" />
+                            <img id="StackIcon" src="react.webp" />
+                            <img id="StackIcon" src="supabase.webp" />
+                            <img id="StackIconJS" src="js.webp" />
                         </div>
                     </div>
                 </div>

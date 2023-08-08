@@ -208,7 +208,7 @@ interface BackgroundProps {
 
 const Background: React.FC<BackgroundProps> = ({ getBackgroundColor, getAccentColor }) => {
 
-    const imgSrc = "https://example.image/from/db.png";
+    const imgSrc = "https://example.image/from/db.webp";
     const hexToRGBA = (hexColor: string, alpha: number) => {
         const hex = hexColor.replace('#', '');
         const r = parseInt(hex.substring(0, 2), 16);

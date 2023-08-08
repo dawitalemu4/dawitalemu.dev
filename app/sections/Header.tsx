@@ -95,9 +95,9 @@ const Navbar: React.FC = () => {
 
   return (
     <div id="Navbar" onMouseOver={handleHover} onMouseOut={handleLeave}>
-      <img id="MenuBars" src="bars.jpg" style={{display: hovered ? 'none' : 'flex'}}/>
+      <img id="MenuBars" src="bars.webp" style={{display: hovered ? 'none' : 'flex'}}/>
       <div id="NavbarContainer" style={{ display: hovered ? "flex" : "none"}}>
-        <img id="Bars" src="bars.jpg" style={{display: showMenu ? 'flex' : 'hidden'}} onClick={toggleMenu}/>
+        <img id="Bars" src="bars.webp" style={{display: showMenu ? 'flex' : 'hidden'}} onClick={toggleMenu}/>
         <ul id="NavbarListContainer" style={{ display: showList ? 'flex' : 'none' }}>
           <li id="NavbarHome">
             <div id="home" onClick={handleHomeClick}>Home</div>
