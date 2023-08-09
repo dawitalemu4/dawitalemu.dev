@@ -215,7 +215,7 @@ const Navbar: React.FC = () => {
 
           @media (max-width: 900px) {
             #Navbar {
-              display: flex !important;
+              display: none !important;
             }
 
             #MenuBars {
@@ -267,6 +267,7 @@ const Navbar: React.FC = () => {
 
             #home, #experience, #projects, #contact {
               color: white;
+              z-index: 11;
             }
 
             #DevButton {
