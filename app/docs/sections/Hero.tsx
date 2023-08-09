@@ -254,6 +254,8 @@ const Hero: React.FC = () => {
 
                     @media (max-width: 1000px) {
 
+                        #Hero { height: 110vh; }
+
                         #HeroContainer { flex-direction: column; }
 
                         #BackContainer { top: 25px; left: 20px; }
