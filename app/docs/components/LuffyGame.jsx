@@ -5,7 +5,7 @@ const Luffy = () => {
 
     useEffect(() => {
         let gif = document.getElementById("LuffyImg");
-        let gifs = ["hatclose.png", "hatmid.png", "hatopen.png"];
+        let gifs = ["hatclose.webp", "hatmid.webp", "hatopen.webp"];
         let message = document.getElementById("WarningMessage");
         let gameIntervalId;
         let startTime;

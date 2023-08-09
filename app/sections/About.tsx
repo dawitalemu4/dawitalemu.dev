@@ -44,7 +44,7 @@ const About: React.FC = () => {
                     <br/><br/> I'm mainly interested in full-stack web development, but open to learning new things. <br/><br/> Keep scrolling!</p>
                 </div>                   
                 <div id='AboutImageContainer'>
-                    <img id='AboutImage' src='da.jpg' alt='Dawit Alemu'/>
+                    <img id='AboutImage' src='da.webp' alt='Dawit Alemu'/>
                 </div>                 
                 <div id='AboutTitleContainer'>
                     <p id='AboutTitle'>About</p>

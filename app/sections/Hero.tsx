@@ -56,12 +56,12 @@ const Hero: React.FC = () => {
             <div id='HeroContainer'>
                 <div id='LeftContainer'>
                     <div id='WhiteTriangleContainer'>
-                        <img id='WhiteTriangle' src='whiteTriangle.png' />
+                        <img id='WhiteTriangle' src='whiteTriangle.webp' />
                     </div>
                 </div>
                 <div id='RightContainer'>
                     <div id='BlackTriangleContainer'>
-                        <img id='BlackTriangle' src='blackTriangle.png' />
+                        <img id='BlackTriangle' src='blackTriangle.webp' />
                     </div>
                 </div>
                 <div id="ArrowContainer">

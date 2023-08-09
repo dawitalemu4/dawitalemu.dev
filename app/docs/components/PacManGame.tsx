@@ -4,22 +4,22 @@ import React, { useState, useEffect, useRef } from "react";
 const PacMan: React.FC = () => {
     const [imageIndex, setImageIndex] = useState(0);
     const images = [
-        '1.png',
-        '2.png',
-        '3.png',
-        '4.png',
-        '5.png',
-        '6.png',
-        '7.png',
-        '8.png',
-        '9.png',
-        '10.png',
-        '11.png',
-        '12.png',
-        '13.png',
-        '14.png',
-        '15.png',
-        'final.png'
+        '1.webp',
+        '2.webp',
+        '3.webp',
+        '4.webp',
+        '5.webp',
+        '6.webp',
+        '7.webp',
+        '8.webp',
+        '9.webp',
+        '10.webp',
+        '11.webp',
+        '12.webp',
+        '13.webp',
+        '14.webp',
+        '15.webp',
+        'final.webp'
     ];
 
     const dotsRef = useRef<HTMLImageElement>(null);
@@ -63,8 +63,8 @@ const PacMan: React.FC = () => {
 
     return (
     <div id="pacmanContainer">   
-        <img src="arcade.png" id='arcade'/>
-        <img src="pacmanScene.jpg" id='scene'/>
+        <img src="arcade.webp" id='arcade'/>
+        <img src="pacmanScene.webp" id='scene'/>
         <div id='dotsContainer' ref={dotsContainerRef}>
             <img src={images[imageIndex]} id="dots" ref={dotsRef}/>
         </div>

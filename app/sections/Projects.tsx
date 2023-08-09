@@ -4,13 +4,21 @@ import Link from "next/link";
 import { VscGithubAlt } from 'react-icons/vsc';
 import { CiShare1 } from 'react-icons/ci';
 import { IoIosPaper } from 'react-icons/io';
+import { MdClose } from 'react-icons/md';
 
 const Projects: React.FC = () => {
 
     const [projectScrollHeight, setProjectScrollHeight] = useState('0%');
     const [effectToggle, setEffectToggle] = useState(true);
     const [effectText, setEffectText] = useState('On');
+    const [showModal, setshowModal] = useState(false);
+    const [gif, setGif] = useState('');
     const projectsContainerRef = useRef<HTMLDivElement>(null);
+
+    
+    const toggleModal = () => {
+        setshowModal(!showModal);
+    }
 
     const toggleEffect = () => {
 
@@ -64,7 +72,7 @@ const Projects: React.FC = () => {
                     <div id="Project1">
                         <div id="Project1LeftContainer">
                             <div id="Project1ImageContainer">
-                                <img id="Project1Image" src="dt.png" />
+                                <img id="Project1Image" src="DTGif.webp" onClick={() => {setGif('DTGif.webp'); toggleModal(); }} />
                             </div>
                         </div>
                         <div id="Project1RightContainer">
@@ -81,10 +89,10 @@ const Projects: React.FC = () => {
                                 </div>  
 
                                 <div id="Project1StackContainer">
-                                    <img id="StackIcon" src="angular.jpg" />
-                                    <img id="StackIcon" src="firebase.png" />
-                                    <img id="StackIcon" src="gcp.jpg" />
-                                    <img id="StackIconTS" src="ts.jpg" />
+                                    <img id="StackIcon" src="angular.webp" />
+                                    <img id="StackIcon" src="firebase.webp" />
+                                    <img id="StackIcon" src="gcp.webp" />
+                                    <img id="StackIconTS" src="ts.webp" />
                                 </div>
 
                             </div>
@@ -104,7 +112,7 @@ const Projects: React.FC = () => {
                     <div id="Project2">
                         <div id="Project2LeftContainer">
                             <div id="Project2ImageContainer">
-                                <img id="Project2Image" src="misplaced.png" />
+                                <img id="Project2Image" src="MisplacedGif.webp" onClick={() => {setGif('MisplacedGif.webp'); toggleModal(); }} />
                             </div>
                         </div>
                         <div id="Project2RightContainer">
@@ -121,11 +129,11 @@ const Projects: React.FC = () => {
                                 </div>
 
                                 <div id="Project2StackContainer">
-                                    <img id="StackIcon" src="react.png" />
-                                    <img id="StackIcon" src="expo.png" />
-                                    <img id="StackIcon" src="mongo.png" />
-                                    <img id="StackIcon" src="node.png" />
-                                    <img id="StackIconJS" src="js.png" />
+                                    <img id="StackIcon" src="react.webp" />
+                                    <img id="StackIcon" src="expo.webp" />
+                                    <img id="StackIcon" src="mongo.webp" />
+                                    <img id="StackIcon" src="node.webp" />
+                                    <img id="StackIconJS" src="js.webp" />
                                 </div>
 
                             </div>
@@ -145,7 +153,7 @@ const Projects: React.FC = () => {
                     <div id="Project3">
                         <div id="Project3LeftContainer">
                             <div id="Project3ImageContainer">
-                                <img id="Project3Image" src="tap.png" />
+                                <img id="Project3Image" src="TapGif.webp" onClick={() => {setGif('TapGif.webp'); toggleModal(); }} />
                             </div>
                         </div>
                         <div id="Project3RightContainer">
@@ -161,9 +169,9 @@ const Projects: React.FC = () => {
                                 </div>
 
                                 <div id="Project3StackContainer">
-                                    <img id="StackIcon" src="react.png" />
-                                    <img id="StackIcon" src="next.png" />
-                                    <img id="StackIconTS" src="ts.jpg" />
+                                    <img id="StackIcon" src="react.webp" />
+                                    <img id="StackIcon" src="next.webp" />
+                                    <img id="StackIconTS" src="ts.webp" />
                                 </div>
 
                             </div>
@@ -183,7 +191,7 @@ const Projects: React.FC = () => {
                     <div id="Project4">
                         <div id="Project4LeftContainer">
                             <div id="Project4ImageContainer">
-                                <img id="Project4Image" src="edu.png" />
+                                <img id="Project4Image" src="UAGif.webp" onClick={() => {setGif('UAGif.webp'); toggleModal(); }} />
                             </div>
                         </div>
                         <div id="Project4RightContainer">
@@ -200,9 +208,9 @@ const Projects: React.FC = () => {
                                 </div>
 
                                 <div id="Project4StackContainer">
-                                    <img id="StackIcon" src="react.png" />
+                                    <img id="StackIcon" src="react.webp" />
                                     <img id="StackIcon" src="gatsby.webp" />
-                                    <img id="StackIconJS" src="js.png" />
+                                    <img id="StackIconJS" src="js.webp" />
                                 </div>
 
                             </div>
@@ -222,7 +230,7 @@ const Projects: React.FC = () => {
                     <div id="Project5">
                         <div id="Project5LeftContainer">
                             <div id="Project5ImageContainer">
-                                <img id="Project5Image" src="sonic.png" />
+                                <img id="Project5Image" src="SonicGif.webp" onClick={() => {setGif('SonicGif.webp'); toggleModal(); }} />
                             </div>
                         </div>
                         <div id="Project5RightContainer">
@@ -238,8 +246,8 @@ const Projects: React.FC = () => {
                                 </div>
 
                                 <div id="Project5StackContainer">
-                                    <img id="StackIcon" src="c.png" />
-                                    <img id="StackIcon" src="unity.jpg" />
+                                    <img id="StackIcon" src="c.webp" />
+                                    <img id="StackIcon" src="unity.webp" />
                                 </div>
                                 
                             </div>
@@ -259,6 +267,10 @@ const Projects: React.FC = () => {
                 </div>                    
                 <div id="MoreContainer">
                     <p id="More">And More... Browse My <Link id='MoreGitHub' href='https://github.com/dawitalemu4' target="_blank">GitHub</Link> or Visit the <Link id='DocsA' href='/docs'>Docs Page for Devs</Link>!</p>
+                </div>
+                <div id="ModalContainer" style={{ display: showModal ? "flex" : "none" }} onClick={toggleModal}>
+                    <div id='CloseModal' onClick={toggleModal}><MdClose /></div>
+                    <img id="Img" src={gif} onClick={toggleModal} />
                 </div>
             </div>
         <style>
@@ -385,6 +397,7 @@ const Projects: React.FC = () => {
                     position: relative;
                     height: 100%;
                     object-fit: contain;
+                    cursor: pointer;
                 }
 
                 #Project1RightContainer, #Project2RightContainer, #Project3RightContainer, #Project4RightContainer, #Project5RightContainer {
@@ -524,6 +537,41 @@ const Projects: React.FC = () => {
                 #DocsA, #MoreGitHub { text-decoration: underline; }
 
                 #DocsA:hover, #MoreGitHub:hover { opacity: 0.7; }
+
+                #ModalContainer {
+                    display: flex;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 99.7vw;
+                    height: 100vh;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: rgba(0, 0, 0, 0.8);
+                    cursor: pointer;
+                    z-index: 11;
+                }
+
+                #CloseModal {
+                    display: flex;
+                    position: absolute;
+                    top: 11%;
+                    left: 3%;
+                    width: 5%;
+                    height: 5%;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 50px;
+                    color: white;
+                    cursor: pointer;
+                }
+
+                #Img {
+                    width: 80%;
+                    height: 80%;
+                    object-fit: contain;
+                    cursor: pointer;
+                }
 
                 @media (max-width: 900px) { 
 

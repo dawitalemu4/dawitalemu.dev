@@ -62,11 +62,11 @@ const Experience: React.FC = () => {
                                     <p id='SkillsHeader'>Front End Development</p>
                                 </div>
                                 <div id='SkillsRowContainer'>
-                                    <div id='SkillsRowItem'><img id="ItemLogo" src="ts.jpg" />TypeScript</div>
-                                    <div id='SkillsRowItem'><img id="ItemLogo" src="js.png" />JavaScript</div>
-                                    <div id='SkillsRowItem'><img id="ItemLogo" src="react.png" />React</div>
-                                    <div id='SkillsRowItem'><img id="ItemLogo" src="angular.jpg" />Angular</div>
-                                    <div id='SkillsRowItem'><img id="ItemLogo" src="next.png" />Next.js</div>
+                                    <div id='SkillsRowItem'><img id="ItemLogo" src="ts.webp" />TypeScript</div>
+                                    <div id='SkillsRowItem'><img id="ItemLogo" src="js.webp" />JavaScript</div>
+                                    <div id='SkillsRowItem'><img id="ItemLogo" src="react.webp" />React</div>
+                                    <div id='SkillsRowItem'><img id="ItemLogo" src="angular.webp" />Angular</div>
+                                    <div id='SkillsRowItem'><img id="ItemLogo" src="next.webp" />Next.js</div>
                                     <div id='SkillsRowItem'><img id="ItemLogo" src="gatsby.webp" />Gatsby.js</div>
                                 </div>
                             </div>
@@ -75,11 +75,11 @@ const Experience: React.FC = () => {
                                     <p id='SkillsHeader'>Back End Development</p>
                                 </div>
                                 <div id='SkillsRowContainer'>
-                                    <div id='SkillsRowItem'><img id="ItemLogo" src="python.png" />Python</div>
-                                    <div id='SkillsRowItem'><img id="ItemLogo" src="java.png" />Java</div>
-                                    <div id='SkillsRowItem'><img id="ItemLogo" src="node.png" />Node.js</div>
-                                    <div id='SkillsRowItem'><img id="ItemLogo" src="firebase.png" />Firebase</div>
-                                    <div id='SkillsRowItem'><img id="ItemLogo" src="mongo.png" />MongoDB</div>
+                                    <div id='SkillsRowItem'><img id="ItemLogo" src="python.webp" />Python</div>
+                                    <div id='SkillsRowItem'><img id="ItemLogo" src="java.webp" />Java</div>
+                                    <div id='SkillsRowItem'><img id="ItemLogo" src="node.webp" />Node.js</div>
+                                    <div id='SkillsRowItem'><img id="ItemLogo" src="firebase.webp" />Firebase</div>
+                                    <div id='SkillsRowItem'><img id="ItemLogo" src="mongo.webp" />MongoDB</div>
                                     <div id='SkillsRowItem'>Learning More...</div>
                                 </div>
                             </div>
@@ -89,8 +89,8 @@ const Experience: React.FC = () => {
                                         <p id='DoubleSkillsHeader'>App Development</p>
                                     </div>
                                     <div id='DoubleSkillsRowContainer'>
-                                        <div id='DoubleSkillsRowItem'><img id="DoubleItemLogo" src="react.png" />React Native</div>
-                                        <div id='DoubleSkillsRowItem'><img id="DoubleItemLogo" src="expo.png" />Expo</div>
+                                        <div id='DoubleSkillsRowItem'><img id="DoubleItemLogo" src="react.webp" />React Native</div>
+                                        <div id='DoubleSkillsRowItem'><img id="DoubleItemLogo" src="expo.webp" />Expo</div>
                                     </div>
                                 </div>
                                 <div id="DoubleSkillList">
@@ -98,8 +98,8 @@ const Experience: React.FC = () => {
                                         <p id='DoubleSkillsHeader'>Game Development</p>
                                     </div>
                                     <div id='DoubleSkillsRowContainer'>
-                                        <div id='DoubleSkillsRowItem'><img id="DoubleItemLogo" src="c.png" />C#</div>
-                                        <div id='DoubleSkillsRowItem'><img id="DoubleItemLogo" src="unity.jpg" />Unity Game Engine</div>
+                                        <div id='DoubleSkillsRowItem'><img id="DoubleItemLogo" src="c.webp" />C#</div>
+                                        <div id='DoubleSkillsRowItem'><img id="DoubleItemLogo" src="unity.webp" />Unity Game Engine</div>
                                     </div>
                                 </div>
                             </div>
@@ -108,12 +108,12 @@ const Experience: React.FC = () => {
                                     <p id='SkillsHeader'>Miscellaneous</p>
                                 </div>
                                 <div id='SkillsRowContainer'>
-                                    <div id='BottomSkillsRowItem'><Link id="GitHubA" href="https://github.com/dawitalemu4" target="_blank"><img id="GitHubItemLogo" src="github.jpg" />GitHub</Link></div>
-                                    <div id='BottomSkillsRowItem'><img id="ItemLogo" src="git.png" />Git</div>
-                                    <div id='BottomSkillsRowItem'><img id="ItemLogo" src="gcp.jpg" />Google Cloud</div>
-                                    <div id='BottomSkillsRowItem'><img id="ItemLogo" src="bash.png" />Bash</div>
-                                    <div id='BottomSkillsRowItem'><img id="ItemLogo" src="vercel.png" />Vercel</div>
-                                    <div id='BottomSkillsRowItem'><img id="ItemLogo" src="figma.png" />Figma</div>
+                                    <div id='BottomSkillsRowItem'><Link id="GitHubA" href="https://github.com/dawitalemu4" target="_blank"><img id="GitHubItemLogo" src="github.webp" />GitHub</Link></div>
+                                    <div id='BottomSkillsRowItem'><img id="ItemLogo" src="git.webp" />Git</div>
+                                    <div id='BottomSkillsRowItem'><img id="ItemLogo" src="gcp.webp" />Google Cloud</div>
+                                    <div id='BottomSkillsRowItem'><img id="ItemLogo" src="bash.webp" />Bash</div>
+                                    <div id='BottomSkillsRowItem'><img id="ItemLogo" src="vercel.webp" />Vercel</div>
+                                    <div id='BottomSkillsRowItem'><img id="ItemLogo" src="figma.webp" />Figma</div>
                                 </div>
                             </div>
                         </div>
