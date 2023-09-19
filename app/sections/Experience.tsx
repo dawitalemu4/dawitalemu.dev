@@ -78,9 +78,9 @@ const Experience: React.FC = () => {
                                     <div id='SkillsRowItem'><img id="ItemLogo" src="python.webp" />Python</div>
                                     <div id='SkillsRowItem'><img id="ItemLogo" src="java.webp" />Java</div>
                                     <div id='SkillsRowItem'><img id="ItemLogo" src="node.webp" />Node.js</div>
+                                    <div id='SkillsRowItem'><img id="ItemLogo" src="psql.png" />PostgreSQL</div>
                                     <div id='SkillsRowItem'><img id="ItemLogo" src="firebase.webp" />Firebase</div>
                                     <div id='SkillsRowItem'><img id="ItemLogo" src="mongo.webp" />MongoDB</div>
-                                    <div id='SkillsRowItem'>Learning More...</div>
                                 </div>
                             </div>
                             <div id="DoubleSkillListContainer">
