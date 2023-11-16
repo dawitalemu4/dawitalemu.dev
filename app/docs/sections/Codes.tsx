@@ -88,7 +88,7 @@ useEffect(() => {
 
 
 export const debreTsionCode: string = 
-`// GalleryBody.tsx
+`// GalleryBody.ts
 export class GalleryBody implements OnInit {
     Gallery$: Observable<Galleries[]>;
     firestore: Firestore = inject(Firestore);

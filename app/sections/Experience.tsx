@@ -78,7 +78,7 @@ const Experience: React.FC = () => {
                                     <div id='SkillsRowItem'><img id="ItemLogo" src="python.webp" />Python</div>
                                     <div id='SkillsRowItem'><img id="ItemLogo" src="java.webp" />Java</div>
                                     <div id='SkillsRowItem'><img id="ItemLogo" src="node.webp" />Node.js</div>
-                                    <div id='SkillsRowItem'><img id="ItemLogo" src="psql.png" />PostgreSQL</div>
+                                    <div id='SkillsRowItem'><img id="ItemLogo" src="psql.webp" />PostgreSQL</div>
                                     <div id='SkillsRowItem'><img id="ItemLogo" src="firebase.webp" />Firebase</div>
                                     <div id='SkillsRowItem'><img id="ItemLogo" src="mongo.webp" />MongoDB</div>
                                 </div>
@@ -108,12 +108,12 @@ const Experience: React.FC = () => {
                                     <p id='SkillsHeader'>Miscellaneous</p>
                                 </div>
                                 <div id='SkillsRowContainer'>
-                                    <div id='BottomSkillsRowItem'><Link id="GitHubA" href="https://github.com/dawitalemu4" target="_blank"><img id="GitHubItemLogo" src="github.webp" />GitHub</Link></div>
+                                    <Link id="BottomSkillsRowItem" href="https://github.com/dawitalemu4" target="_blank"><img id="ItemLogo" src="github.webp" />GitHub</Link>
                                     <div id='BottomSkillsRowItem'><img id="ItemLogo" src="git.webp" />Git</div>
-                                    <div id='BottomSkillsRowItem'><img id="ItemLogo" src="gcp.webp" />Google Cloud</div>
                                     <div id='BottomSkillsRowItem'><img id="ItemLogo" src="bash.webp" />Bash</div>
+                                    <div id='BottomSkillsRowItem'><img id="ItemLogo" src="gcp.webp" />Google Cloud</div>
+                                    <div id='BottomSkillsRowItem'><img id="ItemLogo" src="aws.webp" />AWS</div>
                                     <div id='BottomSkillsRowItem'><img id="ItemLogo" src="vercel.webp" />Vercel</div>
-                                    <div id='BottomSkillsRowItem'><img id="ItemLogo" src="figma.webp" />Figma</div>
                                 </div>
                             </div>
                         </div>
