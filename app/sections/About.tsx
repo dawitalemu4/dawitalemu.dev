@@ -1,7 +1,7 @@
 'use client'
 import React, { useState, useEffect, useRef } from 'react';
 
-const About: React.FC = () => {
+export default function About() {
 
     const [aboutScrollHeight, setAboutScrollHeight] = useState('0%');
     const aboutContainerRef = useRef<HTMLDivElement>(null);
@@ -169,6 +169,4 @@ const About: React.FC = () => {
         </style>
         </div>
     )
-}
-
-export default About;
+};

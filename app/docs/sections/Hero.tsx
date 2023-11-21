@@ -1,12 +1,14 @@
 "use client"
 import React, { useEffect } from "react";
+import { HeroData } from "../components/Data";
 import Link from "next/link";
 import { IoIosArrowDown } from "react-icons/io";
 import { HiOutlineArrowSmLeft, HiArrowNarrowDown} from "react-icons/hi";
 
-const Hero: React.FC = () => {
+export default function Hero() {
 
     const scrollToElement = (elementId: string) => {
+        console.log(elementId);
         const element = document.getElementById(elementId);
         if (element) {
             const elementRect = element.getBoundingClientRect();
@@ -34,35 +36,6 @@ const Hero: React.FC = () => {
             arrow.style.display = "none";
         }
     }
-
-    
-    const Portfolio = () => {
-        scrollToElement("Portfolio");
-    }
-    
-    const DebreTsion = () => {
-        scrollToElement("DebreTsion");
-    }
-    
-    const Misplaced = () => {
-        scrollToElement("Misplaced");
-    }
-    
-    const TapIn = () => {
-        scrollToElement("TapIn");
-    }
-    
-    const UA = () => {
-        scrollToElement("UA");
-    }
-    
-    const Sonic = () => {
-        scrollToElement("Sonic");
-    }
-    
-    const CreatorVerse = () => {
-        scrollToElement("CreatorVerse");
-    }
     
     const Bottom = () => {
         const element = document.getElementById("MiniGames");
@@ -74,10 +47,13 @@ const Hero: React.FC = () => {
     }
 
     useEffect(() => {
+
         window.addEventListener("scroll", isContainerVisble);
+
         return () => {
             window.removeEventListener("scroll", isContainerVisble);
-        }
+        };
+
     }, []);
 
     
@@ -94,33 +70,15 @@ const Hero: React.FC = () => {
                 </div>
                 <div id="HeroListContainer">
                     <div id="HeroList">
-                        
-                        <div id="HeroListItemContainer">
-                            <div id="HeroListItem" onClick={Portfolio}>Portfolio <IoIosArrowDown /></div>
-                        </div>
 
-                        <div id="HeroListItemContainer">
-                            <div id="HeroListItem" onClick={DebreTsion}>Debre Tsion Church <IoIosArrowDown /></div>
-                        </div>
-                        
-                        <div id="HeroListItemContainer">
-                            <div id="HeroListItem" onClick={Misplaced}>Misplaced <IoIosArrowDown /></div>
-                        </div>
-                        
-                        <div id="HeroListItemContainer">
-                            <div id="HeroListItem" onClick={TapIn}>Let's Tap In <IoIosArrowDown /></div>
-                        </div>
-                        
-                        <div id="HeroListItemContainer">
-                            <div id="HeroListItem" onClick={UA}>Urban Alliance <IoIosArrowDown /></div>
-                        </div>
-                        
-                        <div id="HeroListItemContainer">
-                            <div id="HeroListItem" onClick={Sonic}>2D Sonic Platformer <IoIosArrowDown /></div>
-                        </div>
+                        {HeroData.map((item: any) => (
+                            <div id='HeroListItemContainer' key={item.id}>
+                                <div id="HeroListItem" onClick={() => scrollToElement(`${item.element_id}`)}>{item.title} <IoIosArrowDown /></div>
+                            </div>
+                        ))}
 
                         <div id="HeroListItemContainerBottom">
-                            <div id="HeroListItem" onClick={CreatorVerse}>CreatorVerse <IoIosArrowDown /></div>
+                            <div id="HeroListItem" onClick={() => scrollToElement('CreatorVerse')}>CreatorVerse <IoIosArrowDown /></div>
                         </div>
 
                     </div>
@@ -181,6 +139,7 @@ const Hero: React.FC = () => {
                         flex-direction: column;
                         justify-content: center;
                         align-items: center;
+                        user-select: none;
                     }
 
                     #HeroHeader {
@@ -246,6 +205,7 @@ const Hero: React.FC = () => {
                         font-size: 25px;
                         font-family: InterMedium;
                         cursor: pointer;
+                        user-select: none;
                     }
 
                     #HeroListItem:hover {
@@ -291,6 +251,4 @@ const Hero: React.FC = () => {
             </div>
         </div>
     )
-}
-
-export default Hero;
+};

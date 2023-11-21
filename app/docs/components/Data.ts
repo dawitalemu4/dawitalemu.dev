@@ -1,42 +1,27 @@
-"use client"
-import React, { useEffect, useRef } from 'react';
-import hljs from 'highlight.js/lib/core';
-import 'highlight.js/styles/base16/google-dark.css';
-import javascript from 'highlight.js/lib/languages/javascript';
-hljs.registerLanguage('javascript', javascript);
-import typescript from 'highlight.js/lib/languages/typescript';
-hljs.registerLanguage('typescript', typescript);
-import csharp from 'highlight.js/lib/languages/csharp';
-hljs.registerLanguage('csharp', csharp);
+export const HeroData = [
 
-interface CodeHighlightProps {
-    code: string;
-}
+    { element_id: 'Portfolio', title: 'Portfolio' },
 
-const CodeHighlight: React.FC<CodeHighlightProps> = ({ code }) => {
-    const codeRef = useRef<HTMLElement>(null);
+    { element_id: 'DebreTsion', title: 'Debre Tsion Church' },
 
-    useEffect(() => {
-        if (codeRef.current) {
-            hljs.highlightElement(codeRef.current);
-        }
-    }, [code]);
+    { element_id: 'Misplaced', title: 'Misplaced' },
 
-    return (
-        <pre>
-            <code ref={codeRef}>
-                {code}
-            </code>
-        </pre>
-    );
-};
+    { element_id: 'TapIn', title: "Let's Tap In" },
 
-export default CodeHighlight;
+    { element_id: 'UA', title: 'Urban Allaince' },
+
+    { element_id: 'Sonic', title: '2D Sonic Platformer' }
+
+];
 
 
 
-export const portfolioCode: string = 
-`// Project.tsx
+export const ProjectsData = [
+    {
+        divID: 'Portfolio',
+        header: 'Portfolio',
+        paragraph: "Thought the parallax effect was cool? Here's the code for the effect on the projects section!  Even though this function is almost the same as the other functions in the other sections, this one has an on and off button to toggle the effect. In short, I took the height of the div and the top, the scroll position of the user, and calculated the % of where their scroll position is on the div. I also offset the top a bit for timing reasons, as it would start counting the % immediately as the top of the div showed up on the screen, but the effect is cooler when you can see it happening😹. Why I'm using this component's parallax function is, because believe it or not, I spent 20 minutes or so confused why 'if (effectToggle === true)' wouldn't display 'On', until I tried false like how it is now. Don't ask me why it works. (jk)",
+        code: `// Project.tsx
 const [projectScrollHeight, setProjectScrollHeight] = useState('0%');
 const [effectToggle, setEffectToggle] = useState(true);
 const [effectText, setEffectText] = useState('On');
@@ -46,18 +31,18 @@ const handleProjectScroll = () => {
     
     const projectsContainer = projectsContainerRef.current;
     if (!projectsContainer) return;
-  
+    
     const containerHeight = projectsContainer.clientHeight;
     const containerTop = projectsContainer.getBoundingClientRect().top;
     const scrollPosition = Math.max(0, window.scrollY - containerTop - window.innerHeight * 1.9);
     const isContainerVisible = containerTop + containerHeight >= 0 && containerTop <= window.innerHeight;
     
     if (!isContainerVisible) {
-      setProjectScrollHeight('0%');
+        setProjectScrollHeight('0%');
     } else {
-      const maxScroll = containerHeight * 2.5;
-      const projectScrollPercentage = Math.min((scrollPosition / maxScroll) * 100, 100);
-      setProjectScrollHeight('S{projectScrollPercentage}%');
+        const maxScroll = containerHeight * 2.5;
+        const projectScrollPercentage = Math.min((scrollPosition / maxScroll) * 100, 100);
+        setProjectScrollHeight('S{projectScrollPercentage}%');
     }
 }
 
@@ -83,12 +68,21 @@ useEffect(() => {
     return (
         <div id='Projects' ref={projectsContainerRef}>
         ...
-    )`;
-
-
-
-export const debreTsionCode: string = 
-`// GalleryBody.ts
+    )
+...`,
+        github: 'https://github.com/dawitalemu4/portfolio',
+        siteURL: '/',
+        images: [
+            ['StackIcon', 'react.webp'],
+            ['StackIcon', 'next.webp'],
+            ['StackIconTS', 'ts.webp']
+        ]
+    },
+    {
+        divID: 'DebreTsion',
+        header: 'Debre Tsion Church',
+        paragraph: "This component is one of my favorites because the UI that this code creates feels amazing to me.  The typescript basically fetches the images from my firebase db and has a function that makes any image clicked on become a modal. What made this challenging was figuring out how to make an image that was clicked on become the image in the modal, as the image on the modal would default to the latest image that was fetched. How I solved this was by running another for loop to pick up the specific image that was clicked on as url and made the selectedImage prop = url when the image is clicked on. I know this can be optimized, but I had other things to get to, and plan to get back to it when I learn how to optimize it.",
+        code: `// GalleryBody.ts
 export class GalleryBody implements OnInit {
     Gallery$: Observable<Galleries[]>;
     firestore: Firestore = inject(Firestore);
@@ -140,37 +134,47 @@ html:
             </ng-container>
         </div>
     </div>
-*/`;
-
-
-
-export const misplacedCode: string = 
-`// PostForm.jsx
+*/
+...`,
+        github: 'https://github.com/DebreTsionWeb/debretsion.org',
+        siteURL: 'https://debretsion.org/en',
+        images: [
+            ['StackIcon', 'angular.webp'],
+            ['StackIcon', 'firebase.webp'],
+            ['StackIcon', 'gcp.webp'],
+            ['StackIconTS', 'ts.webp']
+        ]
+    },
+    {
+        divID: 'Misplaced',
+        header: 'Misplaced',
+        paragraph: "This code block creates one of my favorite features on this app, which is previewing what their post will look like while they're typing in the form's input boxes! I know it looks weird, it's React Native, but I utilized useState and updated the state of each text variable's text every time the input box's input changed. Then I used the variable that is being changed as the inner text of the tag in the preview, creating a constant update to the preview's text!",
+        code: `// PostForm.jsx
 const [Price, setPrice] = useState('');
 const [Title, setTitle] = useState('');
 const [Location, setLocation] = useState('');
 const [Description, setDescription] = useState('');
 const [Contact, setContact] = useState('');
 
- 
+    
 const handlePriceChange = (text) => {
-  setPrice(text);
+    setPrice(text);
 }
 
 const handleTitleChange = (text) => {
-  setTitle(text);
+    setTitle(text);
 }
 
 const handleLocationChange = (text) => {
-  setLocation(text);
+    setLocation(text);
 }
 
 const handleDescriptionChange = (text) => {
-  setDescription(text);
+    setDescription(text);
 }
 
 const handleContactChange = (text) => {
-  setContact(text);
+    setContact(text);
 }
 
 
@@ -193,12 +197,22 @@ jsx:
         value={Title}
     />
 ...
-`;
-
-
-
-export const tapInCode: string =
-`// Background.tsx
+`,
+        github: 'https://github.com/misplaced-dev/misplaced.app',
+        siteURL: 'https://misplaced.app',
+        images: [
+            ['StackIcon', 'react.webp'],
+            ['StackIcon', 'expo.webp'],
+            ['StackIcon', 'mongo.webp'],
+            ['StackIcon', 'node.webp'],
+            ['StackIconJS', 'js.webp']
+        ]
+    },
+    {
+        divID: 'TapIn',
+        header: "Let's Tap In",
+        paragraph: "Okay. I know I used a package, but I didn't copy and paste this code, and the docs weren't super easy for me to understand, making it a challenge for me when I was at this point of my coding journey. This code snippet takes the main color from an image (the image of the card that was clicked) and then creates a color for a background and a color for an accent (text color, etc.) that can be used on the page of the card that was clicked. In another component not in this code snippet, I take the values of these two variables and use them as a gradient in the CSS, making whatever color the background is a cool gradient matching up with the main color of the image!",
+        code: `// Background.tsx
 import Color from "color-thief-react";
 
 interface BackgroundProps {
@@ -237,12 +251,20 @@ const Background: React.FC<BackgroundProps> = ({ getBackgroundColor, getAccentCo
             </Color>
         </div>
     );
-};`;
-
-
-
-export const UACode: string =
-`// Courses.jsx
+};`,
+        github: 'https://github.com/dawitalemu4/TapInWebPage',
+        siteURL: 'https://tapinwebpage.vercel.app',
+        images: [
+            ['StackIcon', 'react.webp'],
+            ['StackIcon', 'next.webp'],
+            ['StackIconTS', 'ts.webp']
+        ]
+    },
+    {
+        divID: 'UA',
+        header: 'Urban Alliance',
+        paragraph: "Since this project had no backend or any difficult frontend components, I chose this code snippet where I decided to follow the DRY (Don't Repeat Yourself) rule and use a map function to make the 9 different course cards instead of hard coding each one. I created a variable that has key : value pairs so that in the map function, I could just call the key to get the value!",
+        code: `// Courses.jsx
 const courses = [
     {
         header: "Back End Dev Course", 
@@ -282,12 +304,20 @@ return (
             </div>
         ))}
     </div>
-);`;
-
-
-
-export const sonicCode: string =
-`// PlayerMovement.cs
+);`,
+        github: 'https://github.com/EduCoGroup/educogroup.org',
+        siteURL: 'https://educogroup.vercel.app',
+        images: [
+            ['StackIcon', 'react.webp'],
+            ['StackIcon', 'gatsby.webp'],
+            ['StackIconTS', 'ts.webp']
+        ]
+    },
+    {
+        divID: 'Sonic',
+        header: '2D Sonic Platformer',
+        paragraph: "This C# script contains logic for sonic's speed, jump force, movement state, and whether he should be able to jump depending on if he isn't colliding with the ground properly/currently. This was the most challenging script for me because I liked the fast refreshes from web development, but every time I wanted to test if the new value I inserted was good or not, I had to manually stop the game and run it again. Jokes aside, the UnityEngine has a lot of functions doing all of the heavy lifting, but getting the syntax correct was harder for me as I was newer to coding when I was working on this project.",
+        code: `// PlayerMovement.cs
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
@@ -300,7 +330,7 @@ public class PlayerMovement : MonoBehaviour {
     private float moveSpeed = 15f;
     private float jumpForce = 20f;
     private enum MovementState { idle, running, jumping, falling }
-  
+    
     private void Start() {
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<BoxCollider2D>();
@@ -345,24 +375,31 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     private bool IsGrounded() {
-      return Physics2D.BoxCast( coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround );
+        return Physics2D.BoxCast( coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround );
     }
-}`;
-
-
-
-export const CVCode: string =
-`// ShowCreators.jsx
+}`,
+        github: 'https://github.com/dawitalemu4/sonic',
+        siteURL: 'https://github.com/dawitalemu4/sonic',
+        images: [
+            ['StackIcon', 'c.webp'],
+            ['StackIcon', 'unity.webp']
+        ]
+    },
+    {
+        divID: 'CreatorVerse',
+        header: 'CreatorVerse',
+        paragraph: "I chose this code snippet because of its funny story. I was pair programming with a friend to help him learn React, and this component wasn't working for about 30 minutes and we couldn't figure out why. We eventually figured out [id] shouldn't be in the end of the useEffect because the id doesn't change on this page, meaning useEffect wouldn't work as intended. Other than that, this was the first full-stack website I built in less than a day!",
+        code: `// ShowCreators.jsx
 export default function ShowCreators() {
     const [creators, setCreators] = useState([]);
-  
+    
     useEffect(() => {
         async function fetchCreators() {
             try {
                 const { data, error } = await supabase
                 .from('creators')
                 .select('id, name, Youtube, Twitter, Instagram, description, imageURL');
-  
+    
                 if (error) {
                     console.log('error', error);
                 } else {
@@ -372,7 +409,17 @@ export default function ShowCreators() {
                 console.log('error', error);
             }
         }
-  
+    
         fetchCreators();
         
-    }, []); /*<- Bad code was [id]*/`;
+    }, []); /*<- Bad code was [id]*/
+...`,
+        github: 'https://github.com/dawitalemu4/CodePath103PreWork',
+        siteURL: 'https://creatorverse-da.vercel.app',
+        images: [
+            ['StackIcon', 'react.webp'],
+            ['StackIcon', 'supabase.webp'],
+            ['StackIconJS', 'js.webp']
+        ]
+    },
+];

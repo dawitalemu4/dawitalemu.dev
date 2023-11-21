@@ -1,7 +1,8 @@
 "use client"
 import React, { useState, useEffect, useRef } from "react";
 
-const PacMan: React.FC = () => {
+export default function PacMan() {
+    
     const [imageIndex, setImageIndex] = useState(0);
     const images = [
         '1.webp',
@@ -211,5 +212,3 @@ const PacMan: React.FC = () => {
 
     );
 };
-
-export default PacMan;

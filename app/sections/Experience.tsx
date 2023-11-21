@@ -1,8 +1,9 @@
 'use client'
 import React, { useState, useEffect, useRef } from 'react';
+import { ExperienceData } from './Data';
 import Link from "next/link";
 
-const Experience: React.FC = () => {
+export default function Experience() {
 
     const [experienceScrollHeight, setExperienceScrollHeight] = useState('0%');
     const experienceContainerRef = useRef<HTMLDivElement>(null);
@@ -57,65 +58,21 @@ const Experience: React.FC = () => {
                     </div>
                     <div id='SkillsContainer'>
                         <div id='SkillsListContainer'>
-                            <div id="SkillList">
-                                <div id='SkillsListHeaderContainer'>
-                                    <p id='SkillsHeader'>Front End Development</p>
-                                </div>
-                                <div id='SkillsRowContainer'>
-                                    <div id='SkillsRowItem'><img id="ItemLogo" src="ts.webp" />TypeScript</div>
-                                    <div id='SkillsRowItem'><img id="ItemLogo" src="js.webp" />JavaScript</div>
-                                    <div id='SkillsRowItem'><img id="ItemLogo" src="react.webp" />React</div>
-                                    <div id='SkillsRowItem'><img id="ItemLogo" src="angular.webp" />Angular</div>
-                                    <div id='SkillsRowItem'><img id="ItemLogo" src="next.webp" />Next.js</div>
-                                    <div id='SkillsRowItem'><img id="ItemLogo" src="gatsby.webp" />Gatsby.js</div>
-                                </div>
-                            </div>
-                            <div id="SkillList">
-                                <div id='SkillsListHeaderContainer'>
-                                    <p id='SkillsHeader'>Back End Development</p>
-                                </div>
-                                <div id='SkillsRowContainer'>
-                                    <div id='SkillsRowItem'><img id="ItemLogo" src="python.webp" />Python</div>
-                                    <div id='SkillsRowItem'><img id="ItemLogo" src="java.webp" />Java</div>
-                                    <div id='SkillsRowItem'><img id="ItemLogo" src="node.webp" />Node.js</div>
-                                    <div id='SkillsRowItem'><img id="ItemLogo" src="psql.webp" />PostgreSQL</div>
-                                    <div id='SkillsRowItem'><img id="ItemLogo" src="firebase.webp" />Firebase</div>
-                                    <div id='SkillsRowItem'><img id="ItemLogo" src="mongo.webp" />MongoDB</div>
-                                </div>
-                            </div>
-                            <div id="DoubleSkillListContainer">
-                                <div id="DoubleSkillList">
-                                    <div id='DoubleSkillsListHeaderContainer'>
-                                        <p id='DoubleSkillsHeader'>App Development</p>
+                            {ExperienceData.map((list: any) => (
+                                <div id="SkillList" key={list.id}>
+                                    <div id='SkillsListHeaderContainer'>
+                                        <p id='SkillsHeader'>{list.header}</p>
                                     </div>
-                                    <div id='DoubleSkillsRowContainer'>
-                                        <div id='DoubleSkillsRowItem'><img id="DoubleItemLogo" src="react.webp" />React Native</div>
-                                        <div id='DoubleSkillsRowItem'><img id="DoubleItemLogo" src="expo.webp" />Expo</div>
+                                    <div id='SkillsRowContainer'>
+                                        {list.images.map((image: any) => (
+                                            <div id='SkillsRowItem' key={image.id}>
+                                                <img id="ItemLogo" src={image[0]} />
+                                                {image[1]}
+                                            </div>
+                                        ))}
                                     </div>
                                 </div>
-                                <div id="DoubleSkillList">
-                                    <div id='DoubleSkillsListHeaderContainer'>
-                                        <p id='DoubleSkillsHeader'>Game Development</p>
-                                    </div>
-                                    <div id='DoubleSkillsRowContainer'>
-                                        <div id='DoubleSkillsRowItem'><img id="DoubleItemLogo" src="c.webp" />C#</div>
-                                        <div id='DoubleSkillsRowItem'><img id="DoubleItemLogo" src="unity.webp" />Unity Game Engine</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="SkillList">
-                                <div id='SkillsListHeaderContainer'>
-                                    <p id='SkillsHeader'>Miscellaneous</p>
-                                </div>
-                                <div id='SkillsRowContainer'>
-                                    <Link id="BottomSkillsRowItem" href="https://github.com/dawitalemu4" target="_blank"><img id="ItemLogo" src="github.webp" />GitHub</Link>
-                                    <div id='BottomSkillsRowItem'><img id="ItemLogo" src="git.webp" />Git</div>
-                                    <div id='BottomSkillsRowItem'><img id="ItemLogo" src="bash.webp" />Bash</div>
-                                    <div id='BottomSkillsRowItem'><img id="ItemLogo" src="gcp.webp" />Google Cloud</div>
-                                    <div id='BottomSkillsRowItem'><img id="ItemLogo" src="aws.webp" />AWS</div>
-                                    <div id='BottomSkillsRowItem'><img id="ItemLogo" src="vercel.webp" />Vercel</div>
-                                </div>
-                            </div>
+                            ))}
                         </div>
                     </div>
                 </div>
@@ -212,7 +169,7 @@ const Experience: React.FC = () => {
                     align-items: center;
                 }
 
-                #SkillsListContainer, #DoubleSkillListContainer {
+                #SkillsListContainer {
                     display: flex;
                     position: relative;
                     width: 100%;
@@ -222,12 +179,7 @@ const Experience: React.FC = () => {
                     align-items: center;
                 }
 
-                #DoubleSkillListContainer {
-                    height: 40%;
-                    flex-direction: row;
-                }
-
-                #SkillList, #DoubleSkillList {
+                #SkillList {
                     display: flex;
                     position: relative;
                     width: 100%;
@@ -237,11 +189,7 @@ const Experience: React.FC = () => {
                     align-items: center;
                 }
 
-                #DoubleSkillList {
-                    height: 100%;
-                }
-
-                #SkillsListHeaderContainer, #DoubleSkillsListHeaderContainer {
+                #SkillsListHeaderContainer {
                     display: flex;
                     position: relative;
                     width: 100%;
@@ -251,11 +199,7 @@ const Experience: React.FC = () => {
                     align-items: center;
                 }
 
-                #DoubleSkillsListHeaderContainer {
-                    height: 25%;
-                }
-
-                #SkillsHeader, #DoubleSkillsHeader {
+                #SkillsHeader {
                     font-size: 20px;
                     text-align: center;
                     font-family: InterSemi;
@@ -270,18 +214,8 @@ const Experience: React.FC = () => {
                     justify-content: center;
                     align-items: flex-start;
                 }
-                
-                #DoubleSkillsRowContainer {
-                    display: flex;
-                    position: relative;
-                    width: 100%;
-                    height: 75%;
-                    flex-direction: row;
-                    justify-content: center;
-                    align-items: flex-start;
-                }
 
-                #SkillsRowItem, #DoubleSkillsRowItem, #BottomSkillsRowItem {
+                #SkillsRowItem {
                     display: flex;
                     position: relative;
                     height: 50%;
@@ -291,38 +225,16 @@ const Experience: React.FC = () => {
                     object-fit: contain;
                     text-align: center;
                     font-family: Inter;
-                    transform: translateY(calc(0.8 * var(--experienceScrollHeight)));
+                    transform: translateY(calc(0.7 * var(--experienceScrollHeight)));
                 }
 
-                #DoubleSkillsRowItem {
-                    margin-left: 10px;
-                    margin-right: 10px;
-                    transform: translateY(calc(0.6 * var(--experienceScrollHeight)));
-                }
-
-                #BottomSkillsRowItem { transform: translateY(calc(0.7 * var(--experienceScrollHeight))); }
-
-                #ItemLogo, #GitHubItemLogo {
-                    width: 90px;
-                    height: 90px;
+                #ItemLogo {
+                    width: 85px;
+                    height: 85px;
                     margin-bottom: 10px;
                 }
 
-                #DoubleItemLogo {
-                    width: 90px;
-                    height: 90px;
-                    margin-bottom: 10px;
-                }
-
-                #ItemLogo:hover, #DoubleItemLogo:hover, #GitHubA:hover { transform: scale(1.1); }
-
-                #GitHubA {
-                    width
-                    font-size: 16px;
-                    text-decoration: underline;
-                }
-
-                #GitHubA:hover { opacity: 0.8; }
+                #ItemLogo:hover { transform: scale(1.1); }
 
                 #ResumeLink { font-size: 22px; font-family: InterSemi; text-decoration: underline; }
 
@@ -342,19 +254,11 @@ const Experience: React.FC = () => {
 
                     #SkillsContainer { width: 90%; height: 50%; }
 
-                    #DoubleSkillListContainer { margin-bottom: 15px; }
+                    #SkillsHeader{ font-size: 18px; }
 
-                    #SkillsHeader, #DoubleSkillsHeader { font-size: 18px; }
-
-                    #SkillsRowItem, #BottomSkillsRowItem { font-size: 11px; margin-top: -10px; }
-
-                    #DoubleSkillsRowItem { font-size: 11px; }
+                    #SkillsRowItem { font-size: 11px; margin-top: -10px; }
                     
-                    #ItemLogo, #GitHubItemLogo { width: 60px; height: 60px; padding: 0px 3px; }
-
-                    #DoubleItemLogo { width: 65px; height: 65px; }
-
-                    #GitHubA { font-size: 11px; }
+                    #ItemLogo { width: 60px; height: 60px; padding: 0px 3px; }
 
                     #ResumeLink { font-size: 18px; }
                 }
@@ -363,6 +267,4 @@ const Experience: React.FC = () => {
         </style>
         </div>
     )
-}
-
-export default Experience;
+};
