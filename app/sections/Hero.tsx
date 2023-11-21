@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { HiArrowNarrowDown } from 'react-icons/hi';
 
-const Hero: React.FC = () => {
+export default function Hero() {
 
     const [heroScrollHeight, setHeroScrollHeight] = useState('0%');
     const heroContainerRef = useRef<HTMLDivElement>(null);
@@ -203,6 +203,4 @@ const Hero: React.FC = () => {
         </style>
         </div>
     )
-}
-
-export default Hero;
+};

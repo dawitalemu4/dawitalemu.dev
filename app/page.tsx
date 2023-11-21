@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import Navbar from './sections/Header';
+import Navbar from './sections/Navbar';
 import Hero from './sections/Hero';
 import About from './sections/About';
 import Experience from './sections/Experience';

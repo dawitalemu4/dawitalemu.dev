@@ -1,12 +1,13 @@
 'use client'
 import React, { useState, useEffect, useRef } from 'react';
+import { ProjectsData } from './Data';
 import Link from "next/link";
 import { VscGithubAlt } from 'react-icons/vsc';
 import { CiShare1 } from 'react-icons/ci';
 import { IoIosPaper } from 'react-icons/io';
 import { MdClose } from 'react-icons/md';
 
-const Projects: React.FC = () => {
+export default function Projects() {
 
     const [projectScrollHeight, setProjectScrollHeight] = useState('0%');
     const [effectToggle, setEffectToggle] = useState(true);
@@ -69,201 +70,47 @@ const Projects: React.FC = () => {
                     <button id="ProjectsHeaderToggle" onClick={toggleEffect}>Effect: {effectText}</button>
                 </div>
                 <div id="ProjectsListContainer">
-                    <div id="Project1">
-                        <div id="Project1LeftContainer">
-                            <div id="Project1ImageContainer">
-                                <img id="Project1Image" src="DTGif.webp" onClick={() => {setGif('DTGif.webp'); toggleModal(); }} />
-                            </div>
-                        </div>
-                        <div id="Project1RightContainer">
-                            <div id="Project1ParagraphContainer">
-
-                                <div id="Project1HeaderContainer">
-                                    <p id="Project1Header">Debre Tsion Church</p>
-                                </div>
-                                
-                                <div id="Project1TextContainer">
-                                    <p id='Project1Paragraph'>This website was created by 6 devs led by Dawit Alemu to give back to our childhood church.
-                                    I taught junior devs, managed meading with church leadership, and recieved good feedback from teammates and was approved to push to production.
-                                    </p>
-                                </div>  
-
-                                <div id="Project1StackContainer">
-                                    <img id="StackIcon" src="angular.webp" />
-                                    <img id="StackIcon" src="firebase.webp" />
-                                    <img id="StackIcon" src="gcp.webp" />
-                                    <img id="StackIconTS" src="ts.webp" />
-                                </div>
-
-                            </div>
-                            <div id="Project1IconsContainer">
-                                <div id="GithubIconContainer">
-                                    <Link id="GithubLink" href="https://github.com/DebreTsionWeb/debretsion.org" target='_blank'> <VscGithubAlt id='GithubIcon' />Video Demos</Link>
-                                </div>
-                                <div id="RedirectIconContainer">
-                                    <Link id="RedirectLink" href="https://debretsion.vercel.app/en" target='_blank'> <CiShare1 id='RedirectIcon' />View Site</Link>
-                                </div>
-                                <div id="DocsIconContainer">
-                                    <Link id="DocsLink" href="/docs"> <IoIosPaper id='DocsIcon' />Docs</Link>
+                    {ProjectsData.map((data: any) => (
+                        <div id={`Project${data.id}`} key={data.id}>
+                            <div id="ProjectLeftContainer">
+                                <div id="ProjectImageContainer">
+                                    <img id="ProjectImage" src={data.image} onClick={() => {setGif(`${data.image}`); toggleModal(); }} />
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div id="Project2">
-                        <div id="Project2LeftContainer">
-                            <div id="Project2ImageContainer">
-                                <img id="Project2Image" src="MisplacedGif.webp" onClick={() => {setGif('MisplacedGif.webp'); toggleModal(); }} />
-                            </div>
-                        </div>
-                        <div id="Project2RightContainer">
-                            <div id="Project2ParagraphContainer">
+                            <div id="ProjectRightContainer">
+                                <div id="ProjectParagraphContainer">
 
-                                <div id="Project2HeaderContainer">
-                                    <p id="Project2Header">Misplaced</p>
-                                </div>
+                                    <div id="ProjectHeaderContainer">
+                                        <p id="ProjectHeader">{data.header}</p>
+                                    </div>
+                                    
+                                    <div id="ProjectTextContainer">
+                                        <p id='ProjectParagraph'>{data.paragraph}</p>
+                                    </div> 
 
-                                <div id="Project2TextContainer">
-                                    <p id='Project2Paragraph'>Misplaced is a digitalized lost and found platform for TU students to retrieve lost items by posting information through an intuitive React Native UI and connecting with potential finders. 
-                                    Wrote 100k+ lines of code and was recognized by VP and CIO of Towson University.
-                                    </p>
-                                </div>
+                                    <div id="ProjectStackContainer">
+                                        {data.images.map((image: any) => (
+                                            <div id="StackIconContainer" key={image.id}>
+                                                <img id={image[0]} src={image[1]} />
+                                            </div>
+                                        ))}
+                                    </div>
 
-                                <div id="Project2StackContainer">
-                                    <img id="StackIcon" src="react.webp" />
-                                    <img id="StackIcon" src="expo.webp" />
-                                    <img id="StackIcon" src="mongo.webp" />
-                                    <img id="StackIcon" src="node.webp" />
-                                    <img id="StackIconJS" src="js.webp" />
                                 </div>
-
-                            </div>
-                            <div id="Project2IconsContainer">
-                                <div id="GithubIconContainer">
-                                    <Link id="GithubLink" href="https://github.com/misplaced-dev/misplaced.app" target='_blank'> <VscGithubAlt id='GithubIcon' />Video Demos</Link>
-                                </div>
-                                <div id="RedirectIconContainer">
-                                    <Link id="RedirectLink" href="https://misplaced.app" target='_blank'> <CiShare1 id='RedirectIcon' />View Site</Link>
-                                </div>
-                                <div id="DocsIconContainer">
-                                    <Link id="DocsLink" href="/docs"> <IoIosPaper id='DocsIcon' />Docs</Link>
+                                <div id="ProjectIconsContainer">
+                                    <div id="GithubIconContainer">
+                                        <Link id="GithubLink" href={data.github} target='_blank'> <VscGithubAlt id='GithubIcon' />Video Demos</Link>
+                                    </div>
+                                    <div id="RedirectIconContainer">
+                                        <Link id="RedirectLink" href={data.siteURL} target='_blank'> <CiShare1 id='RedirectIcon' />View Site</Link>
+                                    </div>
+                                    <div id="DocsIconContainer">
+                                        <Link id="DocsLink" href="/docs"> <IoIosPaper id='DocsIcon' />Docs</Link>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div id="Project3">
-                        <div id="Project3LeftContainer">
-                            <div id="Project3ImageContainer">
-                                <img id="Project3Image" src="TapGif.webp" onClick={() => {setGif('TapGif.webp'); toggleModal(); }} />
-                            </div>
-                        </div>
-                        <div id="Project3RightContainer">
-                            <div id="Project3ParagraphContainer">
-
-                                <div id="Project3HeaderContainer">
-                                    <p id="Project3Header">Let's Tap In, LLC</p>
-                                </div>
-
-                                <div id="Project3TextContainer">
-                                    <p id='Project3Paragraph'>This static website displays dummy events and allows you to checkout tickets.
-                                    Led initiative on website preformance improvements, collaborated with other senior developers, and receieved approval to push to production.</p>
-                                </div>
-
-                                <div id="Project3StackContainer">
-                                    <img id="StackIcon" src="react.webp" />
-                                    <img id="StackIcon" src="next.webp" />
-                                    <img id="StackIconTS" src="ts.webp" />
-                                </div>
-
-                            </div>
-                            <div id="Project3IconsContainer">
-                                <div id="GithubIconContainer">
-                                    <Link id="GithubLink" href="https://github.com/dawitalemu4/TapInWebPage" target='_blank'> <VscGithubAlt id='GithubIcon' />Video Demos</Link>
-                                </div>
-                                <div id="RedirectIconContainer">
-                                    <Link id="RedirectLink" href="https://tapinwebpage.vercel.app/" target='_blank'> <CiShare1 id='RedirectIcon' />View Site</Link>
-                                </div>
-                                <div id="DocsIconContainer">
-                                    <Link id="DocsLink" href="/docs"> <IoIosPaper id='DocsIcon' />Docs</Link>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="Project4">
-                        <div id="Project4LeftContainer">
-                            <div id="Project4ImageContainer">
-                                <img id="Project4Image" src="UAGif.webp" onClick={() => {setGif('UAGif.webp'); toggleModal(); }} />
-                            </div>
-                        </div>
-                        <div id="Project4RightContainer">
-                            <div id="Project4ParagraphContainer">
-
-                                <div id="Project4HeaderContainer">
-                                    <p id="Project4Header">Urban Alliance</p>
-                                </div>
-
-                                <div id="Project4TextContainer">
-                                    <p id='Project4Paragraph'>This static website was a revamping of a partner companies template-service website. 
-                                    Held meetings with the CEO and Co-Founder to align development with business needs.
-                                    Sparked the start of the partner companies codebase using GitHub organizations, project-based repos, and protection rules.</p>
-                                </div>
-
-                                <div id="Project4StackContainer">
-                                    <img id="StackIcon" src="react.webp" />
-                                    <img id="StackIcon" src="gatsby.webp" />
-                                    <img id="StackIconJS" src="js.webp" />
-                                </div>
-
-                            </div>
-                            <div id="Project4IconsContainer">
-                                <div id="GithubIconContainer">
-                                    <Link id="GithubLink" href="https://github.com/EduCoGroup/educogroup.org" target='_blank'> <VscGithubAlt id='GithubIcon' />Video Demos</Link>
-                                </div>
-                                <div id="RedirectIconContainer">
-                                    <Link id="RedirectLink" href="https://educogroup.vercel.app/" target='_blank'> <CiShare1 id='RedirectIcon' />View Site</Link>
-                                </div>
-                                <div id="DocsIconContainer">
-                                    <Link id="DocsLink" href="/docs"> <IoIosPaper id='DocsIcon' />Docs</Link>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="Project5">
-                        <div id="Project5LeftContainer">
-                            <div id="Project5ImageContainer">
-                                <img id="Project5Image" src="SonicGif.webp" onClick={() => {setGif('SonicGif.webp'); toggleModal(); }} />
-                            </div>
-                        </div>
-                        <div id="Project5RightContainer">
-                            <div id="Project5ParagraphContainer">
-
-                                <div id="Project5HeaderContainer">
-                                    <p id="Project5Header">2D Sonic Platformer</p>
-                                </div>
-
-                                <div id="Project5TextContainer">
-                                    <p id='Project5Paragraph'>A sentimental first project where I decided to take action on my childhood dream to become a "game maker", and introduced me to the world of software development.
-                                    Learned physics and animation in game development, and more importantly, how to self teach software development, which brought me where I am now.</p>
-                                </div>
-
-                                <div id="Project5StackContainer">
-                                    <img id="StackIcon" src="c.webp" />
-                                    <img id="StackIcon" src="unity.webp" />
-                                </div>
-                                
-                            </div>
-                            <div id="Project5IconsContainer">
-                                <div id="GithubIconContainer">
-                                    <Link id="GithubLink" href="https://github.com/dawitalemu4/sonic" target='_blank'> <VscGithubAlt id='GithubIcon' />Video Demos</Link>
-                                </div>
-                                <div id="RedirectIconContainer">
-                                    <Link id="RedirectLink" href="https://github.com/dawitalemu4/sonic" target='_blank'> <CiShare1 id='RedirectIcon' />View Video</Link>
-                                </div>
-                                <div id="DocsIconContainer">
-                                    <Link id="DocsLink" href="/docs"> <IoIosPaper id='DocsIcon' />Docs</Link>
-                                </div>
-                            </div>
-                        </div>
-                    </div>                
+                    ))}              
                 </div>                    
                 <div id="MoreContainer">
                     <p id="More">And More... Browse My <Link id='MoreGitHub' href='https://github.com/dawitalemu4' target="_blank">GitHub</Link> or Visit the <Link id='DocsA' href='/docs'>Docs Page for Devs</Link>!</p>
@@ -371,7 +218,7 @@ const Projects: React.FC = () => {
                     transform: ${effectToggle ? `translateX(calc(-1 * ${projectScrollHeight}))` : 'none'};
                 }
 
-                #Project1LeftContainer, #Project2LeftContainer, #Project3LeftContainer, #Project4LeftContainer, #Project5LeftContainer {
+                #ProjectLeftContainer {
                     display: flex;
                     position: relative;
                     width: 40%;
@@ -381,7 +228,7 @@ const Projects: React.FC = () => {
                     align-items: center;
                 }
 
-                #Project1ImageContainer, #Project2ImageContainer, #Project3ImageContainer, #Project4ImageContainer, #Project5ImageContainer {
+                #ProjectImageContainer {
                     display: flex;
                     position: relative;
                     width: 90%;
@@ -392,15 +239,13 @@ const Projects: React.FC = () => {
                     overflow: hidden;
                 }
 
-                #Project1Image, #Project2Image, #Project3Image, #Project4Image, #Project5Image {
-                    display: flex;
-                    position: relative;
+                #ProjectImage {
                     height: 100%;
                     object-fit: contain;
                     cursor: pointer;
                 }
 
-                #Project1RightContainer, #Project2RightContainer, #Project3RightContainer, #Project4RightContainer, #Project5RightContainer {
+                #ProjectRightContainer {
                     display: flex;
                     position: relative;
                     width: 60%;
@@ -410,7 +255,7 @@ const Projects: React.FC = () => {
                     align-items: flex-start;
                 }
 
-                #Project1ParagraphContainer, #Project2ParagraphContainer, #Project3ParagraphContainer, #Project4ParagraphContainer, #Project5ParagraphContainer {
+                #ProjectParagraphContainer {
                     display: flex;
                     position: relative;
                     width: 85%;
@@ -420,7 +265,7 @@ const Projects: React.FC = () => {
                     align-items: center;
                 }
 
-                #Project1HeaderContainer, #Project2HeaderContainer, #Project3HeaderContainer, #Project4HeaderContainer, #Project5HeaderContainer {
+                #ProjectHeaderContainer {
                     display: flex;
                     position: relative;
                     width: 100%;
@@ -429,14 +274,14 @@ const Projects: React.FC = () => {
                     align-items: center;
                 }
 
-                #Project1Header, #Project2Header, #Project3Header, #Project4Header, #Project5Header {
+                #ProjectHeader {
                     font-size: 30px;
                     color: white;
                     font-family: InterSemi;
                     text-align: center;
                 }
 
-                #Project1TextContainer, #Project2TextContainer, #Project3TextContainer, #Project4TextContainer, #Project5TextContainer {
+                #ProjectTextContainer {
                     display: flex;
                     position: relative;
                     width: 100%;
@@ -449,28 +294,36 @@ const Projects: React.FC = () => {
                     overflow-y: scroll;
                 }
 
-                #Project1TextContainer::-webkit-scrollbar, #Project2TextContainer::-webkit-scrollbar, #Project3TextContainer::-webkit-scrollbar, #Project4TextContainer::-webkit-scrollbar, #Project5TextContainer::-webkit-scrollbar {
+                #ProjectTextContainer::-webkit-scrollbar {
                     width: 5px;
                     background-color: black;
                 }
 
-                #Project1TextContainer::-webkit-scrollbar-thumb, #Project2TextContainer::-webkit-scrollbar-thumb, #Project3TextContainer::-webkit-scrollbar-thumb, #Project4TextContainer::-webkit-scrollbar-thumb, #Project5TextContainer::-webkit-scrollbar-thumb {
+                #ProjectTextContainer::-webkit-scrollbar-thumb {
                     background-color: white;
                     border-radius: 10px;
                 }
 
-                #Project1Paragraph, #Project2Paragraph, #Project3Paragraph, #Project4Paragraph, #Project5Paragraph {
+                #ProjectParagraph {
                     font-size: 16px;
                     color: white;
                     font-family: Inter;
                     text-align: left;
                 }
 
-                #Project1StackContainer, #Project2StackContainer, #Project3StackContainer, #Project4StackContainer, #Project5StackContainer {
+                #ProjectStackContainer {
                     display: flex;
                     position: relative;
                     width: 100%;
                     height: 25%;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                #StackIconContainer {
+                    display: flex;
+                    position: relative;
+                    height: 100%;
                     justify-content: center;
                     align-items: center;
                 }
@@ -483,7 +336,7 @@ const Projects: React.FC = () => {
 
                 #StackIconTS, #StackIconJS { margin-left: 7px; }
 
-                #Project1IconsContainer, #Project2IconsContainer, #Project3IconsContainer, #Project4IconsContainer, #Project5IconsContainer {
+                #ProjectIconsContainer {
                     display: flex;
                     position: relative;
                     width: 15%;
@@ -581,21 +434,21 @@ const Projects: React.FC = () => {
 
                     #Project1, #Project2, #Project3, #Project4, #Project5 { width: 95%; margin-bottom: 3%; }
 
-                    #Project1LeftContainer, #Project2LeftContainer, #Project3LeftContainer, #Project4LeftContainer, #Project5LeftContainer { display: none; }
+                    #ProjectLeftContainer { display: none; }
 
-                    #Project1RightContainer, #Project2RightContainer, #Project3RightContainer, #Project4RightContainer, #Project5RightContainer { 
+                    #ProjectRightContainer { 
                         width: 90%; 
                         flex-direction: column;
                         align-items: center;
                     }
                     
-                    #Project1ParagraphContainer, #Project2ParagraphContainer, #Project3ParagraphContainer, #Project4ParagraphContainer, #Project5ParagraphContainer { width: 100%; height: 75%; }
+                    #ProjectParagraphContainer { width: 100%; height: 75%; }
 
-                    #Project1TextContainer, #Project2TextContainer, #Project3TextContainer, #Project4TextContainer, #Project5TextContainer { height: 40%; }
+                    #ProjectTextContainer { height: 40%; }
 
-                    #Project1StackContainer, #Project2StackContainer, #Project3StackContainer, #Project4StackContainer, #Project5StackContainer { height: 20%; margin-top: 5%; }
+                    #ProjectStackContainer { height: 20%; margin-top: 5%; }
 
-                    #Project1IconsContainer, #Project2IconsContainer, #Project3IconsContainer, #Project4IconsContainer, #Project5IconsContainer { 
+                    #ProjectIconsContainer { 
                         width: 100%; 
                         height: 19%; 
                         margin-bottom: 1%; 
@@ -632,7 +485,5 @@ const Projects: React.FC = () => {
             `}
         </style>
         </div>
-    )
-}
-
-export default Projects;
+    );
+};

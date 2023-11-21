@@ -1,41 +1,40 @@
-"use client";
-import React, { useRef } from "react";
+import React from "react";
 
-const PokeBall: React.FC = () => {
-
-    const clickMe = useRef<HTMLDivElement>(null);
-    const pokeBall = useRef<HTMLImageElement>(null);
-    const pikachuJump = useRef<HTMLImageElement>(null);
-    const pikachuRun = useRef<HTMLImageElement>(null);
-    const textBox = useRef<HTMLImageElement>(null);
-    const textStill = useRef<HTMLImageElement>(null);
+export default function PokeBall() {
 
     const handlePokeBallClick = () => {
-        if (!clickMe || !pokeBall.current || !pikachuJump.current || !pikachuRun.current || !textBox.current || !textStill.current) {
+        const clickMe = window.document.getElementById("ClickMe");
+        const pokeBall = window.document.getElementById("PokeBallGif");
+        const pikachuJump = window.document.getElementById("PikachuJump");
+        const pikachuRun = window.document.getElementById("PikachuRun");
+        const textBox = window.document.getElementById("TextBox");
+        const textStill = window.document.getElementById("TextStill");
+
+        if (!clickMe || !pokeBall || !pikachuJump || !pikachuRun || !textBox || !textStill) {
             return;
         }
-        if (clickMe.current && pokeBall.current && pikachuJump.current && pikachuRun.current && textBox.current && textStill.current) {
-            clickMe.current.style.display = "none";
-            pokeBall.current.style.display = "none";
-            pikachuJump.current.style.display = "flex";
+        if (clickMe && pokeBall && pikachuJump && pikachuRun && textBox && textStill) {
+            clickMe.style.display = "none";
+            pokeBall.style.display = "none";
+            pikachuJump.style.display = "flex";
             setTimeout(function () {
-                if (!pikachuJump.current || !pikachuRun.current) {
+                if (!pikachuJump || !pikachuRun) {
                     return;
                 }
-                pikachuJump.current.style.display = "none";
-                pikachuRun.current.style.display = "flex";
+                pikachuJump.style.display = "none";
+                pikachuRun.style.display = "flex";
                 setTimeout(function () {
-                    if (!pikachuRun.current || !textBox.current) {
+                    if (!pikachuRun || !textBox) {
                         return;
                     }
-                    pikachuRun.current.style.display = "none";
-                    textBox.current.style.display = "flex";
+                    pikachuRun.style.display = "none";
+                    textBox.style.display = "flex";
                     setTimeout(function () {
-                        if (!textBox.current || !textStill.current) {
+                        if (!textBox || !textStill) {
                             return;
                         }
-                        textBox.current.style.display = "none";
-                        textStill.current.style.display = "flex";
+                        textBox.style.display = "none";
+                        textStill.style.display = "flex";
                     }, 3660);
                 }, 1500);
             }, 1000);
@@ -45,12 +44,12 @@ const PokeBall: React.FC = () => {
 
     return (
         <div id="PokeBallContainer">
-            <div id="ClickMe" ref={clickMe}>Click Me!</div>
-            <img id="PokeBallGif" ref={pokeBall} src="/pokeball.gif" onClick={handlePokeBallClick}/>
-            <img id="PikachuJump" ref={pikachuJump} src="/pikachujump.gif" style={{display: 'none'}}/>
-            <img id="PikachuRun" ref={pikachuRun} src="/pikachurun.gif" style={{display: 'none'}}/>
-            <img id="TextBox" ref={textBox} src="/textbox.gif" style={{display: 'none'}}/>
-            <img id="TextStill" ref={textStill} src="/textstill.webp" style={{display: 'none'}}/>
+            <div id="ClickMe">Click Me!</div>
+            <img id="PokeBallGif" src="/pokeball.gif" onClick={handlePokeBallClick}/>
+            <img id="PikachuJump" src="/pikachujump.gif" style={{display: 'none'}}/>
+            <img id="PikachuRun" src="/pikachurun.gif" style={{display: 'none'}}/>
+            <img id="TextBox" src="/textbox.gif" style={{display: 'none'}}/>
+            <img id="TextStill" src="/textstill.webp" style={{display: 'none'}}/>
             
             <style> 
                 {`
@@ -152,6 +151,4 @@ const PokeBall: React.FC = () => {
             </style>
         </div>
     )
-}
-
-export default PokeBall;
+};

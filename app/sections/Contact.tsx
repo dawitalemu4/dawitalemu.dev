@@ -3,7 +3,7 @@ import React from 'react';
 import Link from "next/link";
 import { HiArrowNarrowUp } from "react-icons/hi";
 
-const Contact: React.FC = () => {
+export default function Contact() {
 
     const toTop = () => {
         window.scrollTo({
@@ -163,6 +163,4 @@ const Contact: React.FC = () => {
             </style>
         </div>
     )
-}
-
-export default Contact;
+};

@@ -1,36 +1,40 @@
 "use client"
 import React, { useEffect } from "react";
+import { ProjectsData } from "../components/Data";
+import CodeHighlight from "../components/CodeHighlight";
 import Link from "next/link";
 import { HiArrowNarrowUp } from "react-icons/hi";
 import { VscGithubAlt } from 'react-icons/vsc';
 import { CiShare1 } from 'react-icons/ci';
-import CodeHighlight, { portfolioCode, debreTsionCode, misplacedCode, tapInCode, UACode, sonicCode, CVCode } from "./Codes";
 
-const Projects: React.FC = () => {
+export default function Projects() {
 
     const Top = () => {
         window.scrollTo({ top: 0, behavior: "smooth" })
-    }
+    };
 
     const isContainerVisble = () => {
         const container = document.getElementById("Projects");
-        if (!container) { return }
+        if (!container) { return; }
         const containerRect = container.getBoundingClientRect();
         const targetPosition = containerRect.top;
         const arrow = document.getElementById("UpContainer");
-        if (!arrow) { return }
+        if (!arrow) { return; }
         if (targetPosition < 0) {
             arrow.style.display = "flex";
         } else {
             arrow.style.display = "none";
         }
-    }
+    };
 
     useEffect(() => {
+
         window.addEventListener("scroll", isContainerVisble);
+
         return () => {
             window.removeEventListener("scroll", isContainerVisble);
-        }
+        };
+
     }, []);
 
     return (
@@ -39,327 +43,52 @@ const Projects: React.FC = () => {
                 <div id="Up" onClick={Top}><HiArrowNarrowUp /></div>
             </div>
             <div id="ProjectsContainer">
-
-                <div id="Portfolio">
-                    <div id="DocsHeaderContainer">
-                        <p id="DocsHeader">Portfolio</p>
-                    </div>
-                    <div id="DocsTextContainer">
-                        <div id="DocsLeftContainer">
-                            <div id="DocsChallengeContainer">
-                                <div id="DocsChallengeHeaderContainer">
-                                    <p id="DocsChallengeHeader">Favorite Challenge</p>
-                                </div>
+                {ProjectsData.map((project: any) => (
+                    <div id={project.divID} key={project.id}>
+                        <div id="DocsHeaderContainer">
+                            <p id="DocsHeader">{project.header}</p>
+                        </div>
+                        <div id="DocsTextContainer">
+                            <div id="DocsLeftContainer">
                                 <div id="DocsChallengeContainer">
-                                    <p id="DocsChallenge">Thought the parallax effect was cool? Here's the code for the effect on the projects section! 
-                                    Even though this function is almost the same as the other functions in the other sections, this one has an on and off button to toggle the effect.
-                                    In short, I took the height of the div and the top, the scroll position of the user, and calculated the % of where their scroll position is on the div.
-                                    I also offset the top a bit for timing reasons, as it would start counting the % immediately as the top of the div showed up on the screen, but the effect is 
-                                    cooler when you can see it happening😹. Why I'm using this component's parallax function is, because believe it or not, I spent 20 minutes or so confused
-                                    why 'if (effectToggle === true)' wouldn't display 'On', until I tried false like how it is now. Don't ask me why it works. (jk)</p>
+                                    <div id="DocsChallengeHeaderContainer">
+                                        <p id="DocsChallengeHeader">Favorite Challenge</p>
+                                    </div>
+                                    <div id="DocsChallengeContainer">
+                                        <p id="DocsChallenge">{project.paragraph}</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div id="DocsRightContainer">
-                            <div id="DocsCodeContainer">
-                                <div id="DocsCodeHeaderContainer">
-                                    <p id="DocsCodeHeader">Code</p>
-                                </div>
+                            <div id="DocsRightContainer">
                                 <div id="DocsCodeContainer">
-                                    <div id="DocsCode"><CodeHighlight code={portfolioCode} /></div>
-                                </div>  
-                            </div>
-                        </div>
-                    </div>  
-                    <div id="BottomContainer">
-                        <div id="DocsIconsContainer">
-                            <div id="GithubIconContainer">
-                                <Link id="GithubLink" href="https://github.com/dawitalemu4/portfolio" target='_blank'> <VscGithubAlt id='GithubIcon' />Video Demos</Link>
-                            </div>
-                            <div id="RedirectIconContainer">
-                                <Link id="RedirectLink" href="/" target='_blank'> <CiShare1 id='RedirectIcon' />View Site</Link>
-                            </div>
-                        </div>                     
-                        <div id="DocsStackContainer">
-                            <img id="StackIcon" src="react.webp" />
-                            <img id="StackIcon" src="next.webp" />
-                            <img id="StackIconTS" src="ts.webp" />
-                        </div>
-                    </div>
-                </div>
-
-                <div id="DebreTsion">
-                    <div id="DocsHeaderContainer">
-                        <p id="DocsHeader">Debre Tsion Church</p>
-                    </div>
-                    <div id="DocsTextContainer">
-                        <div id="DocsLeftContainer">
-                            <div id="DocsChallengeContainer">
-                                <div id="DocsChallengeHeaderContainer">
-                                    <p id="DocsChallengeHeader">Favorite Challenge</p>
+                                    <div id="DocsCodeHeaderContainer">
+                                        <p id="DocsCodeHeader">Code</p>
+                                    </div>
+                                    <div id="DocsCodeContainer">
+                                        <div id="DocsCode"><CodeHighlight code={project.code} /></div>
+                                    </div>  
                                 </div>
-                                <div id="DocsChallengeContainer">
-                                    <p id="DocsChallenge">This component is one of my favorites because the UI that this code creates feels amazing to me. 
-                                    The typescript basically fetches the images from my firebase db and has a function that makes any image clicked on become a modal.
-                                    What made this challenging was figuring out how to make an image that was clicked on become the image in the modal, as the image on the modal would default to the latest image that was fetched.
-                                    How I solved this was by running another for loop to pick up the specific image that was clicked on as url and made the selectedImage prop = url when the image is clicked on.
-                                    I know this can be optimized, but I had other things to get to, and plan to get back to it when I learn how to optimize it.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="DocsRightContainer">
-                            <div id="DocsCodeContainer">
-                                <div id="DocsCodeHeaderContainer">
-                                    <p id="DocsCodeHeader">Code</p>
-                                </div>
-                                <div id="DocsCodeContainer">
-                                    <div id='DocsCode'><CodeHighlight code={debreTsionCode} /></div>
-                                </div>  
-                            </div>
-                        </div>
-                    </div>  
-                    <div id="BottomContainer">
-                        <div id="DocsIconsContainer">
-                            <div id="GithubIconContainer">
-                                <Link id="GithubLink" href="https://github.com/DebreTsionWeb/debretsion.org" target='_blank'> <VscGithubAlt id='GithubIcon' />Video Demos</Link>
-                            </div>
-                            <div id="RedirectIconContainer">
-                                <Link id="RedirectLink" href="https://debretsion.vercel.app/en" target='_blank'> <CiShare1 id='RedirectIcon' />View Site</Link>
-                            </div>
-                        </div>
-                        <div id="DocsStackContainer">
-                            <img id="StackIcon" src="angular.webp" />
-                            <img id="StackIcon" src="firebase.webp" />
-                            <img id="StackIcon" src="gcp.webp" />
-                            <img id="StackIconTS" src="ts.webp" />
-                        </div>
-                    </div>
-                </div>
-
-                <div id="Misplaced">
-                    <div id="DocsHeaderContainer">
-                        <p id="DocsHeader">Misplaced</p>
-                    </div>
-                    <div id="DocsTextContainer">
-                        <div id="DocsLeftContainer">
-                            <div id="DocsChallengeContainer">
-                                <div id="DocsChallengeHeaderContainer">
-                                    <p id="DocsChallengeHeader">Favorite Challenge</p>
-                                </div>
-                                <div id="DocsChallengeContainer">
-                                    <p id="DocsChallenge">This code block creates one of my favorite features on this app, which is previewing what their post will look like while they're typing in the form's input boxes!
-                                    I know it looks weird, it's React Native, but I utilized useState and updated the state of each text variable's text every time the input box's input changed.
-                                    Then I used the variable that is being changed as the inner text of the tag in the preview, creating a constant update to the preview's text!</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="DocsRightContainer">
-                            <div id="DocsCodeContainer">
-                                <div id="DocsCodeHeaderContainer">
-                                    <p id="DocsCodeHeader">Code</p>
-                                </div>
-                                <div id="DocsCodeContainer">
-                                    <div id='DocsCode'><CodeHighlight code={misplacedCode} /></div>
-                                </div>  
-                            </div>
-                        </div>
-                    </div>  
-                    <div id="BottomContainer">
-                        <div id="DocsIconsContainer">
-                            <div id="GithubIconContainer">
-                                <Link id="GithubLink" href="https://github.com/misplaced-dev/misplaced.app" target='_blank'> <VscGithubAlt id='GithubIcon' />Video Demos</Link>
-                            </div>
-                            <div id="RedirectIconContainer">
-                                <Link id="RedirectLink" href="https://misplaced.app" target='_blank'> <CiShare1 id='RedirectIcon' />View Site</Link>
-                            </div>
-                        </div>                        
-                        <div id="DocsStackContainer">
-                            <img id="StackIcon" src="react.webp" />
-                            <img id="StackIcon" src="expo.webp" />
-                            <img id="StackIcon" src="mongo.webp" />
-                            <img id="StackIcon" src="node.webp" />
-                            <img id="StackIconJS" src="js.webp" />
-                        </div>
-                    </div>
-                </div>
-
-                <div id="TapIn">
-                    <div id="DocsHeaderContainer">
-                        <p id="DocsHeader">Let's Tap In</p>
-                    </div>
-                    <div id="DocsTextContainer">
-                        <div id="DocsLeftContainer">
-                            <div id="DocsChallengeContainer">
-                                <div id="DocsChallengeHeaderContainer">
-                                    <p id="DocsChallengeHeader">Favorite Challenge</p>
-                                </div>
-                                <div id="DocsChallengeContainer">
-                                    <p id="DocsChallenge">Okay. I know I used a package, but I didn't copy and paste this code, and the docs weren't super easy for me to understand, making it a challenge for me when I was at this point of my coding journey.
-                                    This code snippet takes the main color from an image (the image of the card that was clicked) and then creates a color for a background and a color for an accent (text color, etc.) that can be used on the page of the card that was clicked.
-                                    In another component not in this code snippet, I take the values of these two variables and use them as a gradient in the CSS, making whatever color the background is a cool gradient matching up with the main color of the image!</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="DocsRightContainer">
-                            <div id="DocsCodeContainer">
-                                <div id="DocsCodeHeaderContainer">
-                                    <p id="DocsCodeHeader">Code</p>
-                                </div>
-                                <div id="DocsCodeContainer">
-                                    <div id='DocsCode'><CodeHighlight code={tapInCode} /></div>
-                                </div>  
-                            </div>
-                        </div>
-                    </div>  
-                    <div id="BottomContainer">
-                        <div id="DocsIconsContainer">
-                            <div id="GithubIconContainer">
-                                <Link id="GithubLink" href="https://github.com/dawitalemu4/TapInWebPage" target='_blank'> <VscGithubAlt id='GithubIcon' />Video Demos</Link>
-                            </div>
-                            <div id="RedirectIconContainer">
-                                <Link id="RedirectLink" href="https://tapinwebpage.vercel.app/" target='_blank'> <CiShare1 id='RedirectIcon' />View Site</Link>
-                            </div>
-                        </div>
-                        <div id="DocsStackContainer">
-                            <img id="StackIcon" src="react.webp" />
-                            <img id="StackIcon" src="next.webp" />
-                            <img id="StackIconTS" src="ts.webp" />
-                        </div>
-                    </div>
-                </div>
-
-                <div id="UA">
-                    <div id="DocsHeaderContainer">
-                        <p id="DocsHeader">Urban Alliance</p>
-                    </div>
-                    <div id="DocsTextContainer">
-                        <div id="DocsLeftContainer">
-                            <div id="DocsChallengeContainer">
-                                <div id="DocsChallengeHeaderContainer">
-                                    <p id="DocsChallengeHeader">Favorite Challenge</p>
-                                </div>
-                                <div id="DocsChallengeContainer">
-                                    <p id="DocsChallenge">Since this project had no backend or any difficult frontend components, I chose this code snippet where I decided to follow the DRY (Don't Repeat Yourself) rule and use a map function to make the 9 different course cards instead of hard coding each one.
-                                    I created a variable that has key : value pairs so that in the map function, I could just call the key to get the value!</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="DocsRightContainer">
-                            <div id="DocsCodeContainer">
-                                <div id="DocsCodeHeaderContainer">
-                                    <p id="DocsCodeHeader">Code</p>
-                                </div>
-                                <div id="DocsCodeContainer">
-                                    <div id='DocsCode'><CodeHighlight code={UACode} /></div>
-                                </div>  
-                            </div>
-                        </div>
-                    </div>  
-                    <div id="BottomContainer">
-                        <div id="DocsIconsContainer">
-                            <div id="GithubIconContainer">
-                                <Link id="GithubLink" href="https://github.com/EduCoGroup/educogroup.org" target='_blank'> <VscGithubAlt id='GithubIcon' />Video Demos</Link>
-                            </div>
-                            <div id="RedirectIconContainer">
-                                <Link id="RedirectLink" href="https://educogroup.vercel.app/" target='_blank'> <CiShare1 id='RedirectIcon' />View Site</Link>
-                            </div>
-                        </div>
-                        <div id="DocsStackContainer">
-                            <img id="StackIcon" src="react.webp" />
-                            <img id="StackIcon" src="gatsby.webp" />
-                            <img id="StackIconJS" src="js.webp" />
-                        </div>
-                    </div>
-                </div>
-
-                <div id="Sonic">
-                    <div id="DocsHeaderContainer">
-                        <p id="DocsHeader">2D Sonic Platformer</p>
-                    </div>
-                    <div id="DocsTextContainer">
-                        <div id="DocsLeftContainer">
-                            <div id="DocsChallengeContainer">
-                                <div id="DocsChallengeHeaderContainer">
-                                    <p id="DocsChallengeHeader">Favorite Challenge</p>
-                                </div>
-                                <div id="DocsChallengeContainer">
-                                    <p id="DocsChallenge">This C# script contains logic for sonic's speed, jump force, movement state, and whether he should be able to jump depending on if he isn't colliding with the ground properly/currently.
-                                    This was the most challenging script for me because I liked the fast refreshes from web development, but every time I wanted to test if the new value I inserted was good or not, I had to manually stop the game and run it again.
-                                    Jokes aside, the UnityEngine has a lot of functions doing all of the heavy lifting, but getting the syntax correct was harder for me as I was newer to coding when I was working on this project.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="DocsRightContainer">
-                            <div id="DocsCodeContainer">
-                                <div id="DocsCodeHeaderContainer">
-                                    <p id="DocsCodeHeader">Code</p>
-                                </div>
-                                <div id="DocsCodeContainer">
-                                    <div id='DocsCode'><CodeHighlight code={sonicCode} /></div>
-                                </div>  
-                            </div>
-                        </div>
-                    </div>  
-                    <div id="BottomContainer">
-                        <div id="DocsIconsContainer">
-                            <div id="GithubIconContainer">
-                                <Link id="GithubLink" href="https://github.com/dawitalemu4/sonic" target='_blank'> <VscGithubAlt id='GithubIcon' />Video Demos</Link>
-                            </div>
-                            <div id="RedirectIconContainer">
-                                <Link id="RedirectLink" href="https://github.com/dawitalemu4/sonic" target='_blank'> <CiShare1 id='RedirectIcon' />View Video</Link>
                             </div>
                         </div>  
-                        <div id="DocsStackContainer">
-                            <img id="StackIcon" src="c.webp" />
-                            <img id="StackIcon" src="unity.webp" />
+                        <div id="BottomContainer">
+                            <div id="DocsIconsContainer">
+                                <div id="GithubIconContainer">
+                                    <Link id="GithubLink" href={project.github} target='_blank'> <VscGithubAlt id='GithubIcon' />Video Demos</Link>
+                                </div>
+                                <div id="RedirectIconContainer">
+                                    <Link id="RedirectLink" href={project.siteURL} target='_blank'> <CiShare1 id='RedirectIcon' />View Site</Link>
+                                </div>
+                            </div>                     
+                            <div id="DocsStackContainer">
+                                {project.images.map((image: any) => (
+                                    <div id='StackIconContainer' key={image.id}>
+                                        <img id={image[0]} src={image[1]} />
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     </div>
-                </div> 
-
-                <div id="CreatorVerse">
-                    <div id="DocsHeaderContainer">
-                        <p id="DocsHeader">CreatorVerse</p>
-                    </div>
-                    <div id="DocsTextContainer">
-                        <div id="DocsLeftContainer">
-                            <div id="DocsChallengeContainer">
-                                <div id="DocsChallengeHeaderContainer">
-                                    <p id="DocsChallengeHeader">Favorite Challenge</p>
-                                </div>
-                                <div id="DocsChallengeContainer">
-                                    <p id="DocsChallenge">I chose this code snippet because of its funny story. I was pair programming with a friend to help him learn React, and this component wasn't working for about 30 minutes and we couldn't figure out why.
-                                    We eventually figured out [id] shouldn't be in the end of the useEffect because the id doesn't change on this page, meaning useEffect wouldn't work as intended. Other than that, this was the first full-stack website I built in less than a day!</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="DocsRightContainer">
-                            <div id="DocsCodeContainer">
-                                <div id="DocsCodeHeaderContainer">
-                                    <p id="DocsCodeHeader">Code</p>
-                                </div>
-                                <div id="DocsCodeContainer">
-                                    <div id='DocsCode'><CodeHighlight code={CVCode} /></div>
-                                </div>  
-                            </div>
-                        </div>
-                    </div>  
-                    <div id="BottomContainer">
-                        <div id="DocsIconsContainer">
-                            <div id="GithubIconContainer">
-                                <Link id="GithubLink" href="https://github.com/dawitalemu4/CodePath103PreWork" target='_blank'> <VscGithubAlt id='GithubIcon' />Video Demos</Link>
-                            </div>
-                            <div id="RedirectIconContainer">
-                                <Link id="RedirectLink" href="https://creatorverse-da.vercel.app" target='_blank'> <CiShare1 id='RedirectIcon' />View Site</Link>
-                            </div>
-                        </div>
-                        <div id="DocsStackContainer">
-                            <img id="StackIcon" src="react.webp" />
-                            <img id="StackIcon" src="supabase.webp" />
-                            <img id="StackIconJS" src="js.webp" />
-                        </div>
-                    </div>
-                </div>
-
+                ))}
             </div>
         <style>
             {` 
@@ -584,6 +313,14 @@ const Projects: React.FC = () => {
                     align-items: center;
                 }
 
+                #StackIconContainer {
+                    display: flex;
+                    position: relative;
+                    height: 100%;
+                    justify-content: center;
+                    align-items: center;
+                }
+
                 #StackIcon, #StackIconTS, #StackIconJS {
                     height: 80%;
                     margin-left: 3px;
@@ -621,6 +358,4 @@ const Projects: React.FC = () => {
         </style>
         </div>
     )
-}
-
-export default Projects;
+};

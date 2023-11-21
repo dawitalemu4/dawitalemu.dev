@@ -5,7 +5,8 @@ import Yoshi from "../components/YoshiGame";
 import PokeBall from "../components/PokeBallGame";
 import Luffy from "../components/LuffyGame";
 
-const MiniGames: React.FC = () => { 
+export default function MiniGames() { 
+
     return ( 
         <div id='MiniGames'>
             <div id='MiniGamesContainer'>
@@ -35,7 +36,6 @@ const MiniGames: React.FC = () => {
                 </div>
 
             </div>
-            
         <style>
             {` 
                 #MiniGames {
@@ -130,5 +130,3 @@ const MiniGames: React.FC = () => {
         </div>
     );
 };
-
-export default MiniGames;

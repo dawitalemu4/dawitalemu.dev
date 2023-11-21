@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect } from 'react';
 
-const Luffy = () => {
+export default function Luffy() {
 
     useEffect(() => {
         let gif = document.getElementById("LuffyImg");
@@ -118,5 +118,3 @@ const Luffy = () => {
         </div>
     );
 };
-
-export default Luffy;
