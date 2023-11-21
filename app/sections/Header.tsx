@@ -4,23 +4,16 @@ import Link from "next/link";
 
 const Navbar: React.FC = () => {
   const [showMenu, setShowMenu] = useState(false);
-  const [showList, setShowList] = useState(false);
+  const [rightAmount, setRightAmount] = useState('-380px');
   const [textIndex, setTextIndex] = useState(0);
-  const [hovered, setHovered] = useState(false);
-
-
-  const handleHover = () => {
-      setHovered(true);
-  }
-
-  const handleLeave = () => {
-      setHovered(false);
-      setShowList(false);
-  }
 
   const toggleMenu = () => {
-    setShowMenu(!showMenu);  
-    setShowList(!showList);  
+    setShowMenu(!showMenu);
+    if (showMenu && window.innerWidth > 600) {
+      setRightAmount('-380px');
+    } else if (showMenu && window.innerWidth < 600) {
+      setRightAmount('-100%');
+    }
   };
 
 
@@ -38,7 +31,7 @@ const Navbar: React.FC = () => {
       left: 0, 
       behavior: 'smooth'
     });
-    handleLeave();
+    toggleMenu();
   };
 
 
@@ -51,7 +44,7 @@ const Navbar: React.FC = () => {
       left: 0,
       behavior: 'smooth'
     });
-    handleLeave();
+    toggleMenu();
   };
   
 
@@ -64,7 +57,7 @@ const Navbar: React.FC = () => {
       left: 0,
       behavior: 'smooth' 
     });
-    handleLeave();
+    toggleMenu();
   };
 
 
@@ -75,7 +68,7 @@ const Navbar: React.FC = () => {
       left: 0,
       behavior: 'smooth'
     });
-    handleLeave();
+    toggleMenu();
   };
 
 
@@ -94,11 +87,13 @@ const Navbar: React.FC = () => {
 
 
   return (
-    <div id="Navbar" onMouseOver={handleHover} onMouseOut={handleLeave}>
-      <img id="MenuBars" src="bars.webp" style={{display: hovered ? 'none' : 'flex'}}/>
-      <div id="NavbarContainer" style={{ display: hovered ? "flex" : "none"}}>
-        <img id="Bars" src="bars.webp" style={{display: showMenu ? 'flex' : 'hidden'}} onClick={toggleMenu}/>
-        <ul id="NavbarListContainer" style={{ display: showList ? 'flex' : 'none' }}>
+    <div id="Navbar">
+      <img id="MenuBars" src="bars.webp" onClick={toggleMenu} />
+      <div id="NavbarContainer" style={{ right: showMenu ? "0px" : `${rightAmount}`, transition: "right 0.5s ease-in-out" }}>
+        <div id="XContainer">
+          <img id="X" src="x.webp" onClick={toggleMenu} />
+        </div>
+        <ul id="NavbarListContainer">
           <li id="NavbarHome">
             <div id="home" onClick={handleHomeClick}>Home</div>
           </li>
@@ -111,10 +106,10 @@ const Navbar: React.FC = () => {
           <li id="NavbarContact">
             <div id="contact" onClick={handleContactClick}>Contact</div>
           </li>
-          <li>
-            <Link id="DevButton" href="/docs">{texts[textIndex]}</Link>
-          </li>
         </ul>
+        <div id="DevButtonContainer">
+          <Link id="DevButton" href="/docs">{texts[textIndex]}</Link>
+        </div>
         <style>
           {`
 
@@ -122,22 +117,13 @@ const Navbar: React.FC = () => {
             display: flex;
             position: fixed;
             top: 0;
-            left: 0;
             right: 0;
-            width: 99.7vw;
-            height: 70px;
+            width: 380px;
+            height: 100vh;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             z-index: 10;
-          }
-
-          @keyframes dropdown {
-            0% {
-              top: -50px;
-            }
-            100% {
-              top: 0;
-            }
           }
 
           #MenuBars {
@@ -149,41 +135,60 @@ const Navbar: React.FC = () => {
             height: 70px;
             background-color: black;
             border-radius: 10px;
-          }
-
-          #MenuBars:hover {
-            opacity: 0;
+            cursor: pointer;
           }
         
           #NavbarContainer {
             display: flex;
-            position: relative;
-            width: 100%;
+            position: fixed;
+            top: 0;
+            width: 380px;
             height: 100%;
-            flex-direction: row;
-            justify-content: flex-end;
+            flex-direction: column;
+            justify-content: space-around;
             align-items: center;
             background-color: white;
             font-family: Inter;
-            border-bottom: 1px solid #ccc;
-            animation: dropdown 0.3s ease-in-out;
+            border-left: 1px solid black;
+          }
+
+          #XContainer {
+            display: flex;
+            position: relative;
+            width: 100%;
+            height: 5%;
+            justify-content: flex-end;
+            align-items: center;
+            padding-right: 20px;
+          }
+
+          #X {
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+          }
+
+          #DevButtonContainer {
+            display: flex;
+            position: relative;
+            width: 100%;
+            height: 50px;
+            align-items: center;
+            justify-content: center;
           }
 
           #DevButton {
+            display: flex;
+            position: relative;
+            width: 90%;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            background-color: black;
+            border-radius: 10px;
             font-family: Consolas;
             color: #39FF14;
             border: 1px solid #171717;
-            padding: 10px;
-            border-radius: 10px;
-            display: flex;
-            align-items: flex-start;
-            justify-content: flex-start;
-            background-color: black;
-            position: fixed;
-            top: 8px;
-            left: -1px;
-            scale: 0.9;
-            transform: scale(1);
             transition: transform 0.5s ease-in-out;
             animation: dropdown 0.25s ease-in-out;
           }
@@ -193,16 +198,16 @@ const Navbar: React.FC = () => {
           #NavbarListContainer {
             display: flex;
             position: relative;
-            width: 40%;
-            height: 100%;
-            flex-direction: row;
-            justify-content: space-between;
+            width: 100%;
+            height: 60%;
+            flex-direction: column;
+            justify-content: space-around;
             align-items: center;
           }
 
           #NavbarListContainer li {
-            font-size: 20px;
-            font-family: InterMedium;
+            font-size: 28px;
+            font-family: InterSemi;
           }
 
           #home, #experience, #projects, #contact {
@@ -213,84 +218,9 @@ const Navbar: React.FC = () => {
             opacity: 0.8;
           }
 
-          @media (max-width: 900px) {
-            #Navbar {
-              display: none !important;
-            }
-
-            #MenuBars {
-              background-color: transparent; 
-            }
-
-            #NavbarContainer { 
-              width: 100%;
-              display: flex !important;
-              justify-content: center;
-              background-color: #171717;
-              position: fixed;
-              top: 0;
-              left: 0;
-              z-index: 5;
-              height: 70px;
-            }
-
-            #Bars {
-              cursor: pointer;
-              display: flex;
-              width: 70px;
-              height: 70px;
-              position: fixed;
-              right: 15px;
-              z-index: 4;
-            }
-
-            #NavbarListContainer {
-              width: 100%;
-              height: 250px;
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              justify-content: center;
-              background-color: #171717;
-              position: fixed;
-              top: 70px;
-              left: 0;
-              z-index: 3; 
-              border-bottom-left-radius: 30px;
-              border-bottom-right-radius: 30px;
-            }
-
-            #NavbarListContainer li {
-              padding: 6px;
-              font-size: 17px;
-            }
-
-            #home, #experience, #projects, #contact {
-              color: white;
-              z-index: 11;
-            }
-
-            #DevButton {
-              position: static;
-              padding: 4px;
-              text-align: center;
-              margin-top: -5px;
-              color: #39FF14 !important;
-            }
-
-            #Bars:hover {
-              opacity: 0.5;
-            }
-          }
-
-          @media (min-width: 901px) {
-            #Bars {
-              display: none;
-            }
-            
-            #NavbarListContainer {
-              display: flex !important;
-            }
+          @media (max-width: 600px) {
+            #Navbar { width: 100%; }
+            #NavbarContainer { width: 100%; }
           }
           
           `}
