@@ -47,9 +47,9 @@ export default function Experience() {
                 <div id="ExperienceAndSkillsContainer">
                     <div id='ExperienceParagraphContainer'>
                         <p id='ExperienceParagraph'>
-                            In Summer 2023, I interned at Urban Alliance as a Front End Engineer and created a website for a partner company's main website using React, Gatsby.js, and JavaScript.
+                            In Fall 2023 and Spring 2024, I interned at Baltimore Life Insurance as a Front End Software Engineer on the Platform Team working on the Internal Agent Portal using React (JavaScript), Swagger, and a variety of packages.
                             <br/><br/>
-                            I also completed multiple contracts during Summer 2023, but the most notable one is a website I built for my childhood church, where I led a team of 6 junior developers and taught/learned Angular.
+                            I also completed multiple contracts during Summer 2023, but the most notable one is a website I built for my childhood church, where I led a team of 6 junior developers and taught/learned Angular (TypeScript), Firebase, and Google Cloud Platform.
                             <br/><br/>
                             <b>Keep scrolling</b> for more in-depth information about some of my works!
                             <br/><br/>
