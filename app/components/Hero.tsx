@@ -69,7 +69,7 @@ export default function Hero() {
                 </div>                
                 <div id="HeaderContainer">
                     <p id="HeaderText">Dawit Alemu</p>
-                    <p id="HeaderSubText">Full-Stack Software Developer</p>
+                    <p id="HeaderSubText">Full-Stack Software Engineer</p>
                 </div>
             </div>
         <style>

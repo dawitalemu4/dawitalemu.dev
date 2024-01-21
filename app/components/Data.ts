@@ -41,7 +41,7 @@ export const ProjectsData = [
         images: [
             ["StackIcon", "react.webp"],
             ["StackIcon", "gatsby.webp"],
-            ["StackIconTS", "ts.webp"]
+            ["StackIconJS", "js.webp"]
         ],
         github: "https://github.com/EduCoGroup/educogroup.org",
         siteURL: "https://educogroup.vercel.app"
@@ -69,7 +69,7 @@ export const ExperienceData = [
             ["react.webp", "React"],
             ["angular.webp", "Angular"],
             ["next.webp", "Next.js"],
-            ["gatsby.webp", "Gatsby.js"]
+            ["remix.webp", "Remix.js"]
         ]
     },
     {
