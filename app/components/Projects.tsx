@@ -6,6 +6,7 @@ import { VscGithubAlt } from 'react-icons/vsc';
 import { CiShare1 } from 'react-icons/ci';
 import { IoIosPaper } from 'react-icons/io';
 import { MdClose } from 'react-icons/md';
+import { Project } from '../types';
 
 export default function Projects() {
 
@@ -70,7 +71,7 @@ export default function Projects() {
                     <button id="ProjectsHeaderToggle" onClick={toggleEffect}>Effect: {effectText}</button>
                 </div>
                 <div id="ProjectsListContainer">
-                    {ProjectsData.map((data: any) => (
+                    {ProjectsData.map((data: Project) => (
                         <div id={`Project${data.id}`} key={data.id}>
                             <div id="ProjectLeftContainer">
                                 <div id="ProjectImageContainer">

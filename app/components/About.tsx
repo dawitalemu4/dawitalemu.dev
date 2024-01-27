@@ -40,7 +40,7 @@ export default function About() {
         <div id='About' ref={aboutContainerRef}>
             <div id="AboutContainer">
                 <div id="AboutParagraphContainer">
-                    <p id='AboutParagraph'>Hello! My name is Dawit Alemu and I'm currently a junior at Towson University who loves to self-teach software development. 
+                    <p id='AboutParagraph'>Hello! My name is Dawit Alemu and I'm currently a junior at Towson University who loves to self-teach software engineering. 
                     <br/><br/> I'm mainly interested in full-stack web development, but open to learning new things. <br/><br/> Keep scrolling!</p>
                 </div>                   
                 <div id='AboutImageContainer'>

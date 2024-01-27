@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ExperienceData } from './Data';
 import Link from "next/link";
+import { Experience } from '../types';
 
 export default function Experience() {
 
@@ -58,14 +59,14 @@ export default function Experience() {
                     </div>
                     <div id='SkillsContainer'>
                         <div id='SkillsListContainer'>
-                            {ExperienceData.map((list: any) => (
-                                <div id="SkillList" key={list.id}>
+                            {ExperienceData.map((list: Experience, index: number) => (
+                                <div id="SkillList" key={index}>
                                     <div id='SkillsListHeaderContainer'>
                                         <p id='SkillsHeader'>{list.header}</p>
                                     </div>
                                     <div id='SkillsRowContainer'>
-                                        {list.images.map((image: any) => (
-                                            <div id='SkillsRowItem' key={image.id}>
+                                        {list.images.map((image: string[], index: number) => (
+                                            <div id='SkillsRowItem' key={index}>
                                                 <img id="ItemLogo" src={image[0]} />
                                                 {image[1]}
                                             </div>

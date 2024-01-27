@@ -1,8 +1,8 @@
 import React from 'react';
 import { Metadata } from 'next';
-import Hero from './sections/Hero';
-import Projects from './sections/Projects';
-import MiniGames from './sections/MiniGames';
+import Hero from './containers/Hero';
+import Projects from './containers/Projects';
+import MiniGames from './containers/MiniGames';
 
 export const metadata: Metadata = {
   title: 'Dawit Alemu',

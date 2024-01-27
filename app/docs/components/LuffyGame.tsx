@@ -4,11 +4,11 @@ import React, { useEffect } from 'react';
 export default function Luffy() {
 
     useEffect(() => {
-        let gif = document.getElementById("LuffyImg");
-        let gifs = ["hatclose.webp", "hatmid.webp", "hatopen.webp"];
-        let message = document.getElementById("WarningMessage");
-        let gameIntervalId;
-        let startTime;
+        let gif: any = document.getElementById("LuffyImg");
+        let gifs: any[] = ["hatclose.webp", "hatmid.webp", "hatopen.webp"];
+        let message: any = document.getElementById("WarningMessage");
+        let gameIntervalId: any;
+        let startTime: number;
 
         startGame();
 
@@ -27,7 +27,7 @@ export default function Luffy() {
             }, 5040);
         }
 
-        function onClick(event) {
+        function onClick(event: any) {
 
             event.preventDefault();
             let now = Date.now();
@@ -63,7 +63,7 @@ export default function Luffy() {
                     message.style.display = "none";
                 }
 
-                if(i == gifs[1]) {message.style.display = "none";}
+                if (i == gifs[1]) {message.style.display = "none";}
             }, 400);
             gif.removeEventListener("click", onClick);
             gif.removeEventListener("contextmenu", onClick);

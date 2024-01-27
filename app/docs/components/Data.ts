@@ -8,7 +8,7 @@ export const HeroData = [
 
     { element_id: 'TapIn', title: "Let's Tap In" },
 
-    { element_id: 'UA', title: 'Urban Allaince' },
+    { element_id: 'UA', title: 'Urban Alliance' },
 
     { element_id: 'Sonic', title: '2D Sonic Platformer' }
 
@@ -310,7 +310,7 @@ return (
         images: [
             ['StackIcon', 'react.webp'],
             ['StackIcon', 'gatsby.webp'],
-            ['StackIconTS', 'ts.webp']
+            ['StackIconJS', 'js.webp']
         ]
     },
     {
