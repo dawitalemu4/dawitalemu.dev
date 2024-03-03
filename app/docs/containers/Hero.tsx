@@ -23,7 +23,7 @@ export default function Hero() {
         }
     }
 
-    const isContainerVisble = () => {
+    const isContainerVisible = () => {
         const container = document.getElementById("Hero");
         if (!container) { return }
         const containerRect = container.getBoundingClientRect();
@@ -48,10 +48,10 @@ export default function Hero() {
 
     useEffect(() => {
 
-        window.addEventListener("scroll", isContainerVisble);
+        window.addEventListener("scroll", isContainerVisible);
 
         return () => {
-            window.removeEventListener("scroll", isContainerVisble);
+            window.removeEventListener("scroll", isContainerVisible);
         };
 
     }, []);

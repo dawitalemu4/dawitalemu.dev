@@ -1,7 +1,7 @@
 export const ProjectsData = [
     {
         id: 1, image: "DTGif.webp", header: "Debre Tsion Church",
-        paragraph: "This website was created by 6 devs led by Dawit Alemu to give back to our childhood church. I taught junior devs, managed meading with church leadership, and recieved good feedback from teammates and was approved to push to production.",
+        paragraph: "This website was created by 6 devs led by Dawit Alemu to give back to our childhood church. I taught junior devs, managed meetings with church leadership, and received good feedback from teammates and was approved to push to production.",
         images: [
             ["StackIcon", "angular.webp"],
             ["StackIcon", "firebase.webp"],
@@ -26,7 +26,7 @@ export const ProjectsData = [
     },
     {
         id: 3, image: "TapGif.webp", header: "Let's Tap In, LLC",
-        paragraph: "This static website displays dummy events and allows you to checkout tickets. Led initiative on website preformance improvements, collaborated with other senior developers, and receieved approval to push to production.",
+        paragraph: "This static website displays dummy events and allows you to checkout tickets. Led initiative on website performance improvements, collaborated with other senior developers, and received approval to push to production.",
         images: [
             ["StackIcon", "react.webp"],
             ["StackIcon", "next.webp"],
@@ -99,7 +99,7 @@ export const ExperienceData = [
         images: [
             ["aws.webp", "AWS"],
             ["gcp.webp", "Google Cloud"],
-            ["vercel.webp", "Vercel"],
+            ["vim.webp", "Vim"],
             ["bash.webp", "Bash"],
             ["git.webp", "Git"],
             ["github.webp", "GitHub"]
