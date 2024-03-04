@@ -20,7 +20,7 @@ export default function Contact() {
                     <p id='ContactHeader'>Contact Me (You Should)</p>
                 </div>
                 <div id="ContactBodyContainer">
-                    <div id="ContactIconsConatiner">
+                    <div id="ContactIconsContainer">
                         <Link id="ContactEmail" href='https://mail.google.com/mail?view=cm&fs=1&to=dndawita@gmail.com&su=Draft' target='_blank'><img id="EmailIcon" src="mail.webp" /></Link>
                         <Link id="ContactLinkedin" href='https://www.linkedin.com/in/dawit-alemu4' target='_blank'><img id="LinkedinIcon" src="in.webp" /></Link>
                         <Link id="ContactGitHub" href="https://github.com/dawitalemu4" target='_blank'><img id="GitHubIcon" src="github.webp" /></Link>
@@ -82,7 +82,7 @@ export default function Contact() {
                         align-items: center;
                     }
 
-                    #ContactIconsConatiner {
+                    #ContactIconsContainer {
                         display: flex;
                         position: relative;
                         width: 100%;
@@ -149,7 +149,7 @@ export default function Contact() {
 
                         #Contact { height: 92vh; }
 
-                        #ContactIconsConatiner { flex-direction: column; }
+                        #ContactIconsContainer { flex-direction: column; }
 
                         #ContactEmail, #ContactLinkedin, #ContactGitHub { width: 50%; height: 33%; }
 

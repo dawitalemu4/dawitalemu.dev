@@ -13,7 +13,7 @@ export default function Projects() {
         window.scrollTo({ top: 0, behavior: "smooth" })
     };
 
-    const isContainerVisble = () => {
+    const isContainerVisible = () => {
         const container = document.getElementById("Projects");
         if (!container) { return; }
         const containerRect = container.getBoundingClientRect();
@@ -29,10 +29,10 @@ export default function Projects() {
 
     useEffect(() => {
 
-        window.addEventListener("scroll", isContainerVisble);
+        window.addEventListener("scroll", isContainerVisible);
 
         return () => {
-            window.removeEventListener("scroll", isContainerVisble);
+            window.removeEventListener("scroll", isContainerVisible);
         };
 
     }, []);
