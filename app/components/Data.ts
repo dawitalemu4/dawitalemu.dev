@@ -99,7 +99,7 @@ export const ExperienceData = [
         images: [
             ["aws.webp", "AWS"],
             ["gcp.webp", "Google Cloud"],
-            ["vim.webp", "Vim"],
+            ["vi.webp", "Vim"],
             ["bash.webp", "Bash"],
             ["git.webp", "Git"],
             ["github.webp", "GitHub"]
