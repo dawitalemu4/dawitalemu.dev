@@ -1,22 +1,20 @@
-import React from 'react';
-import { Metadata } from 'next';
-import Hero from './containers/Hero';
-import Projects from './containers/Projects';
-import MiniGames from './containers/MiniGames';
+import React from "react";
+import { Metadata } from "next";
+import Hero from "./sections/hero";
+import Projects from "./sections/projects";
+import MiniGames from "./sections/miniGames";
 
 export const metadata: Metadata = {
-  title: 'Dawit Alemu',
-  description: 'Portfolio By Dawit Alemu',
+    title: "Dawit Alemu's Docs",
+    description: "Portfolio By Dawit Alemu"
 };
 
-export default function Home(){
-  return (
-    <html>
-      <body>    
-        <Hero />
-        <Projects />
-        <MiniGames />
-      </body>
-    </html>
-  )
-}
+export default function Docs() {
+    return (
+        <>
+            <Hero />
+            <Projects />
+            <MiniGames />
+        </>
+    );
+};

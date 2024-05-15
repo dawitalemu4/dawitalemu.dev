@@ -1,22 +1,16 @@
-export const HeroData = [
+import { HeroOption, ProjectCard } from '../utils/types';
 
+export const HeroData: HeroOption[] = [
     { element_id: 'Portfolio', title: 'Portfolio' },
-
     { element_id: 'DebreTsion', title: 'Debre Tsion Church' },
-
     { element_id: 'Misplaced', title: 'Misplaced' },
-
     { element_id: 'TapIn', title: "Let's Tap In" },
-
     { element_id: 'UA', title: 'Urban Alliance' },
-
-    { element_id: 'Sonic', title: '2D Sonic Platformer' }
-
+    { element_id: 'Sonic', title: '2D Sonic Platformer' },
+    { element_id: 'CreatorVerse', title: 'CreatorVerse' }
 ];
 
-
-
-export const ProjectsData = [
+export const ProjectsData: ProjectCard[] = [
     {
         divID: 'Portfolio',
         header: 'Portfolio',

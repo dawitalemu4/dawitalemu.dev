@@ -1,43 +1,36 @@
-"use client"
+"use client";
 import React from "react";
-import PacMan from "../components/PacManGame";
-import Yoshi from "../components/YoshiGame";
-import PokeBall from "../components/PokeBallGame";
-import Luffy from "../components/LuffyGame";
+import PacMan from "../games/pacman";
+import Yoshi from "../games/yoshi";
+import PokeBall from "../games/pokeball";
+import Luffy from "../games/luffy";
 
 export default function MiniGames() { 
 
     return ( 
-        <div id='MiniGames'>
-            <div id='MiniGamesContainer'>
-                
+        <div id="MiniGames">
+            <div id="MiniGamesContainer">
                 <div id="PacMan">
                     <PacMan />
                 </div>
-
                 <div id="PokeBallAndYoshi">
-
                     <div id="PokeBall">
                         <PokeBall />
                     </div>
-
                     <div id="Yoshi">
                         <Yoshi />
                     </div>
-
                 </div>
-
                 <div id="Luffy">
                     <Luffy />
                 </div>
-
                 <div id="PikachuWaveContainer">
-                    <img id='PikachuWave' src="pikachu.gif" />
+                    <img id="PikachuWave" src="/docs/pokemon/pikachu.gif" />
                 </div>
-
             </div>
         <style>
-            {` 
+            {`
+
                 #MiniGames {
                     display: flex;
                     position: relative;
@@ -124,7 +117,6 @@ export default function MiniGames() {
                     #PokeBall, #Yoshi { width: 100%; height: 50%; }
 
                 }
-
             `}
         </style>
         </div>

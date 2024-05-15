@@ -1,30 +1,35 @@
-"use client"
+"use client";
 import React, { useEffect } from "react";
-import { ProjectsData } from "../components/Data";
-import CodeHighlight from "../components/CodeHighlight";
 import Link from "next/link";
+import HighlightCode from "../components/highlightCode";
+import { ProjectsData } from "../utils/data";
 import { HiArrowNarrowUp } from "react-icons/hi";
-import { VscGithubAlt } from 'react-icons/vsc';
-import { CiShare1 } from 'react-icons/ci';
+import { VscGithubAlt } from "react-icons/vsc";
+import { CiShare1 } from "react-icons/ci";
 
 export default function Projects() {
 
-    const Top = () => {
+    const top = () => {
         window.scrollTo({ top: 0, behavior: "smooth" })
     };
 
     const isContainerVisible = () => {
+
         const container = document.getElementById("Projects");
-        if (!container) { return; }
+
+        if (!container) return;
+
         const containerRect = container.getBoundingClientRect();
         const targetPosition = containerRect.top;
         const arrow = document.getElementById("UpContainer");
-        if (!arrow) { return; }
+
+        if (!arrow) return;
+
         if (targetPosition < 0) {
             arrow.style.display = "flex";
         } else {
             arrow.style.display = "none";
-        }
+        };
     };
 
     useEffect(() => {
@@ -40,7 +45,7 @@ export default function Projects() {
     return (
         <div id="Projects">
             <div id="UpContainer">
-                <div id="Up" onClick={Top}><HiArrowNarrowUp /></div>
+                <div id="Up" onClick={top}><HiArrowNarrowUp /></div>
             </div>
             <div id="ProjectsContainer">
                 {ProjectsData.map((project: any) => (
@@ -65,7 +70,7 @@ export default function Projects() {
                                         <p id="DocsCodeHeader">Code</p>
                                     </div>
                                     <div id="DocsCodeContainer">
-                                        <div id="DocsCode"><CodeHighlight code={project.code} /></div>
+                                        <div id="DocsCode"><HighlightCode code={project.code} /></div>
                                     </div>  
                                 </div>
                             </div>
@@ -73,16 +78,16 @@ export default function Projects() {
                         <div id="BottomContainer">
                             <div id="DocsIconsContainer">
                                 <div id="GithubIconContainer">
-                                    <Link id="GithubLink" href={project.github} target='_blank'> <VscGithubAlt id='GithubIcon' />Video Demos</Link>
+                                    <Link id="GithubLink" href={project.github} target="_blank"> <VscGithubAlt id="GithubIcon" />Video Demos</Link>
                                 </div>
                                 <div id="RedirectIconContainer">
-                                    <Link id="RedirectLink" href={project.siteURL} target='_blank'> <CiShare1 id='RedirectIcon' />View Site</Link>
+                                    <Link id="RedirectLink" href={project.siteURL} target="_blank"> <CiShare1 id="RedirectIcon" />View Site</Link>
                                 </div>
                             </div>                     
                             <div id="DocsStackContainer">
                                 {project.images.map((image: any) => (
-                                    <div id='StackIconContainer' key={image.id}>
-                                        <img id={image[0]} src={image[1]} />
+                                    <div id="StackIconContainer" key={image.id}>
+                                        <img id={image[0]} src={"/devicons/" + image[1]} />
                                     </div>
                                 ))}
                             </div>

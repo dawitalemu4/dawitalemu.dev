@@ -1,53 +1,53 @@
-'use client'
-import React, { useState, useEffect, useRef } from 'react';
+"use client";
+import React, { useState, useEffect, useRef } from "react";
 
 export default function About() {
 
-    const [aboutScrollHeight, setAboutScrollHeight] = useState('0%');
+    const [aboutScrollHeight, setAboutScrollHeight] = useState("0%");
     const aboutContainerRef = useRef<HTMLDivElement>(null);
 
     const handleAboutScroll = () => {
+
         const aboutContainer = aboutContainerRef.current;
         if (!aboutContainer) return;
-      
+
         const containerHeight = aboutContainer.clientHeight;
         const containerTop = aboutContainer.getBoundingClientRect().top;
         const scrollPosition = Math.max(0, window.scrollY - containerTop - window.innerHeight * 1.9);
 
         const isContainerVisible = containerTop + containerHeight >= 0 && containerTop <= window.innerHeight;
-      
+
         if (!isContainerVisible) {
-          setAboutScrollHeight('0%');
+            setAboutScrollHeight("0%");
         } else {
-          const maxScroll = containerHeight * 2;
-          const aboutScrollPercentage = Math.min((scrollPosition / maxScroll) * 100, 100);
-          setAboutScrollHeight(`${aboutScrollPercentage}%`);
-        }
-    }
-    
+            const maxScroll = containerHeight * 2;
+            const aboutScrollPercentage = Math.min((scrollPosition / maxScroll) * 100, 100);
+            setAboutScrollHeight(`${aboutScrollPercentage}%`);
+        };
+    };
+
     useEffect(() => {
 
-        window.addEventListener('scroll', handleAboutScroll);
+        window.addEventListener("scroll", handleAboutScroll);
         
         return () => {
-            window.removeEventListener('scroll', handleAboutScroll);
+            window.removeEventListener("scroll", handleAboutScroll);
         };
 
     }, []);
 
-
     return (
-        <div id='About' ref={aboutContainerRef}>
+        <div id="About" ref={aboutContainerRef}>
             <div id="AboutContainer">
                 <div id="AboutParagraphContainer">
-                    <p id='AboutParagraph'>Hello! My name is Dawit Alemu and I'm currently a junior at Towson University who loves to self-teach software engineering. 
+                    <p id="AboutParagraph">Hello! My name is Dawit Alemu and I'm currently a junior at Towson University who loves to self-teach software engineering. 
                     <br/><br/> I'm mainly interested in full-stack web development, but open to learning new things. <br/><br/> Keep scrolling!</p>
                 </div>                   
-                <div id='AboutImageContainer'>
-                    <img id='AboutImage' src='da.webp' alt='Dawit Alemu'/>
+                <div id="AboutImageContainer">
+                    <img id="AboutImage" src="da.webp" alt="Dawit Alemu"/>
                 </div>                 
-                <div id='AboutTitleContainer'>
-                    <p id='AboutTitle'>About</p>
+                <div id="AboutTitleContainer">
+                    <p id="AboutTitle">About</p>
                 </div>
             </div>
         <style>
@@ -100,6 +100,7 @@ export default function About() {
                 }
 
                 #AboutParagraph {
+                    font-family: InterMedium;
                     font-size: 26px;
                     color: black;
                 }
@@ -164,9 +165,8 @@ export default function About() {
                         transform: translateY(calc(0.4 * var(--aboutScrollHeight))) translateX(calc(-1 * (0.1 * var(--aboutScrollHeight))));
                     }
                 }
-
             `}
         </style>
         </div>
-    )
+    );
 };
