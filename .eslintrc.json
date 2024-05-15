@@ -5,6 +5,7 @@
         "react/jsx-no-comment-textnodes": "off",
         "jsx-a11y/alt-text": "off",
         "react-hooks/exhaustive-deps": "off",
-        "@next/next/no-img-element": "off"
+        "@next/next/no-img-element": "off",
+        "react/jsx-key": "off"
     }
 }
