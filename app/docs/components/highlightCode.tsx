@@ -9,11 +9,11 @@ hljs.registerLanguage("typescript", typescript);
 import csharp from "highlight.js/lib/languages/csharp";
 hljs.registerLanguage("csharp", csharp);
 
-interface CodeHighlightProps {
+interface HighlightCodeProps {
     code: string;
 };
 
-const CodeHighlight: React.FC<CodeHighlightProps> = ({ code }) => {
+const HighlightCode: React.FC<HighlightCodeProps> = ({ code }) => {
 
     const codeRef = useRef<HTMLElement>(null);
 
@@ -34,4 +34,4 @@ const CodeHighlight: React.FC<CodeHighlightProps> = ({ code }) => {
     );
 };
 
-export default CodeHighlight;
+export default HighlightCode;

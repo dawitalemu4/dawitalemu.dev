@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect } from "react";
 import Link from "next/link";
-import CodeHighlight from "../components/codeHighlight";
+import HighlightCode from "../components/highlightCode";
 import { ProjectsData } from "../utils/data";
 import { HiArrowNarrowUp } from "react-icons/hi";
 import { VscGithubAlt } from "react-icons/vsc";
@@ -70,7 +70,7 @@ export default function Projects() {
                                         <p id="DocsCodeHeader">Code</p>
                                     </div>
                                     <div id="DocsCodeContainer">
-                                        <div id="DocsCode"><CodeHighlight code={project.code} /></div>
+                                        <div id="DocsCode"><HighlightCode code={project.code} /></div>
                                     </div>  
                                 </div>
                             </div>
