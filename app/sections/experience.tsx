@@ -1,78 +1,65 @@
-'use client'
-import React, { useState, useEffect, useRef } from 'react';
-import { ExperienceData } from './Data';
+"use client";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { Experience } from '../types';
+import { ExperienceData } from "../utils/data";
+import { IconRow } from "../utils/types";
+import ExperienceRow from "../components/experienceRow";
 
 export default function Experience() {
 
-    const [experienceScrollHeight, setExperienceScrollHeight] = useState('0%');
+    const [experienceScrollHeight, setExperienceScrollHeight] = useState("0%");
     const experienceContainerRef = useRef<HTMLDivElement>(null);
 
     const handleExperienceScroll = () => {
+
         const experienceContainer = experienceContainerRef.current;
         if (!experienceContainer) return;
-      
+
         const containerHeight = experienceContainer.clientHeight;
         const containerTop = experienceContainer.getBoundingClientRect().top;
         const scrollPosition = Math.max(0, window.scrollY - containerTop - window.innerHeight * 1.9);
 
         const isContainerVisible = containerTop + containerHeight >= 0 && containerTop <= window.innerHeight;
-      
+
         if (!isContainerVisible) {
-          setExperienceScrollHeight('0%');
+            setExperienceScrollHeight("0%");
         } else {
-          const maxScroll = containerHeight * 2;
-          const experienceScrollPercentage = Math.min((scrollPosition / maxScroll) * 100, 100);
-          setExperienceScrollHeight(`${experienceScrollPercentage}%`);
-        }
-    }
+            const maxScroll = containerHeight * 2;
+            const experienceScrollPercentage = Math.min((scrollPosition / maxScroll) * 100, 100);
+            setExperienceScrollHeight(`${experienceScrollPercentage}%`);
+        };
+    };
     
     useEffect(() => {
 
-        window.addEventListener('scroll', handleExperienceScroll);
-        
+        window.addEventListener("scroll", handleExperienceScroll);
+
         return () => {
-            window.removeEventListener('scroll', handleExperienceScroll);
+            window.removeEventListener("scroll", handleExperienceScroll);
         };
 
     }, []);
-    
 
     return (
-        <div id='Experience' ref={experienceContainerRef}>
-            <div id='ExperienceContainer'>
-                <div id='ExperienceHeaderContainer'>
-                    <p id='ExperienceHeader'>Experience && Skills</p>
+        <div id="Experience" ref={experienceContainerRef}>
+            <div id="ExperienceContainer">
+                <div id="ExperienceHeaderContainer">
+                    <p id="ExperienceHeader">Experience && Skills</p>
                 </div>
                 <div id="ExperienceAndSkillsContainer">
-                    <div id='ExperienceParagraphContainer'>
-                        <p id='ExperienceParagraph'>
-                            In Fall 2023 and Spring 2024, I interned at Baltimore Life Insurance as a Front End Software Engineer on the Platform Team working on the Internal Agent Portal using React (JavaScript), Swagger, and a variety of packages.
-                            <br/><br/>
-                            I also completed multiple contracts during Summer 2023, but the most notable one is a website I built for my childhood church, where I led a team of 6 junior developers and taught/learned Angular (TypeScript), Firebase, and Google Cloud Platform.
+                    <div id="ExperienceParagraphContainer">
+                        <p id="ExperienceParagraph">
+                            In Fall 2023 and Spring 2024, I interned at Baltimore Life Insurance as a Front End Software Engineer on the Platform Team implementing my redesign of the home page for the Internal Agent Portal using React, which has now gone into prod.
                             <br/><br/>
                             <b>Keep scrolling</b> for more in-depth information about some of my works!
                             <br/><br/>
-                            <Link id='ResumeLink' href="https://docs.google.com/document/d/1VA2JjizgZaup8Hw1dX10K6-6aRnEW3wpa1yVvscN2H4/edit?usp=sharing" target="_blank">Click me to view Dawit's resume!</Link>
+                            <Link id="ResumeLink" href="https://docs.google.com/document/d/1VA2JjizgZaup8Hw1dX10K6-6aRnEW3wpa1yVvscN2H4/edit?usp=sharing" target="_blank">Click me to view Dawit"s resume!</Link>
                         </p>
                     </div>
-                    <div id='SkillsContainer'>
-                        <div id='SkillsListContainer'>
-                            {ExperienceData.map((list: Experience, index: number) => (
-                                <div id="SkillList" key={index}>
-                                    <div id='SkillsListHeaderContainer'>
-                                        <p id='SkillsHeader'>{list.header}</p>
-                                    </div>
-                                    <div id='SkillsRowContainer'>
-                                        {list.images.map((image: string[], index: number) => (
-                                            <div id='SkillsRowItem' key={index}>
-                                                <img id="ItemLogo" src={image[0]} />
-                                                {image[1]}
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
+                    <div id="SkillsContainer">
+                        <div id="SkillsRowContainer">
+                            {ExperienceData.map((row: IconRow) => (
+                                <ExperienceRow row={row} />
                             ))}
                         </div>
                     </div>
@@ -170,7 +157,7 @@ export default function Experience() {
                     align-items: center;
                 }
 
-                #SkillsListContainer {
+                #SkillsRowContainer {
                     display: flex;
                     position: relative;
                     width: 100%;
@@ -180,7 +167,7 @@ export default function Experience() {
                     align-items: center;
                 }
 
-                #SkillList {
+                #SkillRow {
                     display: flex;
                     position: relative;
                     width: 100%;
@@ -190,7 +177,7 @@ export default function Experience() {
                     align-items: center;
                 }
 
-                #SkillsListHeaderContainer {
+                #SkillRowHeaderContainer {
                     display: flex;
                     position: relative;
                     width: 100%;
@@ -200,13 +187,13 @@ export default function Experience() {
                     align-items: center;
                 }
 
-                #SkillsHeader {
+                #SkillHeader {
                     font-size: 20px;
                     text-align: center;
                     font-family: InterSemi;
                 }
 
-                #SkillsRowContainer {
+                #SkillRowContainer {
                     display: grid;
                     position: relative;
                     width: 100%;
@@ -216,7 +203,7 @@ export default function Experience() {
                     align-items: flex-start;
                 }
 
-                #SkillsRowItem {
+                #SkillRowItem {
                     display: flex;
                     position: relative;
                     height: 50%;
@@ -263,9 +250,8 @@ export default function Experience() {
 
                     #ResumeLink { font-size: 18px; }
                 }
-
             `}
         </style>
         </div>
-    )
+    );
 };

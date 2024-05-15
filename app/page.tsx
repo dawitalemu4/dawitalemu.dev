@@ -1,28 +1,26 @@
-import { Metadata } from 'next';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Experience from './components/Experience';
-import Projects from './components/Projects';
-import Contact from './components/Contact';
-import "./globals.css"
+import { Metadata } from "next";
+import Sidebar from "./sections/sidebar";
+import Hero from "./sections/hero";
+import About from "./sections/about";
+import Experience from "./sections/experience";
+import Projects from "./sections/projects";
+import Contact from "./sections/contact";
+import "./globals.css";
 
 export const metadata: Metadata = {
-  title: 'Dawit Alemu',
-  description: 'Portfolio By Dawit Alemu',
+    title: "Dawit Alemu's Portfolio",
+    description: "Portfolio By Dawit Alemu"
 };
 
 export default function Home() {
-  return (
-    <html>
-      <body>
-        <Navbar/>
-        <Hero/>
-        <About/>
-        <Experience/>
-        <Projects/>
-        <Contact/>
-      </body>
-  </html>
-  )
-}
+    return (
+        <>
+            <Sidebar/>
+            <Hero/>
+            <About/>
+            <Experience/>
+            <Projects/>
+            <Contact/>
+        </>
+    );
+};

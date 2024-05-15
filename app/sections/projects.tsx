@@ -1,124 +1,83 @@
-'use client'
-import React, { useState, useEffect, useRef } from 'react';
-import { ProjectsData } from './Data';
+"use client";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { VscGithubAlt } from 'react-icons/vsc';
-import { CiShare1 } from 'react-icons/ci';
-import { IoIosPaper } from 'react-icons/io';
-import { MdClose } from 'react-icons/md';
-import { Project } from '../types';
+import ProjectCard from "../components/projectCard";
+import { IoIosClose } from "react-icons/io";
+import { ProjectsData } from "../utils/data";
+import { Project } from "../utils/types";
 
 export default function Projects() {
 
-    const [projectScrollHeight, setProjectScrollHeight] = useState('0%');
+    const [projectScrollHeight, setProjectScrollHeight] = useState("0%");
     const [effectToggle, setEffectToggle] = useState(true);
-    const [effectText, setEffectText] = useState('On');
+    const [effectText, setEffectText] = useState("On");
     const [showModal, setshowModal] = useState(false);
-    const [gif, setGif] = useState('');
+    const [gif, setGif] = useState("");
     const projectsContainerRef = useRef<HTMLDivElement>(null);
 
-    
     const toggleModal = () => {
         setshowModal(!showModal);
-    }
+    };
 
     const toggleEffect = () => {
 
         setEffectToggle(!effectToggle);
 
         if (effectToggle === false) {
-            setEffectText('On');
+            setEffectText("On");
         } else {
-            setEffectText('Off');
-        }
-    }
+            setEffectText("Off");
+        };
+    };
 
     const handleProjectScroll = () => {
+
         const projectsContainer = projectsContainerRef.current;
         if (!projectsContainer) return;
-      
+
         const containerHeight = projectsContainer.clientHeight;
         const containerTop = projectsContainer.getBoundingClientRect().top;
         const scrollPosition = Math.max(0, window.scrollY - containerTop - window.innerHeight * 1.9);
 
         const isContainerVisible = containerTop + containerHeight >= 0 && containerTop <= window.innerHeight;
-      
+
         if (!isContainerVisible) {
-          setProjectScrollHeight('0%');
+            setProjectScrollHeight("0%");
         } else {
-          const maxScroll = containerHeight * 2.5;
-          const projectScrollPercentage = Math.min((scrollPosition / maxScroll) * 100, 100);
-          setProjectScrollHeight(`${projectScrollPercentage}%`);
-        }
-    }
-    
+            const maxScroll = containerHeight * 2.5;
+            const projectScrollPercentage = Math.min((scrollPosition / maxScroll) * 100, 100);
+            setProjectScrollHeight(`${projectScrollPercentage}%`);
+        };
+    };
+
     useEffect(() => {
 
-        window.addEventListener('scroll', handleProjectScroll);
-        
+        window.addEventListener("scroll", handleProjectScroll);
+
         return () => {
-            window.removeEventListener('scroll', handleProjectScroll);
+            window.removeEventListener("scroll", handleProjectScroll);
         };
 
     }, []);
 
-
     return (
-        <div id='Projects' ref={projectsContainerRef}>
+        <div id="Projects" ref={projectsContainerRef}>
             <div id="ProjectsContainer">
                 <div id="ProjectsHeaderContainer">
                     <p id="ProjectsHeader">Projects</p>
-                    <button id="ProjectsHeaderToggle" onClick={toggleEffect}>Effect: {effectText}</button>
+                    <p id="ProjectsHeaderToggle" onClick={toggleEffect}>Scroll Effect: {effectText}</p>
                 </div>
                 <div id="ProjectsListContainer">
                     {ProjectsData.map((data: Project) => (
-                        <div id={`Project${data.id}`} key={data.id}>
-                            <div id="ProjectLeftContainer">
-                                <div id="ProjectImageContainer">
-                                    <img id="ProjectImage" src={data.image} onClick={() => {setGif(`${data.image}`); toggleModal(); }} />
-                                </div>
-                            </div>
-                            <div id="ProjectRightContainer">
-                                <div id="ProjectParagraphContainer">
-
-                                    <div id="ProjectHeaderContainer">
-                                        <p id="ProjectHeader">{data.header}</p>
-                                    </div>
-                                    
-                                    <div id="ProjectTextContainer">
-                                        <p id='ProjectParagraph'>{data.paragraph}</p>
-                                    </div> 
-
-                                    <div id="ProjectStackContainer">
-                                        {data.images.map((image: any) => (
-                                            <div id="StackIconContainer" key={image.id}>
-                                                <img id={image[0]} src={image[1]} />
-                                            </div>
-                                        ))}
-                                    </div>
-
-                                </div>
-                                <div id="ProjectIconsContainer">
-                                    <div id="GithubIconContainer">
-                                        <Link id="GithubLink" href={data.github} target='_blank'> <VscGithubAlt id='GithubIcon' />Video Demos</Link>
-                                    </div>
-                                    <div id="RedirectIconContainer">
-                                        <Link id="RedirectLink" href={data.siteURL} target='_blank'> <CiShare1 id='RedirectIcon' />View Site</Link>
-                                    </div>
-                                    <div id="DocsIconContainer">
-                                        <Link id="DocsLink" href="/docs"> <IoIosPaper id='DocsIcon' />Docs</Link>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <ProjectCard data={data} setGif={(image: string) => setGif(image)} toggleModal={toggleModal} />
                     ))}              
                 </div>                    
                 <div id="MoreContainer">
-                    <p id="More">And More... Browse My <Link id='MoreGitHub' href='https://github.com/dawitalemu4' target="_blank">GitHub</Link> or Visit the <Link id='DocsA' href='/docs'>Docs Page for Devs</Link>!</p>
+                    <p id="More">And More... Browse My <Link id="MoreGitHub" href="https://github.com/dawitalemu4" target="_blank">GitHub</Link> or Visit the <Link id="DocsA" href="/docs">Docs Page for Devs</Link>!</p>
                 </div>
                 <div id="ModalContainer" style={{ display: showModal ? "flex" : "none" }} onClick={toggleModal}>
-                    <div id='CloseModal' onClick={toggleModal}><MdClose /></div>
-                    <img id="Img" src={gif} onClick={toggleModal} />
+                    <div id="CloseModal" onClick={toggleModal}><IoIosClose /></div>
+                    <img id="ProjectGif" src={"/gifs/" + gif} onClick={toggleModal} />
                 </div>
             </div>
         <style>
@@ -166,8 +125,12 @@ export default function Projects() {
                 #ProjectsHeaderToggle {
                     display: flex;
                     position: absolute;
-                    top: 20%;
-                    right: 5%;
+                    top: 10%;
+                    right: 3%;
+                    padding: 20px;
+                    font-family: InterMedium;
+                    cursor: pointer;
+                    user-select: none;
                 }
 
                 #ProjectsListContainer {
@@ -195,28 +158,28 @@ export default function Projects() {
                 }
 
                 #Project1 {
-                    left: ${effectToggle ? '50%' : '0'};
-                    transform: ${effectToggle ? `translateX(calc(-1.2 * ${projectScrollHeight}))` : 'none'};
+                    left: ${effectToggle ? "50%" : "0"};
+                    transform: ${effectToggle ? `translateX(calc(-1.2 * ${projectScrollHeight}))` : "none"};
                 }
                 
                 #Project2 {
-                    right: ${effectToggle ? '60%' : '0'};
-                    transform: ${effectToggle ? `translateX(calc(1.1 * ${projectScrollHeight}))` : 'none'};
+                    right: ${effectToggle ? "60%" : "0"};
+                    transform: ${effectToggle ? `translateX(calc(1.1 * ${projectScrollHeight}))` : "none"};
                 }
 
                 #Project3 {
-                    left: ${effectToggle ? '70%' : '0'};
-                    transform: ${effectToggle ? `translateX(calc(-1.05 * ${projectScrollHeight}))` : 'none'};
+                    left: ${effectToggle ? "70%" : "0"};
+                    transform: ${effectToggle ? `translateX(calc(-1.05 * ${projectScrollHeight}))` : "none"};
                 }
 
                 #Project4 {
-                    right: ${effectToggle ? '80%' : '0'};
-                    transform: ${effectToggle ? `translateX(calc(1 * ${projectScrollHeight}))` : 'none'};
+                    right: ${effectToggle ? "80%" : "0"};
+                    transform: ${effectToggle ? `translateX(calc(1 * ${projectScrollHeight}))` : "none"};
                 }
 
                 #Project5 {
-                    left: ${effectToggle ? '90%' : '0'};
-                    transform: ${effectToggle ? `translateX(calc(-1 * ${projectScrollHeight}))` : 'none'};
+                    left: ${effectToggle ? "90%" : "0"};
+                    transform: ${effectToggle ? `translateX(calc(-1 * ${projectScrollHeight}))` : "none"};
                 }
 
                 #ProjectLeftContainer {
@@ -324,7 +287,7 @@ export default function Projects() {
                 #StackIconContainer {
                     display: flex;
                     position: relative;
-                    height: 100%;
+                    height: 80%;
                     justify-content: center;
                     align-items: center;
                 }
@@ -388,7 +351,7 @@ export default function Projects() {
                     align-items: center;
                 }
 
-                #DocsA, #MoreGitHub { text-decoration: underline; }
+                #DocsA, #MoreGitHub { color: black; }
 
                 #DocsA:hover, #MoreGitHub:hover { opacity: 0.7; }
 
@@ -420,7 +383,7 @@ export default function Projects() {
                     cursor: pointer;
                 }
 
-                #Img {
+                #ProjectGif {
                     width: 80%;
                     height: 80%;
                     object-fit: contain;
@@ -459,28 +422,28 @@ export default function Projects() {
                     #GithubIconContainer, #RedirectIconContainer, #DocsIconContainer { width: 33%; height: 100%; }
 
                     #Project1 {
-                        left: ${effectToggle ? '55%' : '0'};
-                        transform: ${effectToggle ? `translateX(calc(-1.2 * ${projectScrollHeight}))` : 'none'};
+                        left: ${effectToggle ? "55%" : "0"};
+                        transform: ${effectToggle ? `translateX(calc(-1.2 * ${projectScrollHeight}))` : "none"};
                     }
                     
                     #Project2 {
-                        right: ${effectToggle ? '65%' : '0'};
-                        transform: ${effectToggle ? `translateX(calc(1.1 * ${projectScrollHeight}))` : 'none'};
+                        right: ${effectToggle ? "65%" : "0"};
+                        transform: ${effectToggle ? `translateX(calc(1.1 * ${projectScrollHeight}))` : "none"};
                     }
-    
+
                     #Project3 {
-                        left: ${effectToggle ? '75%' : '0'};
-                        transform: ${effectToggle ? `translateX(calc(-1.05 * ${projectScrollHeight}))` : 'none'};
+                        left: ${effectToggle ? "75%" : "0"};
+                        transform: ${effectToggle ? `translateX(calc(-1.05 * ${projectScrollHeight}))` : "none"};
                     }
-    
+
                     #Project4 {
-                        right: ${effectToggle ? '85%' : '0'};
-                        transform: ${effectToggle ? `translateX(calc(1 * ${projectScrollHeight}))` : 'none'};
+                        right: ${effectToggle ? "85%" : "0"};
+                        transform: ${effectToggle ? `translateX(calc(1 * ${projectScrollHeight}))` : "none"};
                     }
-    
+
                     #Project5 {
-                        left: ${effectToggle ? '95%' : '0'};
-                        transform: ${effectToggle ? `translateX(calc(-1 * ${projectScrollHeight}))` : 'none'};
+                        left: ${effectToggle ? "95%" : "0"};
+                        transform: ${effectToggle ? `translateX(calc(-1 * ${projectScrollHeight}))` : "none"};
                     }
                 }
             `}

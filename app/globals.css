@@ -1,47 +1,66 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 html, body {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
-  background-color: black;
-  font-family: InterMedium;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    font-family: InterMedium;
+    overflow-x: hidden;
 }
 
 body::-webkit-scrollbar {
-  width: 0.2em;
-  background-color: black;
+    width: 0.3em;
+    background-color: black;
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #F5F5F5;
+    background-color: #F5F5F5;
+    border-radius: 10px;
+}
+
+h1 {
+    font-size: 50px;
+    font-family: InterBold;
+}
+
+h2 {
+    font-size: 30px;
+    font-family: InterSemi;
+}
+
+h3 {
+    font-size: 25px;
+    font-family: InterMedium;
+}
+
+p {
+    font-size: 16px;
+    font-family: Inter;
+}
+
+a {
+    color: white;
 }
 
 @font-face {
-  font-family: 'Inter';
-  src: url('/Inter-Regular.ttf') format('truetype');
+    font-family: "InterBold";
+    src: url("/fonts/Inter-Bold.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'InterMedium';
-  src: url('/Inter-Medium.ttf') format('truetype');
+    font-family: "InterSemi";
+    src: url("/fonts/Inter-SemiBold.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'InterSemi';
-  src: url('/Inter-SemiBold.ttf') format('truetype');
+    font-family: "InterMedium";
+    src: url("/fonts/Inter-Medium.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'InterBold';
-  src: url('/Inter-Bold.ttf') format('truetype');
+    font-family: "Inter";
+    src: url("/fonts/Inter-Regular.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'Consolas';
-  src: url('/Consolas.ttf') format('truetype');
+    font-family: "Consolas";
+    src: url("/fonts/Consolas.ttf") format("truetype");
 }
