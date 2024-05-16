@@ -1,4 +1,4 @@
-import { HeroOption, ProjectCard } from '../utils/types';
+import { HeroOption, Project } from '../utils/types';
 
 export const HeroData: HeroOption[] = [
     { element_id: 'Portfolio', title: 'Portfolio' },
@@ -10,7 +10,7 @@ export const HeroData: HeroOption[] = [
     { element_id: 'CreatorVerse', title: 'CreatorVerse' }
 ];
 
-export const ProjectsData: ProjectCard[] = [
+export const ProjectsData: Project[] = [
     {
         divID: 'Portfolio',
         header: 'Portfolio',
@@ -247,7 +247,7 @@ const Background: React.FC<BackgroundProps> = ({ getBackgroundColor, getAccentCo
     );
 };`,
         github: 'https://github.com/dawitalemu4/TapInWebPage',
-        siteURL: 'https://tapinwebpage.vercel.app',
+        siteURL: 'https://letsalltapin.vercel.app',
         images: [
             ['StackIcon', 'react.webp'],
             ['StackIcon', 'next.webp'],

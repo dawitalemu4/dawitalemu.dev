@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
+import "./css/luffy.scss";
 
 export default function Luffy() {
 
@@ -81,45 +82,6 @@ export default function Luffy() {
             <div id="WarningMessageContainer">
                 <p id="WarningMessage">Tap left click while luffy is pulling - Don't drag or hold</p>
             </div>
-        <style>
-            {`
-
-                #LuffyContainer {
-                    display: flex;
-                    position: relative;
-                    width: 100%;
-                    height: 100%;
-                    flex-direction: column;
-                    justify-content: flex-start;
-                    align-items: center;
-                }
-
-                #LuffyImg {
-                    height: 90%;
-                    cursor: pointer;
-                }
-
-                #WarningMessageContainer {
-                    display: flex;
-                    position: relative;
-                    width: 100%;
-                    height: 10%;
-                    justify-content: center;
-                    align-items: center;
-                }
-
-                #WarningMessage {
-                    color: white;
-                    text-align: center;
-                }
-
-                @media (max-width: 1000px ) {
-
-                    #WarningMessage { font-size: 12px; }
-
-                }
-            `}
-        </style>
         </div>
     );
 };

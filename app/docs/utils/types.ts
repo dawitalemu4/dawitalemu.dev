@@ -3,7 +3,7 @@ export interface HeroOption {
     title: string;
 };
 
-export interface ProjectCard {
+export interface Project {
     divID: string;
     header: string;
     paragraph: string;

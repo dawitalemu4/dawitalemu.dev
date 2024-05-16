@@ -35,7 +35,7 @@ export const ProjectsData = [
             ["StackIconTS", "ts.webp"]
         ],
         github: "https://github.com/dawitalemu4/TapInWebPage",
-        siteURL: "https://tapinwebpage.vercel.app",
+        siteURL: "https://letsalltapin.vercel.app",
         image: "TapGif.webp"
     },
     {

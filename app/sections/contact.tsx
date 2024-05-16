@@ -2,6 +2,7 @@
 import React from "react";
 import Link from "next/link";
 import { HiArrowNarrowUp } from "react-icons/hi";
+import "./css/contact.scss";
 
 export default function Contact() {
 
@@ -17,7 +18,7 @@ export default function Contact() {
         <div id="Contact">
             <div id="ContactContainer">
                 <div id="ContactHeaderContainer">
-                    <p id="ContactHeader">Contact Me (You Should)</p>
+                    <h1 id="ContactHeader">Contact Me (You Should)</h1>
                 </div>
                 <div id="ContactBodyContainer">
                     <div id="ContactIconsContainer">
@@ -31,139 +32,6 @@ export default function Contact() {
                     </div>
                 </div>
             </div>
-        <style>
-            {`
-
-                #Contact {  
-                    display: flex;
-                    position: relative;
-                    width: 99.7vw;
-                    height: 100vh;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                    background-color: black;
-                    z-index: 9;
-                    color: white;
-                }
-
-                #ContactContainer {
-                    display: flex;
-                    position: relative;
-                    width: 100%;
-                    height: 100%;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                }
-
-                #ContactHeaderContainer {
-                    display: flex;
-                    position: relative;
-                    width: 100%;
-                    height: 30%;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                }
-
-                #ContactHeader {
-                    font-size: 50px;
-                    font-family: InterBold;
-                    text-align: center;
-                }
-
-                #ContactBodyContainer {
-                    display: flex;
-                    position: relative;
-                    width: 100%;
-                    height: 70%;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                }
-
-                #ContactIconsContainer {
-                    display: flex;
-                    position: relative;
-                    width: 100%;
-                    height: 50%;
-                    flex-direction: row;
-                    justify-content: center;
-                    align-items: center;
-                }
-
-                #ContactEmail, #ContactLinkedin, #ContactGitHub {
-                    display: flex;
-                    position: relative;
-                    width: 30%;
-                    height: 85%;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                }
-
-                #ContactEmail:hover, #ContactLinkedin:hover, #ContactGitHub:hover {
-                    cursor: pointer;
-                    opacity: 0.8;
-                }
-
-                #EmailIcon { height: 80%; }
-
-                #LinkedinIcon { height: 65%; }
-
-                #GitHubIcon { height: 65%; }
-
-                #ContactButtonContainer {
-                    display: flex;
-                    position: relative;
-                    width: 100%;
-                    height: 50%;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                }
-
-                #ContactButtonText {
-                    font-size: 20px;
-                    font-family: InterBold;
-                    text-align: center;
-                }
-
-                #ContactButton {
-                    display: flex;
-                    position: relative;
-                    width: 300px;
-                    height: 80px;
-                    color: white;
-                    justify-content: center;
-                    align-items: center;
-                    font-size: 50px;
-                    margin-top: 10px;
-                    background-color: black;
-                    border: none;
-                }
-
-                #ContactButton:hover {
-                    cursor: pointer;
-                    opacity: 0.8;
-                }
-
-                @media (max-width: 900px) {
-
-                    #Contact { height: 92vh; }
-
-                    #ContactIconsContainer { flex-direction: column; }
-
-                    #ContactEmail, #ContactLinkedin, #ContactGitHub { width: 50%; height: 33%; }
-
-                    #EmailIcon, #LinkedinIcon, #GitHubIcon { height: 70%; }
-
-                    #ContactButtonContainer { width: 90%; }
-
-                }
-            `}
-        </style>
         </div>
-    )
+    );
 };

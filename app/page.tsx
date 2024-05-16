@@ -5,7 +5,6 @@ import About from "./sections/about";
 import Experience from "./sections/experience";
 import Projects from "./sections/projects";
 import Contact from "./sections/contact";
-import "./globals.css";
 
 export const metadata: Metadata = {
     title: "Dawit Alemu's Portfolio",

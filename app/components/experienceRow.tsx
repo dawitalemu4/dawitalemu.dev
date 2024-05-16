@@ -1,5 +1,6 @@
 import React from "react";
 import { IconRow } from "../utils/types";
+import "./css/experienceRow.scss";
 
 interface ExperienceRowProps {
     row: IconRow;
@@ -8,7 +9,7 @@ interface ExperienceRowProps {
 const ExperienceRow: React.FC<ExperienceRowProps> = ({ row }) => (
     <div id="SkillRow" key={row.id}>
         <div id="SkillRowHeaderContainer">
-            <p id="SkillHeader">{row.header}</p>
+            <h3 id="SkillHeader">{row.header}</h3>
         </div>
         <div id="SkillRowContainer">
             {row.images.map((image: string[], index: number) => (
