@@ -67,11 +67,11 @@ export default function PacMan() {
     }, [dotsRef, dotsContainerRef]);
 
     return (
-        <div id="PacmanContainer">   
-            <img id="Arcade" src="/docs/pacman/arcade.webp" />
-            <img id="Scene" src="/docs/pacman/pacmanScene.webp" />
-            <div id="DotsContainer" ref={dotsContainerRef}>
-                <img id="Dots" src={"/docs/pacman/" + images[imageIndex]} ref={dotsRef} />
+        <div id="pacman-container">   
+            <img id="arcade" src="/docs/pacman/arcade.webp" />
+            <img id="scene" src="/docs/pacman/pacmanScene.webp" />
+            <div id="dots-container" ref={dotsContainerRef}>
+                <img src={"/docs/pacman/" + images[imageIndex]} ref={dotsRef} />
             </div>
         </div>
     );

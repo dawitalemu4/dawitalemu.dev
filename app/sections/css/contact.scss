@@ -1,4 +1,4 @@
-#Contact {  
+#contact {  
     display: flex;
     position: relative;
     width: 99.7vw;
@@ -9,120 +9,88 @@
     background-color: black;
     z-index: 9;
     color: white;
-}
 
-#ContactContainer {
-    display: flex;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+    #contact-header {
+        display: flex;
+        position: relative;
+        width: 100%;
+        height: 30%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
-#ContactHeaderContainer {
-    display: flex;
-    position: relative;
-    width: 100%;
-    height: 30%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+        h1 {
+            text-align: center;
+        }
+    }
 
-#ContactHeader {
-    font-size: 50px;
-    font-family: InterBold;
-    text-align: center;
-}
+    #contact-container {
+        display: flex;
+        position: relative;
+        width: 100%;
+        height: 70%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
-#ContactBodyContainer {
-    display: flex;
-    position: relative;
-    width: 100%;
-    height: 70%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+        #contact-icons {
+            display: flex;
+            position: relative;
+            width: 100%;
+            height: 50%;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
 
-#ContactIconsContainer {
-    display: flex;
-    position: relative;
-    width: 100%;
-    height: 50%;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
+            a {
+                display: flex;
+                position: relative;
+                width: 30%;
+                height: 85%;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: 0.5s;
+                cursor: pointer;
 
-#ContactEmail, #ContactLinkedin, #ContactGitHub {
-    display: flex;
-    position: relative;
-    width: 30%;
-    height: 85%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+                &:hover {
+                    scale: 1.1;
+                }
 
-#ContactEmail:hover, #ContactLinkedin:hover, #ContactGitHub:hover {
-    cursor: pointer;
-    opacity: 0.8;
-}
+                img {
+                    width: 40%;
+                }
+            }
+        }
 
-#EmailIcon { height: 80%; }
+        #contact-arrow-button {
+            display: flex;
+            position: relative;
+            width: 90%;
+            height: 50%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
 
-#LinkedinIcon { height: 65%; }
+            h3 {
+                text-align: center;
+            }
 
-#GitHubIcon { height: 65%; }
+            svg {
+                font-size: 50px;
+                transition: 0.5s;
+                cursor: pointer;
 
-#ContactButtonContainer {
-    display: flex;
-    position: relative;
-    width: 100%;
-    height: 50%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-#ContactButtonText {
-    font-size: 20px;
-    font-family: InterBold;
-    text-align: center;
-}
-
-#ContactButton {
-    display: flex;
-    position: relative;
-    width: 300px;
-    height: 80px;
-    color: white;
-    justify-content: center;
-    align-items: center;
-    font-size: 50px;
-    margin-top: 10px;
-    background-color: black;
-    border: none;
-}
-
-#ContactButton:hover {
-    cursor: pointer;
-    opacity: 0.8;
+                &:hover {
+                    scale: 1.2;
+                }
+            }
+        }
+    }
 }
 
 @media (max-width: 900px) {
-
-    #Contact { height: 92vh; }
-
-    #ContactIconsContainer { flex-direction: column; }
-
-    #ContactEmail, #ContactLinkedin, #ContactGitHub { width: 50%; height: 33%; }
-
-    #EmailIcon, #LinkedinIcon, #GitHubIcon { height: 70%; }
-
-    #ContactButtonContainer { width: 90%; }
-
+    #contact {
+        height: 92vh;
+    }
 }

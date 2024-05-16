@@ -14,13 +14,13 @@ export default function Projects() {
 
     const isContainerVisible = () => {
 
-        const container = document.getElementById("Projects");
+        const container = document.getElementById("projects");
 
         if (!container) return;
 
         const containerRect = container.getBoundingClientRect();
         const targetPosition = containerRect.top;
-        const arrow = document.getElementById("UpContainer");
+        const arrow = document.getElementById("up-arrow");
 
         if (!arrow) return;
 
@@ -42,15 +42,20 @@ export default function Projects() {
     }, []);
 
     return (
-        <div id="Projects">
-            <div id="UpContainer">
-                <div id="Up" onClick={top}><HiArrowNarrowUp /></div>
+        <>
+            <div id="projects">
+                <div id="up-arrow" onClick={top}><HiArrowNarrowUp /></div>
+                <div id="projects-list">
+                    {ProjectsData.map((project: Project) => (
+                        <ProjectSection project={project} />
+                    ))}
+                </div>
             </div>
-            <div id="ProjectsContainer">
-                {ProjectsData.map((project: Project) => (
-                    <ProjectSection project={project} />
-                ))}
-            </div>
-        </div>
+            <style>
+                {`
+                    :root { --projects-height: calc(${ProjectsData.length} * 100vh) }
+                `}
+            </style>
+        </>
     );
 };

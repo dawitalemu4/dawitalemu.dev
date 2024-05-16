@@ -10,5 +10,5 @@ export interface Project {
     code: string;
     github: string;
     siteURL: string;
-    images: string[][];
+    images: string[];
 };

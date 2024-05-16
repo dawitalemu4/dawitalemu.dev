@@ -13,43 +13,27 @@ interface ProjectCardProps {
 };
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ data, setGif, toggleModal }) => (
-    <div id={`Project${data.id}`} key={data.id}>
-        <div id="ProjectLeftContainer">
-            <div id="ProjectImageContainer">
-                <img id="ProjectImage" src={"/gifs/" + data.image} onClick={() => { setGif(`${data.image}`); toggleModal(); }} />
+    <div id={`Project${data.id}`}>
+        <div id="project-image">
+            <img src={"/gifs/" + data.image} onClick={() => { setGif(`${data.image}`); toggleModal(); }} />
+        </div>
+        <div id="project-text-container">
+            <div id="project-header">
+                <h3>{data.header}</h3>
+            </div>
+            <div id="project-paragraph">
+                <p>{data.paragraph}</p>
+            </div> 
+            <div id="project-stack">
+                {data.images.map((image: string) => (
+                    <img src={"/devicons/" + image} />
+                ))}
             </div>
         </div>
-        <div id="ProjectRightContainer">
-            <div id="ProjectParagraphContainer">
-
-                <div id="ProjectHeaderContainer">
-                    <h3 id="ProjectHeader">{data.header}</h3>
-                </div>
-
-                <div id="ProjectTextContainer">
-                    <p id="ProjectParagraph">{data.paragraph}</p>
-                </div> 
-
-                <div id="ProjectStackContainer">
-                    {data.images.map((image: any) => (
-                        <div id="StackIconContainer" key={image.id}>
-                            <img id={image[0]} src={"/devicons/" + image[1]} />
-                        </div>
-                    ))}
-                </div>
-
-            </div>
-            <div id="ProjectIconsContainer">
-                <div id="GithubIconContainer">
-                    <Link id="GithubLink" href={data.github} target="_blank"><VscGithubAlt id="GithubIcon" />Video Demos</Link>
-                </div>
-                <div id="RedirectIconContainer">
-                    <Link id="RedirectLink" href={data.siteURL} target="_blank"><CiShare1 id="RedirectIcon" />View Site</Link>
-                </div>
-                <div id="DocsIconContainer">
-                    <Link id="DocsLink" href={`/docs/#${data.element_id}`}> <IoIosPaper id="DocsIcon" />Docs</Link>
-                </div>
-            </div>
+        <div id="project-links">
+            <a href={data.github} target="_blank"><VscGithubAlt />GitHub</a>
+            <a href={data.siteURL} target="_blank"><CiShare1 />View Site</a>
+            <Link href={`/docs/#${data.element_id}`}> <IoIosPaper />Docs</Link>
         </div>
     </div>
 );

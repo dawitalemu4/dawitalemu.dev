@@ -40,14 +40,14 @@ export default function Yoshi() {
     }, [yoshiRef, eyesRef]);
 
     return (
-        <div id="YoshiContainer">
-            <p id="BubbleText">Refresh and move your mouse around Yoshi to see what happens!</p>
-            <div id="YoshiImgContainer">    
-                <img id="Eyes" src="/docs/yoshi/eyes.webp" ref={eyesRef} />
-                <img id="YoshiImg" src="/docs/yoshi/yoshi.webp" ref={yoshiRef} />
+        <div id="yoshi-container">
+            <p id="bubble-text">Refresh and move your mouse around Yoshi to see what happens!</p>
+            <div id="yoshi-image-container">    
+                <img id="yoshi-eyes" src="/docs/yoshi/eyes.webp" ref={eyesRef} />
+                <img id="yoshi-body" src="/docs/yoshi/yoshi.webp" ref={yoshiRef} />
             </div>        
-            <div id="MouseContainer">
-                <img id="MousePointer" src="/docs/yoshi/pointer.webp" />
+            <div id="mouse-pointer">
+                <img src="/docs/yoshi/pointer.webp" />
             </div>
         </div>
     );

@@ -61,23 +61,26 @@ export default function Projects() {
     }, []);
 
     return (
-        <div id="Projects" ref={projectsContainerRef}>
-            <div id="ProjectsContainer">
-                <div id="ProjectsHeaderContainer">
-                    <h1 id="ProjectsHeader">Projects</h1>
-                    <p id="ProjectsHeaderToggle" onClick={toggleEffect}>Scroll Effect: {effectText}</p>
+        <div id="projects" ref={projectsContainerRef}>
+            <div id="projects-container">
+                <div id="projects-header">
+                    <h1>Projects</h1>
+                    <p onClick={toggleEffect}>Scroll Effect: {effectText}</p>
                 </div>
-                <div id="ProjectsListContainer">
+                <div id="projects-list">
                     {ProjectsData.map((data: Project) => (
                         <ProjectCard data={data} setGif={(image: string) => setGif(image)} toggleModal={toggleModal} />
-                    ))}              
-                </div>                    
-                <div id="MoreContainer">
-                    <p id="More">And More... Browse My <Link id="MoreGitHub" href="https://github.com/dawitalemu4" target="_blank">GitHub</Link> or Visit the <Link id="DocsA" href="/docs">Docs Page for Devs</Link>!</p>
+                    ))}
                 </div>
-                <div id="ModalContainer" style={{ display: showModal ? "flex" : "none" }} onClick={toggleModal}>
-                    <img id="ProjectGif" src={"/gifs/" + gif} onClick={toggleModal} />
-                </div>
+            </div>
+            <div id="docs-link">
+                <p>
+                    And More... Browse My <a id="MoreGitHub" href="https://github.com/dawitalemu4" target="_blank">GitHub</a> or 
+                    Visit the <Link href="/docs">Docs Page for Devs</Link>!
+                </p>
+            </div>
+            <div id="demo-modal" style={{ display: showModal ? "flex" : "none" }} onClick={toggleModal}>
+                <img src={"/gifs/" + gif} />
             </div>
         <style>
             {` 

@@ -1,1 +1,193 @@
+#Portfolio, #DebreTsion, #Misplaced, #TapIn, #UA, #Sonic, #CreatorVerse {
+    display: flex;
+    position: relative;
+    width: 95%;
+    height: calc(100vh - 100px);
+    padding: 50px 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    z-index: 3;
 
+    #project-header {
+        display: flex;
+        position: relative;
+        width: 100%;
+        height: 10%;
+        justify-content: center;
+        align-items: center;
+
+        h1 {
+            text-align: center;
+        }
+    }
+
+    #project-text-container {
+        display: flex;
+        position: relative;
+        width: 100%;
+        height: 75%;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        
+        #project-paragraph-container, #project-code-container {
+            display: flex;
+            position: relative;
+            width: 50%;
+            height: 100%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            .project-text-header {
+                display: flex;
+                position: relative;
+                width: 100%;
+                height: 20%;
+                justify-content: center;
+                align-items: center;
+
+                h2 {
+                    text-align: center;
+                }
+            }
+
+            #project-text {
+                display: flex;
+                position: relative;
+                width: 90%;
+                height: 80%;
+                justify-content: flex-start;
+                align-items: flex-start;
+
+                p {
+                    font-size: 15px;
+                    font-family: Inter;
+                    text-align: left;
+                    margin-top: 2%;
+                    padding-right: 2%;
+                    overflow-y: scroll;
+
+                    &::-webkit-scrollbar {
+                        width: 5px;
+                        background-color: transparent;
+                    }
+
+                    &::-webkit-scrollbar-thumb {
+                        background-color: white;
+                        border-radius: 10px;
+                    }
+                }
+            }
+
+            #project-code {
+                display: flex;
+                position: relative;
+                width: 100%;
+                height: 70%;
+                margin-bottom: 10%;
+                justify-content: flex-start;
+                align-items: flex-start;
+                overflow: scroll;
+                font-size: 11px;
+                background-color: #1d1f21;
+
+                &::-webkit-scrollbar {
+                    width: 5px;
+                    height: 5px;
+                    background-color: transparent;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background-color: white;
+                    border-radius: 10px;
+                }
+            }
+        }
+    }
+
+    #project-icons-container {
+        display: flex;
+        position: relative;
+        width: 100%;
+        height: 15%;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        #project-links {
+            display: flex;
+            position: relative;
+            width: 50%;
+            height: 100%;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+
+            a {
+                display: flex;
+                position: relative;
+                width: 20%;
+                height: 100%;
+                margin: 0 5%;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                font-size: 12px;
+                font-family: Inter;
+                text-align: center;
+                transition: 0.3s;
+                gap: 3px;
+
+                &:hover { scale: 1.05; }
+
+                svg {
+                    font-size: 45px;
+                }
+            }
+        }
+
+        #project-stack {
+            display: flex;
+            position: relative;
+            width: 50%;
+            height: 100%;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                height: 70%;
+                margin-left: 3px;
+                margin-right: 3px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+
+    #project-header { font-size: 34px; }
+
+    #project-text-container {
+        flex-direction: column;
+
+        #project-paragraph-container, #project-code-container {
+            width: 100%;
+            height: 40%;
+
+            .project-text-header { font-size: 25px; }
+
+            #project-text { width: 100%; }
+
+            #project-code { width: 100%; }
+        }
+    }
+
+    #project-stack img {
+        height: 40%;
+    }
+}

@@ -1,19 +1,19 @@
 import { HeroOption, Project } from '../utils/types';
 
 export const HeroData: HeroOption[] = [
-    { element_id: 'Portfolio', title: 'Portfolio' },
-    { element_id: 'DebreTsion', title: 'Debre Tsion Church' },
-    { element_id: 'Misplaced', title: 'Misplaced' },
-    { element_id: 'TapIn', title: "Let's Tap In" },
-    { element_id: 'UA', title: 'Urban Alliance' },
-    { element_id: 'Sonic', title: '2D Sonic Platformer' },
-    { element_id: 'CreatorVerse', title: 'CreatorVerse' }
+    { element_id: "Portfolio", title: "Portfolio" },
+    { element_id: "DebreTsion", title: "Debre Tsion Church" },
+    { element_id: "Misplaced", title: "Misplaced" },
+    { element_id: "TapIn", title: "Let's Tap In" },
+    { element_id: "UA", title: "Urban Alliance" },
+    { element_id: "Sonic", title: "2D Sonic Platformer" },
+    { element_id: "CreatorVerse", title: "CreatorVerse" }
 ];
 
 export const ProjectsData: Project[] = [
     {
-        divID: 'Portfolio',
-        header: 'Portfolio',
+        divID: "Portfolio",
+        header: "Portfolio",
         paragraph: "Thought the parallax effect was cool? Here's the code for the effect on the projects section!  Even though this function is almost the same as the other functions in the other sections, this one has an on and off button to toggle the effect. In short, I took the height of the div and the top, the scroll position of the user, and calculated the % of where their scroll position is on the div. I also offset the top a bit for timing reasons, as it would start counting the % immediately as the top of the div showed up on the screen, but the effect is cooler when you can see it happening😹. Why I'm using this component's parallax function is, because believe it or not, I spent 20 minutes or so confused why 'if (effectToggle === true)' wouldn't display 'On', until I tried false like how it is now. Don't ask me why it works. (jk)",
         code: `// Project.tsx
 const [projectScrollHeight, setProjectScrollHeight] = useState('0%');
@@ -64,17 +64,17 @@ useEffect(() => {
         ...
     )
 ...`,
-        github: 'https://github.com/dawitalemu4/portfolio',
-        siteURL: '/',
+        github: "https://github.com/dawitalemu4/portfolio",
+        siteURL: "/",
         images: [
-            ['StackIcon', 'react.webp'],
-            ['StackIcon', 'next.webp'],
-            ['StackIconTS', 'ts.webp']
+            "react.webp",
+            "next.webp",
+            "ts.webp"
         ]
     },
     {
-        divID: 'DebreTsion',
-        header: 'Debre Tsion Church',
+        divID: "DebreTsion",
+        header: "Debre Tsion Church",
         paragraph: "This component is one of my favorites because the UI that this code creates feels amazing to me.  The typescript basically fetches the images from my firebase db and has a function that makes any image clicked on become a modal. What made this challenging was figuring out how to make an image that was clicked on become the image in the modal, as the image on the modal would default to the latest image that was fetched. How I solved this was by running another for loop to pick up the specific image that was clicked on as url and made the selectedImage prop = url when the image is clicked on. I know this can be optimized, but I had other things to get to, and plan to get back to it when I learn how to optimize it.",
         code: `// GalleryBody.ts
 export class GalleryBody implements OnInit {
@@ -130,18 +130,18 @@ html:
     </div>
 */
 ...`,
-        github: 'https://github.com/DebreTsionWeb/debretsion.org',
-        siteURL: 'https://debretsion.org/en',
+        github: "https://github.com/DebreTsionWeb/debretsion.org",
+        siteURL: "https://debretsion.org/en",
         images: [
-            ['StackIcon', 'angular.webp'],
-            ['StackIcon', 'firebase.webp'],
-            ['StackIcon', 'gcp.webp'],
-            ['StackIconTS', 'ts.webp']
+            "angular.webp",
+            "firebase.webp",
+            "gcp.webp",
+            "ts.webp"
         ]
     },
     {
-        divID: 'Misplaced',
-        header: 'Misplaced',
+        divID: "Misplaced",
+        header: "Misplaced",
         paragraph: "This code block creates one of my favorite features on this app, which is previewing what their post will look like while they're typing in the form's input boxes! I know it looks weird, it's React Native, but I utilized useState and updated the state of each text variable's text every time the input box's input changed. Then I used the variable that is being changed as the inner text of the tag in the preview, creating a constant update to the preview's text!",
         code: `// PostForm.jsx
 const [Price, setPrice] = useState('');
@@ -192,18 +192,18 @@ jsx:
     />
 ...
 `,
-        github: 'https://github.com/misplaced-dev/misplaced.app',
-        siteURL: 'https://misplaced.app',
+        github: "https://github.com/misplaced-dev/misplaced.app",
+        siteURL: "https://misplaced.app",
         images: [
-            ['StackIcon', 'react.webp'],
-            ['StackIcon', 'expo.webp'],
-            ['StackIcon', 'mongo.webp'],
-            ['StackIcon', 'node.webp'],
-            ['StackIconJS', 'js.webp']
+            "react.webp",
+            "expo.webp",
+            "mongo.webp",
+            "node.webp",
+            "js.webp"
         ]
     },
     {
-        divID: 'TapIn',
+        divID: "TapIn",
         header: "Let's Tap In",
         paragraph: "Okay. I know I used a package, but I didn't copy and paste this code, and the docs weren't super easy for me to understand, making it a challenge for me when I was at this point of my coding journey. This code snippet takes the main color from an image (the image of the card that was clicked) and then creates a color for a background and a color for an accent (text color, etc.) that can be used on the page of the card that was clicked. In another component not in this code snippet, I take the values of these two variables and use them as a gradient in the CSS, making whatever color the background is a cool gradient matching up with the main color of the image!",
         code: `// Background.tsx
@@ -246,17 +246,17 @@ const Background: React.FC<BackgroundProps> = ({ getBackgroundColor, getAccentCo
         </div>
     );
 };`,
-        github: 'https://github.com/dawitalemu4/TapInWebPage',
-        siteURL: 'https://letsalltapin.vercel.app',
+        github: "https://github.com/dawitalemu4/TapInWebPage",
+        siteURL: "https://letsalltapin.vercel.app",
         images: [
-            ['StackIcon', 'react.webp'],
-            ['StackIcon', 'next.webp'],
-            ['StackIconTS', 'ts.webp']
+            "react.webp",
+            "next.webp",
+            "ts.webp"
         ]
     },
     {
-        divID: 'UA',
-        header: 'Urban Alliance',
+        divID: "UA",
+        header: "Urban Alliance",
         paragraph: "Since this project had no backend or any difficult frontend components, I chose this code snippet where I decided to follow the DRY (Don't Repeat Yourself) rule and use a map function to make the 9 different course cards instead of hard coding each one. I created a variable that has key : value pairs so that in the map function, I could just call the key to get the value!",
         code: `// Courses.jsx
 const courses = [
@@ -299,17 +299,17 @@ return (
         ))}
     </div>
 );`,
-        github: 'https://github.com/EduCoGroup/educogroup.org',
-        siteURL: 'https://educogroup.vercel.app',
+        github: "https://github.com/EduCoGroup/educogroup.org",
+        siteURL: "https://educogroup.vercel.app",
         images: [
-            ['StackIcon', 'react.webp'],
-            ['StackIcon', 'gatsby.webp'],
-            ['StackIconJS', 'js.webp']
+            "react.webp",
+            "gatsby.webp",
+            "js.webp"
         ]
     },
     {
-        divID: 'Sonic',
-        header: '2D Sonic Platformer',
+        divID: "Sonic",
+        header: "2D Sonic Platformer",
         paragraph: "This C# script contains logic for sonic's speed, jump force, movement state, and whether he should be able to jump depending on if he isn't colliding with the ground properly/currently. This was the most challenging script for me because I liked the fast refreshes from web development, but every time I wanted to test if the new value I inserted was good or not, I had to manually stop the game and run it again. Jokes aside, the UnityEngine has a lot of functions doing all of the heavy lifting, but getting the syntax correct was harder for me as I was newer to coding when I was working on this project.",
         code: `// PlayerMovement.cs
 using UnityEngine;
@@ -372,16 +372,16 @@ public class PlayerMovement : MonoBehaviour {
         return Physics2D.BoxCast( coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround );
     }
 }`,
-        github: 'https://github.com/dawitalemu4/sonic',
-        siteURL: 'https://github.com/dawitalemu4/sonic',
+        github: "https://github.com/dawitalemu4/sonic",
+        siteURL: "https://github.com/dawitalemu4/sonic",
         images: [
-            ['StackIcon', 'c.webp'],
-            ['StackIcon', 'unity.webp']
+            "c.webp",
+            "unity.webp"
         ]
     },
     {
-        divID: 'CreatorVerse',
-        header: 'CreatorVerse',
+        divID: "CreatorVerse",
+        header: "CreatorVerse",
         paragraph: "I chose this code snippet because of its funny story. I was pair programming with a friend to help him learn React, and this component wasn't working for about 30 minutes and we couldn't figure out why. We eventually figured out [id] shouldn't be in the end of the useEffect because the id doesn't change on this page, meaning useEffect wouldn't work as intended. Other than that, this was the first full-stack website I built in less than a day!",
         code: `// ShowCreators.jsx
 export default function ShowCreators() {
@@ -408,12 +408,12 @@ export default function ShowCreators() {
         
     }, []); /*<- Bad code was [id]*/
 ...`,
-        github: 'https://github.com/dawitalemu4/CodePath103PreWork',
-        siteURL: 'https://creatorverse-da.vercel.app',
+        github: "https://github.com/dawitalemu4/CodePath103PreWork",
+        siteURL: "https://creatorverse-da.vercel.app",
         images: [
-            ['StackIcon', 'react.webp'],
-            ['StackIcon', 'supabase.webp'],
-            ['StackIconJS', 'js.webp']
+            "react.webp",
+            "supabase.webp",
+            "js.webp"
         ]
     },
 ];

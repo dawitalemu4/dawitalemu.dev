@@ -1,11 +1,11 @@
-@keyframes updown {
+@keyframes bounce {
     0% { top: 0; }
     25% { top: -200px; }
     75% { top: 200px; }
     100% { top: 0; }
 }
 
-#YoshiContainer {
+#yoshi-container {
     display: flex;
     position: relative;
     width: 100%;
@@ -13,66 +13,65 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-}
 
-#BubbleText {
-    display: flex;
-    position: absolute;
-    top: 10%;
-    font-size: 20px;
-    text-align: center;
-    color: white;
-}
+    #bubble-text {
+        display: flex;
+        position: absolute;
+        top: 10%;
+        font-size: 20px;
+        text-align: center;
+        color: white;
+    }
 
-#MouseContainer {
-    display: flex;
-    position: relative;
-    width: 10%;
-    height: 100%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+    #yoshi-image-container {
+        display: flex;
+        position: relative;
+        width: 50%;
+        height: 50%;
+        padding-left: 10%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
-#MousePointer {
-    width: 15px;
-    position: relative;
-    animation: updown 5s ease-in-out infinite;
-}
+        #yoshi-eyes {
+            position: absolute;
+            top: 11%;
+            height: 8%;
+            z-index: 3;
+        }
 
-#YoshiImgContainer {
-    display: flex;
-    position: relative;
-    width: 50%;
-    height: 50%;
-    padding-left: 10%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+        #yoshi-body {
+            position: absolute;
+            height: 100%;
+            z-index: 2;
+        }
+    }
 
-#YoshiImg {
-    position: absolute;
-    height: 100%;
-    z-index: 2;
-}
+    #mouse-pointer {
+        display: flex;
+        position: relative;
+        width: 10%;
+        height: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
-#Eyes {
-    position: absolute;
-    top: 11%;
-    height: 8%;
-    z-index: 3;
+        img {
+            width: 15px;
+            position: relative;
+            animation: bounce 5s ease-in-out infinite;
+        }
+    }
 }
 
 @media (max-width: 1000px) {
 
-    #BubbleText { font-size: 13px; }
-
-    @keyframes updown {
+    @keyframes bounce {
         0% { top: 0; }
         25% { top: -100px; }
         75% { top: 100px; }
         100% { top: 0; }
     }
 
+    #bubble-text { font-size: 13px; }
 }

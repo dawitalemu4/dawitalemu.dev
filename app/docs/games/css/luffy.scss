@@ -1,4 +1,4 @@
-#LuffyContainer {
+#luffy-container {
     display: flex;
     position: relative;
     width: 100%;
@@ -6,29 +6,29 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-}
 
-#LuffyImg {
-    height: 90%;
-    cursor: pointer;
-}
+    #luffy-img {
+        height: 90%;
+        cursor: pointer;
+    }
 
-#WarningMessageContainer {
-    display: flex;
-    position: relative;
-    width: 100%;
-    height: 10%;
-    justify-content: center;
-    align-items: center;
-}
+    #luffy-warning-message {
+        display: flex;
+        position: relative;
+        width: 100%;
+        height: 10%;
+        justify-content: center;
+        align-items: center;
 
-#WarningMessage {
-    color: white;
-    text-align: center;
+        p {
+            color: white;
+            text-align: center;
+        }
+    }
 }
 
 @media (max-width: 1000px ) {
 
-    #WarningMessage { font-size: 12px; }
+    #luffy-warning-message p { font-size: 12px; }
 
 }

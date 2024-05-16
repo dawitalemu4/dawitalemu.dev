@@ -11,17 +11,11 @@ export default function Hero() {
 
     const scrollToElement = (elementId: string) => {
 
-        const element = document.getElementById(elementId);
+        const project = document.getElementById(elementId);
 
-        if (element) {
-
-            const elementRect = element.getBoundingClientRect();
-            const viewportHeight = window.innerHeight;
-            const offset = (viewportHeight - elementRect.height) * 0.50;
-            const targetPosition = elementRect.top - offset;
-
+        if (project) {
             window.scrollTo({
-                top: targetPosition,
+                top: project.getBoundingClientRect().top,
                 behavior: "smooth"
             });
         };
@@ -29,13 +23,13 @@ export default function Hero() {
 
     const isContainerVisible = () => {
 
-        const container = document.getElementById("Hero");
+        const container = document.getElementById("hero");
 
         if (!container) return;
 
         const containerRect = container.getBoundingClientRect();
         const targetPosition = containerRect.bottom;
-        const arrow = document.getElementById("BackContainer");
+        const arrow = document.getElementById("back-arrow");
 
         if (!arrow) { return };
 
@@ -48,7 +42,7 @@ export default function Hero() {
     
     const bottom = () => {
 
-        const element = document.getElementById("MiniGames");
+        const element = document.getElementById("mini-games");
 
         if (!element) return;
 
@@ -69,24 +63,20 @@ export default function Hero() {
     }, []);
 
     return (
-        <div id="Hero">
-            <div id="BackContainer">
-                <Link id="Back" href="/"><HiOutlineArrowSmLeft /></Link>
-            </div>
-            <div id="HeroContainer">
-                <div id="HeroHeaderContainer">
-                    <h1 id="HeroHeader">Docs</h1>
-                    <p id="HeroSubHeader">Mini-games at the bottom</p>
-                    <div id="Bottom" onClick={bottom}><HiArrowNarrowDown /></div>
+        <div id="hero">
+            <Link id="back-arrow" href="/"><HiOutlineArrowSmLeft /></Link>
+            <div id="hero-container">
+                <div id="hero-header">
+                    <h1>Docs</h1>
+                    <p>Mini-games at the bottom</p>
+                    <div id="bottom-arrow" onClick={bottom}><HiArrowNarrowDown /></div>
                 </div>
-                <div id="HeroListContainer">
-                    <div id="HeroList">
-                        {HeroData.map((item: HeroOption) => (
-                            <div id="HeroListItemContainer">
-                                <div id="HeroListItem" onClick={() => scrollToElement(`${item.element_id}`)}>{item.title} <IoIosArrowDown /></div>
-                            </div>
-                        ))}
-                    </div>
+                <div id="hero-list">
+                    {HeroData.map((item: HeroOption) => (
+                        <div id="hero-list-item" onClick={() => scrollToElement(`${item.element_id}`)}>
+                            <p>{item.title} <IoIosArrowDown /></p>
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>

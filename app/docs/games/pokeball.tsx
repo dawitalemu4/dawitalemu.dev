@@ -48,13 +48,13 @@ export default function PokeBall() {
     };
 
     return (
-        <div id="PokeBallContainer">
-            <div id="ClickMe">Click Me!</div>
-            <img id="PokeBallGif" src="/docs/pokemon/pokeball.gif" onClick={handlePokeBallClick} />
-            <img id="PikachuJump" src="/docs/pokemon/pikachujump.gif" style={{ display: "none" }} />
-            <img id="PikachuRun" src="/docs/pokemon/pikachurun.gif" style={{ display: "none" }} />
-            <img id="TextBox" src="/docs/pokemon/textbox.gif" style={{ display: "none" }} />
-            <img id="TextStill" src="/docs/pokemon/textstill.webp" style={{ display: "none" }} />
+        <div id="pokeball-container">
+            <div id="pokeball-header">Click Me!</div>
+            <img id="pokeball-gif" src="/docs/pokemon/pokeball.gif" onClick={handlePokeBallClick} />
+            <img id="pikachu-jump" src="/docs/pokemon/pikachujump.gif" style={{ display: "none" }} />
+            <img id="pikachu-run" src="/docs/pokemon/pikachurun.gif" style={{ display: "none" }} />
+            <img id="text-box" src="/docs/pokemon/textbox.gif" style={{ display: "none" }} />
+            <img id="text-still" src="/docs/pokemon/textstill.webp" style={{ display: "none" }} />
         </div>
     );
 };

@@ -9,24 +9,24 @@ import "./css/miniGames.scss";
 export default function MiniGames() { 
 
     return ( 
-        <div id="MiniGames">
-            <div id="MiniGamesContainer">
-                <div id="PacMan">
+        <div id="mini-games">
+            <div id="mini-games-container">
+                <div id="pacman">
                     <PacMan />
                 </div>
-                <div id="PokeBallAndYoshi">
-                    <div id="PokeBall">
+                <div id="pokeball-and-yoshi">
+                    <div id="pokeball">
                         <PokeBall />
                     </div>
-                    <div id="Yoshi">
+                    <div id="yoshi">
                         <Yoshi />
                     </div>
                 </div>
-                <div id="Luffy">
+                <div id="luffy">
                     <Luffy />
                 </div>
-                <div id="PikachuWaveContainer">
-                    <img id="PikachuWave" src="/docs/pokemon/pikachu.gif" />
+                <div id="pikachu-wave">
+                    <img src="/docs/pokemon/pikachu.gif" />
                 </div>
             </div>
         </div>

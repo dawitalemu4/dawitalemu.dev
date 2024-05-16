@@ -1,0 +1,171 @@
+#Project1, #Project2, #Project3, #Project4, #Project5 {
+    display: flex;
+    position: relative;
+    width: 90%;
+    height: 19%;
+    margin-top: 1%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    border-radius: 25px;
+    border: 3px solid #ccc;
+
+    #project-image {
+        display: flex;
+        position: relative;
+        width: 40%;
+        height: 75%;
+        padding: 0 5%;
+        justify-content: center;
+        align-items: center;
+        object-fit: contain;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            object-fit: contain;
+            cursor: pointer;
+        }
+    }
+
+    #project-text-container {
+        display: flex;
+        position: relative;
+        width: 50%;
+        height: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        color: white;
+
+        #project-header {
+            display: flex;
+            position: relative;
+            width: 100%;
+            height: 20%;
+            justify-content: center;
+            align-items: center;
+
+            h3 {
+                font-size: 30px;
+                text-align: center;
+            }
+        }
+
+        #project-paragraph {
+            display: flex;
+            position: relative;
+            width: 100%;
+            height: 40%;
+            margin-top: 2%;
+            margin-bottom: 2%;
+            padding-right: 5px;
+            justify-content: center;
+            align-items: flex-start;
+            overflow-y: scroll;
+
+            &::-webkit-scrollbar {
+                width: 5px;
+                background-color: black;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: white;
+                border-radius: 10px;
+            }
+
+            p {
+                text-align: left;
+            }
+        }
+
+        #project-stack {
+            display: flex;
+            position: relative;
+            width: 100%;
+            height: 25%;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                height: 70%;
+                margin-left: 3px;
+                margin-right: 3px;
+            }
+        }
+    }
+
+    #project-links {
+        display: flex;
+        position: relative;
+        width: 10%;
+        height: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        a {
+            display: flex;
+            position: relative;
+            width: 100%;
+            height: 30%;
+            margin: 3% 0;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 12px;
+            font-family: Inter;
+            text-align: center;
+            transition: 0.3s;
+            gap: 3px;
+
+            &:hover { scale: 1.05; }
+
+            svg {
+                font-size: 45px;
+            }
+        }
+    }
+}
+
+@media (max-width: 900px) { 
+
+    #Project1, #Project2, #Project3, #Project4, #Project5 {
+        width: 95%; 
+        margin-bottom: 3%;
+
+        #project-image {
+            display: none;
+        }
+
+        #project-text-container {
+            width: 90%; 
+            flex-direction: column;
+            align-items: center;
+
+            #project-paragraph {
+                width: 100%; 
+                height: 75%;
+            }
+
+            #project-stack {
+                height: 20%; 
+                margin-top: 5%;
+            }
+        }
+
+        #project-links { 
+            width: 100%; 
+            height: 19%; 
+            margin-bottom: 1%; 
+            flex-direction: row;
+
+            a {
+                width: 33%;
+                height: 100%; 
+            }
+        }
+    }
+}

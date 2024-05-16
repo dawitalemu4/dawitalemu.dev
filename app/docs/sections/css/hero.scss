@@ -1,4 +1,9 @@
-#Hero {
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+#hero {
     display: flex;
     position: relative;
     width: 99.7vw;
@@ -8,154 +13,152 @@
     align-items: center;
     color: white;
     z-index: 1;
-}
 
-@keyframes fadeIn {
-0% { opacity: 0; }
-100% { opacity: 1; }
-}
+    #back-arrow {
+        display: flex;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 50px;
+        justify-content: center;
+        align-items: center;
+        transition: 0.5s;
+        z-index: 2;
 
-#HeroContainer {
-    display: flex;
-    position: relative;
-    width: 90%;
-    height: 100%;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    animation: fadeIn 2s ease-in-out;
-}
+        &:hover {
+            scale: 1.1;
+        }
+    }
 
-#BackContainer {
-    display: flex;
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    width: 50px;
-    height: 50px;
-    justify-content: center;
-    align-items: center;
-    z-index: 2;
-}
+    #hero-container {
+        display: flex;
+        position: relative;
+        width: 90%;
+        height: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        animation: fadeIn 2s ease-in-out;
 
-#Back { font-size: 50px; }
+        #hero-header {
+            display: flex;
+            position: relative;
+            width: 40%;
+            height: 100%;
+            padding-left: 5%;
+            margin-top: -5%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            user-select: none;
 
-#Back:hover { opacity: 0.5;}
+            h1 {
+                font-size: 150px;
+                margin-bottom: 10px;
+            }
 
-#HeroHeaderContainer {
-    display: flex;
-    position: relative;
-    width: 40%;
-    height: 100%;
-    padding-left: 5%;
-    margin-top: -5%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    user-select: none;
-}
+            p {
+                text-align: center;
+                font-family: InterMedium;
+                margin-bottom: 80px;
+            }
 
-#HeroHeader {
-    font-size: 150px;
-    margin-bottom: 10px;
-}
+            #bottom-arrow {
+                display: flex;
+                position: absolute;
+                top: 80%;
+                width: 100%;
+                font-size: 50px;
+                justify-content: center;
+                align-items: center;
+                transition: 0.5s;
+                cursor: pointer;
 
-#HeroSubHeader {
-    text-align: center;
-    font-family: InterMedium;
-    margin-bottom: 80px;
-}
+                &:hover {
+                    scale: 1.1;
+                }
+            }
+        }
 
-#Bottom {
-    display: flex;
-    position: absolute;
-    top: 80%;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    font-size: 50px;
-    cursor: pointer;
-}
+        #hero-list {
+            display: flex;
+            position: relative;
+            width: 60%;
+            height: 100%;
+            padding: 10%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-end;
 
-#Bottom:hover { opacity: 0.5; }
+            #hero-list-item {
+                display: flex;
+                position: relative;
+                width: 75%;
+                height: 90px;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+                border-bottom: 3px solid #ccc;
 
-#HeroListContainer {
-    display: flex;
-    position: relative;
-    width: 60%;
-    height: 100%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
-}
+                p {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 10px;
+                    font-size: 25px;
+                    font-family: InterMedium;
+                    cursor: pointer;
+                    user-select: none;
 
-#HeroList {
-    display: flex;
-    position: relative;
-    width: 90%;
-    height: 90%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+                    &:hover {
+                        opacity: 0.8;
+                    }
+                }
+            }
 
-#HeroListItemContainer {
-    display: flex;
-    position: relative;
-    width: 75%;
-    height: 13%;
-    justify-content: center;
-    align-items: center;
-    border-bottom: 3px solid #ccc;
-}
-
-#HeroListItemContainer:last-child { border-bottom: none; }
-
-#HeroListItem {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
-    font-size: 25px;
-    font-family: InterMedium;
-    cursor: pointer;
-    user-select: none;
-}
-
-#HeroListItem:hover {
-    opacity: 0.8;
+            #hero-list-item:last-child { border-bottom: none; }
+        }
+    }
 }
 
 @media (max-width: 1000px) {
 
-    #Hero { height: 110vh; }
+    #hero {
+        height: 110vh;
 
-    #HeroContainer { flex-direction: column; }
+        #back-arrow {
+            top: 25px;
+            left: 20px;
+        }
 
-    #BackContainer { top: 25px; left: 20px; }
+        #hero-container {
+            flex-direction: column;
 
-    #HeroHeaderContainer { 
-        width: 100%; 
-        height: 40%; 
-        padding-top: 5%;
-        padding-left: 0;
-        align-items: center;
+            #hero-header { 
+                width: 100%; 
+                height: 40%; 
+                padding-top: 5%;
+                padding-left: 0;
+                align-items: center;
+
+                h1 { 
+                    font-size: 100px;
+                }
+
+                #bottom-arrow {
+                    top: 90%;
+                }
+            }
+
+            #hero-list { 
+                width: 100%; 
+                height: 60%; 
+                align-items: center; 
+                z-index: 3;
+                background-color: black;
+            }
+        }
     }
-
-    #HeroHeader { font-size: 100px; }
-
-    #HeroSubHeader { padding-left: 0; }
-
-    #Bottom { top: 90%; }
-
-    #HeroListContainer { 
-        width: 100%; 
-        height: 60%; 
-        align-items: center; 
-        z-index: 3;
-        background-color: black;
-    }
-
-    #HeroList, #HeroListItemContainer, #HeroListItemContainerBottom { width: 95%; }
-
 }
