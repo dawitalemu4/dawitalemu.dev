@@ -7,14 +7,14 @@ interface ExperienceRowProps {
 };
 
 const ExperienceRow: React.FC<ExperienceRowProps> = ({ row }) => (
-    <div id="SkillRow" key={row.id}>
-        <div id="SkillRowHeaderContainer">
-            <h3 id="SkillHeader">{row.header}</h3>
+    <div id="skill-row">
+        <div id="skill-row-header">
+            <h3>{row.header}</h3>
         </div>
-        <div id="SkillRowContainer">
-            {row.images.map((image: string[], index: number) => (
-                <div id="SkillRowItem" key={index}>
-                    <img id="ItemLogo" src={"/devicons/" + image[0]} />
+        <div id="skill-row-container">
+            {row.images.map((image: string[]) => (
+                <div id="skill-row-item">
+                    <img src={"/devicons/" + image[0]} />
                     {image[1]}
                 </div>
             ))}

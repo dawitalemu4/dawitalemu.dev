@@ -52,24 +52,26 @@ export default function Hero() {
     }, []);
 
     return (
-        <div id="Hero" ref={heroContainerRef}>
-            <div id="HeroContainer">
-                <div id="LeftContainer">
-                    <div id="WhiteTriangleContainer">
-                        <img id="WhiteTriangle" src="whiteTriangle.webp" />
+        <>
+            <div id="hero" ref={heroContainerRef}>
+                <div id="hero-container">
+                    <div id="left-container">
+                        <div id="white-triangle">
+                            <img src="whiteTriangle.webp" />
+                        </div>
                     </div>
-                </div>
-                <div id="RightContainer">
-                    <div id="BlackTriangleContainer">
-                        <img id="BlackTriangle" src="blackTriangle.webp" />
+                    <div id="right-container">
+                        <div id="black-triangle">
+                            <img src="blackTriangle.webp" />
+                        </div>
                     </div>
-                </div>
-                <div id="ArrowContainer">
-                        <div id="Arrow">Scroll Down<HiArrowNarrowDown/></div>
-                </div>                
-                <div id="HeaderContainer">
-                    <p id="HeaderText">Dawit Alemu</p>
-                    <p id="HeaderSubText">Full-Stack Software Engineer</p>
+                    <div id="arrow-container">
+                        <div id="arrow">Scroll Down<HiArrowNarrowDown/></div>
+                    </div>                
+                    <div id="header-container">
+                        <p>Dawit Alemu</p>
+                        <p>Full-Stack Software Engineer</p>
+                    </div>
                 </div>
             </div>
             <style>
@@ -77,6 +79,6 @@ export default function Hero() {
                     :root { --heroScrollHeight: ${heroScrollHeight}; }
                 `}
             </style>
-        </div>
+        </>
     );
 };

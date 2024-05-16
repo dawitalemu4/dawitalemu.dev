@@ -55,22 +55,20 @@ export default function Sidebar() {
     }, [textIndex, texts.length]);
 
     return (
-        <div id="Sidebar">
-            <FaBars id="MenuBars" onClick={toggleMenu} />
-            <div id="SidebarContainer" style={{ right: showMenu ? "0px" : `${rightAmount}`, transition: "right 0.5s ease-in-out" }}>
-                <div id="XContainer">
-                    <IoIosClose id="X" onClick={toggleMenu} />
-                </div>
-                <ul id="SidebarListContainer">
-                    <li onClick={() => handleMenuClick("Hero")}>Home</li>
-                    <li onClick={() => handleMenuClick("Experience")}>Experience</li>
-                    <li onClick={() => handleMenuClick("Projects")}>Projects</li>
-                    <li onClick={() => handleMenuClick("Contact")}>Contact</li>
-                </ul>
-                <div id="DevButtonContainer">
-                    <Link id="DevButton" href="/docs">{texts[textIndex]}</Link>
-                </div>
+        <>
+            <div id="sidebar-open">
+                <FaBars onClick={toggleMenu} />
             </div>
-        </div>
+            <div id="sidebar" style={{ right: showMenu ? "0" : `${rightAmount}` }}>
+                <IoIosClose id="sidebar-close" onClick={toggleMenu} />
+                <ul>
+                    <li onClick={() => handleMenuClick("hero")}>Home</li>
+                    <li onClick={() => handleMenuClick("experience")}>Experience</li>
+                    <li onClick={() => handleMenuClick("projects")}>Projects</li>
+                    <li onClick={() => handleMenuClick("contact")}>Contact</li>
+                </ul>
+                <Link id="sidebar-docs" href="/docs">{texts[textIndex]}</Link>
+            </div>
+        </>
     );
 };

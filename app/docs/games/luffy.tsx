@@ -11,6 +11,7 @@ export default function Luffy() {
         let message: any = document.getElementById("WarningMessage");
         let gameIntervalId: any;
         let startTime: number;
+        if (!message || !gif) return;
 
         const startGame = () => {
 
@@ -77,10 +78,10 @@ export default function Luffy() {
     }, []);
 
     return (
-        <div id="LuffyContainer">
-            <img id="LuffyImg" src="/docs/luffy/luffy.gif" />
-            <div id="WarningMessageContainer">
-                <p id="WarningMessage">Tap left click while luffy is pulling - Don't drag or hold</p>
+        <div id="luffy-container">
+            <img id="luffy-img" src="/docs/luffy/luffy.gif" />
+            <div id="luffy-warning-message">
+                <p>Tap left click while luffy is pulling - Don't drag or hold</p>
             </div>
         </div>
     );

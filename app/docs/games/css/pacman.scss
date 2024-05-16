@@ -1,4 +1,4 @@
-#PacmanContainer {
+#pacman-container {
     display: flex;
     position: absolute;
     top: 5%;
@@ -7,68 +7,68 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
 
-#Arcade {
-    display: flex;
-    position: relative;
-    width: 100%;
-    z-index: 1;
-}
+    #arcade {
+        display: flex;
+        position: relative;
+        width: 100%;
+        z-index: 1;
+    }
 
-#Scene {
-    position: absolute;
-    left: 24.9%;
-    top: 31.5%;
-    width: 42%;
-    height: 42%;
-    border: 50px solid black;
-    z-index: 2;
-}
+    #scene {
+        position: absolute;
+        left: 24.9%;
+        top: 31.5%;
+        width: 42%;
+        height: 42%;
+        border: 50px solid black;
+        z-index: 2;
+    }
 
-#DotsContainer {
-    display: flex;
-    position: absolute;
-    top: 35%;
-    width: 50%;
-    height: 50%;
-    align-items: center;
-    justify-content: center;
-    z-index: 3;
-}
+    #dots-container {
+        display: flex;
+        position: absolute;
+        top: 35%;
+        width: 50%;
+        height: 50%;
+        align-items: center;
+        justify-content: center;
+        z-index: 3;
 
-#Dots {
-    position: absolute;
-    top: 0;
-    width: 7%;
-    z-index: 3;
+        img {
+            position: absolute;
+            top: 0;
+            width: 7%;
+            z-index: 3;
+        }
+    }
 }
 
 @media (max-width: 900px) {
 
-    #PacmanContainer {
+    #pacman-container {
         width: 100%;
         left: 0;
-    }
 
-    #DotsContainer {
-        top: 31.5%;
-        width: 50%;
-        height: 54.3%;
-    }
+        #scene {
+            border: 0px;
+        }
 
-    #Scene {
-        border: 0px;
-    }
+        #dots-container {
+            top: 31.5%;
+            width: 50%;
+            height: 54.3%;
 
-    #Dots{
-        bottom: 37%;
-    }   
+            img {
+                bottom: 37%;
+            }
+        }
+    }
 }
 
 @media (min-width: 1650px) {
 
-    #DotsContainer {
+    #dots-container {
         top: 34%;
     }
 }

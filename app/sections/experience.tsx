@@ -1,6 +1,5 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
-import Link from "next/link";
 import ExperienceRow from "../components/experienceRow";
 import { ExperienceData } from "../utils/data";
 import { IconRow } from "../utils/types";
@@ -42,23 +41,23 @@ export default function Experience() {
     }, []);
 
     return (
-        <div id="Experience" ref={experienceContainerRef}>
-            <div id="ExperienceContainer">
-                <div id="ExperienceHeaderContainer">
-                    <h1 id="ExperienceHeader">Experience && Skills</h1>
+        <>
+            <div id="experience" ref={experienceContainerRef}>
+                <div id="experience-header">
+                    <h1>Experience && Skills</h1>
                 </div>
-                <div id="ExperienceAndSkillsContainer">
-                    <div id="ExperienceParagraphContainer">
-                        <p id="ExperienceParagraph">
+                <div id="experience-container">
+                    <div id="experience-paragraph">
+                        <p>
                             In Fall 2023 and Spring 2024, I interned at Baltimore Life Insurance as a Front End Software Engineer on the Platform Team implementing my redesign of the home page for the Internal Agent Portal using React, which has now gone into prod.
                             <br/><br/>
                             <b>Keep scrolling</b> for more in-depth information about some of my works!
                             <br/><br/>
-                            <Link id="ResumeLink" href="https://docs.google.com/document/d/1VA2JjizgZaup8Hw1dX10K6-6aRnEW3wpa1yVvscN2H4/edit?usp=sharing" target="_blank">Click me to view Dawit"s resume!</Link>
+                            <a href="https://docs.google.com/document/d/1VA2JjizgZaup8Hw1dX10K6-6aRnEW3wpa1yVvscN2H4/edit?usp=sharing" target="_blank"><b>Click me to view Dawit's resume!</b></a>
                         </p>
                     </div>
-                    <div id="SkillsContainer">
-                        <div id="SkillsRowContainer">
+                    <div id="skills-container">
+                        <div id="skills-row-container">
                             {ExperienceData.map((row: IconRow) => (
                                 <ExperienceRow row={row} />
                             ))}
@@ -71,6 +70,6 @@ export default function Experience() {
                     :root { --experienceScrollHeight: ${experienceScrollHeight}; }
                 `}
             </style>
-        </div>
+        </>
     );
 };

@@ -8,7 +8,7 @@ export interface Project {
     id: number;
     header: string;
     paragraph: string;
-    images: string[][];
+    images: string[];
     github: string;
     siteURL: string;
     element_id: string;

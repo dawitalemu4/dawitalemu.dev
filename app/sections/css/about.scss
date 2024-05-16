@@ -1,4 +1,4 @@
-#About {
+#about {
     display: flex;
     position: relative;
     width: 99.7vw;
@@ -9,102 +9,108 @@
     background-color: white;
     overflow: hidden;
     z-index: 6;
-}
 
-#AboutContainer {
-    display: flex;
-    position: relative;
-    width: 90%;
-    height: 100%;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;
-}
+    #about-container {
+        display: flex;
+        position: relative;
+        width: 90%;
+        height: 100%;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
 
-#AboutParagraphContainer {
-    display: flex;
-    position: relative;
-    width: 90%;
-    height: 40%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow-y: scroll;
-}
+        #about-paragraph {
+            display: flex;
+            position: relative;
+            width: 90%;
+            height: 40%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow-y: scroll;
 
-#AboutParagraphContainer::-webkit-scrollbar {
-    width: 5px;
-    background-color: transparent;
-}
+            &::-webkit-scrollbar {
+                width: 5px;
+                background-color: transparent;
+            }
 
-#AboutParagraphContainer::-webkit-scrollbar-thumb {
-    background-color: #ccc;
-    border-radius: 10px;
-}
+            &::-webkit-scrollbar-thumb {
+                background-color: #ccc;
+                border-radius: 10px;
+            }
 
-#AboutParagraph {
-    font-family: InterMedium;
-    font-size: 26px;
-    color: black;
-}
+            p {
+                font-size: 26px;
+                color: black;
+                font-family: InterMedium;
+            }
+        }
 
-#AboutImageContainer {
-    display: flex;
-    position: relative;
-    width: 50%;
-    height: 40%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+        #about-image {
+            display: flex;
+            position: relative;
+            width: 50%;
+            height: 40%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
 
-#AboutImage {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
 
-#AboutTitleContainer {
-    display: flex;
-    position: absolute;
-    top: 30%;
-    width: 100%;
-    height: 20%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 7;
-}
+        #about-title {
+            display: flex;
+            position: absolute;
+            top: 30%;
+            width: 100%;
+            height: 20%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 7;
 
-#AboutTitle {
-    color: black;
-    font-family: InterSemi;
-    font-size: calc(400 * var(--aboutScrollHeight));
-    transform: translateY(calc(0.1 * var(--aboutScrollHeight))) translateX(calc(-1 * (0.09 * var(--aboutScrollHeight))));
+            h1 {
+                color: black;
+                font-family: InterSemi;
+                font-size: calc(400 * var(--aboutScrollHeight));
+                transform: translateY(calc(0.1 * var(--aboutScrollHeight))) translateX(calc(-1 * (0.09 * var(--aboutScrollHeight))));
+            }
+        }
+    }
 }
-
+   
 @media (max-width: 1000px) {
 
-    #AboutContainer { 
+    #about-container { 
         flex-direction: column; 
         justify-content: flex-start; 
         align-items: center; 
-    }
 
-    #AboutParagraphContainer { 
-        width: 95%;
-        height: 21%;
-        text-align: center;
-    }
+        #about-paragraph { 
+            width: 95%;
+            height: 21%;
+            text-align: center;
+            
+            p { font-size: 20px; }
+        }
 
-    #AboutParagraph { font-size: 20px; }
+        #about-image {
+            width: 100%; 
+            height: 20%;
 
-    #AboutImageContainer { width: 100%; height: 20%; }
+            img {
+                width: 70%; 
+                height: 70%;
+            }
+        }
 
-    #AboutImage { width: 70%; height: 70%; }
-
-    #AboutTitle {
-        font-size: calc(300 * var(--aboutScrollHeight));
-        transform: translateY(calc(0.4 * var(--aboutScrollHeight))) translateX(calc(-1 * (0.1 * var(--aboutScrollHeight))));
+        #about-title h1 {
+            font-size: calc(300 * var(--aboutScrollHeight));
+            transform: translateY(calc(0.4 * var(--aboutScrollHeight))) translateX(calc(-1 * (0.1 * var(--aboutScrollHeight))));
+        }
     }
 }
