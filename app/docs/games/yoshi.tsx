@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useRef } from "react";
+import "./css/yoshi.scss";
 
 export default function Yoshi() {
 
@@ -48,91 +49,6 @@ export default function Yoshi() {
             <div id="MouseContainer">
                 <img id="MousePointer" src="/docs/yoshi/pointer.webp" />
             </div>
-        <style>
-            {`
-
-                @keyframes updown {
-                    0% { top: 0; }
-                    25% { top: -200px; }
-                    75% { top: 200px; }
-                    100% { top: 0; }
-                }
-
-                #YoshiContainer {
-                    display: flex;
-                    position: relative;
-                    width: 100%;
-                    height: 100%;
-                    flex-direction: row;
-                    justify-content: center;
-                    align-items: center;
-                }
-                
-                #BubbleText {
-                    display: flex;
-                    position: absolute;
-                    top: 10%;
-                    font-size: 20px;
-                    text-align: center;
-                    color: white;
-                }
-
-                #MouseContainer {
-                    display: flex;
-                    position: relative;
-                    width: 10%;
-                    height: 100%;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                }
-
-                #MousePointer {
-                    width: 15px;
-                    position: relative;
-                    animation: updown 5s ease-in-out infinite;
-                }
-
-                #YoshiImgContainer {
-                    display: flex;
-                    position: relative;
-                    width: 50%;
-                    height: 50%;
-                    padding-left: 10%;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                }
-
-                #YoshiImg {
-                    position: absolute;
-                    width: 80%;
-                    height: 100%;
-                    z-index: 2;
-                }
-
-                #Eyes {
-                    position: absolute;
-                    top: 10%;
-                    width: 16%;
-                    height: 8%;
-                    z-index: 3;
-                }
-
-                @media (max-width: 1000px) {
-
-                    #BubbleText { font-size: 13px; }
-
-                    @keyframes updown {
-                        0% { top: 0; }
-                        25% { top: -100px; }
-                        75% { top: 100px; }
-                        100% { top: 0; }
-                    }
-
-                }
-            `}
-        </style>
         </div>
     );
 };

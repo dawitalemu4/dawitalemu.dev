@@ -1,9 +1,10 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import ExperienceRow from "../components/experienceRow";
 import { ExperienceData } from "../utils/data";
 import { IconRow } from "../utils/types";
-import ExperienceRow from "../components/experienceRow";
+import "./css/experience.scss";
 
 export default function Experience() {
 
@@ -44,7 +45,7 @@ export default function Experience() {
         <div id="Experience" ref={experienceContainerRef}>
             <div id="ExperienceContainer">
                 <div id="ExperienceHeaderContainer">
-                    <p id="ExperienceHeader">Experience && Skills</p>
+                    <h1 id="ExperienceHeader">Experience && Skills</h1>
                 </div>
                 <div id="ExperienceAndSkillsContainer">
                     <div id="ExperienceParagraphContainer">
@@ -65,193 +66,11 @@ export default function Experience() {
                     </div>
                 </div>
             </div>
-        <style>
-            {` 
-
-                :root { --experienceScrollHeight: ${experienceScrollHeight}; }
-
-                #Experience {
-                    display: flex;
-                    position: relative;
-                    width: 99.7vw;
-                    height: 130vh;
-                    padding-top: 2vh;
-                    padding-bottom: 5vh;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                    background-color: black;
-                    overflow: hidden;
-                    z-index: 7;
-                    color: white;
-                }
-
-                #ExperienceContainer {
-                    display: flex;
-                    position: relative;
-                    width: 100%;
-                    height: 100%;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                }
-
-                #ExperienceHeaderContainer {
-                    display: flex;
-                    position: relative;
-                    width: 100%;
-                    height: 15%;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                }
-
-                #ExperienceHeader {
-                    font-size: 50px;
-                    font-family: InterBold;
-                }
-
-                #ExperienceAndSkillsContainer {
-                    display: flex;
-                    position: relative;
-                    width: 100%;
-                    height: 85%;
-                    flex-direction: row;
-                    justify-content: space-evenly;
-                    align-items: center;
-                }
-
-                #ExperienceParagraphContainer {
-                    display: flex;
-                    position: relative;
-                    width: 40%;
-                    height: 100%;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                    overflow-y: scroll;
-                }
-
-                #ExperienceParagraphContainer::-webkit-scrollbar { 
-                    width: 5px;
-                    background-color: black;
-                }
-
-                #ExperienceParagraphContainer::-webkit-scrollbar-thumb {
-                    background-color: white;
-                    border-radius: 10px;
-                }
-
-                #ExperienceParagraph {
-                    font-family: Inter;
-                    font-size: 20px;
-                }
-
-                #SkillsContainer {
-                    display: flex;
-                    position: relative;
-                    width: 50%;
-                    height: 100%;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                }
-
-                #SkillsRowContainer {
-                    display: flex;
-                    position: relative;
-                    width: 100%;
-                    height: 100%;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                }
-
-                #SkillRow {
-                    display: flex;
-                    position: relative;
-                    width: 100%;
-                    height: 50%;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                }
-
-                #SkillRowHeaderContainer {
-                    display: flex;
-                    position: relative;
-                    width: 100%;
-                    height: 15%;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                }
-
-                #SkillHeader {
-                    font-size: 20px;
-                    text-align: center;
-                    font-family: InterSemi;
-                }
-
-                #SkillRowContainer {
-                    display: grid;
-                    position: relative;
-                    width: 100%;
-                    height: 85%;
-                    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-                    justify-content: center;
-                    align-items: flex-start;
-                }
-
-                #SkillRowItem {
-                    display: flex;
-                    position: relative;
-                    height: 50%;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                    object-fit: contain;
-                    text-align: center;
-                    font-family: Inter;
-                    transform: translateY(calc(0.7 * var(--experienceScrollHeight)));
-                }
-
-                #ItemLogo {
-                    width: 85px;
-                    height: 85px;
-                    margin-bottom: 10px;
-                }
-
-                #ItemLogo:hover { transform: scale(1.1); }
-
-                #ResumeLink { font-size: 22px; font-family: InterSemi; text-decoration: underline; }
-
-                @media (max-width: 1000px) {
-                    
-                    #Experience { height: 170vh; }
-
-                    #ExperienceHeaderContainer { width: 90%;  }
-
-                    #ExperienceHeader { font-size: 51px; text-align: center; }
-
-                    #ExperienceAndSkillsContainer { flex-direction: column; justify-content: flex-start; }
-
-                    #ExperienceParagraphContainer { width: 95%; height: 45%; margin-bottom: 5vh; }
-
-                    #ExperienceParagraph { font-size: 16px; text-align: center; }
-
-                    #SkillsContainer { width: 90%; height: 50%; }
-
-                    #SkillsHeader{ font-size: 18px; }
-
-                    #SkillsRowItem { font-size: 11px; margin-top: -10px; }
-                    
-                    #ItemLogo { width: 60px; height: 60px; padding: 0px 3px; }
-
-                    #ResumeLink { font-size: 18px; }
-                }
-            `}
-        </style>
+            <style>
+                {` 
+                    :root { --experienceScrollHeight: ${experienceScrollHeight}; }
+                `}
+            </style>
         </div>
     );
 };

@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import { HiArrowNarrowDown } from "react-icons/hi";
+import "./css/hero.scss";
 
 export default function Hero() {
 
@@ -71,136 +72,11 @@ export default function Hero() {
                     <p id="HeaderSubText">Full-Stack Software Engineer</p>
                 </div>
             </div>
-        <style>
-            {`
-
-                :root { --heroScrollHeight: ${heroScrollHeight}; }
-
-                #Hero {
-                    display: flex;
-                    position: relative;
-                    width: 99.7vw;
-                    height: 160vh;
-                    justify-content: center;
-                    align-items: center;
-                    background-color: #171717;
-                    z-index: 5;
-                    user-select: none;
-                }
-
-                #HeroContainer {
-                    display: flex;
-                    position: fixed;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                }
-
-                #LeftContainer, #RightContainer {
-                    display: flex;
-                    position: absolute;
-                    height: 100%;
-                    width: 100%;
-                    background-color: transparent;
-                    z-index: 3;
-                }
-
-                #LeftContainer { left: calc(0.1% - var(--heroScrollHeight)); }
-
-                #RightContainer { right: calc(0.1% - var(--heroScrollHeight)); }
-
-                #WhiteTriangleContainer, #BlackTriangleContainer {
-                    display: flex;
-                    position: fixed;
-                    top: 0;
-                    height: 100vh;
-                    width: 105vw;
-                }
-
-                #BlackTriangle, #WhiteTriangle {
-                    height: 100%;
-                    width: 100%;
-                }
-
-                #HeaderContainer {
-                    display: flex;
-                    position: absolute;
-                    width: 100%;
-                    height: 100%;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                    z-index: 2;
-                    color: white;
-                }
-
-                #HeaderText { 
-                    font-size: 100px; 
-                    font-family: InterBold;
-                    opacity: calc(20% + var(--heroScrollHeight)); 
-                    text-align: center; 
-                }
-
-                #HeaderSubText { 
-                    font-size: 30px; 
-                    font-family: InterSemi;
-                    opacity: calc(20% + var(--heroScrollHeight)); 
-                    text-align: center; 
-                }
-
-                #ArrowContainer {
-                    display: flex;
-                    position: absolute;
-                    left: 5%;
-                    bottom: 5%;
-                    width: 25%;
-                    height: 25%;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                    z-index: 4;
-                    animation: arrow 2s infinite;
-                    overflow: hidden;
-                }
-
-                @keyframes arrow {
-                    0% { transform: translateY(-5px); }
-                    50% { transform: translateY(20px); }
-                    100% { transform: translateY(-5px); }
-                }
-
-                #Arrow { 
-                    display: flex;
-                    position: relative;
-                    justify-content: center;
-                    align-items: center;
-                    flex-direction: column;
-                    font-size: 50px; 
-                    text-align: center;
-                    color: black; 
-                    opacity: calc(70% - var(--heroScrollHeight));
-                }
-
-                @media (max-width: 1000px) {
-
-                    #HeaderText { font-size: 60px; }
-
-                    #HeaderSubText { font-size: 22px; }
-                    
-                    #Arrow { font-size: 30px; }
-
-                    @keyframes arrow {
-                        0% { transform: translateY(0px); }
-                        50% { transform: translateY(10px); }
-                        100% { transform: translateY(0px); }
-                    }
-                }
-            `}
-        </style>
+            <style>
+                {`
+                    :root { --heroScrollHeight: ${heroScrollHeight}; }
+                `}
+            </style>
         </div>
     );
 };

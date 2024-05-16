@@ -4,6 +4,7 @@ import { VscGithubAlt } from "react-icons/vsc";
 import { CiShare1 } from "react-icons/ci";
 import { IoIosPaper } from "react-icons/io";
 import { Project } from "../utils/types";
+import "./css/projectCard.scss";
 
 interface ProjectCardProps {
     data: Project;
@@ -22,7 +23,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ data, setGif, toggleModal }) 
             <div id="ProjectParagraphContainer">
 
                 <div id="ProjectHeaderContainer">
-                    <p id="ProjectHeader">{data.header}</p>
+                    <h3 id="ProjectHeader">{data.header}</h3>
                 </div>
 
                 <div id="ProjectTextContainer">

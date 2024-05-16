@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
+import "./css/pacman.scss";
 
 export default function PacMan() {
     
@@ -72,85 +73,6 @@ export default function PacMan() {
             <div id="DotsContainer" ref={dotsContainerRef}>
                 <img id="Dots" src={"/docs/pacman/" + images[imageIndex]} ref={dotsRef} />
             </div>
-        <style>
-            {`
-
-                #PacmanContainer {
-                    display: flex;
-                    position: absolute;
-                    top: 5%;
-                    left: 10%;
-                    width: 80%;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                }
-
-                #Arcade {
-                    display: flex;
-                    position: relative;
-                    width: 100%;
-                    z-index: 1;
-                }
-
-                #Scene {
-                    position: absolute;
-                    left: 24.9%;
-                    top: 31.5%;
-                    width: 42%;
-                    height: 42%;
-                    border: 50px solid black;
-                    z-index: 2;
-                }
-
-                #DotsContainer {
-                    display: flex;
-                    position: absolute;
-                    top: 35%;
-                    width: 50%;
-                    height: 50%;
-                    align-items: center;
-                    justify-content: center;
-                    z-index: 3;
-                }
-
-                #Dots {
-                    position: absolute;
-                    top: 0;
-                    width: 7%;
-                    z-index: 3;
-                }
-
-                @media (max-width: 900px) {
-
-                    #PacmanContainer {
-                        width: 100%;
-                        left: 0;
-                    }
-
-                    #DotsContainer {
-                        top: 31.5%;
-                        width: 50%;
-                        height: 54.3%;
-                    }
-
-                    #Scene {
-                        border: 0px;
-                    }
-
-                    #Dots{
-                        bottom: 37%;
-                    }   
-                }
-
-                @media (min-width: 1650px) {
-
-                    #DotsContainer {
-                        top: 34%;
-                    }
-                }
-            `}
-        </style>
         </div>
     );
 };
