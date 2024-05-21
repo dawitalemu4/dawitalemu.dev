@@ -1,8 +1,44 @@
 export const ProjectsData = [
     {
-        id: 1, element_id: "DebreTsion", header: "Debre Tsion Church",
+        element_id: "Postwoman", header: "postwoman:~",
+        paragraph: "",
+        icons: [
+        ],
+        github: "https://github.com/dawitalemu4/postwoman",
+        siteURL: "https://postwoman.dev/",
+        image: ""
+    },
+    {
+        element_id: "BL", header: "Baltimore Life Insurance",
+        paragraph: "",
+        icons: [
+        ],
+        github: "",
+        siteURL: "",
+        image: ""
+    },
+    {
+        element_id: "ZERL", header: "ZERL",
+        paragraph: "",
+        icons: [
+        ],
+        github: "",
+        siteURL: "",
+        image: ""
+    },
+    {
+        element_id: "GDA", header: "Genet's Designs",
+        paragraph: "",
+        icons: [
+        ],
+        github: "",
+        siteURL: "",
+        image: ""
+    },
+    {
+        element_id: "DebreTsion", header: "Debre Tsion Church",
         paragraph: "This website was created by 6 devs led by Dawit Alemu to give back to our childhood church. I taught junior devs, managed meetings with church leadership, and received good feedback from teammates and was approved to push to production.",
-        images: [
+        icons: [
             "angular.webp",
             "firebase.webp",
             "gcp.webp",
@@ -13,9 +49,9 @@ export const ProjectsData = [
         image: "DTGif.webp"
     },
     {
-        id: 2, element_id: "Misplaced", header: "Misplaced",
+        element_id: "Misplaced", header: "Misplaced",
         paragraph: "Misplaced is a digitalized lost and found platform for TU students to retrieve lost items by posting information through an intuitive React Native UI and connecting with potential finders. Wrote 100k+ lines of code and was recognized by VP and CIO of Towson University.",
-        images: [
+        icons: [
             "react.webp",
             "expo.webp",
             "mongo.webp",
@@ -27,9 +63,9 @@ export const ProjectsData = [
         image: "MisplacedGif.webp"
     },
     {
-        id: 3, element_id: "TapIn", header: "Let's Tap In, LLC",
+        element_id: "TapIn", header: "Let's Tap In, LLC",
         paragraph: "This static website displays dummy events and allows you to checkout tickets. Led initiative on website performance improvements, collaborated with other senior developers, and received approval to push to production.",
-        images: [
+        icons: [
             "react.webp",
             "next.webp",
             "ts.webp"
@@ -39,9 +75,9 @@ export const ProjectsData = [
         image: "TapGif.webp"
     },
     {
-        id: 4, element_id: "UA", header: "Urban Alliance",
+        element_id: "UA", header: "Urban Alliance",
         paragraph: "This static website was a revamping of a partner companies template-service website. Held meetings with the CEO and Co-Founder to align development with business needs. Sparked the start of the partner companies codebase using GitHub organizations, project-based repos, and protection rules.",
-        images: [
+        icons: [
             "react.webp",
             "gatsby.webp",
             "js.webp"
@@ -51,9 +87,9 @@ export const ProjectsData = [
         image: "UAGif.webp"
     },
     {
-        id: 5, element_id: "Sonic", header: "2D Sonic Platformer",
+        element_id: "Sonic", header: "2D Sonic Platformer",
         paragraph: "A sentimental first project where I decided to take action on my childhood dream to become a 'game maker', and introduced me to the world of software development. Learned physics and animation in game development, and more importantly, how to self teach software development, which brought me where I am now.",
-        images: [
+        icons: [
             "c.webp",
             "unity.webp",
         ],
@@ -75,18 +111,22 @@ export const ExperienceData = [
             ["react.webp", "React"],
             ["angular.webp", "Angular"],
             ["next.webp", "Next.js"],
-            ["remix.webp", "Remix.js"]
+            ["remix.webp", "Remix.js"],
+            ["solid.webp", "Solid.js"],
+            ["htmx.webp", "HTMX"]
         ]
     },
     {
         id: 2,
         header: "Back End Development",
         images: [
-            ["python.webp", "Python"],
             ["java.webp", "Java"],
+            ["python.webp", "Python"],
+            ["go.webp", "Go"],
+            ["spring.webp", "Spring"],
+            ["django.webp", "Django"],
             ["node.webp", "Node.js"],
             ["express.webp", "Express.js"],
-            ["django.webp", "Django"],
             ["gql.webp", "GraphQL"]
         ]
     },
@@ -96,6 +136,8 @@ export const ExperienceData = [
         images: [
             ["psql.webp", "PostgreSQL"],
             ["msql.webp", "MySQL"],
+            ["sqlite.webp", "SQLite"],
+            ["aurora.webp", "Aurora"],
             ["awsrds.webp", "AWS RDS"],
             ["mongo.webp", "MongoDB"],
             ["firebase.webp", "Firebase"],
@@ -107,11 +149,13 @@ export const ExperienceData = [
         header: "Miscellaneous",
         images: [
             ["aws.webp", "AWS"],
-            ["gcp.webp", "Google Cloud"],
+            ["gcp.webp", "GCP"],
+            ["docker.webp", "Docker"],
             ["vi.webp", "Vim"],
             ["bash.webp", "Bash"],
             ["git.webp", "Git"],
-            ["github.webp", "GitHub"]
+            ["github.webp", "GitHub"],
+            ["md.webp", "Markdown"]
         ]
     }
 ];

@@ -85,55 +85,95 @@ export default function Projects() {
         <style>
             {` 
 
-                #Project1 {
+                #project-card:nth-child(1) {
+                    left: ${effectToggle ? "20%" : "0"};
+                    transform: ${effectToggle ? `translateX(calc(-1 * ${projectScrollHeight}))` : "none"};
+                }
+
+                #project-card:nth-child(2) {
+                    right: ${effectToggle ? "30%" : "0"};
+                    transform: ${effectToggle ? `translateX(${projectScrollHeight})` : "none"};
+                }
+
+                #project-card:nth-child(3) {
+                    left: ${effectToggle ? "35%" : "0"};
+                    transform: ${effectToggle ? `translateX(calc(-1 * ${projectScrollHeight}))` : "none"};
+                }
+
+                #project-card:nth-child(4) {
+                    right: ${effectToggle ? "45%" : "0"};
+                    transform: ${effectToggle ? `translateX(${projectScrollHeight})` : "none"};
+                }
+
+                #project-card:nth-child(5) {
                     left: ${effectToggle ? "50%" : "0"};
-                    transform: ${effectToggle ? `translateX(calc(-1.2 * ${projectScrollHeight}))` : "none"};
+                    transform: ${effectToggle ? `translateX(calc(-1 * ${projectScrollHeight}))` : "none"};
                 }
 
-                #Project2 {
+                #project-card:nth-child(6) {
                     right: ${effectToggle ? "60%" : "0"};
-                    transform: ${effectToggle ? `translateX(calc(1.1 * ${projectScrollHeight}))` : "none"};
+                    transform: ${effectToggle ? `translateX(${projectScrollHeight})` : "none"};
                 }
 
-                #Project3 {
-                    left: ${effectToggle ? "70%" : "0"};
-                    transform: ${effectToggle ? `translateX(calc(-1.05 * ${projectScrollHeight}))` : "none"};
+                #project-card:nth-child(7) {
+                    left: ${effectToggle ? "65%" : "0"};
+                    transform: ${effectToggle ? `translateX(calc(-1 * ${projectScrollHeight}))` : "none"};
                 }
 
-                #Project4 {
-                    right: ${effectToggle ? "80%" : "0"};
-                    transform: ${effectToggle ? `translateX(calc(1 * ${projectScrollHeight}))` : "none"};
+                #project-card:nth-child(8) {
+                    right: ${effectToggle ? "75%" : "0"};
+                    transform: ${effectToggle ? `translateX(${projectScrollHeight})` : "none"};
                 }
 
-                #Project5 {
-                    left: ${effectToggle ? "90%" : "0"};
+                #project-card:nth-child(9) {
+                    left: ${effectToggle ? "80%" : "0"};
                     transform: ${effectToggle ? `translateX(calc(-1 * ${projectScrollHeight}))` : "none"};
                 }
 
                 @media (max-width: 900px) {
 
-                    #Project1 {
+                    #project-card:nth-child(1) {
+                        left: ${effectToggle ? "25%" : "0"};
+                        transform: ${effectToggle ? `translateX(calc(-1 * ${projectScrollHeight}))` : "none"};
+                    }
+
+                    #project-card:nth-child(2) {
+                        right: ${effectToggle ? "35%" : "0"};
+                        transform: ${effectToggle ? `translateX(${projectScrollHeight})` : "none"};
+                    }
+
+                    #project-card:nth-child(3) {
+                        left: ${effectToggle ? "40%" : "0"};
+                        transform: ${effectToggle ? `translateX(calc(-1 * ${projectScrollHeight}))` : "none"};
+                    }
+
+                    #project-card:nth-child(4) {
+                        right: ${effectToggle ? "50%" : "0"};
+                        transform: ${effectToggle ? `translateX(${projectScrollHeight})` : "none"};
+                    }
+
+                    #project-card:nth-child(5) {
                         left: ${effectToggle ? "55%" : "0"};
-                        transform: ${effectToggle ? `translateX(calc(-1.2 * ${projectScrollHeight}))` : "none"};
+                        transform: ${effectToggle ? `translateX(calc(-1 * ${projectScrollHeight}))` : "none"};
                     }
 
-                    #Project2 {
+                    #project-card:nth-child(6) {
                         right: ${effectToggle ? "65%" : "0"};
-                        transform: ${effectToggle ? `translateX(calc(1.1 * ${projectScrollHeight}))` : "none"};
+                        transform: ${effectToggle ? `translateX(${projectScrollHeight})` : "none"};
                     }
 
-                    #Project3 {
-                        left: ${effectToggle ? "75%" : "0"};
-                        transform: ${effectToggle ? `translateX(calc(-1.05 * ${projectScrollHeight}))` : "none"};
+                    #project-card:nth-child(7) {
+                        left: ${effectToggle ? "70%" : "0"};
+                        transform: ${effectToggle ? `translateX(calc(-1 * ${projectScrollHeight}))` : "none"};
                     }
 
-                    #Project4 {
-                        right: ${effectToggle ? "85%" : "0"};
-                        transform: ${effectToggle ? `translateX(calc(1 * ${projectScrollHeight}))` : "none"};
+                    #project-card:nth-child(8) {
+                        right: ${effectToggle ? "80%" : "0"};
+                        transform: ${effectToggle ? `translateX(${projectScrollHeight})` : "none"};
                     }
 
-                    #Project5 {
-                        left: ${effectToggle ? "95%" : "0"};
+                    #project-card:nth-child(9) {
+                        left: ${effectToggle ? "85%" : "0"};
                         transform: ${effectToggle ? `translateX(calc(-1 * ${projectScrollHeight}))` : "none"};
                     }
                 }
