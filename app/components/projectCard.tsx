@@ -13,7 +13,7 @@ interface ProjectCardProps {
 };
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ data, setGif, toggleModal }) => (
-    <div id={`Project${data.id}`}>
+    <div id="project-card">
         <div id="project-image">
             <img src={"/gifs/" + data.image} onClick={() => { setGif(`${data.image}`); toggleModal(); }} />
         </div>
@@ -25,8 +25,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ data, setGif, toggleModal }) 
                 <p>{data.paragraph}</p>
             </div> 
             <div id="project-stack">
-                {data.images.map((image: string) => (
-                    <img src={"/devicons/" + image} />
+                {data.icons.map((icon: string) => (
+                    <img src={"/devicons/" + icon} />
                 ))}
             </div>
         </div>

@@ -2,12 +2,12 @@ import { HeroOption, Project } from '../utils/types';
 
 export const HeroData: HeroOption[] = [
     { element_id: "Portfolio", title: "Portfolio" },
-    { element_id: "DebreTsion", title: "Debre Tsion Church" },
+    { element_id: "Postwoman", title: "Postwoman" },
+    { element_id: "ZERL", title: "ZERL" },
+    { element_id: "GDA", title: "GDA" },
     { element_id: "Misplaced", title: "Misplaced" },
     { element_id: "TapIn", title: "Let's Tap In" },
-    { element_id: "UA", title: "Urban Alliance" },
-    { element_id: "Sonic", title: "2D Sonic Platformer" },
-    { element_id: "CreatorVerse", title: "CreatorVerse" }
+    { element_id: "Sonic", title: "2D Sonic Platformer" }
 ];
 
 export const ProjectsData: Project[] = [
@@ -70,6 +70,36 @@ useEffect(() => {
             "react.webp",
             "next.webp",
             "ts.webp"
+        ]
+    },
+    {
+        divID: "Postwoman",
+        header: "",
+        paragraph: "",
+        code: "",
+        github: "",
+        siteURL: "",
+        images: [
+        ]
+    },
+    {
+        divID: "ZERL",
+        header: "",
+        paragraph: "",
+        code: "",
+        github: "",
+        siteURL: "",
+        images: [
+        ]
+    },
+    {
+        divID: "GDA",
+        header: "",
+        paragraph: "",
+        code: "",
+        github: "",
+        siteURL: "",
+        images: [
         ]
     },
     {
@@ -255,59 +285,6 @@ const Background: React.FC<BackgroundProps> = ({ getBackgroundColor, getAccentCo
         ]
     },
     {
-        divID: "UA",
-        header: "Urban Alliance",
-        paragraph: "Since this project had no backend or any difficult frontend components, I chose this code snippet where I decided to follow the DRY (Don't Repeat Yourself) rule and use a map function to make the 9 different course cards instead of hard coding each one. I created a variable that has key : value pairs so that in the map function, I could just call the key to get the value!",
-        code: `// Courses.jsx
-const courses = [
-    {
-        header: "Back End Dev Course", 
-        button: "Access Free Training", 
-        buttonLink: "https://www.educogrouppaths.org/posts/31500319",
-        image: "https://link.to/image.svg",
-        description: "Dummy Text"
-    },
-    {
-        header: "Front End Dev Course", 
-        button: "Access Free Training", 
-        buttonLink: "https://www.educogrouppaths.org/posts/31503037",
-        image: "https://link.to/image.svg",
-        description: "Dummy Text"
-    },
-    ...
-];
-
-return (
-    <div id="CoursesListGrid">
-        {courses.map((course) => (
-            <div key={course.id}> 
-                <div id="Course">
-                    <div id="CourseHeaderContainer">
-                        <p id="CourseHeader">{course.header}</p>
-                    </div>
-                    <div id="CourseImageContainer">
-                        <img id="CourseImage" src={course.image}/>
-                    </div>
-                    <div id="CourseDescriptionContainer">
-                        <p id="CourseDescription">{course.description}</p>
-                    </div>
-                    <div id="CourseButtonContainer">
-                        <Link id="CoursesButton" to={course.buttonLink} target="blank">{course.button}</Link>
-                    </div>
-                </div>
-            </div>
-        ))}
-    </div>
-);`,
-        github: "https://github.com/EduCoGroup/educogroup.org",
-        siteURL: "https://educogroup.vercel.app",
-        images: [
-            "react.webp",
-            "gatsby.webp",
-            "js.webp"
-        ]
-    },
-    {
         divID: "Sonic",
         header: "2D Sonic Platformer",
         paragraph: "This C# script contains logic for sonic's speed, jump force, movement state, and whether he should be able to jump depending on if he isn't colliding with the ground properly/currently. This was the most challenging script for me because I liked the fast refreshes from web development, but every time I wanted to test if the new value I inserted was good or not, I had to manually stop the game and run it again. Jokes aside, the UnityEngine has a lot of functions doing all of the heavy lifting, but getting the syntax correct was harder for me as I was newer to coding when I was working on this project.",
@@ -377,43 +354,6 @@ public class PlayerMovement : MonoBehaviour {
         images: [
             "c.webp",
             "unity.webp"
-        ]
-    },
-    {
-        divID: "CreatorVerse",
-        header: "CreatorVerse",
-        paragraph: "I chose this code snippet because of its funny story. I was pair programming with a friend to help him learn React, and this component wasn't working for about 30 minutes and we couldn't figure out why. We eventually figured out [id] shouldn't be in the end of the useEffect because the id doesn't change on this page, meaning useEffect wouldn't work as intended. Other than that, this was the first full-stack website I built in less than a day!",
-        code: `// ShowCreators.jsx
-export default function ShowCreators() {
-    const [creators, setCreators] = useState([]);
-    
-    useEffect(() => {
-        async function fetchCreators() {
-            try {
-                const { data, error } = await supabase
-                .from('creators')
-                .select('id, name, Youtube, Twitter, Instagram, description, imageURL');
-    
-                if (error) {
-                    console.log('error', error);
-                } else {
-                    setCreators(data);
-                }
-            } catch (error) {
-                console.log('error', error);
-            }
-        }
-    
-        fetchCreators();
-        
-    }, []); /*<- Bad code was [id]*/
-...`,
-        github: "https://github.com/dawitalemu4/CodePath103PreWork",
-        siteURL: "https://creatorverse-da.vercel.app",
-        images: [
-            "react.webp",
-            "supabase.webp",
-            "js.webp"
         ]
     },
 ];

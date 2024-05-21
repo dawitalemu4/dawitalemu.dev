@@ -5,12 +5,11 @@ export interface IconRow {
 };
 
 export interface Project {
-    id: number;
+    element_id: string;
     header: string;
     paragraph: string;
-    images: string[];
+    icons: string[];
     github: string;
     siteURL: string;
-    element_id: string;
     image: string;
 };

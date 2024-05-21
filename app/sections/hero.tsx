@@ -13,7 +13,7 @@ export default function Hero() {
         const heroContainer = heroContainerRef.current;
         if (!heroContainer) return;
 
-        const containerHeight = heroContainer.clientHeight;
+        const containerHeight = heroContainer.clientHeight + 300;
         const containerTop = heroContainer.getBoundingClientRect().top;
         const scrollPosition = window.scrollY;
 
