@@ -25,7 +25,7 @@ export default function Experience() {
             setExperienceScrollHeight("0%");
         } else {
             const maxScroll = containerHeight * 2;
-            const experienceScrollPercentage = Math.min((scrollPosition / maxScroll) * 100, 100);
+            const experienceScrollPercentage = Math.min((scrollPosition / maxScroll) * 90, 100);
             setExperienceScrollHeight(`${experienceScrollPercentage}%`);
         };
     };

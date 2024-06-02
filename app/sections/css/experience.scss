@@ -36,7 +36,8 @@
         #experience-paragraph {
             display: flex;
             position: relative;
-            width: 40%;
+            width: 30%;
+            min-width: calc(90% - 700px);
             height: 100%;
             flex-direction: column;
             justify-content: center;
@@ -70,7 +71,8 @@
         #skills-container {
             display: flex;
             position: relative;
-            width: 50%;
+            width: 60%;
+            max-width: 700px;
             height: 100%;
             flex-direction: column;
             justify-content: center;
@@ -89,8 +91,7 @@
     }
 }
 
-
-@media (max-width: 1350px) {
+@media (max-width: 900px) {
 
     #experience {
         height: 170vh;
@@ -106,6 +107,7 @@
 
         #experience-paragraph { 
             width: 95%;
+            min-width: 95%;
             height: 45%;
             margin-bottom: 5vh;
 
@@ -119,6 +121,7 @@
 
         #skills-container {
             width: 90%;
+            max-width: 90%;
             height: 50%;
         }
     }

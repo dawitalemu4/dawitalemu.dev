@@ -9,15 +9,6 @@ export const ProjectsData = [
         image: ""
     },
     {
-        element_id: "BL", header: "Baltimore Life Insurance",
-        paragraph: "",
-        icons: [
-        ],
-        github: "",
-        siteURL: "",
-        image: ""
-    },
-    {
         element_id: "ZERL", header: "ZERL",
         paragraph: "",
         icons: [
@@ -122,11 +113,11 @@ export const ExperienceData = [
         images: [
             ["java.webp", "Java"],
             ["python.webp", "Python"],
+            ["rust.webp", "Rust"],
             ["go.webp", "Go"],
             ["spring.webp", "Spring"],
+            ["tokio.webp", "Tokio"],
             ["django.webp", "Django"],
-            ["node.webp", "Node.js"],
-            ["express.webp", "Express.js"],
             ["gql.webp", "GraphQL"]
         ]
     },
@@ -136,9 +127,9 @@ export const ExperienceData = [
         images: [
             ["psql.webp", "PostgreSQL"],
             ["msql.webp", "MySQL"],
-            ["sqlite.webp", "SQLite"],
             ["aurora.webp", "Aurora"],
             ["awsrds.webp", "AWS RDS"],
+            ["dynamo.webp", "DynamoDB"],
             ["mongo.webp", "MongoDB"],
             ["firebase.webp", "Firebase"],
             ["supabase.webp", "Supabase"]

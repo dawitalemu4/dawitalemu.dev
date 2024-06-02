@@ -33,7 +33,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ data, setGif, toggleModal }) 
         <div id="project-links">
             <a href={data.github} target="_blank"><VscGithubAlt />GitHub</a>
             <a href={data.siteURL} target="_blank"><CiShare1 />View Site</a>
-            <Link href={`/docs/#${data.element_id}`}> <IoIosPaper />Docs</Link>
+            <a href={`/docs/#${data.element_id}`}> <IoIosPaper />Docs</a>
         </div>
     </div>
 );
