@@ -45,6 +45,18 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+
+            #line1, #line2 {
+                position: absolute;
+                height: 100%;
+                border: 1px solid red;
+            }
+            #line1 {
+                left: 5%;
+            }
+            #line2 {
+                right: 5%;
+            }
         }
     }
 
@@ -89,6 +101,25 @@
             height: 80%;
             object-fit: contain;
             cursor: pointer;
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    
+    #projects {
+
+        #projects-container {
+
+            #projects-header {
+
+                p {
+                    top: -5%;
+                    right: 2%;
+                    padding: 10px;
+                    font-size: 12px;
+                }
+            }
         }
     }
 }

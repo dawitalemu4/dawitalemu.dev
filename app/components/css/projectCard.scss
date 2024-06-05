@@ -11,6 +11,12 @@
     border-radius: 25px;
     border: 3px solid #ccc;
 
+    #line {
+        position: absolute;
+        width: 100%;
+        border: 1px solid red;
+    }
+
     #project-image {
         display: flex;
         position: relative;
@@ -58,10 +64,8 @@
             position: relative;
             width: 100%;
             height: 40%;
-            margin-top: 2%;
-            margin-bottom: 2%;
             padding-right: 5px;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: flex-start;
             overflow-y: scroll;
 
@@ -73,10 +77,6 @@
             &::-webkit-scrollbar-thumb {
                 background-color: white;
                 border-radius: 10px;
-            }
-
-            p {
-                text-align: left;
             }
         }
 
@@ -132,8 +132,7 @@
 
 @media (max-width: 900px) { 
 
-    #Project1, #Project2, #Project3, #Project4, #Project5 {
-        width: 95%; 
+    #project-card {
         margin-bottom: 3%;
 
         #project-image {
@@ -141,30 +140,27 @@
         }
 
         #project-text-container {
-            width: 90%; 
+            width: 75%; 
             flex-direction: column;
-            align-items: center;
+            align-items: flex-end;
 
             #project-paragraph {
-                width: 100%; 
-                height: 75%;
+                width: 90%; 
+                height: 50%;
             }
 
             #project-stack {
                 height: 20%; 
                 margin-top: 5%;
+
+                img {
+                    height: 60%;
+                }
             }
         }
 
         #project-links { 
-            width: 100%; 
-            height: 19%; 
-            margin-bottom: 1%; 
-
-            a {
-                width: 33%;
-                height: 100%; 
-            }
+            width: 25%; 
         }
     }
 }

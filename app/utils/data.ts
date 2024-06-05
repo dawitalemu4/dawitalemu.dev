@@ -1,30 +1,34 @@
 export const ProjectsData = [
     {
         element_id: "Postwoman", header: "postwoman:~",
-        paragraph: "",
+        paragraph: "Postwoman is a self-hosted dev tool that achieves what postman does but with my personal preferences in its functionality and design. It is my favorite project so far because it solves a lot of pet peeves of mine and drastically improves my experience testing APIs over the experience postman gave me.",
         icons: [
+            "go.webp",
+            "echo.webp",
+            "htmx.webp",
+            "js.webp"
         ],
         github: "https://github.com/dawitalemu4/postwoman",
         siteURL: "https://postwoman.dev/",
-        image: ""
+        image: "postwoman.gif"
     },
     {
         element_id: "ZERL", header: "ZERL",
         paragraph: "",
         icons: [
         ],
-        github: "",
-        siteURL: "",
-        image: ""
+        github: "https://github.com/ZERL-dev",
+        siteURL: "https://zbesthome4u.com/",
+        image: "ZERL.gif"
     },
     {
         element_id: "GDA", header: "Genet's Designs",
-        paragraph: "",
+        paragraph: "This e-commerce site that sells and displays traditional ethiopian clothing a tailor named Genet Bekele.",
         icons: [
         ],
-        github: "",
-        siteURL: "",
-        image: ""
+        github: "https://github.com/GDA-dev",
+        siteURL: "https://genetdesigns.com/",
+        image: "GDA.gif"
     },
     {
         element_id: "DebreTsion", header: "Debre Tsion Church",
@@ -37,7 +41,7 @@ export const ProjectsData = [
         ],
         github: "https://github.com/DebreTsionWeb/debretsion.org",
         siteURL: "https://debretsion.org/en",
-        image: "DTGif.webp"
+        image: "DT.webp"
     },
     {
         element_id: "Misplaced", header: "Misplaced",
@@ -45,13 +49,13 @@ export const ProjectsData = [
         icons: [
             "react.webp",
             "expo.webp",
+            "express.webp",
             "mongo.webp",
-            "node.webp",
             "js.webp"
         ],
         github: "https://github.com/misplaced-dev/misplaced.app",
         siteURL: "https://misplaced.app",
-        image: "MisplacedGif.webp"
+        image: "misplaced.webp"
     },
     {
         element_id: "TapIn", header: "Let's Tap In, LLC",
@@ -63,7 +67,7 @@ export const ProjectsData = [
         ],
         github: "https://github.com/dawitalemu4/TapInWebPage",
         siteURL: "https://letsalltapin.vercel.app",
-        image: "TapGif.webp"
+        image: "tapIn.webp"
     },
     {
         element_id: "UA", header: "Urban Alliance",
@@ -75,7 +79,7 @@ export const ProjectsData = [
         ],
         github: "https://github.com/EduCoGroup/educogroup.org",
         siteURL: "https://educogroup.vercel.app",
-        image: "UAGif.webp"
+        image: "UA.webp"
     },
     {
         element_id: "Sonic", header: "2D Sonic Platformer",
@@ -86,7 +90,7 @@ export const ProjectsData = [
         ],
         github: "https://github.com/dawitalemu4/sonic",
         siteURL: "https://github.com/dawitalemu4/sonic",
-        image: "SonicGif.webp"
+        image: "sonic.webp"
     }
 ];
 

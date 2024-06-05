@@ -227,8 +227,8 @@ jsx:
         images: [
             "react.webp",
             "expo.webp",
+            "express.webp",
             "mongo.webp",
-            "node.webp",
             "js.webp"
         ]
     },
