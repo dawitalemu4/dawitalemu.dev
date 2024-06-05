@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import { VscGithubAlt } from "react-icons/vsc";
 import { CiShare1 } from "react-icons/ci";
 import { IoIosPaper } from "react-icons/io";
@@ -10,10 +9,12 @@ interface ProjectCardProps {
     data: Project;
     setGif: (image: string) => void;
     toggleModal: () => void;
+    position?: Object;
 };
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ data, setGif, toggleModal }) => (
-    <div id="project-card">
+const ProjectCard: React.FC<ProjectCardProps> = ({ data, setGif, toggleModal, position }) => (
+    <div id="project-card" style={position}>
+                    <div id="line"></div>
         <div id="project-image">
             <img src={"/gifs/" + data.image} onClick={() => { setGif(`${data.image}`); toggleModal(); }} />
         </div>
@@ -33,7 +34,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ data, setGif, toggleModal }) 
         <div id="project-links">
             <a href={data.github} target="_blank"><VscGithubAlt />GitHub</a>
             <a href={data.siteURL} target="_blank"><CiShare1 />View Site</a>
-            <Link href={`/docs/#${data.element_id}`}> <IoIosPaper />Docs</Link>
+            <a href={`/docs/#${data.element_id}`}> <IoIosPaper />Docs</a>
         </div>
     </div>
 );

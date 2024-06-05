@@ -62,7 +62,6 @@
             justify-content: center;
             align-items: center;
             animation: arrow 2s infinite;
-            overflow: hidden;
             z-index: 4;
 
             #arrow { 
@@ -106,17 +105,20 @@
     }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 900px) {
 
-    #HeaderText { font-size: 60px; }
+    #hero {
 
-    #HeaderSubText { font-size: 22px; }
+        #hero-container {
 
-    #Arrow { font-size: 30px; }
+            #arrow-container {
+                #arrow { font-size: 35px; }
+            }
 
-    @keyframes arrow {
-        0% { transform: translateY(0px); }
-        50% { transform: translateY(10px); }
-        100% { transform: translateY(0px); }
+            #header-container {
+                p:first-child { font-size: 55px; }
+                p:last-child { font-size: 22px; }
+            }
+        }
     }
 }

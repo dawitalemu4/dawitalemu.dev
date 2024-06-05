@@ -36,7 +36,8 @@
         #experience-paragraph {
             display: flex;
             position: relative;
-            width: 40%;
+            width: 30%;
+            min-width: calc(90% - 700px);
             height: 100%;
             flex-direction: column;
             justify-content: center;
@@ -70,7 +71,8 @@
         #skills-container {
             display: flex;
             position: relative;
-            width: 50%;
+            width: 60%;
+            max-width: 700px;
             height: 100%;
             flex-direction: column;
             justify-content: center;
@@ -89,11 +91,9 @@
     }
 }
 
-
-@media (max-width: 1350px) {
+@media (max-width: 900px) {
 
     #experience {
-        height: 170vh;
 
         #experience-header {
             width: 90%;
@@ -102,24 +102,25 @@
         #experience-container {
             flex-direction: column; 
             justify-content: flex-start;
-        }
 
-        #experience-paragraph { 
-            width: 95%;
-            height: 45%;
-            margin-bottom: 5vh;
+            #experience-paragraph { 
+                width: 85%;
+                height: 45%;
+                margin-bottom: 5vh;
 
-            p {
-                width: 100%;
-                font-size: 16px; 
+                p {
+                    width: 100%;
+                    font-size: 16px; 
+                    text-align: center;
 
-                a { font-size: 18px; }
+                    a { font-size: 18px; }
+                }
             }
-        }
 
-        #skills-container {
-            width: 90%;
-            height: 50%;
+            #skills-container {
+                width: 85%;
+                height: 50%;
+            }
         }
     }
 }

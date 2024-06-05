@@ -16,7 +16,7 @@ export default function Contact() {
     return (
         <div id="contact">
             <div id="contact-header">
-                <h1 >Contact Me (You Should)</h1>
+                <h1>Contact Me (You Should)</h1>
             </div>
             <div id="contact-container">
                 <div id="contact-icons">

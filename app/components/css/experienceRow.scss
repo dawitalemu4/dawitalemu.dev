@@ -59,18 +59,25 @@
     }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 900px) {
 
-    #skill-row-header h3 { font-size: 18px; }
+    #skill-row {
+        height: 300px;
 
-    #skill-row-item {
-        font-size: 11px;
-        margin-top: -10px;
+        #skill-row-header h3 {
+            font-size: 18px;
+        }
 
-        img {
-            width: 60px;
-            height: 60px;
-            padding: 0px 3px;
+        #skill-row-container {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+
+            #skill-row-item {
+                font-size: 11px;
+
+                img {
+                    height: 50px;
+                }
+            }
         }
     }
 }
