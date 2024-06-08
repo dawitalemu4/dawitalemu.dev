@@ -1,6 +1,5 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
-import Link from "next/link";
 import ProjectCard from "../components/projectCard";
 import { ProjectsData } from "../utils/data";
 import { Project } from "../utils/types";
@@ -14,7 +13,7 @@ export default function Projects() {
     const [showModal, setshowModal] = useState(false);
     const [gif, setGif] = useState("");
     const projectsContainerRef = useRef<HTMLDivElement>(null);
-    const positionPercentage = 15;
+    const positionPercentage = 5;
 
     const toggleModal = () => {
         setshowModal(!showModal);
@@ -71,36 +70,36 @@ export default function Projects() {
                 <div id="projects-list">
                     <div id="line1"></div>
                     <div id="line2"></div>
-                    {ProjectsData.map((data: Project, index: number) => (
-                        <ProjectCard
-                            data={data}
-                            setGif={(image: string) => setGif(image)}
-                            toggleModal={toggleModal}
-                            position={ effectToggle ? ( index % 2 === 0 ? { right: `calc(${index} * ${positionPercentage}%)` } : { left: `calc(${index} * ${positionPercentage}%)` }) : (undefined)}
-                        />
-                    ))}
+                    {ProjectsData.map((data: Project, index: number) => {
+
+                        const sensitivityMultiplier = ProjectsData.length - index;
+
+                        return (
+                            <ProjectCard
+                                data={data}
+                                setGif={(image: string) => setGif(image)}
+                                toggleModal={toggleModal}
+                                position={ effectToggle ? ( index % 2 === 0 ? {
+                                    right: `calc(${sensitivityMultiplier} * ${positionPercentage}%)`,
+                                    transform: `translateX(calc(0.${sensitivityMultiplier} * ${projectScrollHeight}))`
+                                } : {
+                                    left: `calc(${sensitivityMultiplier} * ${positionPercentage}%)`,
+                                    transform: `translateX(calc(-0.${sensitivityMultiplier} * ${projectScrollHeight}))`
+                                }) : (undefined)}
+                            />
+                        )
+                    })}
                 </div>
             </div>
             <div id="docs-link">
                 <p>
                     And More... Browse My <a id="MoreGitHub" href="https://github.com/dawitalemu4" target="_blank">GitHub</a> or 
-                    Visit the <Link href="/docs">Docs Page for Devs</Link>!
+                    Visit the <a href="/docs">Docs Page for Devs</a>!
                 </p>
             </div>
             <div id="demo-modal" style={{ display: showModal ? "flex" : "none" }} onClick={toggleModal}>
                 <img src={"/gifs/" + gif} />
             </div>
-        <style>
-            {`
-                #project-card:nth-child(odd) {
-                    transform: ${effectToggle ? `translateX(${projectScrollHeight})` : "none"};
-                }
-
-                #project-card:nth-child(even) {
-                    transform: ${effectToggle ? `translateX(calc(-1 * ${projectScrollHeight}))` : "none"};
-                }
-            `}
-        </style>
         </div>
     );
 };
