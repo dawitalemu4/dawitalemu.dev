@@ -11,12 +11,6 @@
     border-radius: 25px;
     border: 3px solid #ccc;
 
-    #line {
-        position: absolute;
-        width: 100%;
-        border: 1px solid red;
-    }
-
     #project-image {
         display: flex;
         position: relative;
@@ -154,7 +148,7 @@
                 margin-top: 5%;
 
                 img {
-                    height: 60%;
+                    height: 50%;
                 }
             }
         }

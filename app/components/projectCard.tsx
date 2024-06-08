@@ -14,7 +14,6 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ data, setGif, toggleModal, position }) => (
     <div id="project-card" style={position}>
-                    <div id="line"></div>
         <div id="project-image">
             <img src={"/gifs/" + data.image} onClick={() => { setGif(`${data.image}`); toggleModal(); }} />
         </div>

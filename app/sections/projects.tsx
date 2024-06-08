@@ -13,7 +13,6 @@ export default function Projects() {
     const [showModal, setshowModal] = useState(false);
     const [gif, setGif] = useState("");
     const projectsContainerRef = useRef<HTMLDivElement>(null);
-    const positionPercentage = 5;
 
     const toggleModal = () => {
         setshowModal(!showModal);
@@ -44,7 +43,7 @@ export default function Projects() {
         if (!isContainerVisible) {
             setProjectScrollHeight("0%");
         } else {
-            const maxScroll = containerHeight * 2.25;
+            const maxScroll = containerHeight * 2.5;
             const projectScrollPercentage = Math.min((scrollPosition / maxScroll) * 100, 100);
             setProjectScrollHeight(`${projectScrollPercentage}%`);
         };
@@ -68,27 +67,9 @@ export default function Projects() {
                     <p onClick={toggleEffect}>Scroll Effect: {effectText}</p>
                 </div>
                 <div id="projects-list">
-                    <div id="line1"></div>
-                    <div id="line2"></div>
-                    {ProjectsData.map((data: Project, index: number) => {
-
-                        const sensitivityMultiplier = ProjectsData.length - index;
-
-                        return (
-                            <ProjectCard
-                                data={data}
-                                setGif={(image: string) => setGif(image)}
-                                toggleModal={toggleModal}
-                                position={ effectToggle ? ( index % 2 === 0 ? {
-                                    right: `calc(${sensitivityMultiplier} * ${positionPercentage}%)`,
-                                    transform: `translateX(calc(0.${sensitivityMultiplier} * ${projectScrollHeight}))`
-                                } : {
-                                    left: `calc(${sensitivityMultiplier} * ${positionPercentage}%)`,
-                                    transform: `translateX(calc(-0.${sensitivityMultiplier} * ${projectScrollHeight}))`
-                                }) : (undefined)}
-                            />
-                        )
-                    })}
+                    {ProjectsData.map((data: Project) => (
+                        <ProjectCard data={data} setGif={(image: string) => setGif(image)} toggleModal={toggleModal} />
+                    ))}
                 </div>
             </div>
             <div id="docs-link">
@@ -100,6 +81,92 @@ export default function Projects() {
             <div id="demo-modal" style={{ display: showModal ? "flex" : "none" }} onClick={toggleModal}>
                 <img src={"/gifs/" + gif} />
             </div>
+            <style>
+                {`
+                    #project-card:nth-child(1) {
+                        left: ${effectToggle ? "50%" : "0"};
+                        transform: ${effectToggle ? `translateX(calc(-2.05 * ${projectScrollHeight}))` : "none"};
+                    }
+                    
+                    #project-card:nth-child(2) {
+                        right: ${effectToggle ? "55%" : "0"};
+                        transform: ${effectToggle ? `translateX(calc(1.65 * ${projectScrollHeight}))` : "none"};
+                    }
+
+                    #project-card:nth-child(3) {
+                        left: ${effectToggle ? "60%" : "0"};
+                        transform: ${effectToggle ? `translateX(calc(-1.45 * ${projectScrollHeight}))` : "none"};
+                    }
+
+                    #project-card:nth-child(4) {
+                        right: ${effectToggle ? "65%" : "0"};
+                        transform: ${effectToggle ? `translateX(calc(1.3 * ${projectScrollHeight}))` : "none"};
+                    }
+
+                    #project-card:nth-child(5) {
+                        left: ${effectToggle ? "70%" : "0"};
+                        transform: ${effectToggle ? `translateX(calc(-1.2 * ${projectScrollHeight}))` : "none"};
+                    }
+                    
+                    #project-card:nth-child(6) {
+                        right: ${effectToggle ? "75%" : "0"};
+                        transform: ${effectToggle ? `translateX(calc(1.125 * ${projectScrollHeight}))` : "none"};
+                    }
+
+                    #project-card:nth-child(7) {
+                        left: ${effectToggle ? "80%" : "0"};
+                        transform: ${effectToggle ? `translateX(calc(-1.075 * ${projectScrollHeight}))` : "none"};
+                    }
+
+                    #project-card:nth-child(8) {
+                        right: ${effectToggle ? "85%" : "0"};
+                        transform: ${effectToggle ? `translateX(calc(1.025 * ${projectScrollHeight}))` : "none"};
+                    }
+
+                    @media (max-width: 900px) {
+
+                        #project-card:nth-child(1) {
+                            left: ${effectToggle ? "70%" : "0"};
+                            transform: ${effectToggle ? `translateX(calc(-2.05 * ${projectScrollHeight}))` : "none"};
+                        }
+                        
+                        #project-card:nth-child(2) {
+                            right: ${effectToggle ? "70%" : "0"};
+                            transform: ${effectToggle ? `translateX(calc(1.65 * ${projectScrollHeight}))` : "none"};
+                        }
+
+                        #project-card:nth-child(3) {
+                            left: ${effectToggle ? "75%" : "0"};
+                            transform: ${effectToggle ? `translateX(calc(-1.45 * ${projectScrollHeight}))` : "none"};
+                        }
+
+                        #project-card:nth-child(4) {
+                            right: ${effectToggle ? "75%" : "0"};
+                            transform: ${effectToggle ? `translateX(calc(1.3 * ${projectScrollHeight}))` : "none"};
+                        }
+
+                        #project-card:nth-child(5) {
+                            left: ${effectToggle ? "80%" : "0"};
+                            transform: ${effectToggle ? `translateX(calc(-1.2 * ${projectScrollHeight}))` : "none"};
+                        }
+                        
+                        #project-card:nth-child(6) {
+                            right: ${effectToggle ? "85%" : "0"};
+                            transform: ${effectToggle ? `translateX(calc(1.125 * ${projectScrollHeight}))` : "none"};
+                        }
+
+                        #project-card:nth-child(7) {
+                            left: ${effectToggle ? "90%" : "0"};
+                            transform: ${effectToggle ? `translateX(calc(-1.075 * ${projectScrollHeight}))` : "none"};
+                        }
+
+                        #project-card:nth-child(8) {
+                            right: ${effectToggle ? "95%" : "0"};
+                            transform: ${effectToggle ? `translateX(calc(1.025 * ${projectScrollHeight}))` : "none"};
+                        }
+                    }
+                `}
+            </style>
         </div>
     );
 };

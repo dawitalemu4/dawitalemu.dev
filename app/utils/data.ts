@@ -16,6 +16,11 @@ export const ProjectsData = [
         element_id: "ZERL", header: "ZERL",
         paragraph: "",
         icons: [
+            "java.webp",
+            "spring.webp",
+            "react.webp",
+            "remix.webp",
+            "ts.webp"
         ],
         github: "https://github.com/ZERL-dev",
         siteURL: "https://zbesthome4u.com/",
@@ -25,6 +30,11 @@ export const ProjectsData = [
         element_id: "GDA", header: "Genet's Designs",
         paragraph: "This e-commerce site that sells and displays traditional ethiopian clothing a tailor named Genet Bekele.",
         icons: [
+            "python.webp",
+            "django.webp",
+            "gql.webp",
+            "react.webp",
+            "ts.webp"
         ],
         github: "https://github.com/GDA-dev",
         siteURL: "https://genetdesigns.com/",
