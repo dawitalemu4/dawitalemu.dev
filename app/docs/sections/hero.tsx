@@ -1,6 +1,5 @@
 "use client";
 import React, { useEffect } from "react";
-import Link from "next/link";
 import { HeroData } from "../utils/data";
 import { HeroOption } from "../utils/types";
 import { IoIosArrowDown } from "react-icons/io";
@@ -64,7 +63,7 @@ export default function Hero() {
 
     return (
         <div id="hero">
-            <Link id="back-arrow" href="/"><HiOutlineArrowSmLeft /></Link>
+            <a id="back-arrow" href="/"><HiOutlineArrowSmLeft /></a>
             <div id="hero-container">
                 <div id="hero-header">
                     <h1>Docs</h1>
