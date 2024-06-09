@@ -1,4 +1,4 @@
-#Portfolio, #DebreTsion, #Misplaced, #TapIn, #UA, #Sonic, #CreatorVerse {
+.project-section {
     display: flex;
     position: relative;
     width: 95%;
@@ -38,7 +38,7 @@
             width: 50%;
             height: 100%;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
 
             .project-text-header {
@@ -58,27 +58,24 @@
                 display: flex;
                 position: relative;
                 width: 90%;
-                height: 80%;
+                height: 70%;
                 justify-content: flex-start;
                 align-items: flex-start;
+                padding-right: 2%;
+                overflow-y: scroll;
+
+                &::-webkit-scrollbar {
+                    width: 5px;
+                    background-color: transparent;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background-color: white;
+                    border-radius: 10px;
+                }
 
                 p {
-                    font-size: 15px;
-                    font-family: Inter;
-                    text-align: left;
                     margin-top: 2%;
-                    padding-right: 2%;
-                    overflow-y: scroll;
-
-                    &::-webkit-scrollbar {
-                        width: 5px;
-                        background-color: transparent;
-                    }
-
-                    &::-webkit-scrollbar-thumb {
-                        background-color: white;
-                        border-radius: 10px;
-                    }
                 }
             }
 
@@ -91,7 +88,6 @@
                 justify-content: flex-start;
                 align-items: flex-start;
                 overflow: scroll;
-                font-size: 11px;
                 background-color: #1d1f21;
 
                 &::-webkit-scrollbar {
@@ -142,7 +138,9 @@
                 transition: 0.3s;
                 gap: 3px;
 
-                &:hover { scale: 1.05; }
+                &:hover {
+                    scale: 1.05;
+                }
 
                 svg {
                     font-size: 45px;
@@ -170,24 +168,53 @@
 
 @media (max-width: 900px) {
 
-    #project-header { font-size: 34px; }
+    .project-section {
 
-    #project-text-container {
-        flex-direction: column;
-
-        #project-paragraph-container, #project-code-container {
-            width: 100%;
-            height: 40%;
-
-            .project-text-header { font-size: 25px; }
-
-            #project-text { width: 100%; }
-
-            #project-code { width: 100%; }
+        #project-header {
+            font-size: 34px;
         }
-    }
 
-    #project-stack img {
-        height: 40%;
+        #project-text-container {
+            flex-direction: column;
+            padding-top: 10%;
+
+            #project-paragraph-container, #project-code-container {
+                width: 100%;
+                height: 50%;
+
+                .project-text-header {
+                    margin-bottom: 10px;
+                }
+
+                #project-text {
+                    width: 100%;
+                }
+
+                #project-code {
+                    width: 100%;
+                    font-size: 8px;
+                }
+            }
+        }
+
+        #project-icons-container {
+
+            #project-links {
+                justify-content: space-between;
+
+                a {
+                    width: 50%;
+                    margin: 0;
+                }
+            }
+
+            #project-stack {
+                flex-wrap: wrap;
+
+                img {
+                    height: 40%;
+                }
+            }        
+        }
     }
 }

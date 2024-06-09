@@ -2,7 +2,7 @@ import { HeroOption, Project } from '../utils/types';
 
 export const HeroData: HeroOption[] = [
     { element_id: "Portfolio", title: "Portfolio" },
-    { element_id: "Postwoman", title: "Postwoman" },
+    { element_id: "Postwoman", title: "postwoman:~" },
     { element_id: "ZERL", title: "ZERL" },
     { element_id: "GDA", title: "GDA" },
     { element_id: "Misplaced", title: "Misplaced" },
@@ -15,55 +15,63 @@ export const ProjectsData: Project[] = [
         divID: "Portfolio",
         header: "Portfolio",
         paragraph: "Thought the parallax effect was cool? Here's the code for the effect on the projects section!  Even though this function is almost the same as the other functions in the other sections, this one has an on and off button to toggle the effect. In short, I took the height of the div and the top, the scroll position of the user, and calculated the % of where their scroll position is on the div. I also offset the top a bit for timing reasons, as it would start counting the % immediately as the top of the div showed up on the screen, but the effect is cooler when you can see it happening😹. Why I'm using this component's parallax function is, because believe it or not, I spent 20 minutes or so confused why 'if (effectToggle === true)' wouldn't display 'On', until I tried false like how it is now. Don't ask me why it works. (jk)",
-        code: `// Project.tsx
-const [projectScrollHeight, setProjectScrollHeight] = useState('0%');
+        code: `// projects.tsx
+const [projectScrollHeight, setProjectScrollHeight] = useState("0%");
 const [effectToggle, setEffectToggle] = useState(true);
-const [effectText, setEffectText] = useState('On');
+const [effectText, setEffectText] = useState("On");
+const [showModal, setshowModal] = useState(false);
+const [gif, setGif] = useState("");
 const projectsContainerRef = useRef<HTMLDivElement>(null);
 
-const handleProjectScroll = () => {
-    
-    const projectsContainer = projectsContainerRef.current;
-    if (!projectsContainer) return;
-    
-    const containerHeight = projectsContainer.clientHeight;
-    const containerTop = projectsContainer.getBoundingClientRect().top;
-    const scrollPosition = Math.max(0, window.scrollY - containerTop - window.innerHeight * 1.9);
-    const isContainerVisible = containerTop + containerHeight >= 0 && containerTop <= window.innerHeight;
-    
-    if (!isContainerVisible) {
-        setProjectScrollHeight('0%');
-    } else {
-        const maxScroll = containerHeight * 2.5;
-        const projectScrollPercentage = Math.min((scrollPosition / maxScroll) * 100, 100);
-        setProjectScrollHeight('S{projectScrollPercentage}%');
-    }
-}
+const toggleModal = () => {
+    setshowModal(!showModal);
+};
 
 const toggleEffect = () => {
 
     setEffectToggle(!effectToggle);
 
     if (effectToggle === false) {
-        setEffectText('On');
+        setEffectText("On");
     } else {
-        setEffectText('Off');
-    }
+        setEffectText("Off");
+    };
+};
 
-}
+const handleProjectScroll = () => {
+
+    const projectsContainer = projectsContainerRef.current;
+    if (!projectsContainer) return;
+
+    const containerHeight = projectsContainer.clientHeight;
+    const containerTop = projectsContainer.getBoundingClientRect().top;
+    const scrollPosition = Math.max(0, window.scrollY - containerTop - window.innerHeight * 1.9);
+
+    const isContainerVisible = containerTop + containerHeight >= 0 && containerTop <= window.innerHeight;
+
+    if (!isContainerVisible) {
+        setProjectScrollHeight("0%");
+    } else {
+        const maxScroll = containerHeight * 2.5;
+        const projectScrollPercentage = Math.min((scrollPosition / maxScroll) * 100, 100);
+        setProjectScrollHeight(S{projectScrollPercentage}%);
+    };
+};
 
 useEffect(() => {
-    window.addEventListener('scroll', handleProjectScroll);
+
+    window.addEventListener("scroll", handleProjectScroll);
+
     return () => {
-        window.removeEventListener('scroll', handleProjectScroll);
+        window.removeEventListener("scroll", handleProjectScroll);
     };
+
 }, []);
 
-    return (
-        <div id='Projects' ref={projectsContainerRef}>
-        ...
-    )
-...`,
+return (
+    <div id="projects" ref={projectsContainerRef}>
+    ...
+)`,
         github: "https://github.com/dawitalemu4/portfolio",
         siteURL: "/",
         images: [
@@ -74,32 +82,46 @@ useEffect(() => {
     },
     {
         divID: "Postwoman",
-        header: "",
+        header: "postwoman:~",
         paragraph: "",
         code: "",
-        github: "",
-        siteURL: "",
+        github: "https://github.com/dawitalemu4/postwoman",
+        siteURL: "https://postwoman.dev",
         images: [
+            "go.webp",
+            "echo.webp",
+            "htmx.webp",
+            "js.webp"
         ]
     },
     {
         divID: "ZERL",
-        header: "",
+        header: "ZERL",
         paragraph: "",
         code: "",
-        github: "",
-        siteURL: "",
+        github: "https://github.com/ZERL-dev",
+        siteURL: "https://zbesthome4u.com",
         images: [
+            "java.webp",
+            "spring.webp",
+            "react.webp",
+            "remix.webp",
+            "ts.webp"
         ]
     },
     {
         divID: "GDA",
-        header: "",
+        header: "Genet's Designs",
         paragraph: "",
         code: "",
-        github: "",
-        siteURL: "",
+        github: "https://github.com/GDA-dev",
+        siteURL: "https://genetdesigns.com",
         images: [
+            "python.webp",
+            "django.webp",
+            "gql.webp",
+            "react.webp",
+            "ts.webp"
         ]
     },
     {

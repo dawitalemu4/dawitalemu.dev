@@ -9,7 +9,7 @@ export const ProjectsData = [
             "js.webp"
         ],
         github: "https://github.com/dawitalemu4/postwoman",
-        siteURL: "https://postwoman.dev/",
+        siteURL: "https://postwoman.dev",
         image: "postwoman.gif"
     },
     {
@@ -23,7 +23,7 @@ export const ProjectsData = [
             "ts.webp"
         ],
         github: "https://github.com/ZERL-dev",
-        siteURL: "https://zbesthome4u.com/",
+        siteURL: "https://zbesthome4u.com",
         image: "ZERL.gif"
     },
     {
@@ -37,7 +37,7 @@ export const ProjectsData = [
             "ts.webp"
         ],
         github: "https://github.com/GDA-dev",
-        siteURL: "https://genetdesigns.com/",
+        siteURL: "https://genetdesigns.com",
         image: "GDA.gif"
     },
     {
