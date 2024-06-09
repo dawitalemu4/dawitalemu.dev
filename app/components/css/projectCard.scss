@@ -115,7 +115,9 @@
             transition: 0.3s;
             gap: 3px;
 
-            &:hover { scale: 1.05; }
+            &:hover {
+                scale: 1.05;
+            }
 
             svg {
                 font-size: 45px;
