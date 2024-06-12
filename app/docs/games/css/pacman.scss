@@ -1,26 +1,23 @@
 #pacman-container {
     display: flex;
-    position: absolute;
-    top: 5%;
-    left: 10%;
-    width: 80%;
+    width: 100%;
+    height: 950px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
     #arcade {
-        display: flex;
-        position: relative;
-        width: 100%;
+        width: 850px;
+        height: 950px;
         z-index: 1;
     }
 
     #scene {
         position: absolute;
-        left: 24.9%;
-        top: 31.5%;
-        width: 42%;
-        height: 42%;
+        width: 325px;
+        height: 365px;
+        margin-top: 210px;
+        margin-right: 4px;
         border: 50px solid black;
         z-index: 2;
     }
@@ -28,9 +25,9 @@
     #dots-container {
         display: flex;
         position: absolute;
-        top: 35%;
         width: 50%;
         height: 50%;
+        margin-top: 450px;
         align-items: center;
         justify-content: center;
         z-index: 3;
@@ -63,12 +60,5 @@
                 bottom: 37%;
             }
         }
-    }
-}
-
-@media (min-width: 900px) {
-
-    #dots-container {
-        top: 34%;
     }
 }
