@@ -115,6 +115,11 @@
                     &:hover {
                         opacity: 0.8;
                     }
+
+                    svg {
+                        position: absolute;
+                        right: 10px;
+                    }
                 }
             }
 
