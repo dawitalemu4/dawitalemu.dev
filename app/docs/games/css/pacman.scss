@@ -17,7 +17,7 @@
         width: 325px;
         height: 365px;
         margin-top: 210px;
-        margin-right: 4px;
+        margin-right: 3px;
         border: 50px solid black;
         z-index: 2;
     }
@@ -25,39 +25,44 @@
     #dots-container {
         display: flex;
         position: absolute;
-        width: 50%;
-        height: 50%;
-        margin-top: 450px;
-        align-items: center;
+        height: 705px;
+        margin-top: 500px;
         justify-content: center;
+        align-items: flex-start;
         z-index: 3;
 
         img {
-            position: absolute;
-            top: 0;
-            width: 7%;
+            width: 30px;
+            margin-right: 2px;
             z-index: 3;
         }
     }
 }
 
 @media (max-width: 900px) {
-
     #pacman-container {
-        width: 100%;
-        left: 0;
+        
+        #arcade {
+            width: 350px;
+            height: 390px;
+        }
 
         #scene {
-            border: 0px;
+            width: 145px;
+            height: 160px;
+            margin-top: 90px;
+            margin-right: 1px;
+            border: 15px solid black;
         }
 
         #dots-container {
-            top: 31.5%;
-            width: 50%;
-            height: 54.3%;
+            width: 145px;
+            height: 405px;
+            margin-top: 305px;
 
             img {
-                bottom: 37%;
+                width: 12px;
+                margin-right: 1px;
             }
         }
     }

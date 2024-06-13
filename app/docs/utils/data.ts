@@ -7,7 +7,7 @@ export const HeroData: HeroOption[] = [
     { element_id: "GDA", title: "GDA" },
     { element_id: "Misplaced", title: "Misplaced" },
     { element_id: "TapIn", title: "Let's Tap In" },
-    { element_id: "Sonic", title: "2D Sonic Platformer" }
+    { element_id: "Sonic", title: "Sonic Game" }
 ];
 
 export const ProjectsData: Project[] = [
