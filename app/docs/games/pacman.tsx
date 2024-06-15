@@ -42,7 +42,7 @@ export default function PacMan() {
             if (!dotsContainer) return;
 
             const containerTop = dotsContainer.getBoundingClientRect().top;
-            const containerBottom = dotsContainer.getBoundingClientRect().bottom;
+            const containerBottom = dotsContainer.getBoundingClientRect().bottom + 100;
             const viewportHeight = window.innerHeight;
 
             if (containerTop <= viewportHeight && containerBottom >= 0) {
