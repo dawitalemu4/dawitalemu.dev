@@ -1,7 +1,7 @@
 import React from "react";
 import "./css/pokeball.scss";
 
-export default function PokeBall() {
+const PokeBall: React.FC<{ pokeballClicked: () => void }> = ({ pokeballClicked }) => {
 
     const handlePokeBallClick = () => {
 
@@ -49,8 +49,8 @@ export default function PokeBall() {
 
     return (
         <div id="pokeball-container">
-            <div id="pokeball-header">Click Me!</div>
-            <img id="pokeball-gif" src="/docs/pokemon/pokeball.gif" onClick={handlePokeBallClick} />
+            <h2 id="pokeball-header">Click Me!</h2>
+            <img id="pokeball-gif" src="/docs/pokemon/pokeball.gif" onClick={() => { handlePokeBallClick(); pokeballClicked(); }} />
             <img id="pikachu-jump" src="/docs/pokemon/pikachujump.gif" style={{ display: "none" }} />
             <img id="pikachu-run" src="/docs/pokemon/pikachurun.gif" style={{ display: "none" }} />
             <img id="text-box" src="/docs/pokemon/textbox.gif" style={{ display: "none" }} />
@@ -58,3 +58,5 @@ export default function PokeBall() {
         </div>
     );
 };
+
+export default PokeBall;

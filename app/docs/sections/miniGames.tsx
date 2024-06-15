@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import PacMan from "../games/pacman";
 import Yoshi from "../games/yoshi";
 import PokeBall from "../games/pokeball";
@@ -7,6 +7,8 @@ import Luffy from "../games/luffy";
 import "./css/miniGames.scss";
 
 export default function MiniGames() { 
+
+    const [showPikachu, setShowPikachu] = useState(false);
 
     return ( 
         <div id="mini-games">
@@ -16,7 +18,7 @@ export default function MiniGames() {
                 </div>
                 <div id="pokeball-and-yoshi">
                     <div id="pokeball">
-                        <PokeBall />
+                        <PokeBall pokeballClicked={() => setShowPikachu(true)} />
                     </div>
                     <div id="yoshi">
                         <Yoshi />
@@ -26,7 +28,9 @@ export default function MiniGames() {
                     <Luffy />
                 </div>
                 <div id="pikachu-wave">
-                    <img src="/docs/pokemon/pikachu.gif" />
+                    {showPikachu &&
+                        <img src="/docs/pokemon/pikachu.gif" />
+                    }
                 </div>
             </div>
         </div>

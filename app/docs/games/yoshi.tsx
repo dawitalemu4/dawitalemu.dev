@@ -41,7 +41,7 @@ export default function Yoshi() {
 
     return (
         <div id="yoshi-container">
-            <p id="bubble-text">Refresh and move your mouse around Yoshi to see what happens!</p>
+            <h2 id="bubble-text">Refresh and move your mouse around Yoshi to see what happens!</h2>
             <div id="yoshi-image-container">    
                 <img id="yoshi-eyes" src="/docs/yoshi/eyes.webp" ref={eyesRef} />
                 <img id="yoshi-body" src="/docs/yoshi/yoshi.webp" ref={yoshiRef} />
