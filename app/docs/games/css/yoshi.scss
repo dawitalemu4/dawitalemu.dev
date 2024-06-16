@@ -1,20 +1,14 @@
-@keyframes bounce {
-    0% { top: 0; }
-    25% { top: -200px; }
-    75% { top: 200px; }
-    100% { top: 0; }
-}
-
 #yoshi-container {
     display: flex;
     position: relative;
     width: 100%;
-    height: 100%;
+    height: 450px;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
 
     #bubble-text {
+        width: 90%;
         text-align: center;
         color: white;
     }
@@ -29,8 +23,8 @@
 
         #yoshi-eyes {
             position: absolute;
-            top: 11%;
-            height: 8%;
+            top: 35px;
+            height: 25px;
             z-index: 3;
         }
 
@@ -39,34 +33,10 @@
             z-index: 2;
         }
     }
-
-    #mouse-pointer {
-        display: flex;
-        position: relative;
-        width: 10%;
-        height: 100%;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        img {
-            width: 15px;
-            position: relative;
-            animation: bounce 5s ease-in-out infinite;
-        }
-    }
 }
 
 @media (max-width: 900px) {
-
-    @keyframes bounce {
-        0% { top: 0; }
-        25% { top: -100px; }
-        75% { top: 100px; }
-        100% { top: 0; }
-    }
-
     #bubble-text {
-        font-size: 13px;
+        font-size: 20px;
     }
 }
