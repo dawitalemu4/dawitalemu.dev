@@ -1,7 +1,7 @@
 #mini-games {
     display: flex;
     position: relative;
-    width: 99.7vw;
+    width: 100vw;
     height: 100%;
     flex-direction: column;
     justify-content: flex-end;
@@ -79,19 +79,22 @@
 @media (max-width: 900px) {
 
     #mini-games {
-        height: 200vh;
 
-        #pacman {
-            height: 30%;
-        }
+        #mini-games-container {
 
-        #pokeball-and-yoshi {
-            flex-direction: column;
-            height: 50%;
+            #pacman {
+                margin: 0;
+            }
 
-            #pokeball, #yoshi {
-                width: 100%;
-                height: 50%;
+            #pokeball-and-yoshi {
+                margin: 0;
+                margin-bottom: 30px;
+                flex-direction: column;
+                gap: 100px;
+
+                #pokeball, #yoshi {
+                    width: 100%;
+                }
             }
         }
     }

@@ -6,7 +6,7 @@
 #hero {
     display: flex;
     position: relative;
-    width: 99.7vw;
+    width: 100vw;
     height: 100vh;
     flex-direction: column;
     justify-content: center;
@@ -60,8 +60,8 @@
             }
 
             p {
+                font-size: 20px;
                 text-align: center;
-                font-family: InterMedium;
                 margin-bottom: 80px;
             }
 
@@ -85,7 +85,7 @@
         #hero-list {
             display: flex;
             position: relative;
-            width: 60%;
+            width: 70%;
             height: 100%;
             padding: 10%;
             flex-direction: column;
@@ -95,8 +95,8 @@
             #hero-list-item {
                 display: flex;
                 position: relative;
-                width: 75%;
-                height: 90px;
+                width: 70%;
+                height: 80px;
                 text-align: center;
                 justify-content: center;
                 align-items: center;
@@ -106,9 +106,7 @@
                     display: flex;
                     flex-direction: row;
                     align-items: center;
-                    gap: 10px;
-                    font-size: 25px;
-                    font-family: InterMedium;
+                    font-size: 22px;
                     cursor: pointer;
                     user-select: none;
 
@@ -142,6 +140,7 @@
         }
 
         #hero-container {
+            width: 100%;
             flex-direction: column;
 
             #hero-header { 

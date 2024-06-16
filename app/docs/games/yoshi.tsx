@@ -45,9 +45,6 @@ export default function Yoshi() {
             <div id="yoshi-image-container">    
                 <img id="yoshi-eyes" src="/docs/yoshi/eyes.webp" ref={eyesRef} />
                 <img id="yoshi-body" src="/docs/yoshi/yoshi.webp" ref={yoshiRef} />
-            </div>        
-            <div id="mouse-pointer">
-                <img src="/docs/yoshi/pointer.webp" />
             </div>
         </div>
     );

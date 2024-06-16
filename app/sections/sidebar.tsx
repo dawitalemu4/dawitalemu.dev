@@ -13,7 +13,7 @@ export default function Sidebar() {
     const texts = [
         'if (SWE || dev) {return "Click Me!"}',
         'for (docs+more) {return "Click Me!"}',
-        'for (miniGames) {return "Click Me!"}',
+        'for (miniGames) {return "Click Me!"}'
     ];
 
     const toggleMenu = () => {
@@ -27,18 +27,14 @@ export default function Sidebar() {
         };
     };
 
-    const handleMenuClick = (item: string) => {
+    const handleMenuClick = (sectionId: string) => {
 
-        const itemPosition = document.getElementById(`${item}`);
-        if (!itemPosition) return;
+        const section = document.getElementById(`${sectionId}`);
 
-        window.scrollTo({
-            top: itemPosition.offsetTop,
-            left: 0,
-            behavior: "smooth"
-        });
-
-        toggleMenu();
+        if (section) {
+            section.scrollIntoView({ behavior: "smooth", block: "start" }); 
+            toggleMenu();
+        };
     };
 
     useEffect(() => {

@@ -6,9 +6,9 @@ export default function Luffy() {
 
     useEffect(() => {
 
-        let gif: any = document.getElementById("LuffyImg");
+        let gif: any = document.getElementById("luffy-img");
         let gifs: any[] = ["hatclose.webp", "hatmid.webp", "hatopen.webp"];
-        let message: any = document.getElementById("WarningMessage");
+        let message: any = document.getElementById("warning-message");
         let gameIntervalId: any;
         let startTime: number;
         if (!message || !gif) return;
@@ -80,7 +80,7 @@ export default function Luffy() {
     return (
         <div id="luffy-container">
             <img id="luffy-img" src="/docs/luffy/luffy.gif" />
-            <div id="luffy-warning-message">
+            <div id="warning-message">
                 <p>Tap left click while luffy is pulling - Don't drag or hold</p>
             </div>
         </div>

@@ -13,10 +13,7 @@ export default function Hero() {
         const project = document.getElementById(elementId);
 
         if (project) {
-            window.scrollTo({
-                top: project.getBoundingClientRect().top,
-                behavior: "smooth"
-            });
+            project.scrollIntoView({ behavior: "smooth", block: "start" }); 
         };
     };
 
@@ -38,18 +35,6 @@ export default function Hero() {
             arrow.style.display = "none";
         };
     };
-    
-    const bottom = () => {
-
-        const element = document.getElementById("mini-games");
-
-        if (!element) return;
-
-        window.scrollTo({
-            top: element.getBoundingClientRect().top,
-            behavior: "smooth"
-        });
-    };
 
     useEffect(() => {
 
@@ -68,7 +53,7 @@ export default function Hero() {
                 <div id="hero-header">
                     <h1>Docs</h1>
                     <p>Mini-games at the bottom</p>
-                    <div id="bottom-arrow" onClick={bottom}><HiArrowNarrowDown /></div>
+                    <div id="bottom-arrow" onClick={() => scrollToElement("mini-games")}><HiArrowNarrowDown /></div>
                 </div>
                 <div id="hero-list">
                     {HeroData.map((item: HeroOption) => (
