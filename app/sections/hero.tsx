@@ -28,13 +28,13 @@ export default function Hero() {
             setHeroScrollHeight(`${heroScrollPercentage}%`);
 
             if (heroScrollPercentage === 100) {
-                const leftContainer = document.getElementById("LeftContainer");
-                const rightContainer = document.getElementById("RightContainer");
+                const leftContainer = document.getElementById("left-container");
+                const rightContainer = document.getElementById("right-container");
                 if (leftContainer) leftContainer.style.display = "none";
                 if (rightContainer) rightContainer.style.display = "none";
             } else {
-                const leftContainer = document.getElementById("LeftContainer");
-                const rightContainer = document.getElementById("RightContainer");
+                const leftContainer = document.getElementById("left-container");
+                const rightContainer = document.getElementById("right-container");
                 if (leftContainer) leftContainer.style.display = "flex";
                 if (rightContainer) rightContainer.style.display = "flex";
             };
