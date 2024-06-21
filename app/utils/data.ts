@@ -88,7 +88,7 @@ export const ProjectsData = [
             "js.webp"
         ],
         github: "https://github.com/EduCoGroup/educogroup.org",
-        siteURL: "https://educogroup.vercel.app",
+        siteURL: "https://educopaths.com",
         image: "UA.webp"
     },
     {
@@ -125,12 +125,12 @@ export const ExperienceData = [
         id: 2,
         header: "Back End Development",
         images: [
-            ["java.webp", "Java"],
             ["python.webp", "Python"],
             ["rust.webp", "Rust"],
             ["go.webp", "Go"],
-            ["spring.webp", "Spring"],
+            ["java.webp", "Java"],
             ["tokio.webp", "Tokio"],
+            ["spring.webp", "Spring"],
             ["django.webp", "Django"],
             ["gql.webp", "GraphQL"]
         ]
