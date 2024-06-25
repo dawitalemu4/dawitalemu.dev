@@ -156,11 +156,11 @@ export const ExperienceData = [
             ["aws.webp", "AWS"],
             ["gcp.webp", "GCP"],
             ["docker.webp", "Docker"],
-            ["vi.webp", "Vim"],
+            ["neovim.webp", "Neovim"],
+            ["nu.webp", "Nushell"],
             ["bash.webp", "Bash"],
             ["git.webp", "Git"],
-            ["github.webp", "GitHub"],
-            ["md.webp", "Markdown"]
+            ["github.webp", "GitHub"]
         ]
     }
 ];
