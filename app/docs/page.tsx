@@ -1,6 +1,6 @@
 import React from "react";
 import { Metadata } from "next";
-import Hero from "./sections/hero";
+import Menu from "./sections/menu";
 import Projects from "./sections/projects";
 import MiniGames from "./sections/miniGames";
 
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function Docs() {
     return (
         <>
-            <Hero />
+            <Menu />
             <Projects />
             <MiniGames />
         </>

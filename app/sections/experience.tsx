@@ -49,7 +49,7 @@ export default function Experience() {
                 <div id="experience-container">
                     <div id="experience-paragraph">
                         <p>
-                            In Summer 2024, I interned at Godaddy as a Backend Software Engineer on the Edge/API Gateway Team working on a CLI tool that handles the configuration of a reverse proxy using Rust, Tokio, and DynamoDB.
+                            In Summer 2024, I interned at Godaddy as a Backend Software Engineer on the Edge/API Gateway Team working on a CLI tool/lambda function written in Rust, Tokio, Axum, and Clap. I contributed to the first phase of a company-wide integration plan for a tier 0 service and wrote features that help streamline the configuration process of our reverse proxy for all of GoDaddy’s microservices.
                             <br/><br/>
                             In Fall 2023 and Spring 2024, I interned at Baltimore Life Insurance as a Frontend Software Engineer on the Platform Team implementing my redesign of the home page for the Internal Agent Portal using React, which has now gone into prod.
                             <br/><br/>

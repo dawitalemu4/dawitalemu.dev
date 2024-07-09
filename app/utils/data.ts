@@ -13,7 +13,7 @@ export const ProjectsData = [
         image: "postwoman.gif"
     },
     {
-        element_id: "ZERL", header: "ZERL",
+        element_id: "ZERL", header: "Elias Realtor",
         paragraph: "",
         icons: [
             "java.webp",
@@ -23,7 +23,7 @@ export const ProjectsData = [
             "ts.webp"
         ],
         github: "https://github.com/ZERL-dev",
-        siteURL: "https://zbesthome4u.com",
+        siteURL: "https://eliasrealtor.vercel.app",
         image: "ZERL.gif"
     },
     {

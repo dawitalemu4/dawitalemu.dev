@@ -6,12 +6,12 @@ html, body {
     overflow-x: hidden;
 }
 
-body::-webkit-scrollbar {
+body::-webkit-scrollbar, div::-webkit-scrollbar {
     width: 0.3em;
     background-color: black;
 }
 
-body::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb, div::-webkit-scrollbar-thumb {
     background-color: #F5F5F5;
     border-radius: 10px;
 }
