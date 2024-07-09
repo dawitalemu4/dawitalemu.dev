@@ -1,12 +1,12 @@
 "use client";
 import React, { useEffect } from "react";
-import { HeroData } from "../utils/data";
-import { HeroOption } from "../utils/types";
 import { IoIosArrowDown } from "react-icons/io";
-import { HiOutlineArrowSmLeft, HiArrowNarrowDown} from "react-icons/hi";
-import "./css/hero.scss";
+import { HiOutlineArrowSmLeft, HiArrowNarrowDown } from "react-icons/hi";
+import { MenuOption } from "../utils/types";
+import { MenuData } from "../utils/data";
+import "./css/menu.scss";
 
-export default function Hero() {
+export default function Menu() {
 
     const scrollToElement = (elementId: string) => {
 
@@ -19,7 +19,7 @@ export default function Hero() {
 
     const isContainerVisible = () => {
 
-        const container = document.getElementById("hero");
+        const container = document.getElementById("menu");
 
         if (!container) return;
 
@@ -47,17 +47,17 @@ export default function Hero() {
     }, []);
 
     return (
-        <div id="hero">
+        <div id="menu">
             <a id="back-arrow" href="/"><HiOutlineArrowSmLeft /></a>
-            <div id="hero-container">
-                <div id="hero-header">
+            <div id="menu-container">
+                <div id="menu-header">
                     <h1>Docs</h1>
                     <p>Mini-games at the bottom</p>
                     <div id="bottom-arrow" onClick={() => scrollToElement("mini-games")}><HiArrowNarrowDown /></div>
                 </div>
-                <div id="hero-list">
-                    {HeroData.map((item: HeroOption) => (
-                        <div id="hero-list-item" onClick={() => scrollToElement(`${item.element_id}`)}>
+                <div id="menu-list">
+                    {MenuData.map((item: MenuOption) => (
+                        <div id="menu-list-item" onClick={() => scrollToElement(`${item.element_id}`)}>
                             <p>{item.title} <IoIosArrowDown /></p>
                         </div>
                     ))}

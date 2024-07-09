@@ -1,9 +1,9 @@
 "use client";
 import React, { useEffect } from "react";
 import ProjectSection from "../components/projectSection";
+import { HiArrowNarrowUp } from "react-icons/hi";
 import { ProjectsData } from "../utils/data";
 import { Project } from "../utils/types";
-import { HiArrowNarrowUp } from "react-icons/hi";
 import "./css/projects.scss";
 
 export default function Projects() {

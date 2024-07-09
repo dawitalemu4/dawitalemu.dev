@@ -1,9 +1,9 @@
-import { HeroOption, Project } from '../utils/types';
+import { MenuOption, Project } from '../utils/types';
 
-export const HeroData: HeroOption[] = [
+export const MenuData: MenuOption[] = [
     { element_id: "Portfolio", title: "Portfolio" },
     { element_id: "Postwoman", title: "postwoman:~" },
-    { element_id: "ZERL", title: "ZERL" },
+    { element_id: "ZERL", title: "Elias Realtor" },
     { element_id: "GDA", title: "Genet's Designs" },
     { element_id: "DebreTsion", title: "Debre Tsion Church" },
     { element_id: "Misplaced", title: "Misplaced" },
@@ -97,11 +97,11 @@ return (
     },
     {
         divID: "ZERL",
-        header: "ZERL",
+        header: "Elias Realtor",
         paragraph: "",
         code: "",
         github: "https://github.com/ZERL-dev",
-        siteURL: "https://zbesthome4u.com",
+        siteURL: "https://eliasrealtor.vercel.app",
         images: [
             "java.webp",
             "spring.webp",

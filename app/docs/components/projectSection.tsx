@@ -1,8 +1,8 @@
 import React from "react";
 import HighlightCode from "../components/highlightCode";
-import { Project } from "../utils/types";
 import { VscGithubAlt } from "react-icons/vsc";
 import { CiShare1 } from "react-icons/ci";
+import { Project } from "../utils/types";
 import "./css/projectSection.scss";
 
 interface ProjectSectionProps {

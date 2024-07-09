@@ -1,4 +1,4 @@
-export interface HeroOption {
+export interface MenuOption {
     element_id: string;
     title: string;
 };

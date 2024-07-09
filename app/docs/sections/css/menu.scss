@@ -3,7 +3,7 @@
     100% { opacity: 1; }
 }
 
-#hero {
+#menu {
     display: flex;
     position: relative;
     width: 100vw;
@@ -32,7 +32,7 @@
         }
     }
 
-    #hero-container {
+    #menu-container {
         display: flex;
         position: relative;
         width: 90%;
@@ -42,10 +42,10 @@
         align-items: center;
         animation: fadeIn 2s ease-in-out;
 
-        #hero-header {
+        #menu-header {
             display: flex;
             position: relative;
-            width: 40%;
+            width: 30%;
             height: 100%;
             padding-left: 5%;
             margin-top: -5%;
@@ -82,17 +82,22 @@
             }
         }
 
-        #hero-list {
+        #menu-list {
             display: flex;
             position: relative;
             width: 70%;
             height: 100%;
-            padding: 10%;
+            padding-right: 5%;
             flex-direction: column;
             justify-content: center;
             align-items: flex-end;
+            overflow-y: scroll;
 
-            #hero-list-item {
+            &::-webkit-scrollbar {
+                width: 0;
+            }
+
+            #menu-list-item {
                 display: flex;
                 position: relative;
                 width: 70%;
@@ -101,18 +106,18 @@
                 justify-content: center;
                 align-items: center;
                 border-bottom: 3px solid #ccc;
+                cursor: pointer;
+                user-select: none;
+
+                &:hover {
+                    opacity: 0.8;
+                }
 
                 p {
                     display: flex;
                     flex-direction: row;
                     align-items: center;
                     font-size: 22px;
-                    cursor: pointer;
-                    user-select: none;
-
-                    &:hover {
-                        opacity: 0.8;
-                    }
 
                     svg {
                         position: absolute;
@@ -121,7 +126,7 @@
                 }
             }
 
-            #hero-list-item:last-child {
+            #menu-list-item:last-child {
                 border-bottom: none;
             }
         }
@@ -130,7 +135,7 @@
 
 @media (max-width: 900px) {
 
-    #hero {
+    #menu {
         height: 115vh;
         margin-bottom: 50px;
 
@@ -139,14 +144,13 @@
             left: 20px;
         }
 
-        #hero-container {
+        #menu-container {
             width: 100%;
             flex-direction: column;
 
-            #hero-header { 
+            #menu-header { 
                 width: 100%; 
-                height: 50%; 
-                padding-top: 5%;
+                height: 50%;
                 padding-left: 0;
                 align-items: center;
 
@@ -159,9 +163,11 @@
                 }
             }
 
-            #hero-list { 
+            #menu-list { 
                 width: 100%; 
-                height: 50%; 
+                height: 70%; 
+                padding-right: 0;
+                justify-content: flex-start;
                 align-items: center; 
                 z-index: 3;
                 background-color: black;
