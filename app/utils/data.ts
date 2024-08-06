@@ -1,4 +1,6 @@
-export const ProjectsData = [
+import { IconRow, Project } from "./types";
+
+export const ProjectsData: Project[] = [
     {
         element_id: "Postwoman", header: "postwoman:~",
         paragraph: "Postwoman is a self-hosted dev tool that achieves what postman does but with my personal preferences in its functionality and design. It is my favorite project so far because it solves a lot of pet peeves of mine and drastically improves my experience testing APIs over the experience postman gave me.",
@@ -15,6 +17,7 @@ export const ProjectsData = [
     {
         element_id: "ZERL", header: "Elias Realtor",
         paragraph: "",
+        footnote: "* Frontend no longer maintained by me, I wrote/finished the backend",
         icons: [
             "java.webp",
             "spring.webp",
@@ -22,13 +25,14 @@ export const ProjectsData = [
             "remix.webp",
             "ts.webp"
         ],
-        github: "https://github.com/ZERL-dev",
+        github: "https://github.com/dawitalemu4/zerl-server",
         siteURL: "https://eliasrealtor.vercel.app",
         image: "ZERL.gif"
     },
     {
-        element_id: "GDA", header: "Genet's Designs",
+        element_id: "GDA", header: "Genet Designs",
         paragraph: "This e-commerce site that sells and displays traditional ethiopian clothing a tailor named Genet Bekele.",
+        footnote: "* Frontend no longer maintained by me, I wrote/finished the backend",
         icons: [
             "python.webp",
             "django.webp",
@@ -36,7 +40,7 @@ export const ProjectsData = [
             "react.webp",
             "ts.webp"
         ],
-        github: "https://github.com/GDA-dev",
+        github: "https://github.com/dawitalemu4/gda-server",
         siteURL: "https://genetdesigns.com",
         image: "GDA.gif"
     },
@@ -106,7 +110,7 @@ export const ProjectsData = [
 
 
 
-export const ExperienceData = [
+export const ExperienceData: IconRow[] = [
     {
         id: 1,
         header: "Front End Development",
@@ -125,11 +129,11 @@ export const ExperienceData = [
         id: 2,
         header: "Back End Development",
         images: [
-            ["python.webp", "Python"],
             ["rust.webp", "Rust"],
             ["go.webp", "Go"],
             ["java.webp", "Java"],
-            ["tokio.webp", "Tokio"],
+            ["python.webp", "Python"],
+            ["tokio.webp", "Tokio/Axum"],
             ["spring.webp", "Spring"],
             ["django.webp", "Django"],
             ["gql.webp", "GraphQL"]
