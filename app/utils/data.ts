@@ -26,7 +26,7 @@ export const ProjectsData: Project[] = [
             "ts.webp"
         ],
         github: "https://github.com/dawitalemu4/zerl-server",
-        siteURL: "https://eliasrealtor.vercel.app",
+        siteURL: "https://github.com/dawitalemu4/zerl-server",
         image: "ZERL.gif"
     },
     {
