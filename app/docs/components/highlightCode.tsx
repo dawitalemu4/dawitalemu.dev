@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from "react";
 import hljs from "highlight.js/lib/core";
 import "highlight.js/styles/base16/google-dark.css";
+import rust from "highlight.js/lib/languages/rust";
 import go from "highlight.js/lib/languages/go";
 import java from "highlight.js/lib/languages/java";
 import django from "highlight.js/lib/languages/django";
@@ -10,6 +11,7 @@ import typescript from "highlight.js/lib/languages/typescript";
 import javascript from "highlight.js/lib/languages/javascript";
 import csharp from "highlight.js/lib/languages/csharp";
 
+hljs.registerLanguage("rust", rust);
 hljs.registerLanguage("go", go);
 hljs.registerLanguage("java", java);
 hljs.registerLanguage("django", django);

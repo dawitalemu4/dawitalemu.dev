@@ -85,7 +85,91 @@ return (
         divID: "Postwoman",
         header: "postwoman:~",
         paragraph: "",
-        code: "",
+        code: `// curl.go
+func buildCommand(request models.Request) []string {
+
+    shell := []string{"bash", "-c"}
+    command := []string{"curl", "-L", "-v", "--http1.1"}
+
+    if request.Method != "" && request.Method != "GET" {
+        command = append(command, "-X", request.Method)
+    }
+
+    if request.Headers != "" {
+        command = append(command, "-H", "'" + request.Headers + "'")
+    }
+
+    if request.Origin != "" {
+        command = append(command, "-H", "'Origin: " + request.Origin + "'")
+    }
+
+    if request.Body != "" {
+        command = append(command, "-d", "'" + request.Body + "'")
+    }
+
+    command = append(command, request.Url)
+    shell = append(shell, strings.Join(command, " "))
+    return shell 
+}
+
+func ExecuteCurlRequest(c echo.Context) error {
+
+    var request models.Request
+    var response, headers bytes.Buffer
+
+    json.NewDecoder(c.Request().Body).Decode(&request)
+
+    command := buildCommand(request)
+    curlRequest := exec.Command(command[0], command[1:]...)
+
+    curlRequest.Stdout = &response
+    curlRequest.Stderr = &headers
+
+    err := curlRequest.Run()
+
+    if err != nil && err.Error() == "exit status 6" {
+        println(err.Error(), "/n response: ", response.String(), "/n headers: ", headers.String())
+        return c.HTML(200, "<p>$  error: " + err.Error() + ", probably an invalid url given</p>")
+    }  else if err != nil && err.Error() == "exit status 7" {
+        println(err.Error(), "/n response: ", response.String(), "/n headers: ", headers.String())
+        return c.HTML(200, "<p>$  error: " + err.Error() + ", probably can't connect to localhost, use host.docker.internal instead of localhost in your url if running postwoman with docker</p>")
+    } else if err != nil {
+        println(err.Error(), "/n response: ", response.String(), "/n headers: ", headers.String())
+        return c.HTML(200, "<p>$  error: " + err.Error() + ", probably an invalid header or body given</p>")
+    }
+
+    statusRegex := regexp.MustCompile("HTTP\/\d\.\d\s(\d{3})")
+    statusMatch := statusRegex.FindAllStringSubmatch(headers.String(), -1)
+    splicedStatus := statusMatch[len(statusMatch) - 1][1]
+
+    request.Status = splicedStatus 
+    request.Date = strconv.FormatInt(time.Now().UTC().UnixMilli(), 10)
+    request.Hidden = false
+
+    stringRequest, _ := json.Marshal(request)
+
+    exec.Command("curl", "-X", "POST", "-d", string(stringRequest), "http://localhost:" + env["GO_PORT"] + "/api/request/new/" + request.User_email).Output()
+
+    errorResponseRegex := regexp.MustCompile("<title>(?s).*Error.*<\/title>")
+
+    if errorMatch := errorResponseRegex.FindStringSubmatch(response.String()); errorMatch != nil {
+
+        preTagRegex := regexp.MustCompile("<pre>(?s).*?<\/pre>")
+        preTagMatch := preTagRegex.FindStringSubmatch(response.String())
+
+        if preTagMatch == nil {
+            return c.HTML(200, "$  status: " + splicedStatus + "response: " + response.String())
+        } else {
+            return c.HTML(200, "$  error: " + preTagMatch[0] + "<br /><br />status: " + splicedStatus)
+        }
+    }
+
+    return c.HTML(200," 
+        $  status: " + splicedStatus + "
+        <br /><br />
+        <textarea id="response-textarea" readonly>" + response.String() + "&#013;</textarea>
+    ")
+}`,
         github: "https://github.com/dawitalemu4/postwoman",
         siteURL: "https://postwoman.dev",
         images: [
@@ -99,9 +183,65 @@ return (
         divID: "ZERL",
         header: "Elias Realtor",
         paragraph: "",
-        code: "",
+        code: `// AdminService.java
+@Service
+public class AdminService {
+
+    @Autowired
+    private AdminRepository adminRepository;
+
+    @Value("S{security.jwt.secret}")
+    private String secret;
+
+    public String createJWT(Admin admin) throws Exception {
+
+        JwtClaims jwtClaims = new JwtClaims();
+        JsonWebSignature jws = new JsonWebSignature();
+        Key key = new HmacKey(secret.getBytes());
+
+        jwtClaims.setClaim("username", admin.username);
+        jwtClaims.setClaim("password", admin.password);
+
+        jws.setKey(key);
+        jws.setAlgorithmHeaderValue("HS256");
+        jws.setPayload(jwtClaims.toJson());
+
+        return jws.getCompactSerialization();
+    }
+
+    public boolean authenticateAdmin(Admin admin) {
+
+        String existingAdminPassword = adminRepository.authenticateAdmin(admin.username);
+
+        if (existingAdminPassword == null) {
+            return false;
+        }
+
+        if (BCrypt.checkpw(admin.password, existingAdminPassword)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public Admin createAdmin(Admin admin) {
+
+        String encryptedPassword = BCrypt.hashpw(admin.password, BCrypt.gensalt());
+        admin.password = encryptedPassword;
+
+        return adminRepository.createAdmin(admin);
+    }
+
+    public Admin updatePassword(Admin admin) {
+
+        String encryptedPassword = BCrypt.hashpw(admin.password, BCrypt.gensalt());
+        admin.password = encryptedPassword;
+
+        return adminRepository.updatePassword(admin);
+    }
+}`,
         github: "https://github.com/ZERL-dev",
-        siteURL: "https://eliasrealtor.vercel.app",
+        siteURL: "https://github.com/dawitalemu4/zerl-server",
         images: [
             "java.webp",
             "spring.webp",
@@ -114,7 +254,65 @@ return (
         divID: "GDA",
         header: "Genet's Designs",
         paragraph: "",
-        code: "",
+        code: `// graphql/schema.py
+class sale_clothes_type(DjangoObjectType):
+    class Meta:
+        model = sale_clothes_model
+        fields = "__all__"
+
+class sold_clothes_type(DjangoObjectType):
+    class Meta:
+        model = sold_clothes_model
+        fields = "__all__"
+
+class Query(graphene.ObjectType):
+
+    saleClothes = graphene.List(sale_clothes_type, category=graphene.String(), size=graphene.String(), gender=graphene.String())
+
+    def resolve_saleClothes(root, info, category=None, size=None, gender=None):
+
+        if category and not size and not gender:
+            return sale_clothes_model.objects.filter(category=category)
+        if not category and size and not gender:
+            return sale_clothes_model.objects.filter(size=size)
+        if not category and not size and gender:
+            return sale_clothes_model.objects.filter(gender=gender)
+        if category and size and not gender:
+            return sale_clothes_model.objects.filter(category=category, size=size)
+        if category and not size and gender:
+            return sale_clothes_model.objects.filter(category=category, gender=gender)
+        if not category and size and gender:
+            return sale_clothes_model.objects.filter(size=size, gender=gender)
+        if category and size and gender:
+            return sale_clothes_model.objects.filter(category=category, size=size, gender=gender)
+        else:
+            return sale_clothes_model.objects.all()
+
+
+    soldClothes = graphene.List(sold_clothes_type, category=graphene.String(), size=graphene.String(), gender=graphene.String())
+
+    def resolve_soldClothes(root, info, category=None, size=None, gender=None):
+
+        if category and not size and not gender:
+            return sold_clothes_model.objects.filter(category=category)
+        if not category and size and not gender:
+            return sold_clothes_model.objects.filter(size=size)
+        if not category and not size and gender:
+            return sold_clothes_model.objects.filter(gender=gender)
+        if category and size and not gender:
+            return sold_clothes_model.objects.filter(category=category, size=size)
+        if category and not size and gender:
+            return sold_clothes_model.objects.filter(category=category, gender=gender)
+        if not category and size and gender:
+            return sold_clothes_model.objects.filter(size=size, gender=gender)
+        if category and size and gender:
+            return sold_clothes_model.objects.filter(category=category, size=size, gender=gender)
+        else:
+            return sold_clothes_model.objects.all()
+
+
+schema = graphene.Schema(query=Query)
+`,
         github: "https://github.com/GDA-dev",
         siteURL: "https://genetdesigns.com",
         images: [
