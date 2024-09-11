@@ -1,9 +1,9 @@
 "use client";
 import React, { useEffect } from "react";
-import ProjectSection from "../components/projectSection";
+import ProjectSection from "../components/project-section";
 import { HiArrowNarrowUp } from "react-icons/hi";
-import { ProjectsData } from "../utils/data";
-import { Project } from "../utils/types";
+import { ProjectsData } from "../data";
+import { Project } from "../../../types/docs";
 import "./css/projects.scss";
 
 export default function Projects() {
@@ -47,7 +47,7 @@ export default function Projects() {
                 <div id="up-arrow" onClick={top}><HiArrowNarrowUp /></div>
                 <div id="projects-list">
                     {ProjectsData.map((project: Project) => (
-                        <ProjectSection project={project} />
+                        <ProjectSection key={project.divID} project={project} />
                     ))}
                 </div>
             </div>

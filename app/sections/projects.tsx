@@ -1,9 +1,10 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
-import ProjectCard from "../components/projectCard";
-import { ProjectsData } from "../utils/data";
-import { Project } from "../utils/types";
+import ProjectCard from "../components/project-card";
+import { ProjectsData } from "../data";
+import { Project } from "../../types/home";
 import "./css/projects.scss";
+import VideoModal from "../containers/modals/video";
 
 export default function Projects() {
 
@@ -11,7 +12,7 @@ export default function Projects() {
     const [effectToggle, setEffectToggle] = useState(true);
     const [effectText, setEffectText] = useState("On");
     const [showModal, setshowModal] = useState(false);
-    const [gif, setGif] = useState("");
+    const [video, setVideo] = useState("");
     const projectsContainerRef = useRef<HTMLDivElement>(null);
 
     const toggleModal = () => {
@@ -68,7 +69,12 @@ export default function Projects() {
                 </div>
                 <div id="projects-list">
                     {ProjectsData.map((data: Project) => (
-                        <ProjectCard data={data} setGif={(image: string) => setGif(image)} toggleModal={toggleModal} />
+                        <ProjectCard
+                            key={data.element_id}
+                            data={data}
+                            setVideo={(url: string) => setVideo(url)}
+                            toggleModal={toggleModal}
+                        />
                     ))}
                 </div>
             </div>
@@ -78,9 +84,13 @@ export default function Projects() {
                     Visit the <a href="/docs">Docs Page for Devs</a>!
                 </p>
             </div>
-            <div id="demo-modal" style={{ display: showModal ? "flex" : "none" }} onClick={toggleModal}>
-                <img src={"/gifs/" + gif} />
-            </div>
+            {video !== "" && (
+                <VideoModal
+                    showModal={showModal}
+                    hideModal={() => { toggleModal(); setVideo(""); }}
+                    url={video}
+                />
+            )}
             <style>
                 {`
                     .project-card:nth-child(1) {

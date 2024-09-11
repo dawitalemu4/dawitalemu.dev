@@ -2,8 +2,8 @@
 import React, { useEffect } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { HiOutlineArrowSmLeft, HiArrowNarrowDown } from "react-icons/hi";
-import { MenuOption } from "../utils/types";
-import { MenuData } from "../utils/data";
+import { MenuData } from "../data";
+import { MenuOption } from "../../../types/docs";
 import "./css/menu.scss";
 
 export default function Menu() {
@@ -57,7 +57,7 @@ export default function Menu() {
                 </div>
                 <div id="menu-list">
                     {MenuData.map((item: MenuOption) => (
-                        <div id="menu-list-item" onClick={() => scrollToElement(`${item.element_id}`)}>
+                        <div id="menu-list-item" key={item.element_id} onClick={() => scrollToElement(`${item.element_id}`)}>
                             <p>{item.title} <IoIosArrowDown /></p>
                         </div>
                     ))}

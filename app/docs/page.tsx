@@ -2,7 +2,7 @@ import React from "react";
 import { Metadata } from "next";
 import Menu from "./sections/menu";
 import Projects from "./sections/projects";
-import MiniGames from "./sections/miniGames";
+import MiniGames from "./sections/mini-games";
 
 export const metadata: Metadata = {
     title: "Dawit Alemu's Docs",
