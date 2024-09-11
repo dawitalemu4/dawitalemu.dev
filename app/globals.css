@@ -7,7 +7,7 @@ html, body {
 }
 
 body::-webkit-scrollbar, div::-webkit-scrollbar {
-    width: 0.3em;
+    width: 5px;
     background-color: black;
 }
 

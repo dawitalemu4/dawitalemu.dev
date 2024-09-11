@@ -6,7 +6,7 @@
     flex-direction: column;
     background-color: white;
     overflow: hidden;
-    z-index: 8;
+    z-index: 10;
 
     #projects-container {
         display: flex;
@@ -72,27 +72,6 @@
                     opacity: 0.7;
                 }
             }
-        }
-    }
-
-    #demo-modal {
-        display: flex;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 99.7vw;
-        height: 100vh;
-        justify-content: center;
-        align-items: center;
-        background-color: rgba(0, 0, 0, 0.8);
-        cursor: pointer;
-        z-index: 11;
-
-        img {
-            width: 80%;
-            height: 80%;
-            object-fit: contain;
-            cursor: pointer;
         }
     }
 }

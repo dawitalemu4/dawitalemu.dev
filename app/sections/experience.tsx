@@ -1,8 +1,8 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
-import ExperienceRow from "../components/experienceRow";
-import { ExperienceData } from "../utils/data";
-import { IconRow } from "../utils/types";
+import ExperienceRow from "../components/experience-row";
+import { ExperienceData } from "../data";
+import { IconRow } from "../../types/home";
 import "./css/experience.scss";
 
 export default function Experience() {
@@ -61,7 +61,7 @@ export default function Experience() {
                     <div id="skills-container">
                         <div id="skills-row-container">
                             {ExperienceData.map((row: IconRow) => (
-                                <ExperienceRow row={row} />
+                                <ExperienceRow key={row.id} row={row} />
                             ))}
                         </div>
                     </div>

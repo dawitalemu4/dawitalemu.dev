@@ -12,5 +12,6 @@ export interface Project {
     icons: string[];
     github: string;
     siteURL: string;
-    image: string;
+    thumbnail?: string;
+    video?: string;
 };

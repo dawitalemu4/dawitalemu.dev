@@ -1,9 +1,9 @@
 import React from "react";
-import HighlightCode from "../components/highlightCode";
+import HighlightCode from "../components/highlight-code";
 import { VscGithubAlt } from "react-icons/vsc";
 import { CiShare1 } from "react-icons/ci";
-import { Project } from "../utils/types";
-import "./css/projectSection.scss";
+import { Project } from "../../../types/docs";
+import "./css/project-section.scss";
 
 interface ProjectSectionProps {
     project: Project;
@@ -38,8 +38,8 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({ project }) => (
                 <a href={project.siteURL} target="_blank"><CiShare1 />View Site</a>
             </div>                     
             <div id="project-stack">
-                {project.images.map((image: string) => (
-                    <img src={"/devicons/" + image} />
+                {project.images.map((image: string, index: number) => (
+                    <img key={index} src={"/devicons/" + image} />
                 ))}
             </div>
         </div>

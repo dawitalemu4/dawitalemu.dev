@@ -67,7 +67,7 @@ export default function PacMan() {
     return (
         <div id="pacman-container">   
             <img id="arcade" src="/docs/pacman/arcade.webp" />
-            <img id="scene" src="/docs/pacman/pacmanScene.webp" />
+            <img id="scene" src="/docs/pacman/scene.webp" />
             <div id="dots-container" ref={dotsContainerRef}>
                 <img src={"/docs/pacman/" + images[imageIndex]} ref={dotsRef} />
             </div>

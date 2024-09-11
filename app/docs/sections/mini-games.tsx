@@ -4,7 +4,7 @@ import PacMan from "../games/pacman";
 import Yoshi from "../games/yoshi";
 import PokeBall from "../games/pokeball";
 import Luffy from "../games/luffy";
-import "./css/miniGames.scss";
+import "./css/mini-games.scss";
 
 export default function MiniGames() { 
 
