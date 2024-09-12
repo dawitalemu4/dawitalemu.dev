@@ -38,7 +38,6 @@ export const ProjectsData: Project[] = [
             "django.webp",
             "gql.webp",
             "react.webp",
-            "remix.webp",
             "ts.webp"
         ],
         github: "https://github.com/dawitalemu4/gda-server",

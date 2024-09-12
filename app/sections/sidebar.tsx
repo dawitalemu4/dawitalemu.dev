@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import { Link } from "next-view-transitions";
 import { FaBars } from "react-icons/fa6";
 import { IoIosClose } from "react-icons/io";
 import "./css/sidebar.scss";
@@ -62,7 +63,7 @@ export default function Sidebar() {
                     <li onClick={() => handleMenuClick("projects")}>Projects</li>
                     <li onClick={() => handleMenuClick("contact")}>Contact</li>
                 </ul>
-                <a id="sidebar-docs" href="/docs">{texts[textIndex]}</a>
+                <Link id="sidebar-docs" href="/docs" scroll={false}>{texts[textIndex]}</Link>
             </div>
         </>
     );

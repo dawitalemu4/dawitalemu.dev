@@ -47,7 +47,7 @@ export default function Projects() {
                 <div id="up-arrow" onClick={top}><HiArrowNarrowUp /></div>
                 <div id="projects-list">
                     {ProjectsData.map((project: Project) => (
-                        <ProjectSection key={project.divID} project={project} />
+                        <ProjectSection key={project.element_id} project={project} />
                     ))}
                 </div>
             </div>

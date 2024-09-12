@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
+import { Link } from "next-view-transitions";
 import { IoIosArrowDown } from "react-icons/io";
 import { HiOutlineArrowSmLeft, HiArrowNarrowDown } from "react-icons/hi";
 import { MenuData } from "../data";
@@ -48,7 +49,7 @@ export default function Menu() {
 
     return (
         <div id="menu">
-            <a id="back-arrow" href="/"><HiOutlineArrowSmLeft /></a>
+            <Link id="back-arrow" href="/" scroll={false}><HiOutlineArrowSmLeft /></Link>
             <div id="menu-container">
                 <div id="menu-header">
                     <h1>Docs</h1>

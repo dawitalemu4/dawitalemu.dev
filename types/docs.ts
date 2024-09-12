@@ -4,7 +4,7 @@ export interface MenuOption {
 };
 
 export interface Project {
-    divID: string;
+    element_id: string;
     header: string;
     paragraph: string;
     code: string;

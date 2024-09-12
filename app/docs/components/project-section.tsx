@@ -10,7 +10,7 @@ interface ProjectSectionProps {
 };
 
 const ProjectSection: React.FC<ProjectSectionProps> = ({ project }) => (
-    <div id={project.divID} className="project-section">
+    <div id={project.element_id} className="project-section">
         <div id="project-header">
             <h1>{project.header}</h1>
         </div>
