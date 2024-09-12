@@ -11,12 +11,12 @@ export default function Projects() {
     const [projectScrollHeight, setProjectScrollHeight] = useState("0%");
     const [effectToggle, setEffectToggle] = useState(true);
     const [effectText, setEffectText] = useState("On");
-    const [showModal, setshowModal] = useState(false);
+    const [modalView, setModalView] = useState(false);
     const [video, setVideo] = useState("");
     const projectsContainerRef = useRef<HTMLDivElement>(null);
 
     const toggleModal = () => {
-        setshowModal(!showModal);
+        setModalView(!modalView);
     };
 
     const toggleEffect = () => {
@@ -30,10 +30,17 @@ export default function Projects() {
         };
     };
 
+    const projectSelected = (url: string) => {
+        setVideo(url);
+        toggleModal();
+    };
+
     const handleProjectScroll = () => {
 
         const projectsContainer = projectsContainerRef.current;
+        const heroContainer = document.getElementById("hero-container");
         if (!projectsContainer) return;
+        if (!heroContainer) return;
 
         const containerHeight = projectsContainer.clientHeight;
         const containerTop = projectsContainer.getBoundingClientRect().top;
@@ -43,10 +50,12 @@ export default function Projects() {
 
         if (!isContainerVisible) {
             setProjectScrollHeight("0%");
+            heroContainer.style.display = "flex";
         } else {
             const maxScroll = containerHeight * (window.innerWidth > 900 ? 2.25 : 2.5);
             const projectScrollPercentage = Math.min((scrollPosition / maxScroll) * 100, 100);
             setProjectScrollHeight(`${projectScrollPercentage}%`);
+            heroContainer.style.display = "none";
         };
     };
 
@@ -68,13 +77,14 @@ export default function Projects() {
                     <p onClick={toggleEffect}>Scroll Effect: {effectText}</p>
                 </div>
                 <div id="projects-list">
-                    {ProjectsData.map((data: Project) => (
-                        <ProjectCard
-                            key={data.element_id}
-                            data={data}
-                            setVideo={(url: string) => setVideo(url)}
-                            toggleModal={toggleModal}
-                        />
+                    {ProjectsData.map((project: Project) => (
+                        <>
+                            <ProjectCard
+                                key={project.element_id}
+                                project={project}
+                                projectSelected={projectSelected}
+                            />
+                        </>
                     ))}
                 </div>
             </div>
@@ -86,8 +96,8 @@ export default function Projects() {
             </div>
             {video !== "" && (
                 <VideoModal
-                    showModal={showModal}
-                    hideModal={() => { toggleModal(); setVideo(""); }}
+                    showModal={modalView}
+                    hideModal={toggleModal}
                     url={video}
                 />
             )}

@@ -30,7 +30,8 @@ const HighlightCode: React.FC<HighlightCodeProps> = ({ code }) => {
 
     useEffect(() => {
 
-        if (codeRef.current) {
+
+        if (codeRef.current && codeRef.current.className.length === 0) {
             hljs.highlightElement(codeRef.current);
         };
 

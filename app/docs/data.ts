@@ -13,7 +13,7 @@ export const MenuData: MenuOption[] = [
 
 export const ProjectsData: Project[] = [
     {
-        divID: "portfolio",
+        element_id: "portfolio",
         header: "Portfolio",
         paragraph: "Thought the parallax effect was cool? Here's the code for the effect on the projects section!  Even though this function is almost the same as the other functions in the other sections, this one has an on and off button to toggle the effect. In short, I took the height of the div and the top, the scroll position of the user, and calculated the % of where their scroll position is on the div. I also offset the top a bit for timing reasons, as it would start counting the % immediately as the top of the div showed up on the screen, but the effect is cooler when you can see it happening😹. Why I'm using this component's parallax function is, because believe it or not, I spent 20 minutes or so confused why 'if (effectToggle === true)' wouldn't display 'On', until I tried false like how it is now. Don't ask me why it works. (jk)",
         code: `// projects.tsx
@@ -82,7 +82,7 @@ return (
         ]
     },
     {
-        divID: "postwoman",
+        element_id: "postwoman",
         header: "postwoman:~",
         paragraph: "",
         code: `// curl.go
@@ -180,7 +180,7 @@ func ExecuteCurlRequest(c echo.Context) error {
         ]
     },
     {
-        divID: "zerl",
+        element_id: "zerl",
         header: "Elias Realtor",
         paragraph: "",
         code: `// AdminService.java
@@ -251,7 +251,7 @@ public class AdminService {
         ]
     },
     {
-        divID: "gda",
+        element_id: "gda",
         header: "Genet's Designs",
         paragraph: "",
         code: `// graphql/schema.py
@@ -324,7 +324,7 @@ schema = graphene.Schema(query=Query)
         ]
     },
     {
-        divID: "dt",
+        element_id: "dt",
         header: "Debre Tsion Church",
         paragraph: "This component is one of my favorites because the UI that this code creates feels amazing to me.  The typescript basically fetches the images from my firebase db and has a function that makes any image clicked on become a modal. What made this challenging was figuring out how to make an image that was clicked on become the image in the modal, as the image on the modal would default to the latest image that was fetched. How I solved this was by running another for loop to pick up the specific image that was clicked on as url and made the selectedImage prop = url when the image is clicked on. I know this can be optimized, but I had other things to get to, and plan to get back to it when I learn how to optimize it.",
         code: `// GalleryBody.ts
@@ -391,7 +391,7 @@ html:
         ]
     },
     {
-        divID: "misplaced",
+        element_id: "misplaced",
         header: "Misplaced",
         paragraph: "This code block creates one of my favorite features on this app, which is previewing what their post will look like while they're typing in the form's input boxes! I know it looks weird, it's React Native, but I utilized useState and updated the state of each text variable's text every time the input box's input changed. Then I used the variable that is being changed as the inner text of the tag in the preview, creating a constant update to the preview's text!",
         code: `// PostForm.jsx
@@ -454,7 +454,7 @@ jsx:
         ]
     },
     {
-        divID: "tapin",
+        element_id: "tapin",
         header: "Let's Tap In",
         paragraph: "Okay. I know I used a package, but I didn't copy and paste this code, and the docs weren't super easy for me to understand, making it a challenge for me when I was at this point of my coding journey. This code snippet takes the main color from an image (the image of the card that was clicked) and then creates a color for a background and a color for an accent (text color, etc.) that can be used on the page of the card that was clicked. In another component not in this code snippet, I take the values of these two variables and use them as a gradient in the CSS, making whatever color the background is a cool gradient matching up with the main color of the image!",
         code: `// Background.tsx
@@ -506,7 +506,7 @@ const Background: React.FC<BackgroundProps> = ({ getBackgroundColor, getAccentCo
         ]
     },
     {
-        divID: "sonic",
+        element_id: "sonic",
         header: "2D Sonic Platformer",
         paragraph: "This C# script contains logic for sonic's speed, jump force, movement state, and whether he should be able to jump depending on if he isn't colliding with the ground properly/currently. This was the most challenging script for me because I liked the fast refreshes from web development, but every time I wanted to test if the new value I inserted was good or not, I had to manually stop the game and run it again. Jokes aside, the UnityEngine has a lot of functions doing all of the heavy lifting, but getting the syntax correct was harder for me as I was newer to coding when I was working on this project.",
         code: `// PlayerMovement.cs

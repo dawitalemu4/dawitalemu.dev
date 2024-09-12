@@ -9,8 +9,10 @@
         "lint": "next lint"
     },
     "dependencies": {
+        "@types/dom-view-transitions": "^1.0.5",
         "highlight.js": "^11.9.0",
         "next": "^14.2.8",
+        "next-view-transitions": "^0.3.0",
         "react": "^18",
         "react-dom": "^18",
         "react-icons": "^5.2.1",

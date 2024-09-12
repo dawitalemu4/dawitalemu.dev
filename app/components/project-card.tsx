@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef } from "react";
+import { Link } from "next-view-transitions";
 import { VscGithubAlt } from "react-icons/vsc";
 import { CiShare1 } from "react-icons/ci";
 import { FaPlay } from "react-icons/fa";
@@ -7,39 +8,59 @@ import { Project } from "../../types/home";
 import "./css/project-card.scss";
 
 interface ProjectCardProps {
-    data: Project;
-    setVideo: (url: string) => void;
-    toggleModal: () => void;
+    project: Project;
+    projectSelected: (url: string) => void;
     position?: Object;
 };
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ data, setVideo, toggleModal, position }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ project, projectSelected, position }) => {
+
+    const thumbnailRef = useRef<HTMLImageElement>(null);
+    
+    const thumbnailClicked = () => {
+        projectSelected(String(project.video));
+
+        if (thumbnailRef.current) {
+            thumbnailRef.current.style.viewTransitionName = "video-demo";
+        };
+
+        document.startViewTransition(() => {
+            if (thumbnailRef.current) {
+                thumbnailRef.current.style.viewTransitionName = "";
+            };
+        });
+    };
+
     return (
-        <div id={data.element_id} className="project-card" style={position}>
-            {data.thumbnail && (
+        <div id={project.element_id} className="project-card" style={position}>
+            {project.thumbnail && (
                 <div id="project-image">
-                    <img src={"/thumbnails/" + data.thumbnail} onClick={() => { setVideo(String(data.video)); toggleModal(); }} />
-                    <div onClick={() => { setVideo(String(data.video)); toggleModal(); }}><FaPlay /></div>
+                    <img
+                        src={"/thumbnails/" + project.thumbnail}
+                        onClick={thumbnailClicked}
+                        ref={thumbnailRef}
+                    />
+                    <div onClick={thumbnailClicked}><FaPlay /></div>
                 </div>
             )}
-            <div id="project-text-container" style={ data.thumbnail ? undefined : { marginLeft: "10%" }}>
+            <div id="project-text-container" style={ project.thumbnail ? undefined : { marginLeft: "10%" }}>
                 <div id="project-header">
-                    <h3>{data.header}</h3>
+                    <h3>{project.header}</h3>
                 </div>
                 <div id="project-paragraph">
-                    <p>{data.paragraph}</p>
-                    <span>{data.footnote}</span>
+                    <p>{project.paragraph}</p>
+                    <span>{project.footnote}</span>
                 </div> 
                 <div id="project-stack">
-                    {data.icons.map((icon: string, index: number) => (
+                    {project.icons.map((icon: string, index: number) => (
                         <img key={index} src={"/devicons/" + icon} />
                     ))}
                 </div>
             </div>
             <div id="project-links">
-                <a href={data.github} target="_blank"><VscGithubAlt />GitHub</a>
-                <a href={data.siteURL} target="_blank"><CiShare1 />View Site</a>
-                <a href={`/docs/#${data.element_id}`}> <IoIosPaper />Docs</a>
+                <a href={project.github} target="_blank"><VscGithubAlt />GitHub</a>
+                <a href={project.siteURL} target="_blank"><CiShare1 />View Site</a>
+                <Link href={`/docs/#${project.element_id}`}> <IoIosPaper />Docs</Link>
             </div>
         </div>
     );

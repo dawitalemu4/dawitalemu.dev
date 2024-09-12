@@ -161,15 +161,23 @@
             width: 75%; 
             flex-direction: column;
             align-items: flex-end;
+            margin-left: 0 !important;
 
             #project-paragraph {
                 width: 90%; 
-                height: 50%;
+                height: 45%;
+                margin-top: 5%;
+                padding-right: 10px;
+
+                p {
+                    margin: 0;
+                    margin-bottom: 10px;
+                }
             }
 
             #project-stack {
                 height: 20%; 
-                margin-top: 5%;
+                padding-top: 5%;
 
                 img {
                     height: 50%;
