@@ -1,10 +1,10 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import ProjectCard from "../components/project-card";
+import VideoModal from "../containers/modals/video";
 import { ProjectsData } from "../data";
 import { Project } from "../../types/home";
 import "./css/projects.scss";
-import VideoModal from "../containers/modals/video";
 
 export default function Projects() {
 
@@ -14,6 +14,7 @@ export default function Projects() {
     const [modalView, setModalView] = useState(false);
     const [video, setVideo] = useState("");
     const projectsContainerRef = useRef<HTMLDivElement>(null);
+    const videoDemoRef = useRef<HTMLVideoElement>(null);
 
     const toggleModal = () => {
         setModalView(!modalView);
@@ -78,13 +79,12 @@ export default function Projects() {
                 </div>
                 <div id="projects-list">
                     {ProjectsData.map((project: Project) => (
-                        <>
-                            <ProjectCard
-                                key={project.element_id}
-                                project={project}
-                                projectSelected={projectSelected}
-                            />
-                        </>
+                        <ProjectCard
+                            key={project.element_id}
+                            project={project}
+                            projectSelected={projectSelected}
+                            outerRef={videoDemoRef}
+                        />
                     ))}
                 </div>
             </div>
@@ -97,8 +97,9 @@ export default function Projects() {
             {video !== "" && (
                 <VideoModal
                     showModal={modalView}
-                    hideModal={toggleModal}
+                    hideModal={() => { toggleModal(); setVideo(""); }}
                     url={video}
+                    ref={videoDemoRef}
                 />
             )}
             <style>

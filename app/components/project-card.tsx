@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { Ref, useRef, useImperativeHandle } from "react";
 import { Link } from "next-view-transitions";
 import { VscGithubAlt } from "react-icons/vsc";
 import { CiShare1 } from "react-icons/ci";
@@ -10,14 +10,18 @@ import "./css/project-card.scss";
 interface ProjectCardProps {
     project: Project;
     projectSelected: (url: string) => void;
+    outerRef: Ref<HTMLVideoElement>;
     position?: Object;
 };
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ project, projectSelected, position }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ project, projectSelected, outerRef, position }) => {
 
+    const videoDemoRef = useRef<HTMLVideoElement>(null);
     const thumbnailRef = useRef<HTMLImageElement>(null);
+    // useImperativeHandle(videoDemoRef, () => outerRef as HTMLVideoElement);
     
     const thumbnailClicked = () => {
+
         projectSelected(String(project.video));
 
         if (thumbnailRef.current) {
@@ -25,8 +29,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, projectSelected, pos
         };
 
         document.startViewTransition(() => {
-            if (thumbnailRef.current) {
+            if (thumbnailRef.current && videoDemoRef) {
+                console.log("cleaned")
                 thumbnailRef.current.style.viewTransitionName = "";
+                // videoDemoRef.style.viewTransitionName = "video-demo";
             };
         });
     };
@@ -60,7 +66,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, projectSelected, pos
             <div id="project-links">
                 <a href={project.github} target="_blank"><VscGithubAlt />GitHub</a>
                 <a href={project.siteURL} target="_blank"><CiShare1 />View Site</a>
-                <Link href={`/docs/#${project.element_id}`}> <IoIosPaper />Docs</Link>
+                <Link href={`/docs/#${project.element_id}`}><IoIosPaper />Docs</Link>
             </div>
         </div>
     );
