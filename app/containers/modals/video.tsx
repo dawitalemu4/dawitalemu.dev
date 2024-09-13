@@ -1,30 +1,48 @@
-import React, { forwardRef, useRef, useImperativeHandle } from "react";
+import React, { RefObject, forwardRef, useState, useRef, useImperativeHandle } from "react";
 import "./css/video.scss";
 
 interface VideoModalProps {
-    showModal: boolean;
+    modalView: boolean;
     hideModal: () => void;
     url: string;
+    thumbnailRef: RefObject<HTMLImageElement>;
 };
 
 /* eslint-disable react/display-name */
-const VideoModal = forwardRef<HTMLVideoElement, VideoModalProps>(({ showModal, hideModal, url }, innerRef) => {
+const VideoModal = forwardRef<HTMLVideoElement, VideoModalProps>(({ modalView, hideModal, url, thumbnailRef }, ref) => {
 
+    const [showModal, setShowModal] = useState(modalView);
     const videoDemoRef = useRef<HTMLVideoElement>(null);
-    // useImperativeHandle(videoDemoRef, () => innerRef as HTMLVideoElement);
+    useImperativeHandle(ref, () => videoDemoRef.current as HTMLVideoElement);
 
-    // const cleanUpTransition = () => {
-    //     if (videoDemoRef) {
-    //         console.log("video cleaned")
-    //         videoDemoRef.style.viewTransitionName = "";
-    //     };
-    // };
+    const transitionBack = () => {
+
+        if (videoDemoRef.current) {
+            videoDemoRef.current.style.viewTransitionName = "video-demo";
+        };
+
+        document.startViewTransition(() => {
+            if (videoDemoRef.current && thumbnailRef.current) {
+                videoDemoRef.current.style.viewTransitionName = "";
+                thumbnailRef.current.style.viewTransitionName = "video-demo";
+            }; 
+        });
+
+        setTimeout(() => {
+
+            setShowModal(false);
+            hideModal();
+
+            if (thumbnailRef.current) {
+                thumbnailRef.current.style.viewTransitionName = "";
+            };
+
+        }, 100);
+    };
 
     return (
-        <div id="video-modal" style={{ display: showModal ? "flex" : "none" }} onClick={hideModal}>
-            <video id="video-demo" controls muted loop autoPlay
-                // onTransitionEnd={cleanUpTransition}
-                ref={videoDemoRef}>
+        <div id="video-modal" style={{ display: showModal ? "flex" : "none" }} onClick={transitionBack}>
+            <video controls muted loop autoPlay ref={videoDemoRef}>
                 <source src={url} type="video/mp4" />
             </video>
         </div>

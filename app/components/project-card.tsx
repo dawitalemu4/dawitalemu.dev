@@ -1,4 +1,4 @@
-import React, { Ref, useRef, useImperativeHandle } from "react";
+import React, { RefObject, forwardRef, useRef, useImperativeHandle } from "react";
 import { Link } from "next-view-transitions";
 import { VscGithubAlt } from "react-icons/vsc";
 import { CiShare1 } from "react-icons/ci";
@@ -10,16 +10,16 @@ import "./css/project-card.scss";
 interface ProjectCardProps {
     project: Project;
     projectSelected: (url: string) => void;
-    outerRef: Ref<HTMLVideoElement>;
+    videoDemoRef: RefObject<HTMLVideoElement>;
     position?: Object;
 };
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ project, projectSelected, outerRef, position }) => {
+/* eslint-disable react/display-name */
+const ProjectCard = forwardRef<HTMLImageElement, ProjectCardProps>(({ project, projectSelected, videoDemoRef, position }, ref) => {
 
-    const videoDemoRef = useRef<HTMLVideoElement>(null);
     const thumbnailRef = useRef<HTMLImageElement>(null);
-    // useImperativeHandle(videoDemoRef, () => outerRef as HTMLVideoElement);
-    
+    useImperativeHandle(ref, () => thumbnailRef.current as HTMLImageElement);
+
     const thumbnailClicked = () => {
 
         projectSelected(String(project.video));
@@ -29,11 +29,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, projectSelected, out
         };
 
         document.startViewTransition(() => {
-            if (thumbnailRef.current && videoDemoRef) {
-                console.log("cleaned")
+            if (thumbnailRef.current && videoDemoRef.current) {
                 thumbnailRef.current.style.viewTransitionName = "";
-                // videoDemoRef.style.viewTransitionName = "video-demo";
-            };
+                videoDemoRef.current.style.viewTransitionName = "video-demo";
+            }; 
         });
     };
 
@@ -70,6 +69,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, projectSelected, out
             </div>
         </div>
     );
-};
+});
 
 export default ProjectCard;
