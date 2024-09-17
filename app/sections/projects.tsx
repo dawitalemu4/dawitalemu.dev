@@ -12,9 +12,9 @@ export default function Projects() {
     const [effectToggle, setEffectToggle] = useState(true);
     const [effectText, setEffectText] = useState("On");
     const [modalView, setModalView] = useState(false);
+    const [projectID, setProjectID] = useState<string | null>(null);
     const [video, setVideo] = useState<string | null>(null);
     const projectsContainerRef = useRef<HTMLDivElement>(null);
-    const thumbnailRef = useRef<HTMLImageElement>(null);
     const videoDemoRef = useRef<HTMLVideoElement>(null);
 
     const toggleModal = () => {
@@ -32,8 +32,15 @@ export default function Projects() {
         };
     };
 
-    const projectSelected = (url: string) => {
+    const projectSelected = (projectID: string, url: string) => {
+        setProjectID(projectID);
         setVideo(url);
+        toggleModal();
+    };
+
+    const hideModal = () => {
+        setProjectID(null);
+        setVideo(null);
         toggleModal();
     };
 
@@ -85,7 +92,6 @@ export default function Projects() {
                             project={project}
                             projectSelected={projectSelected}
                             videoDemoRef={videoDemoRef}
-                            ref={thumbnailRef}
                         />
                     ))}
                 </div>
@@ -96,12 +102,12 @@ export default function Projects() {
                     Visit the <a href="/docs">Docs Page for Devs</a>!
                 </p>
             </div>
-            {video && (
+            {(video && projectID) && (
                 <VideoModal
                     modalView={modalView}
-                    hideModal={() => { toggleModal(); setVideo(null); }}
+                    hideModal={hideModal}
+                    projectID={projectID}
                     url={video}
-                    thumbnailRef={thumbnailRef}
                     ref={videoDemoRef}
                 />
             )}

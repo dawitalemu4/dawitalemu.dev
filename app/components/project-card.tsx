@@ -1,4 +1,4 @@
-import React, { RefObject, forwardRef, useRef, useImperativeHandle } from "react";
+import React, { RefObject, useRef } from "react";
 import { Link } from "next-view-transitions";
 import { VscGithubAlt } from "react-icons/vsc";
 import { CiShare1 } from "react-icons/ci";
@@ -9,20 +9,18 @@ import "./css/project-card.scss";
 
 interface ProjectCardProps {
     project: Project;
-    projectSelected: (url: string) => void;
+    projectSelected: (projectID: string, url: string) => void;
     videoDemoRef: RefObject<HTMLVideoElement>;
     position?: Object;
 };
 
-/* eslint-disable react/display-name */
-const ProjectCard = forwardRef<HTMLImageElement, ProjectCardProps>(({ project, projectSelected, videoDemoRef, position }, ref) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ project, projectSelected, videoDemoRef, position }) => {
 
     const thumbnailRef = useRef<HTMLImageElement>(null);
-    useImperativeHandle(ref, () => thumbnailRef.current as HTMLImageElement);
 
     const thumbnailClicked = () => {
 
-        projectSelected(String(project.video));
+        projectSelected(project.element_id + "-thumbnail", String(project.video));
 
         if (thumbnailRef.current) {
             thumbnailRef.current.style.viewTransitionName = "video-demo";
@@ -41,6 +39,7 @@ const ProjectCard = forwardRef<HTMLImageElement, ProjectCardProps>(({ project, p
             {project.thumbnail && (
                 <div id="project-image">
                     <img
+                        id={project.element_id + "-thumbnail"}
                         src={"/thumbnails/" + project.thumbnail}
                         onClick={thumbnailClicked}
                         ref={thumbnailRef}
@@ -69,6 +68,6 @@ const ProjectCard = forwardRef<HTMLImageElement, ProjectCardProps>(({ project, p
             </div>
         </div>
     );
-});
+};
 
 export default ProjectCard;
