@@ -1,15 +1,15 @@
-import React, { RefObject, forwardRef, useState, useRef, useImperativeHandle } from "react";
+import React, { forwardRef, useState, useRef, useImperativeHandle } from "react";
 import "./css/video.scss";
 
 interface VideoModalProps {
     modalView: boolean;
     hideModal: () => void;
+    projectID: string;
     url: string;
-    thumbnailRef: RefObject<HTMLImageElement>;
 };
 
 /* eslint-disable react/display-name */
-const VideoModal = forwardRef<HTMLVideoElement, VideoModalProps>(({ modalView, hideModal, url, thumbnailRef }, ref) => {
+const VideoModal = forwardRef<HTMLVideoElement, VideoModalProps>(({ modalView, hideModal, projectID, url }, ref) => {
 
     const [showModal, setShowModal] = useState(modalView);
     const videoDemoRef = useRef<HTMLVideoElement>(null);
@@ -17,14 +17,16 @@ const VideoModal = forwardRef<HTMLVideoElement, VideoModalProps>(({ modalView, h
 
     const transitionBack = () => {
 
+        const thumbnail = document.getElementById(projectID);
+
         if (videoDemoRef.current) {
             videoDemoRef.current.style.viewTransitionName = "video-demo";
         };
 
         document.startViewTransition(() => {
-            if (videoDemoRef.current && thumbnailRef.current) {
+            if (videoDemoRef.current && thumbnail) {
                 videoDemoRef.current.style.viewTransitionName = "";
-                thumbnailRef.current.style.viewTransitionName = "video-demo";
+                thumbnail.style.viewTransitionName = "video-demo";
             }; 
         });
 
@@ -33,8 +35,8 @@ const VideoModal = forwardRef<HTMLVideoElement, VideoModalProps>(({ modalView, h
             setShowModal(false);
             hideModal();
 
-            if (thumbnailRef.current) {
-                thumbnailRef.current.style.viewTransitionName = "";
+            if (thumbnail) {
+                thumbnail.style.viewTransitionName = "";
             };
 
         }, 100);
