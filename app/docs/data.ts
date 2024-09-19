@@ -84,7 +84,7 @@ return (
     {
         element_id: "postwoman",
         header: "postwoman:~",
-        paragraph: "",
+        paragraph: "This handler is what this whole application is built around, the handler that interacts with curl! Some other portions of this handler create a history request, parse the response from curl, and send back the response from curl. The part I spent the most time on was getting a clean version of the response from curl in one string and getting the response code in a string. Since the go/exec package doesn't have a method that returns back the response and its other detailed information in two variables, I had to build the command into a struct variable, create byte buffer variables and pass their pointers to the command variable's standard output (clean response string) and standard error (verbose curl request info, which includes the response HTTP status) so the buffers variables can store the information when referenced after the command is ran. I wanted this info in two different variables so I could extract only the response status from the standard error with regex and keep the standard output clean with no further action before using it in the handler's response.",
         code: `// curl.go
 func buildCommand(request models.Request) []string {
 
@@ -128,13 +128,10 @@ func ExecuteCurlRequest(c echo.Context) error {
     err := curlRequest.Run()
 
     if err != nil && err.Error() == "exit status 6" {
-        println(err.Error(), "/n response: ", response.String(), "/n headers: ", headers.String())
         return c.HTML(200, "<p>$  error: " + err.Error() + ", probably an invalid url given</p>")
     }  else if err != nil && err.Error() == "exit status 7" {
-        println(err.Error(), "/n response: ", response.String(), "/n headers: ", headers.String())
         return c.HTML(200, "<p>$  error: " + err.Error() + ", probably can't connect to localhost, use host.docker.internal instead of localhost in your url if running postwoman with docker</p>")
     } else if err != nil {
-        println(err.Error(), "/n response: ", response.String(), "/n headers: ", headers.String())
         return c.HTML(200, "<p>$  error: " + err.Error() + ", probably an invalid header or body given</p>")
     }
 
@@ -164,7 +161,7 @@ func ExecuteCurlRequest(c echo.Context) error {
         }
     }
 
-    return c.HTML(200," 
+    return c.HTML(200, " 
         $  status: " + splicedStatus + "
         <br /><br />
         <textarea id="response-textarea" readonly>" + response.String() + "&#013;</textarea>
