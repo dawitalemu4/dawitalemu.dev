@@ -44,34 +44,24 @@ a {
 @font-face {
     font-family: "InterBold";
     src: url("/fonts/Inter-Bold.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
 }
 
 @font-face {
     font-family: "InterSemi";
     src: url("/fonts/Inter-SemiBold.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
 }
 
 @font-face {
     font-family: "InterMedium";
     src: url("/fonts/Inter-Medium.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
 }
 
 @font-face {
     font-family: "Inter";
     src: url("/fonts/Inter-Regular.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
 }
 
 @font-face {
     font-family: "Consolas";
     src: url("/fonts/Consolas.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal; 
 }
