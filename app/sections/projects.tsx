@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
+import { Link } from "next-view-transitions";
 import ProjectCard from "../components/project-card";
 import VideoModal from "../containers/modals/video";
 import { ProjectsData } from "../data";
@@ -99,7 +100,7 @@ export default function Projects() {
             <div id="docs-link">
                 <p>
                     And More... Browse My <a id="MoreGitHub" href="https://github.com/dawitalemu4" target="_blank">GitHub</a> or 
-                    Visit the <a href="/docs">Docs Page for Devs</a>!
+                    Visit the <Link href="/docs">Docs Page for Devs</Link>!
                 </p>
             </div>
             {(video && projectID) && (
