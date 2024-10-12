@@ -2,7 +2,6 @@ html, body {
     margin: 0;
     padding: 0;
     background-color: black;
-    font-family: InterMedium;
     overflow-x: hidden;
 }
 
@@ -18,47 +17,27 @@ body::-webkit-scrollbar-thumb, div::-webkit-scrollbar-thumb {
 
 h1 {
     font-size: 50px;
-    font-family: InterBold;
+    font-weight: 700;
 }
 
 h2 {
     font-size: 30px;
-    font-family: InterSemi;
+    font-weight: 600;
 }
 
 h3 {
     font-size: 25px;
-    font-family: InterMedium;
+    font-weight: 500;
 }
 
 p {
     font-size: 16px;
-    font-family: Inter;
+    font-weight: 400;
 }
 
 a {
     color: white;
     text-decoration: none;
-}
-
-@font-face {
-    font-family: "InterBold";
-    src: url("/fonts/Inter-Bold.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: "InterSemi";
-    src: url("/fonts/Inter-SemiBold.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: "InterMedium";
-    src: url("/fonts/Inter-Medium.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: "Inter";
-    src: url("/fonts/Inter-Regular.ttf") format("truetype");
 }
 
 @font-face {
