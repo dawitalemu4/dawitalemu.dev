@@ -43,7 +43,7 @@
             p {
                 font-size: 26px;
                 color: black;
-                font-family: InterMedium;
+                font-weight: 500;
             }
         }
 
@@ -76,7 +76,7 @@
 
             h1 {
                 color: black;
-                font-family: InterSemi;
+                font-weight: 600;
                 font-size: calc(400 * var(--aboutScrollHeight));
                 transform: translateY(calc(0.1 * var(--aboutScrollHeight))) translateX(calc(-1 * (0.09 * var(--aboutScrollHeight))));
             }

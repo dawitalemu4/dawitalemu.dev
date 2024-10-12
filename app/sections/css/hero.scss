@@ -70,6 +70,7 @@
                 justify-content: center;
                 align-items: center;
                 flex-direction: column;
+                font-weight: 500;
                 font-size: 50px; 
                 text-align: center;
                 color: black; 
@@ -90,14 +91,14 @@
 
             p:first-child {
                 font-size: 100px; 
-                font-family: InterBold;
+                font-weight: 700;
                 opacity: calc(20% + var(--heroScrollHeight)); 
                 text-align: center; 
             }
 
             p:last-child { 
                 font-size: 30px; 
-                font-family: InterSemi;
+                font-weight: 600;
                 opacity: calc(20% + var(--heroScrollHeight)); 
                 text-align: center; 
             }
