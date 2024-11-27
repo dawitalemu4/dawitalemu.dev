@@ -55,7 +55,7 @@ export default function Experience() {
                             <br/><br/>
                             <b>Keep scrolling</b> for more in-depth information about some of my works!
                             <br/><br/>
-                            <a href="https://docs.google.com/document/d/1VA2JjizgZaup8Hw1dX10K6-6aRnEW3wpa1yVvscN2H4/edit?usp=sharing" target="_blank"><b>Click me to view Dawit's resume!</b></a>
+                            <a href="https://docs.google.com/document/d/1VA2JjizgZaup8Hw1dX10K6-6aRnEW3wpa1yVvscN2H4/edit?usp=sharing" target="_blank" aria-label="View Dawit's resume!"><b>Click me to view Dawit's resume!</b></a>
                         </p>
                     </div>
                     <div id="skills-container">

@@ -41,6 +41,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, projectSelected, vid
                     <img
                         id={project.element_id + "-thumbnail"}
                         src={"/thumbnails/" + project.thumbnail}
+                        alt="Project Thumbnail"
                         onClick={thumbnailClicked}
                         ref={thumbnailRef}
                     />
@@ -57,13 +58,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, projectSelected, vid
                 </div> 
                 <div id="project-stack">
                     {project.icons.map((icon: string, index: number) => (
-                        <img key={index} src={"/devicons/" + icon} />
+                        <img key={index} src={"/devicons/" + icon} alt="Dev Icon" />
                     ))}
                 </div>
             </div>
             <div id="project-links">
-                <a href={project.github} target="_blank"><VscGithubAlt />GitHub</a>
-                <a href={project.siteURL} target="_blank"><CiShare1 />View Site</a>
+                {project.github && <a href={project.github} target="_blank"><VscGithubAlt />GitHub</a>}
+                {project.siteURL && <a href={project.siteURL} target="_blank"><CiShare1 />View Site</a>}
                 <Link href={`/docs/#${project.element_id}`}><IoIosPaper />Docs</Link>
             </div>
         </div>

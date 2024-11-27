@@ -51,11 +51,11 @@ const PokeBall: React.FC<{ pokeballClicked: () => void }> = ({ pokeballClicked }
     return (
         <div id="pokeball-container">
             <h2 id="pokeball-header">Click Me!</h2>
-            <img id="pokeball-gif" src="/docs/pokemon/pokeball.gif" onClick={handlePokeBallClick} />
-            <img id="pikachu-jump" src="/docs/pokemon/pikachujump.gif" style={{ display: "none" }} />
-            <img id="pikachu-run" src="/docs/pokemon/pikachurun.gif" style={{ display: "none" }} />
-            <img id="text-box" src="/docs/pokemon/textbox.gif" style={{ display: "none" }} />
-            <img id="text-still" src="/docs/pokemon/textstill.webp" style={{ display: "none" }} />
+            <img id="pokeball-gif" src="/docs/pokemon/pokeball.gif" onClick={handlePokeBallClick} alt="Shaking Pokeball" />
+            <img id="pikachu-jump" src="/docs/pokemon/pikachujump.gif" style={{ display: "none" }} alt="Jumping Pikachu" />
+            <img id="pikachu-run" src="/docs/pokemon/pikachurun.gif" style={{ display: "none" }} alt="Running Pikachu" />
+            <img id="text-box" src="/docs/pokemon/textbox.gif" style={{ display: "none" }} alt="Animated Textbox" />
+            <img id="text-still" src="/docs/pokemon/textstill.webp" style={{ display: "none" }} alt="Still Textbox" />
         </div>
     );
 };

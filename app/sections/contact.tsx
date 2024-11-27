@@ -20,14 +20,14 @@ export default function Contact() {
             </div>
             <div id="contact-container">
                 <div id="contact-icons">
-                    <a href="https://mail.google.com/mail?view=cm&fs=1&to=dndawita@gmail.com&su=Draft" target="_blank">
-                        <img src="/icons/mail.webp" />
+                    <a href="https://mail.google.com/mail?view=cm&fs=1&to=dndawita@gmail.com&su=Draft" target="_blank" aria-label="Email Dawit Alemu">
+                        <img src="/icons/mail.webp" alt="Email Icon" />
                     </a>
-                    <a href="https://github.com/dawitalemu4" target="_blank">
-                        <img src="/icons/github.webp" />
+                    <a href="https://github.com/dawitalemu4" target="_blank" aria-label="View Dawit Alemu's GitHub">
+                        <img src="/icons/github.webp" alt="GitHub Icon" />
                     </a>
-                    <a href="https://www.linkedin.com/in/dawit-alemu4" target="_blank">
-                        <img src="/icons/in.webp" />
+                    <a href="https://www.linkedin.com/in/dawit-alemu4" target="_blank" aria-label="Visit Dawit Alemu's Linkedin">
+                        <img src="/icons/in.webp" alt="Linkedin Icon" />
                     </a>
                 </div>
                 <div id="contact-arrow-button">

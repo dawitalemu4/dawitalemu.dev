@@ -12,15 +12,10 @@ export default function Projects() {
     const [projectScrollHeight, setProjectScrollHeight] = useState("0%");
     const [effectToggle, setEffectToggle] = useState(true);
     const [effectText, setEffectText] = useState("On");
-    const [modalView, setModalView] = useState(false);
     const [projectID, setProjectID] = useState<string | null>(null);
     const [video, setVideo] = useState<string | null>(null);
     const projectsContainerRef = useRef<HTMLDivElement>(null);
     const videoDemoRef = useRef<HTMLVideoElement>(null);
-
-    const toggleModal = () => {
-        setModalView(!modalView);
-    };
 
     const toggleEffect = () => {
 
@@ -36,13 +31,11 @@ export default function Projects() {
     const projectSelected = (projectID: string, url: string) => {
         setProjectID(projectID);
         setVideo(url);
-        toggleModal();
     };
 
     const hideModal = () => {
         setProjectID(null);
         setVideo(null);
-        toggleModal();
     };
 
     const handleProjectScroll = () => {
@@ -99,13 +92,12 @@ export default function Projects() {
             </div>
             <div id="docs-link">
                 <p>
-                    And More... Browse My <a id="MoreGitHub" href="https://github.com/dawitalemu4" target="_blank">GitHub</a> or 
+                    And More... Browse My <a id="MoreGitHub" href="https://github.com/dawitalemu4" target="_blank" aria-label="View Dawit Alemu's GitHub">GitHub</a> or 
                     Visit the <Link href="/docs">Docs Page for Devs</Link>!
                 </p>
             </div>
             {(video && projectID) && (
                 <VideoModal
-                    modalView={modalView}
                     hideModal={hideModal}
                     projectID={projectID}
                     url={video}

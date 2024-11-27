@@ -2,16 +2,14 @@ import React, { forwardRef, useState, useRef, useImperativeHandle } from "react"
 import "./css/video.scss";
 
 interface VideoModalProps {
-    modalView: boolean;
     hideModal: () => void;
     projectID: string;
     url: string;
 };
 
 /* eslint-disable react/display-name */
-const VideoModal = forwardRef<HTMLVideoElement, VideoModalProps>(({ modalView, hideModal, projectID, url }, ref) => {
+const VideoModal = forwardRef<HTMLVideoElement, VideoModalProps>(({ hideModal, projectID, url }, ref) => {
 
-    const [showModal, setShowModal] = useState(modalView);
     const videoDemoRef = useRef<HTMLVideoElement>(null);
     useImperativeHandle(ref, () => videoDemoRef.current as HTMLVideoElement);
 
@@ -32,7 +30,6 @@ const VideoModal = forwardRef<HTMLVideoElement, VideoModalProps>(({ modalView, h
 
         setTimeout(() => {
 
-            setShowModal(false);
             hideModal();
 
             if (thumbnail) {
@@ -43,7 +40,7 @@ const VideoModal = forwardRef<HTMLVideoElement, VideoModalProps>(({ modalView, h
     };
 
     return (
-        <div id="video-modal" style={{ display: showModal ? "flex" : "none" }} onClick={transitionBack}>
+        <div id="video-modal" onClick={transitionBack}>
             <video controls muted loop autoPlay ref={videoDemoRef}>
                 <source src={url} type="video/mp4" />
             </video>

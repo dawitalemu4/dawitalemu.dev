@@ -34,12 +34,12 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({ project }) => (
         </div>  
         <div id="project-icons-container">
             <div id="project-links">
-                <a href={project.github} target="_blank"><VscGithubAlt />Video Demos</a>
-                <a href={project.siteURL} target="_blank"><CiShare1 />View Site</a>
+                <a href={project.github} target="_blank" aria-label="View Project's GitHub Repo"><VscGithubAlt />Video Demos</a>
+                <a href={project.siteURL} target="_blank" aria-label="View Project's Website"><CiShare1 />View Site</a>
             </div>                     
             <div id="project-stack">
                 {project.images.map((image: string, index: number) => (
-                    <img key={index} src={"/devicons/" + image} />
+                    <img key={index} src={"/devicons/" + image} alt="Dev Icon" />
                 ))}
             </div>
         </div>
