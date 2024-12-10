@@ -57,12 +57,12 @@ export default function Hero() {
                 <div id="hero-container">
                     <div id="left-container">
                         <div id="white-triangle">
-                            <img src="whiteTriangle.webp" />
+                            <img src="whiteTriangle.webp" alt="White Triangle Animation Divider" />
                         </div>
                     </div>
                     <div id="right-container">
                         <div id="black-triangle">
-                            <img src="blackTriangle.webp" />
+                            <img src="blackTriangle.webp" alt="Black Triangle Animation Divider" />
                         </div>
                     </div>
                     <div id="arrow-container">

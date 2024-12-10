@@ -29,7 +29,7 @@ export default function MiniGames() {
                 </div>
                 <div id="pikachu-wave">
                     {showPikachu &&
-                        <img src="/docs/pokemon/pikachu.gif" />
+                        <img src="/docs/pokemon/pikachu.gif" alt="Waving Pikachu Gif" />
                     }
                 </div>
             </div>

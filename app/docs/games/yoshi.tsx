@@ -43,8 +43,8 @@ export default function Yoshi() {
         <div id="yoshi-container">
             <h2 id="bubble-text">Refresh and move your mouse around Yoshi to see what happens!</h2>
             <div id="yoshi-image-container">    
-                <img id="yoshi-eyes" src="/docs/yoshi/eyes.webp" ref={eyesRef} />
-                <img id="yoshi-body" src="/docs/yoshi/yoshi.webp" ref={yoshiRef} />
+                <img id="yoshi-eyes" src="/docs/yoshi/eyes.webp" ref={eyesRef} alt="Yoshi Eyes" />
+                <img id="yoshi-body" src="/docs/yoshi/yoshi.webp" ref={yoshiRef} alt="Yoshi Body" />
             </div>
         </div>
     );

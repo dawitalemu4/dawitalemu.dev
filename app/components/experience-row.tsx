@@ -15,7 +15,7 @@ const ExperienceRow: React.FC<ExperienceRowProps> = ({ row }) => {
             <div id="skill-row-container">
                 {row.images.map((image: string[], index: number) => (
                     <div id="skill-row-item" key={index}>
-                        <img src={"/devicons/" + image[0]} />
+                        <img src={"/devicons/" + image[0]} alt="Dev Icon" />
                         {image[1]}
                     </div>
                 ))}

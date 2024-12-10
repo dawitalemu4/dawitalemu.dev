@@ -10,8 +10,8 @@ export interface Project {
     paragraph: string;
     footnote?: string; 
     icons: string[];
-    github: string;
-    siteURL: string;
+    github?: string;
+    siteURL?: string;
     thumbnail?: string;
     video?: string;
 };

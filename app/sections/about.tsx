@@ -51,7 +51,7 @@ export default function About() {
                         </p>
                     </div>                   
                     <div id="about-image">
-                        <img src="da.webp" />
+                        <img src="da.webp" alt="Faceshot of Dawit Alemu" />
                     </div>                 
                     <div id="about-title">
                         <h1>About</h1>

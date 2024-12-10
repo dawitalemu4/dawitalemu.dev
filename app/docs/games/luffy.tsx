@@ -79,7 +79,7 @@ export default function Luffy() {
 
     return (
         <div id="luffy-container">
-            <img id="luffy-img" src="/docs/luffy/luffy.gif" />
+            <img id="luffy-img" src="/docs/luffy/luffy.gif" alt="Animated Gif of Luffy Fishing" />
             <div id="warning-message">
                 <p>Tap left click while luffy is pulling - Don't drag or hold</p>
             </div>

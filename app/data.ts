@@ -2,6 +2,15 @@ import { IconRow, Project } from "../types/home";
 
 export const ProjectsData: Project[] = [
     {
+        element_id: "gd", header: "GoDaddy",
+        paragraph: "Added features to a CLI tool that automates GoDaddy microservice configurations for the tier 0 Edge/API Gateways, and extended it into a HTTP lambda API. Enabled reading from DynamoDB, uploading parsed configs to S3, and more.",
+        icons: [
+            "rust.webp",
+            "tokio.webp",
+            "aws.webp"
+        ]
+    },
+    {
         element_id: "postwoman", header: "postwoman:~",
         paragraph: "A self-hosted dev tool that achieves what postman does but with my personal preferences in its functionality and design. It is my favorite project so far because it solves a lot of pet peeves of mine and drastically improves my experience testing APIs over the experience postman gave me.",
         icons: [
@@ -16,32 +25,39 @@ export const ProjectsData: Project[] = [
         video: "https://github.com/dawitalemu4/postwoman/assets/106638403/b09125dd-565e-479f-be58-194261c2667f"
     },
     {
-        element_id: "zerl", header: "Elias Realtor",
-        paragraph: "A real estate brochure website with an admin portal managing website's contents.",
-        footnote: "* I wrote and finished the backend, frontend isn't maintained by me.",
+        element_id: "bl", header: "Baltimore Life Insurance",
+        paragraph: "Implemented a redesign of the internal Agent Portal's home page to improve user navigation efficiency by reducing average clicks from 3-5 to 1-2.",
         icons: [
-            "java.webp",
-            "spring.webp",
             "react.webp",
-            "remix.webp",
-            "ts.webp"
-        ],
-        github: "https://github.com/dawitalemu4/zerl-server",
-        siteURL: "https://github.com/dawitalemu4/zerl-server"
+            "c.webp",
+            "js.webp"
+        ]
     },
     {
-        element_id: "gda", header: "Genet Designs",
-        paragraph: "An e-commerce site that displays custom traditional ethiopian clothing that is for sale or sold from a tailor named Genet Bekele. Has wishlist and category filtering features.",
-        footnote: "* I wrote and finished the backend, frontend isn't maintained by me.",
+        element_id: "ua", header: "Urban Alliance",
+        paragraph: "A website I created to revamp a partner company's template-service website to solve responsiveness issues and unnesecary expenses.",
         icons: [
-            "python.webp",
-            "django.webp",
-            "gql.webp",
             "react.webp",
+            "gatsby.webp",
+            "js.webp"
+        ],
+        github: "https://github.com/EduCoGroup/educogroup.org",
+        siteURL: "https://educopaths.com",
+        thumbnail: "ua.webp",
+        video: "https://github.com/user-attachments/assets/ad4ec9ce-1610-45e5-a859-355c91c64a33"
+    },
+    {
+        element_id: "tapin", header: "Let's Tap In, LLC",
+        paragraph: "A website that displays events and allows you to checkout tickets. Picks the two primary colors of a event's image and creates a smooth gradient background on the event details page.",
+        icons: [
+            "react.webp",
+            "next.webp",
             "ts.webp"
         ],
-        github: "https://github.com/dawitalemu4/gda-server",
-        siteURL: "https://genetdesigns.com"
+        github: "https://github.com/dawitalemu4/TapInWebPage",
+        siteURL: "https://letsalltapin.vercel.app",
+        thumbnail: "tapin.webp",
+        video: "https://github.com/dawitalemu4/TapInWebPage/assets/106638403/a7f8bbae-2aec-4d3d-a102-50c59a9ca071"
     },
     {
         element_id: "dt", header: "Debre Tsion Church",
@@ -71,32 +87,6 @@ export const ProjectsData: Project[] = [
         siteURL: "https://misplaced.app",
         thumbnail: "misplaced.webp",
         video: "https://user-images.githubusercontent.com/106638403/230789654-ae6849f5-0816-42da-ac26-ce1d9dd37412.mp4"
-    },
-    {
-        element_id: "tapin", header: "Let's Tap In, LLC",
-        paragraph: "A website that displays events and allows you to checkout tickets. Picks the two primary colors of a event's image and creates a smooth gradient background on the event details page.",
-        icons: [
-            "react.webp",
-            "next.webp",
-            "ts.webp"
-        ],
-        github: "https://github.com/dawitalemu4/TapInWebPage",
-        siteURL: "https://letsalltapin.vercel.app",
-        thumbnail: "tapin.webp",
-        video: "https://github.com/dawitalemu4/TapInWebPage/assets/106638403/a7f8bbae-2aec-4d3d-a102-50c59a9ca071"
-    },
-    {
-        element_id: "ua", header: "Urban Alliance",
-        paragraph: "A website I created to revamp a partner company's template-service website to solve responsiveness issues and unnesecary expenses.",
-        icons: [
-            "react.webp",
-            "gatsby.webp",
-            "js.webp"
-        ],
-        github: "https://github.com/EduCoGroup/educogroup.org",
-        siteURL: "https://educopaths.com",
-        thumbnail: "ua.webp",
-        video: "https://github.com/user-attachments/assets/ad4ec9ce-1610-45e5-a859-355c91c64a33"
     },
     {
         element_id: "sonic", header: "2D Sonic Platformer",
